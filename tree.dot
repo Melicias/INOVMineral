@@ -1,0 +1,9 @@
+digraph Tree {
+node [shape=box, style="rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="mqtt.conack.flags_0.0 <= 0.5\ngini = 0.5\nsamples = 1380082\nvalue = [1091602, 1091919]"] ;
+1 [label="gini = 0.0\nsamples = 690168\nvalue = [1091602, 0]"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="gini = 0.0\nsamples = 689914\nvalue = [0, 1091919]"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}
