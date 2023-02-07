@@ -1,5 +1,5 @@
 #!pip install pytorch-tabnet wget
-#from pytorch_tabnet.tab_model import TabNetClassifier
+from pytorch_tabnet.tab_model import TabNetClassifier
 import torch
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
@@ -88,22 +88,22 @@ n_total = len(df)
 features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
 le = LabelEncoder()
-le.fit(df["Attack_label"].values)
+le.fit(df["Attack_type"].values)
 
-train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.8, random_state=random_state)
-train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.2, random_state=random_state) # 0.25 x 0.8 = 0.2
+train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
+train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
-y_train = df["Attack_label"].values[train_val_indices]
-#y_train = le.transform(y_train)
+y_train = df["Attack_type"].values[train_val_indices]
+y_train = le.transform(y_train)
 
 X_valid = df[features].values[valid_indices]
-y_valid = df["Attack_label"].values[valid_indices]
-#y_valid = le.transform(y_valid)
+y_valid = df["Attack_type"].values[valid_indices]
+y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
-y_test = df["Attack_label"].values[test_indices]
-#y_test = le.transform(y_test)
+y_test = df["Attack_type"].values[test_indices]
+y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
 model_norm = standScaler.fit(X_train)
@@ -111,8 +111,8 @@ model_norm = standScaler.fit(X_train)
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
 
-sm = SMOTE(random_state=random_state,n_jobs=-1)
-X_train, y_train = sm.fit_resample(X_train, y_train)
+#sm = SMOTE(random_state=random_state,n_jobs=-1)
+#X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
 n_estimators = 100 if not os.getenv("CI", False) else 20
@@ -122,10 +122,10 @@ clf_xgb = XGBClassifier(max_depth=8,
     n_estimators=n_estimators,
     verbosity=0,
     silent=None,
-    objective="multi:softmax",
-    #objective="multi:softprob",
+    #objective="multi:softmax",
+    objective="multi:softprob",
     booster='gbtree',
-    n_jobs=-1,
+    n_jobs=1,
     nthread=None,
     gamma=0,
     min_child_weight=1,
@@ -140,17 +140,40 @@ clf_xgb = XGBClassifier(max_depth=8,
     base_score=0.5,
     random_state=random_state,
     seed=None,
-    #num_class= (le.classes_).size)
-    num_class= 2)
+    num_class= (le.classes_).size)
+    #num_class= 2)
 
-clf_xgb.fit(X_train, y_train,
+
+print(len(X_train))
+print(len(y_train))
+start = 0
+end = len(X_train)
+step = 100000
+for i in range(start, end, step):
+    x = i
+    print(x)
+    X_train_part = X_train[x:x+step,:]
+    Y_train_part = y_train[x:x+step]
+    print(np.unique(Y_train_part))
+    clf_xgb.fit(X_train_part, Y_train_part,
+            eval_set=[(X_valid, y_valid)],
             early_stopping_rounds=40,
             verbose=10)
+clf_xgb.save_model("XGBClassifierSeparated.json")
 
-preds_valid = np.array(clf_xgb.predict_proba(X_valid, ))
-valid_acc = accuracy_score(y_pred=np.argmax(preds_valid, axis=1) + 1, y_true=y_valid)
+"""
+clf_xgb.fit(X_train, y_train,
+            eval_set=[(X_valid, y_valid)],
+            early_stopping_rounds=40,
+            verbose=10)
+clf_xgb.save_model("XGBClassifierInOneGo.json")
+"""
+
+
+preds_valid = np.array(clf_xgb.predict(X_valid))
+valid_acc = accuracy_score(y_pred=preds_valid, y_true=y_valid)
 print(valid_acc)
 
-preds_test = np.array(clf_xgb.predict_proba(X_test))
-test_acc = accuracy_score(y_pred=np.argmax(preds_test, axis=1) + 1, y_true=y_test)
+preds_test = np.array(clf_xgb.predict(X_test))
+test_acc = accuracy_score(y_pred=preds_test, y_true=y_test)
 print(test_acc)
