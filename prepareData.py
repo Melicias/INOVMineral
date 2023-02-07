@@ -94,15 +94,15 @@ train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2
 train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
-y_train = df["Attack_type"].values[train_val_indices]
+y_train = df["Attack_label"].values[train_val_indices]
 y_train = le.transform(y_train)
 
 X_valid = df[features].values[valid_indices]
-y_valid = df["Attack_type"].values[valid_indices]
+y_valid = df["Attack_label"].values[valid_indices]
 y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
-y_test = df["Attack_type"].values[test_indices]
+y_test = df["Attack_label"].values[test_indices]
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
@@ -143,26 +143,13 @@ clf_xgb = XGBClassifier(max_depth=8,
     num_class= (le.classes_).size)
     #num_class= 2)
 
-
-print(len(X_train))
-print(len(y_train))
 start = 0
 end = len(X_train)
 step = 100000
 for i in range(start, end, step):
     x = i
     print(x)
-    X_train_part = X_train[x:x+step,:]
-    Y_train_part = y_train[x:x+step]
-    print(np.unique(Y_train_part))
-    clf_xgb.fit(X_train_part, Y_train_part,
-            eval_set=[(X_valid, y_valid)],
-            early_stopping_rounds=40,
-            verbose=10)
-clf_xgb.save_model("XGBClassifierSeparated.json")
-
-"""
-clf_xgb.fit(X_train, y_train,
+    clf_xgb.fit(X_train[x:x+step,:], y_train[x:x+step],
             eval_set=[(X_valid, y_valid)],
             early_stopping_rounds=40,
             verbose=10)
