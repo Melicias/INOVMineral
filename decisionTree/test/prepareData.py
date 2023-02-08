@@ -109,7 +109,7 @@ features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_t
 le = LabelEncoder()
 le.fit(df["Attack_type"].values)
 
-train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.9, random_state=random_state)
+train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 #train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
@@ -138,7 +138,7 @@ X_test = model_norm.transform(X_test)
 # Import the model we are using
 from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-rf = RandomForestClassifier(n_estimators = 50, random_state = random_state)
+rf = RandomForestClassifier(n_estimators = 10, random_state = random_state)
 # Train the model on training data
 rf.fit(X_train, y_train)
 
