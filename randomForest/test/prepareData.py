@@ -15,7 +15,6 @@ from imblearn.over_sampling import SMOTE
 from sklearn.utils import shuffle
 from sklearn.tree import export_graphviz
 from sklearn import metrics
-from sklearn import tree
 from xgboost import plot_tree
 import pandas as pd
 import numpy as np
@@ -110,7 +109,7 @@ features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_t
 le = LabelEncoder()
 le.fit(df["Attack_type"].values)
 
-train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.8, random_state=random_state)
+train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 #train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
@@ -136,15 +135,17 @@ X_test = model_norm.transform(X_test)
 #X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
+# Import the model we are using
+from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier()
+rf = RandomForestClassifier(n_estimators = 10, random_state = random_state)
 # Train the model on training data
-clf.fit(X_train, y_train)
+rf.fit(X_train, y_train)
 
-joblib.dump(clf, "./modelDecisionTree.joblib")
+joblib.dump(rf, "./modelRandomForest.joblib")
 #loaded_rf = joblib.load("./random_forest.joblib")
 
-predictions = clf.predict(X_test)
+predictions = rf.predict(X_test)
 print(classification_report(y_test, predictions))
 
 mask = np.logical_not(np.equal(y_test, predictions))
@@ -161,9 +162,9 @@ plt.show()
 calcula_metricas("Random Forest", y_test, predictions)
 
 # Pull out one tree from the forest
-tre = tree.plot_tree(clf)
+tree = rf.estimators_[5]
 # Export the image to a dot file
-dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = features, rounded = True, precision = 1)
+export_graphviz(tree, out_file = 'treeMulti.dot', feature_names = features, rounded = True, precision = 1)
 # Use dot file to create a graph
 (graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
 # Write graph to a png file
