@@ -129,7 +129,7 @@ clf = TabNetClassifier(
     scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
 )
 
-max_epochs = 5 if not os.getenv("CI", False) else 2
+max_epochs = 100 if not os.getenv("CI", False) else 2
 
 clf.fit(
     X_train=X_train, y_train=y_train,

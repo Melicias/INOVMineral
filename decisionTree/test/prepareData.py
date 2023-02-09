@@ -110,7 +110,7 @@ features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_t
 le = LabelEncoder()
 le.fit(df["Attack_type"].values)
 
-train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.8, random_state=random_state)
+train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 #train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
