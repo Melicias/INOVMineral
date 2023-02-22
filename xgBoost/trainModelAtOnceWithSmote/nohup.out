@@ -1,0 +1,49 @@
+http.request.method
+http.referer
+http.request.version
+dns.qry.name.len
+mqtt.conack.flags
+mqtt.protoname
+mqtt.topic
+1909671
+1363998
+250000
+[0]	validation_0-mlogloss:2.03394
+[10]	validation_0-mlogloss:0.63127
+[20]	validation_0-mlogloss:0.29249
+[30]	validation_0-mlogloss:0.17038
+[40]	validation_0-mlogloss:0.12313
+[50]	validation_0-mlogloss:0.10366
+[60]	validation_0-mlogloss:0.09466
+[70]	validation_0-mlogloss:0.09023
+[80]	validation_0-mlogloss:0.08762
+[90]	validation_0-mlogloss:0.08590
+[99]	validation_0-mlogloss:0.08479
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/imblearn/over_sampling/_smote/base.py:340: FutureWarning: The parameter `n_jobs` has been deprecated in 0.10 and will be removed in 0.12. You can pass an nearest neighbors estimator where `n_jobs` is already set instead.
+  FutureWarning,
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/xgboost/sklearn.py:797: UserWarning: `early_stopping_rounds` in `fit` method is deprecated for better compatibility with scikit-learn, use `early_stopping_rounds` in constructor or`set_params` instead.
+  UserWarning,
+0.9620259528073648
+0.9610016652527728
+              precision    recall  f1-score   support
+
+           0       1.00      0.94      0.97      4764
+           1       0.95      0.93      0.94      9739
+           2       1.00      1.00      1.00     13493
+           3       1.00      1.00      1.00     10050
+           4       1.00      1.00      1.00     24552
+           5       0.30      0.85      0.45       186
+           6       1.00      1.00      1.00        74
+           7       1.00      1.00      1.00     49976
+           8       0.80      0.89      0.84      9827
+           9       0.96      0.98      0.97      4010
+          10       0.95      0.91      0.93      1914
+          11       0.96      0.76      0.85     10039
+          12       0.79      0.89      0.84      7500
+          13       1.00      0.95      0.97      9963
+          14       0.78      0.92      0.84      3048
+
+    accuracy                           0.96    159135
+   macro avg       0.90      0.94      0.91    159135
+weighted avg       0.97      0.96      0.96    159135
+

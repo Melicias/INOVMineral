@@ -1,0 +1,8 @@
+  File "prepareData.py", line 168
+    
+    ^
+SyntaxError: EOF while scanning triple-quoted string literal
+  File "prepareData.py", line 168
+    
+    ^
+SyntaxError: EOF while scanning triple-quoted string literal

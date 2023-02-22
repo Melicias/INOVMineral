@@ -147,8 +147,8 @@ X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
 #X_valid = model_norm.transform(X_valid)
 
-#sm = SMOTE(random_state=random_state,n_jobs=-1)
-#X_train, y_train = sm.fit_resample(X_train, y_train)
+sm = SMOTE(random_state=random_state,n_jobs=-1)
+X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
 # Import the model we are using

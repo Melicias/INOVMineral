@@ -1,0 +1,62 @@
+http.request.method
+http.referer
+http.request.version
+dns.qry.name.len
+mqtt.conack.flags
+mqtt.protoname
+mqtt.topic
+['arp.opcode', 'arp.hw.size', 'icmp.checksum', 'icmp.seq_le', 'icmp.unused', 'http.content_length', 'http.response', 'http.tls_port', 'tcp.ack', 'tcp.ack_raw', 'tcp.checksum', 'tcp.connection.fin', 'tcp.connection.rst', 'tcp.connection.syn', 'tcp.connection.synack', 'tcp.flags', 'tcp.flags.ack', 'tcp.len', 'tcp.seq', 'udp.stream', 'udp.time_delta', 'dns.qry.name', 'dns.qry.qu', 'dns.qry.type', 'dns.retransmission', 'dns.retransmit_request', 'dns.retransmit_request_in', 'mqtt.conflag.cleansess', 'mqtt.conflags', 'mqtt.hdrflags', 'mqtt.len', 'mqtt.msg_decoded_as', 'mqtt.msgtype', 'mqtt.proto_len', 'mqtt.topic_len', 'mqtt.ver', 'mbtcp.len', 'mbtcp.trans_id', 'mbtcp.unit_id']
+['http.request.method_0', 'http.request.method_1', 'http.request.method_2', 'http.request.method_3', 'http.request.method_4', 'http.request.method_5', 'http.request.method_6', 'http.request.method_7', 'http.request.method_8', 'http.referer_0', 'http.referer_1', 'http.referer_2', 'http.referer_3', 'http.referer_4', 'http.request.version_0', 'http.request.version_1', 'http.request.version_2', 'http.request.version_3', 'http.request.version_4', 'http.request.version_5', 'http.request.version_6', 'http.request.version_7', 'http.request.version_8', 'http.request.version_9', 'http.request.version_10', 'http.request.version_11', 'http.request.version_12', 'dns.qry.name.len_0', 'dns.qry.name.len_1', 'dns.qry.name.len_2', 'dns.qry.name.len_3', 'dns.qry.name.len_4', 'dns.qry.name.len_5', 'dns.qry.name.len_6', 'dns.qry.name.len_7', 'dns.qry.name.len_8', 'dns.qry.name.len_9', 'mqtt.conack.flags_0', 'mqtt.conack.flags_1', 'mqtt.conack.flags_2', 'mqtt.conack.flags_3', 'mqtt.conack.flags_4', 'mqtt.conack.flags_5', 'mqtt.conack.flags_6', 'mqtt.conack.flags_7', 'mqtt.conack.flags_8', 'mqtt.conack.flags_9', 'mqtt.conack.flags_10', 'mqtt.conack.flags_11', 'mqtt.conack.flags_12', 'mqtt.protoname_0', 'mqtt.protoname_1', 'mqtt.protoname_2', 'mqtt.topic_0', 'mqtt.topic_1', 'mqtt.topic_2']
+1909671
+1363998
+250000
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97      4764
+           1       0.89      0.95      0.92      9739
+           2       1.00      1.00      1.00     13493
+           3       1.00      1.00      1.00     10050
+           4       1.00      1.00      1.00     24552
+           5       0.82      0.71      0.76       186
+           6       1.00      1.00      1.00        74
+           7       1.00      1.00      1.00     49976
+           8       0.79      0.80      0.80      9827
+           9       0.96      0.99      0.98      4010
+          10       0.95      0.91      0.93      1914
+          11       0.82      0.83      0.82     10039
+          12       0.81      0.77      0.79      7500
+          13       0.98      0.95      0.96      9963
+          14       0.86      0.74      0.79      3048
+
+    accuracy                           0.95    159135
+   macro avg       0.92      0.91      0.91    159135
+weighted avg       0.95      0.95      0.95    159135
+
+Elements wrong classified: 7558; Elements correct: 151577
+Desempenho Random Forest - Conjunto de Teste
+ Taxa de Acerto: 95.25%
+ Precisão: 95.26%
+ Sensibilidade: 95.25%
+ Medida F1: 95.23%
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97      4764
+           1       0.89      0.95      0.92      9739
+           2       1.00      1.00      1.00     13493
+           3       1.00      1.00      1.00     10050
+           4       1.00      1.00      1.00     24552
+           5       0.82      0.71      0.76       186
+           6       1.00      1.00      1.00        74
+           7       1.00      1.00      1.00     49976
+           8       0.79      0.80      0.80      9827
+           9       0.96      0.99      0.98      4010
+          10       0.95      0.91      0.93      1914
+          11       0.82      0.83      0.82     10039
+          12       0.81      0.77      0.79      7500
+          13       0.98      0.95      0.96      9963
+          14       0.86      0.74      0.79      3048
+
+    accuracy                           0.95    159135
+   macro avg       0.92      0.91      0.91    159135
+weighted avg       0.95      0.95      0.95    159135
+
