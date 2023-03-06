@@ -12,7 +12,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from imblearn.over_sampling import SMOTENC
 from sklearn.utils import shuffle
 from sklearn.tree import export_graphviz
 from sklearn import metrics
@@ -81,7 +80,6 @@ df.dropna(axis=0, how='any', inplace=True)
 df.drop_duplicates(subset=None, keep="first", inplace=True)
 df = shuffle(df)
 
-
 categorical_columns = []
 for col in df.columns[df.dtypes == object]:
     if col != "Attack_type":
@@ -104,10 +102,6 @@ for coluna in categorical_columns:
 df = pd.get_dummies(data=df, columns=categorical_columns)
 displayInformationDataFrame(df)
 
-featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
-
-
 
 #for the SMOTE part, so it can fit in 16gb of RAM
 df_before = df
@@ -117,7 +111,7 @@ print(len(df))
 df_normal = df[df["Attack_type"] == "Normal"]
 print(len(df_normal))
 df_normal = shuffle(df_normal)
-df_normal = df_normal[:250000]
+df_normal = df_normal[:1000000]
 #df_normal.head(len(df) - 800000)
 #df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
 print(len(df_normal))
@@ -127,11 +121,7 @@ df = pd.concat([df_attacks,df_normal])
 df = shuffle(df)
 n_total = len(df)
 
-features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-
-catIndexs = []
-for fe in finalFeaturesCat:
-    catIndexs.append(features.index(fe))
+features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
 le = LabelEncoder()
 le.fit(df["Attack_type"].values)
@@ -158,10 +148,8 @@ X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
 #X_valid = model_norm.transform(X_valid)
 
-#sm = SMOTE(random_state=random_state,n_jobs=-1)
-#X_train, y_train = sm.fit_resample(X_train, y_train)
-sm = SMOTENC(random_state=42, categorical_features=catIndexs)
-X_res, y_res = sm.fit_resample(X_train, y_train)
+sm = SMOTE(random_state=random_state,n_jobs=-1)
+X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
 # Import the model we are using

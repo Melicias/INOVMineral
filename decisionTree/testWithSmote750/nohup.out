@@ -1,0 +1,62 @@
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/imblearn/over_sampling/_smote/base.py:340: FutureWarning: The parameter `n_jobs` has been deprecated in 0.10 and will be removed in 0.12. You can pass an nearest neighbors estimator where `n_jobs` is already set instead.
+  FutureWarning,
+http.request.method
+http.referer
+http.request.version
+dns.qry.name.len
+mqtt.conack.flags
+mqtt.protoname
+mqtt.topic
+1909671
+1363998
+500000
+              precision    recall  f1-score   support
+
+           0       1.00      0.93      0.97      4825
+           1       0.94      0.62      0.75      9704
+           2       1.00      1.00      1.00     13624
+           3       1.00      0.58      0.73     10157
+           4       1.00      1.00      1.00     24299
+           5       0.31      0.82      0.45       152
+           6       1.00      1.00      1.00        77
+           7       1.00      1.00      1.00    100092
+           8       1.00      0.18      0.30      9941
+           9       0.46      1.00      0.63      3946
+          10       0.94      0.78      0.85      1905
+          11       0.47      0.92      0.62     10115
+          12       0.69      0.54      0.61      7272
+          13       1.00      0.88      0.93     10014
+          14       0.36      0.91      0.52      3012
+
+    accuracy                           0.89    209135
+   macro avg       0.81      0.81      0.76    209135
+weighted avg       0.94      0.89      0.89    209135
+
+Elements wrong classified: 22649; Elements correct: 186486
+Desempenho Random Forest - Conjunto de Teste
+ Taxa de Acerto: 89.17%
+ Precisão: 94.01%
+ Sensibilidade: 89.17%
+ Medida F1: 89.02%
+              precision    recall  f1-score   support
+
+           0       1.00      0.93      0.97      4825
+           1       0.94      0.62      0.75      9704
+           2       1.00      1.00      1.00     13624
+           3       1.00      0.58      0.73     10157
+           4       1.00      1.00      1.00     24299
+           5       0.31      0.82      0.45       152
+           6       1.00      1.00      1.00        77
+           7       1.00      1.00      1.00    100092
+           8       1.00      0.18      0.30      9941
+           9       0.46      1.00      0.63      3946
+          10       0.94      0.78      0.85      1905
+          11       0.47      0.92      0.62     10115
+          12       0.69      0.54      0.61      7272
+          13       1.00      0.88      0.93     10014
+          14       0.36      0.91      0.52      3012
+
+    accuracy                           0.89    209135
+   macro avg       0.81      0.81      0.76    209135
+weighted avg       0.94      0.89      0.89    209135
+
