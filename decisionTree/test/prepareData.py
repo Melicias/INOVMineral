@@ -7,6 +7,7 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
@@ -170,3 +171,6 @@ dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = f
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
+
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))

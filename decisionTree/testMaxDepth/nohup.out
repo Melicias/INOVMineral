@@ -1,0 +1,59 @@
+http.request.method
+http.referer
+http.request.version
+dns.qry.name.len
+mqtt.conack.flags
+mqtt.protoname
+mqtt.topic
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      4902
+           1       0.90      0.96      0.93      9832
+           2       1.00      1.00      1.00     13660
+           3       1.00      1.00      1.00     10018
+           4       1.00      1.00      1.00     24388
+           5       0.97      0.70      0.81       172
+           6       1.00      1.00      1.00        69
+           7       1.00      1.00      1.00    272193
+           8       0.84      0.84      0.84     10061
+           9       0.96      0.99      0.98      4017
+          10       0.98      0.89      0.93      2018
+          11       0.90      0.80      0.85     10138
+          12       0.80      0.90      0.84      7452
+          13       0.99      0.95      0.97      9975
+          14       0.88      0.77      0.82      3040
+
+    accuracy                           0.98    381935
+   macro avg       0.94      0.92      0.93    381935
+weighted avg       0.98      0.98      0.98    381935
+
+Elements wrong classified: 6229; Elements correct: 375706
+Desempenho Random Forest - Conjunto de Teste
+ Taxa de Acerto: 98.37%
+ Precisão: 98.4%
+ Sensibilidade: 98.37%
+ Medida F1: 98.36%
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      4902
+           1       0.90      0.96      0.93      9832
+           2       1.00      1.00      1.00     13660
+           3       1.00      1.00      1.00     10018
+           4       1.00      1.00      1.00     24388
+           5       0.97      0.70      0.81       172
+           6       1.00      1.00      1.00        69
+           7       1.00      1.00      1.00    272193
+           8       0.84      0.84      0.84     10061
+           9       0.96      0.99      0.98      4017
+          10       0.98      0.89      0.93      2018
+          11       0.90      0.80      0.85     10138
+          12       0.80      0.90      0.84      7452
+          13       0.99      0.95      0.97      9975
+          14       0.88      0.77      0.82      3040
+
+    accuracy                           0.98    381935
+   macro avg       0.94      0.92      0.93    381935
+weighted avg       0.98      0.98      0.98    381935
+
+balanced_accuracy
+0.9198468265920544

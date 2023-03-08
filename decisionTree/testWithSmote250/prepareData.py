@@ -8,6 +8,7 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
@@ -155,7 +156,7 @@ X_train, y_train = sm.fit_resample(X_train, y_train)
 # Import the model we are using
 from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier(max_depth=10, random_state = random_state)#,n_estimators = 10)
+clf = tree.DecisionTreeClassifier(max_depth=20, random_state = random_state)#,n_estimators = 10)
 # Train the model on training data
 clf.fit(X_train, y_train)
 
@@ -188,3 +189,6 @@ dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = f
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
+
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))

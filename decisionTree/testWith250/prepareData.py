@@ -112,7 +112,7 @@ print(len(df))
 df_normal = df[df["Attack_type"] == "Normal"]
 print(len(df_normal))
 df_normal = shuffle(df_normal)
-df_normal = df_normal[:500000]
+df_normal = df_normal[:250000]
 #df_normal.head(len(df) - 800000)
 #df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
 print(len(df_normal))
@@ -149,8 +149,8 @@ X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
 #X_valid = model_norm.transform(X_valid)
 
-sm = SMOTE(random_state=random_state,n_jobs=-1)
-X_train, y_train = sm.fit_resample(X_train, y_train)
+#sm = SMOTE(random_state=random_state,n_jobs=-1)
+#X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
 # Import the model we are using

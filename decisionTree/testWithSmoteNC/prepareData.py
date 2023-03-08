@@ -108,7 +108,7 @@ featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]
 finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
 
 
-"""
+
 #for the SMOTE part, so it can fit in 16gb of RAM
 df_before = df
 df_attacks = df[df["Attack_type"] != "Normal"]
@@ -117,12 +117,12 @@ print(len(df))
 df_normal = df[df["Attack_type"] == "Normal"]
 print(len(df_normal))
 df_normal = shuffle(df_normal)
-df_normal = df_normal[:250000]
+df_normal = df_normal[:150000]
 #df_normal.head(len(df) - 800000)
 #df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
 print(len(df_normal))
 df = pd.concat([df_attacks,df_normal])
-"""
+
 
 df = shuffle(df)
 n_total = len(df)
