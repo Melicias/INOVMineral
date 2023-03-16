@@ -71,7 +71,7 @@ def calcula_metricas(nome_modelo, ground_truth, predicao):
 
 #sys.setrecursionlimit(1000000) 
 
-df = pd.read_csv('../../data/DNN-EdgeIIoT-dataset_SMALL.csv', low_memory=False)
+df = pd.read_csv('../../data/DNN-EdgeIIoT-dataset.csv', low_memory=False)
 drop_columns = ["frame.time", "ip.src_host", "ip.dst_host", "arp.src.proto_ipv4","arp.dst.proto_ipv4", 
          "http.file_data","http.request.full_uri","icmp.transmit_timestamp",
          "http.request.uri.query", "tcp.options","tcp.payload","tcp.srcport",
