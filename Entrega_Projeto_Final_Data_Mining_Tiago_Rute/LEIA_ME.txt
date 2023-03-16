@@ -1,0 +1,39 @@
+# ------------------------------
+# Projeto Data Mining - 2021/22
+# Mestrado de Ciência de Dados
+# ------------------------------
+# Elaborado por: 
+# Tiago Ribeiro e Rute Fontelas
+# ------------------------------
+
+1. 
+	Proj2_ai4i2020.csv <= Ficheiro do Conjunto de Dados
+	Fonte: https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset
+
+2. 
+	Script_Parte_1_Projeto_Data_Mining 
+	Script (Colab) Desenvolvido para a Exploracão e Compreensão do Dados e ficheiro do dataset
+	
+3. 
+	Script_Parte_3_Projeto_Data_Mining 
+	Script (DeepNOte) Desenvolvido para a Exploracão e Compreensão do Dados e ficheiros necessários
+	
+4. 
+	Resultados_Algoritmos_Categorias.xlsx
+	Tabelas com resultados e Codificacão de Categorias
+	
+5. 
+	Proj_DM_Final_Tiago_Ribeiro_Rute_Fontelas
+	Ficheiro Word Relatório
+	Ficheiro pdf Relatório
+
+6.  Apresentacao_Proj_DM_Final_Tiago_Ribeiro_Rute_Fontelas
+	Ficheiro pdf apresentacão
+
+7. 
+	Projeto_Streamlit <= Pasta com ficheiros necessários ao projeto de implementacão
+	!! Não se incluiu o contéudo da pasta com as bibliotecas necessárias por ter mais de 600 MB
+	!! Será necessário instalar bibliotecas
+	
+	
+***Qualquer dúvida, não hesitem em contactar um dos autores***

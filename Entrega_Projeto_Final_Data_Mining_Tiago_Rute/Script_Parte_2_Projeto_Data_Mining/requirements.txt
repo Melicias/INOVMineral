@@ -1,0 +1,6 @@
+category_encoders==2.5.0
+imblearn==0.0
+xgboost==0.90
+scikit-optimize
+lightgbm==3.3.2
+

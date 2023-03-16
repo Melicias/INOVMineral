@@ -8,11 +8,11 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from imblearn.over_sampling import SMOTENC
 from sklearn.utils import shuffle
 from sklearn.tree import export_graphviz
 from sklearn import metrics
@@ -70,17 +70,13 @@ def calcula_metricas(nome_modelo, ground_truth, predicao):
 
 #sys.setrecursionlimit(1000000) 
 
-df = pd.read_csv('../../data/DNN-EdgeIIoT-dataset.csv', low_memory=False)
-drop_columns = ["frame.time", "ip.src_host", "ip.dst_host", "arp.src.proto_ipv4","arp.dst.proto_ipv4", 
-         "http.file_data","http.request.full_uri","icmp.transmit_timestamp",
-         "http.request.uri.query", "tcp.options","tcp.payload","tcp.srcport",
-         "tcp.dstport", "udp.port", "mqtt.msg"]
+df = pd.read_csv('../../../data/2022_combined.csv', low_memory=False)
+drop_columns = ['uid','id.orig_h','id.orig_p','id.resp_h','id.resp_p']
 
 df.drop(drop_columns, axis=1, inplace=True)
 df.dropna(axis=0, how='any', inplace=True)
 df.drop_duplicates(subset=None, keep="first", inplace=True)
 df = shuffle(df)
-
 
 categorical_columns = []
 for col in df.columns[df.dtypes == object]:
@@ -104,34 +100,10 @@ for coluna in categorical_columns:
 df = pd.get_dummies(data=df, columns=categorical_columns)
 displayInformationDataFrame(df)
 
-featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
-
-
-
-#for the SMOTE part, so it can fit in 16gb of RAM
-df_before = df
-df_attacks = df[df["Attack_type"] != "Normal"]
-
-print(len(df))
-df_normal = df[df["Attack_type"] == "Normal"]
-print(len(df_normal))
-df_normal = shuffle(df_normal)
-df_normal = df_normal[:150000]
-#df_normal.head(len(df) - 800000)
-#df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
-print(len(df_normal))
-df = pd.concat([df_attacks,df_normal])
-
-
 df = shuffle(df)
 n_total = len(df)
 
-features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-
-catIndexs = []
-for fe in finalFeaturesCat:
-    catIndexs.append(features.index(fe))
+features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
 le = LabelEncoder()
 le.fit(df["Attack_type"].values)
@@ -160,14 +132,10 @@ X_test = model_norm.transform(X_test)
 
 #sm = SMOTE(random_state=random_state,n_jobs=-1)
 #X_train, y_train = sm.fit_resample(X_train, y_train)
-sm = SMOTENC(random_state=42, categorical_features=catIndexs)
-X_res, y_res = sm.fit_resample(X_train, y_train)
 
 
-# Import the model we are using
-from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier(max_depth=10, random_state = random_state)#,n_estimators = 10)
+clf = tree.DecisionTreeClassifier(max_depth=20, random_state = random_state)#,n_estimators = 10)
 # Train the model on training data
 clf.fit(X_train, y_train)
 
@@ -200,3 +168,6 @@ dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = f
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
+
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))
