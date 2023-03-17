@@ -80,10 +80,10 @@ df = shuffle(df)
 
 categorical_columns = []
 for col in df.columns[df.dtypes == object]:
-    if col != "Attack_type":
+    if col != "type":
         categorical_columns.append(col)
 
-featuresFromStart = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
+featuresFromStart = [ col for col in df.columns if col not in ["type"]]
 #print("-----Features from the start-----")
 #print(featuresFromStart)
 #print("-----Categorial features-----")
@@ -103,16 +103,16 @@ displayInformationDataFrame(df)
 df = shuffle(df)
 n_total = len(df)
 
-features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]] 
+features = [ col for col in df.columns if col not in ["type"]] 
 
 le = LabelEncoder()
-le.fit(df["Attack_type"].values)
+le.fit(df["type"].values)
 
 train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 #train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
-y_train = df["Attack_type"].values[train_val_indices]
+y_train = df["type"].values[train_val_indices]
 y_train = le.transform(y_train)
 
 #X_valid = df[features].values[valid_indices]
@@ -120,7 +120,7 @@ y_train = le.transform(y_train)
 #y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
-y_test = df["Attack_type"].values[test_indices]
+y_test = df["type"].values[test_indices]
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
