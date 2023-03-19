@@ -8,15 +8,12 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
-from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 from sklearn.utils import shuffle
-from sklearn.tree import export_graphviz
 from sklearn import metrics
-from sklearn import tree
 from xgboost import plot_tree
 import pandas as pd
 import numpy as np
@@ -25,13 +22,15 @@ import wget
 from pathlib import Path
 import shutil
 import gzip
-import joblib
-import pydot
+from xgboost import XGBClassifier
+
+#sys.setrecursionlimit(1000000) 
 
 random_state=42
 np.random.seed(random_state)
 
 from matplotlib import pyplot as plt
+#%matplotlib inline
 
 #Display information about dataframe
 def displayInformationDataFrame(df_cop):
@@ -158,15 +157,15 @@ le = LabelEncoder()
 le.fit(df["type"].values)
 
 train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
-#train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
+train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
 y_train = df["type"].values[train_val_indices]
 y_train = le.transform(y_train)
 
-#X_valid = df[features].values[valid_indices]
-#y_valid = df["Attack_type"].values[valid_indices]
-#y_valid = le.transform(y_valid)
+X_valid = df[features].values[valid_indices]
+y_valid = df["type"].values[valid_indices]
+y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
 y_test = df["type"].values[test_indices]
@@ -177,44 +176,68 @@ model_norm = standScaler.fit(X_train)
 
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
+X_valid = model_norm.transform(X_valid)
 
-sm = SMOTE(random_state=random_state,n_jobs=-1)
-X_train, y_train = sm.fit_resample(X_train, y_train)
+#sm = SMOTE(random_state=random_state,n_jobs=-1)
+#X_train, y_train = sm.fit_resample(X_train, y_train)
 
-# Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier(max_depth=20, random_state = random_state)#,n_estimators = 10)
-# Train the model on training data
-clf.fit(X_train, y_train)
 
-joblib.dump(clf, "./modelDecisionTree.joblib")
-#loaded_rf = joblib.load("./random_forest.joblib")
+n_estimators = 100 if not os.getenv("CI", False) else 20
 
-predictions = clf.predict(X_test)
-print(classification_report(y_test, predictions))
+clf_xgb = XGBClassifier(max_depth=8,
+    learning_rate=0.1,
+    n_estimators=n_estimators,
+    verbosity=0,
+    silent=None,
+    #objective="multi:softmax",
+    objective="multi:softprob",
+    booster='gbtree',
+    n_jobs=1,
+    nthread=None,
+    gamma=0,
+    min_child_weight=1,
+    max_delta_step=0,
+    subsample=0.7,
+    colsample_bytree=1,
+    colsample_bylevel=1,
+    colsample_bynode=1,
+    reg_alpha=0,
+    reg_lambda=1,
+    scale_pos_weight=1,
+    base_score=0.5,
+    random_state=random_state,
+    seed=None,
+    num_class= (le.classes_).size)
+    #num_class= 2)
 
-mask = np.logical_not(np.equal(y_test, predictions))
-print(f"Elements wrong classified: {len(X_test[mask])}; Elements correct: {len(X_test) - len(X_test[mask])}")
+
+clf_xgb.fit(X_train, y_train,
+            eval_set=[(X_valid, y_valid)],
+            early_stopping_rounds=40,
+            verbose=10)
+clf_xgb.save_model("XGBClassifier.json")
+
+
+preds_valid = np.array(clf_xgb.predict(X_valid))
+valid_acc = accuracy_score(y_pred=preds_valid, y_true=y_valid)
+print(valid_acc)
+
+preds_test = np.array(clf_xgb.predict(X_test))
+test_acc = accuracy_score(y_pred=preds_test, y_true=y_test)
+print(test_acc)
+
+
+plt.figure()
+plot_tree(clf_xgb)
+plt.savefig('tree.pdf',format='eps',bbox_inches = "tight")
+
 
 original_labels_list = le.classes_
 fig,ax = plt.subplots(figsize=(20, 20))
-confusion_matrix = metrics.confusion_matrix(y_test, predictions)
+confusion_matrix = metrics.confusion_matrix(y_test, preds_test)
 cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix,display_labels= original_labels_list)
 cm_display.plot(ax=ax)
 plt.savefig("confusion_matrix.png")
-plt.show()
 
-calcula_metricas("Random Forest", y_test, predictions)
-
-# Pull out one tree from the forest
-tre = tree.plot_tree(clf)
-# Export the image to a dot file
-#dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = features, rounded = True, precision = 1)
-# Use dot file to create a graph
-#(graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
-# Write graph to a png file
-#graph.write_png('treeMulti.png')
-
-print(classification_report(y_test, predictions))
-
-print("balanced_accuracy")
-print(balanced_accuracy_score(y_test, predictions))
+predictions = clf_xgb.predict(X_test)
+print(classification_report(y_test, preds_test))

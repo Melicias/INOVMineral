@@ -8,16 +8,13 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
-from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from imblearn.over_sampling import SMOTENC
 from sklearn.utils import shuffle
 from sklearn.tree import export_graphviz
 from sklearn import metrics
-from sklearn import tree
 from xgboost import plot_tree
 import pandas as pd
 import numpy as np
@@ -54,47 +51,85 @@ def displayInformationDataFrame(df_cop):
     #return display(summary_df)
 
 def calcula_metricas(nome_modelo, ground_truth, predicao):
-  """
-    Funcão Auxiliar para calcular e imprimir métricas: Tx de Acerto, F1, 
-    Precisão, Sensibilidade e AUC
-  """
-  acc = accuracy_score(y_true = ground_truth, y_pred = predicao)
-  f1 = f1_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  precision = precision_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  recall = recall_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  #auc_sklearn = roc_auc_score(y_true = ground_truth, y_score = predicao, multi_class='ovr')
+    """
+      Funcão Auxiliar para calcular e imprimir métricas: Tx de Acerto, F1, 
+      Precisão, Sensibilidade e AUC
+    """
+    acc = accuracy_score(y_true = ground_truth, y_pred = predicao)
+    f1 = f1_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    precision = precision_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    recall = recall_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    #auc_sklearn = roc_auc_score(y_true = ground_truth, y_score = predicao, multi_class='ovr')
 
-  print(f"Desempenho {nome_modelo} - Conjunto de Teste")
-  print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
-  print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
-  #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
+    print(f"Desempenho {nome_modelo} - Conjunto de Teste")
+    print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
+    print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
+    #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
+    
+def fix_data_mixed_types(df, mixed_columns):    
+    # Loop over the mixed columns and clean them
+    for col_name in mixed_columns:
+        dtype_before = df[col_name].dtype
+        
+        # Convert non-numeric values to NaN and replace with mean
+        df[col_name] = pd.to_numeric(df[col_name], errors='coerce')
+        mean = df[col_name].mean()
+        df[col_name].fillna(mean, inplace=True)
+        
+        dtype_after = df[col_name].dtype
+        print(f"[INFO] Before: {dtype_before} | After: {dtype_after}")
+        
+    return df
 
-#sys.setrecursionlimit(1000000) 
 
-df = pd.read_csv('../../data/DNN-EdgeIIoT-dataset_SMALL.csv', low_memory=False)
-drop_columns = ["frame.time", "ip.src_host", "ip.dst_host", "arp.src.proto_ipv4","arp.dst.proto_ipv4", 
-         "http.file_data","http.request.full_uri","icmp.transmit_timestamp",
-         "http.request.uri.query", "tcp.options","tcp.payload","tcp.srcport",
-         "tcp.dstport", "udp.port", "mqtt.msg"]
+df = pd.read_csv('../../../data/2022_combined.csv', low_memory=False)
+drop_columns = ['uid','id.orig_h','id.orig_p','id.resp_h','id.resp_p']
 
 df.drop(drop_columns, axis=1, inplace=True)
 df.dropna(axis=0, how='any', inplace=True)
 df.drop_duplicates(subset=None, keep="first", inplace=True)
 df = shuffle(df)
 
+featuresFromStart = [ col for col in df.columns if col not in ["type"]]
+    
+displayInformationDataFrame(df)
+
+
+def history_to_int(history):
+    hist_list = list(history)
+    sum = 0
+    mapping = {'s': 1, 'S': 2, 'h': 3, 'H': 4, 'a': 5, 'A': 6, 'd': 7, 'D': 8, 'f': 9, 'F': 10, 'r': 11, 'R': 12, 'c': 13, 'C': 14, 'g': 15, 'G': 16, 't': 17, 'T': 18, 'w': 19, 'W': 20, 'i': 21, 'I': 22, 'q': 23, 'Q': 24, '^': 25}
+    for char in hist_list:
+        sum = sum + mapping.get(char,0)
+    return sum
+
+df['flow_duration'] = df['flow_duration'].str.replace(',','.')
+df['flow_duration'] = df['flow_duration'].astype(float)
+
+
+df = fix_data_mixed_types(df, ['duration','resp_bytes','orig_bytes'])
+"""
+
+df['duration'] = df['duration'].str.replace('-','0')
+df['duration'] = df['duration'].str.replace(',','.')
+df['duration'] = df['duration'].astype(float)
+
+df['resp_bytes'] = df['resp_bytes'].str.replace('-','0')
+df['resp_bytes'] = df['resp_bytes'].astype(int)
+
+df['orig_bytes'] = df['orig_bytes'].str.replace('-','0')
+df['orig_bytes'] = df['orig_bytes'].astype(int)
+"""
+df['history'] = df.apply(lambda row: history_to_int(row['history']), axis=1)
 
 categorical_columns = []
 for col in df.columns[df.dtypes == object]:
-    if col != "Attack_type":
+    if col != "type":
         categorical_columns.append(col)
+        
+print(categorical_columns)
+print(df.columns)
 
-featuresFromStart = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-#print("-----Features from the start-----")
-#print(featuresFromStart)
-#print("-----Categorial features-----")
-#print(categorical_columns)
-    
-displayInformationDataFrame(df)
 
 colunas_one_hot = {}
 for coluna in categorical_columns:
@@ -105,43 +140,27 @@ for coluna in categorical_columns:
 df = pd.get_dummies(data=df, columns=categorical_columns)
 displayInformationDataFrame(df)
 
-featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
 
 
 
-#for the SMOTE part, so it can fit in 16gb of RAM
-df_before = df
-df_attacks = df[df["Attack_type"] != "Normal"]
 
-print(len(df))
-df_normal = df[df["Attack_type"] == "Normal"]
-print(len(df_normal))
-df_normal = shuffle(df_normal)
-df_normal = df_normal[:150000]
-#df_normal.head(len(df) - 800000)
-#df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
-print(len(df_normal))
-df = pd.concat([df_attacks,df_normal])
+
+
 
 
 df = shuffle(df)
 n_total = len(df)
 
-features = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
-
-catIndexs = []
-for fe in finalFeaturesCat:
-    catIndexs.append(features.index(fe))
+features = [ col for col in df.columns if col not in ["type"]] 
 
 le = LabelEncoder()
-le.fit(df["Attack_type"].values)
+le.fit(df["type"].values)
 
 train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 #train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
 X_train = df[features].values[train_val_indices]
-y_train = df["Attack_type"].values[train_val_indices]
+y_train = df["type"].values[train_val_indices]
 y_train = le.transform(y_train)
 
 #X_valid = df[features].values[valid_indices]
@@ -149,7 +168,7 @@ y_train = le.transform(y_train)
 #y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
-y_test = df["Attack_type"].values[test_indices]
+y_test = df["type"].values[test_indices]
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
@@ -161,21 +180,19 @@ X_test = model_norm.transform(X_test)
 
 #sm = SMOTE(random_state=random_state,n_jobs=-1)
 #X_train, y_train = sm.fit_resample(X_train, y_train)
-sm = SMOTENC(random_state=42, categorical_features=catIndexs)
-X_res, y_res = sm.fit_resample(X_train, y_train)
 
 
 # Import the model we are using
 from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier(max_depth=10, random_state = random_state)#,n_estimators = 10)
+rf = RandomForestClassifier(n_estimators = 10, random_state = random_state)
 # Train the model on training data
-clf.fit(X_train, y_train)
+rf.fit(X_train, y_train)
 
-joblib.dump(clf, "./modelDecisionTree.joblib")
+joblib.dump(rf, "./modelRandomForest.joblib")
 #loaded_rf = joblib.load("./random_forest.joblib")
 
-predictions = clf.predict(X_test)
+predictions = rf.predict(X_test)
 print(classification_report(y_test, predictions))
 
 mask = np.logical_not(np.equal(y_test, predictions))
@@ -192,15 +209,12 @@ plt.show()
 calcula_metricas("Random Forest", y_test, predictions)
 
 # Pull out one tree from the forest
-tre = tree.plot_tree(clf)
+tree = rf.estimators_[5]
 # Export the image to a dot file
-dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = features, rounded = True, precision = 1)
+export_graphviz(tree, out_file = 'treeMulti.dot', feature_names = features, rounded = True, precision = 1)
 # Use dot file to create a graph
 (graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
 # Write graph to a png file
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
-
-print("balanced_accuracy")
-print(balanced_accuracy_score(y_test, predictions))

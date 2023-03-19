@@ -1,0 +1,101 @@
+http.request.method
+http.referer
+http.request.version
+dns.qry.name.len
+mqtt.conack.flags
+mqtt.protoname
+mqtt.topic
+1909671
+1363998
+250000
+epoch 0  | loss: 0.75237 | train_accuracy: 0.75624 | valid_accuracy: 0.82649 |  0:04:18s
+epoch 1  | loss: 0.48693 | train_accuracy: 0.75961 | valid_accuracy: 0.82935 |  0:08:35s
+epoch 2  | loss: 0.48107 | train_accuracy: 0.75979 | valid_accuracy: 0.83045 |  0:12:48s
+epoch 3  | loss: 0.47716 | train_accuracy: 0.76167 | valid_accuracy: 0.83155 |  0:17:04s
+epoch 4  | loss: 0.47086 | train_accuracy: 0.76146 | valid_accuracy: 0.83143 |  0:21:18s
+epoch 5  | loss: 0.48822 | train_accuracy: 0.76572 | valid_accuracy: 0.83511 |  0:25:31s
+epoch 6  | loss: 0.46327 | train_accuracy: 0.76668 | valid_accuracy: 0.83547 |  0:29:45s
+epoch 7  | loss: 0.46387 | train_accuracy: 0.76263 | valid_accuracy: 0.83407 |  0:33:59s
+epoch 8  | loss: 0.46049 | train_accuracy: 0.76997 | valid_accuracy: 0.82248 |  0:38:10s
+epoch 9  | loss: 0.46028 | train_accuracy: 0.75615 | valid_accuracy: 0.83601 |  0:42:23s
+epoch 10 | loss: 0.4641  | train_accuracy: 0.76627 | valid_accuracy: 0.83544 |  0:46:33s
+epoch 11 | loss: 0.4587  | train_accuracy: 0.77786 | valid_accuracy: 0.83924 |  0:50:43s
+epoch 12 | loss: 0.44009 | train_accuracy: 0.76272 | valid_accuracy: 0.83878 |  0:54:54s
+epoch 13 | loss: 0.45273 | train_accuracy: 0.68275 | valid_accuracy: 0.77975 |  0:59:05s
+epoch 14 | loss: 0.46425 | train_accuracy: 0.76745 | valid_accuracy: 0.83653 |  1:03:15s
+epoch 15 | loss: 0.44543 | train_accuracy: 0.77453 | valid_accuracy: 0.84008 |  1:07:28s
+epoch 16 | loss: 0.44035 | train_accuracy: 0.72748 | valid_accuracy: 0.81337 |  1:11:38s
+epoch 17 | loss: 0.45632 | train_accuracy: 0.73624 | valid_accuracy: 0.83366 |  1:15:47s
+epoch 18 | loss: 0.44277 | train_accuracy: 0.77494 | valid_accuracy: 0.83948 |  1:20:00s
+epoch 19 | loss: 0.44229 | train_accuracy: 0.74902 | valid_accuracy: 0.84731 |  1:24:14s
+epoch 20 | loss: 0.4389  | train_accuracy: 0.68902 | valid_accuracy: 0.80596 |  1:28:23s
+epoch 21 | loss: 0.4318  | train_accuracy: 0.80175 | valid_accuracy: 0.85011 |  1:32:38s
+epoch 22 | loss: 0.40288 | train_accuracy: 0.69811 | valid_accuracy: 0.77973 |  1:36:51s
+epoch 23 | loss: 0.38684 | train_accuracy: 0.71879 | valid_accuracy: 0.80222 |  1:41:06s
+epoch 24 | loss: 0.38416 | train_accuracy: 0.79315 | valid_accuracy: 0.85162 |  1:45:18s
+epoch 25 | loss: 0.38275 | train_accuracy: 0.74719 | valid_accuracy: 0.82451 |  1:49:29s
+epoch 26 | loss: 0.38496 | train_accuracy: 0.76839 | valid_accuracy: 0.82946 |  1:53:42s
+epoch 27 | loss: 0.37932 | train_accuracy: 0.80804 | valid_accuracy: 0.8515  |  1:57:55s
+epoch 28 | loss: 0.37642 | train_accuracy: 0.75055 | valid_accuracy: 0.81289 |  2:02:08s
+epoch 29 | loss: 0.37519 | train_accuracy: 0.77053 | valid_accuracy: 0.82943 |  2:06:19s
+epoch 30 | loss: 0.37793 | train_accuracy: 0.78072 | valid_accuracy: 0.8439  |  2:10:27s
+epoch 31 | loss: 0.39315 | train_accuracy: 0.80124 | valid_accuracy: 0.84881 |  2:14:36s
+epoch 32 | loss: 0.37691 | train_accuracy: 0.80197 | valid_accuracy: 0.8526  |  2:18:47s
+epoch 33 | loss: 0.37678 | train_accuracy: 0.78612 | valid_accuracy: 0.8446  |  2:22:55s
+epoch 34 | loss: 0.37418 | train_accuracy: 0.80623 | valid_accuracy: 0.85155 |  2:27:06s
+epoch 35 | loss: 0.37365 | train_accuracy: 0.7848  | valid_accuracy: 0.83626 |  2:31:14s
+epoch 36 | loss: 0.37317 | train_accuracy: 0.77336 | valid_accuracy: 0.83396 |  2:35:21s
+epoch 37 | loss: 0.37228 | train_accuracy: 0.77846 | valid_accuracy: 0.83158 |  2:39:35s
+epoch 38 | loss: 0.37297 | train_accuracy: 0.78153 | valid_accuracy: 0.84017 |  2:43:52s
+epoch 39 | loss: 0.37879 | train_accuracy: 0.78704 | valid_accuracy: 0.84748 |  2:48:03s
+epoch 40 | loss: 0.37313 | train_accuracy: 0.76707 | valid_accuracy: 0.82932 |  2:52:16s
+epoch 41 | loss: 0.37664 | train_accuracy: 0.78932 | valid_accuracy: 0.84857 |  2:56:26s
+epoch 42 | loss: 0.37199 | train_accuracy: 0.77741 | valid_accuracy: 0.83775 |  3:00:34s
+epoch 43 | loss: 0.37278 | train_accuracy: 0.71822 | valid_accuracy: 0.80094 |  3:04:41s
+epoch 44 | loss: 0.37287 | train_accuracy: 0.79    | valid_accuracy: 0.84903 |  3:08:50s
+epoch 45 | loss: 0.37191 | train_accuracy: 0.73993 | valid_accuracy: 0.82921 |  3:13:02s
+epoch 46 | loss: 0.37164 | train_accuracy: 0.70071 | valid_accuracy: 0.79935 |  3:17:09s
+epoch 47 | loss: 0.37266 | train_accuracy: 0.79038 | valid_accuracy: 0.84835 |  3:21:15s
+epoch 48 | loss: 0.39556 | train_accuracy: 0.78576 | valid_accuracy: 0.83796 |  3:25:22s
+epoch 49 | loss: 0.37337 | train_accuracy: 0.77921 | valid_accuracy: 0.85069 |  3:29:28s
+epoch 50 | loss: 0.37198 | train_accuracy: 0.74883 | valid_accuracy: 0.82685 |  3:33:38s
+epoch 51 | loss: 0.36988 | train_accuracy: 0.715   | valid_accuracy: 0.80177 |  3:37:47s
+epoch 52 | loss: 0.37101 | train_accuracy: 0.70376 | valid_accuracy: 0.7914  |  3:41:57s
+epoch 53 | loss: 0.36772 | train_accuracy: 0.72111 | valid_accuracy: 0.81594 |  3:46:09s
+epoch 54 | loss: 0.36757 | train_accuracy: 0.76399 | valid_accuracy: 0.82976 |  3:50:15s
+epoch 55 | loss: 0.36672 | train_accuracy: 0.70396 | valid_accuracy: 0.80538 |  3:54:25s
+epoch 56 | loss: 0.37364 | train_accuracy: 0.64811 | valid_accuracy: 0.77629 |  3:58:32s
+epoch 57 | loss: 0.3656  | train_accuracy: 0.70107 | valid_accuracy: 0.80449 |  4:02:40s
+epoch 58 | loss: 0.3619  | train_accuracy: 0.61345 | valid_accuracy: 0.74184 |  4:06:51s
+epoch 59 | loss: 0.35497 | train_accuracy: 0.67988 | valid_accuracy: 0.80145 |  4:11:02s
+epoch 60 | loss: 0.34071 | train_accuracy: 0.5198  | valid_accuracy: 0.63817 |  4:15:08s
+epoch 61 | loss: 0.33029 | train_accuracy: 0.60777 | valid_accuracy: 0.73171 |  4:19:17s
+epoch 62 | loss: 0.32137 | train_accuracy: 0.6851  | valid_accuracy: 0.78885 |  4:23:27s
+epoch 63 | loss: 0.31635 | train_accuracy: 0.481   | valid_accuracy: 0.567   |  4:27:33s
+epoch 64 | loss: 0.31493 | train_accuracy: 0.5261  | valid_accuracy: 0.60183 |  4:31:41s
+epoch 65 | loss: 0.3083  | train_accuracy: 0.63462 | valid_accuracy: 0.76066 |  4:35:48s
+epoch 66 | loss: 0.30295 | train_accuracy: 0.47292 | valid_accuracy: 0.57989 |  4:39:57s
+epoch 67 | loss: 0.30592 | train_accuracy: 0.54533 | valid_accuracy: 0.62647 |  4:44:04s
+epoch 68 | loss: 0.30363 | train_accuracy: 0.64532 | valid_accuracy: 0.77013 |  4:48:13s
+epoch 69 | loss: 0.30056 | train_accuracy: 0.62101 | valid_accuracy: 0.73381 |  4:52:19s
+epoch 70 | loss: 0.36612 | train_accuracy: 0.6545  | valid_accuracy: 0.77777 |  4:56:31s
+epoch 71 | loss: 0.31089 | train_accuracy: 0.6706  | valid_accuracy: 0.79891 |  5:00:41s
+epoch 72 | loss: 0.3051  | train_accuracy: 0.68037 | valid_accuracy: 0.80912 |  5:04:55s
+epoch 73 | loss: 0.30196 | train_accuracy: 0.66108 | valid_accuracy: 0.78897 |  5:09:05s
+epoch 74 | loss: 0.30157 | train_accuracy: 0.66265 | valid_accuracy: 0.77547 |  5:13:16s
+epoch 75 | loss: 0.30201 | train_accuracy: 0.63056 | valid_accuracy: 0.77765 |  5:17:28s
+epoch 76 | loss: 0.29927 | train_accuracy: 0.64591 | valid_accuracy: 0.77309 |  5:21:36s
+epoch 77 | loss: 0.298   | train_accuracy: 0.62679 | valid_accuracy: 0.75449 |  5:26:32s
+epoch 78 | loss: 0.29841 | train_accuracy: 0.60179 | valid_accuracy: 0.72853 |  5:31:15s
+epoch 79 | loss: 0.29679 | train_accuracy: 0.66453 | valid_accuracy: 0.78569 |  5:36:57s
+epoch 80 | loss: 0.29705 | train_accuracy: 0.671   | valid_accuracy: 0.8073  |  5:42:51s
+epoch 81 | loss: 0.29533 | train_accuracy: 0.65814 | valid_accuracy: 0.77197 |  5:48:26s
+epoch 82 | loss: 0.29507 | train_accuracy: 0.65071 | valid_accuracy: 0.7736  |  5:53:35s
+epoch 83 | loss: 0.29578 | train_accuracy: 0.6691  | valid_accuracy: 0.79286 |  5:58:18s
+epoch 84 | loss: 0.30332 | train_accuracy: 0.64315 | valid_accuracy: 0.75222 |  6:02:39s
+epoch 85 | loss: 0.29483 | train_accuracy: 0.6471  | valid_accuracy: 0.76769 |  6:07:10s
+epoch 86 | loss: 0.29337 | train_accuracy: 0.62801 | valid_accuracy: 0.73864 |  6:11:27s
+epoch 87 | loss: 0.29891 | train_accuracy: 0.63867 | valid_accuracy: 0.76142 |  6:15:41s
+epoch 88 | loss: 0.29372 | train_accuracy: 0.58876 | valid_accuracy: 0.72618 |  6:19:50s
+epoch 89 | loss: 0.29437 | train_accuracy: 0.55338 | valid_accuracy: 0.60961 |  6:24:05s
+epoch 90 | loss: 0.29188 | train_accuracy: 0.66147 | valid_accuracy: 0.78007 |  6:28:19s

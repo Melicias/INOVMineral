@@ -32,7 +32,6 @@ random_state=42
 np.random.seed(random_state)
 
 from matplotlib import pyplot as plt
-#%matplotlib inline
 
 #Display information about dataframe
 def displayInformationDataFrame(df_cop):
@@ -53,22 +52,36 @@ def displayInformationDataFrame(df_cop):
     #return display(summary_df)
 
 def calcula_metricas(nome_modelo, ground_truth, predicao):
-  """
-    Funcão Auxiliar para calcular e imprimir métricas: Tx de Acerto, F1, 
-    Precisão, Sensibilidade e AUC
-  """
-  acc = accuracy_score(y_true = ground_truth, y_pred = predicao)
-  f1 = f1_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  precision = precision_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  recall = recall_score(y_true = ground_truth, y_pred = predicao,average='weighted')
-  #auc_sklearn = roc_auc_score(y_true = ground_truth, y_score = predicao, multi_class='ovr')
+    """
+      Funcão Auxiliar para calcular e imprimir métricas: Tx de Acerto, F1, 
+      Precisão, Sensibilidade e AUC
+    """
+    acc = accuracy_score(y_true = ground_truth, y_pred = predicao)
+    f1 = f1_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    precision = precision_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    recall = recall_score(y_true = ground_truth, y_pred = predicao,average='weighted')
+    #auc_sklearn = roc_auc_score(y_true = ground_truth, y_score = predicao, multi_class='ovr')
 
-  print(f"Desempenho {nome_modelo} - Conjunto de Teste")
-  print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
-  print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
-  #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
+    print(f"Desempenho {nome_modelo} - Conjunto de Teste")
+    print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
+    print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
+    #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
+    
+def fix_data_mixed_types(df, mixed_columns):    
+    # Loop over the mixed columns and clean them
+    for col_name in mixed_columns:
+        dtype_before = df[col_name].dtype
+        
+        # Convert non-numeric values to NaN and replace with mean
+        df[col_name] = pd.to_numeric(df[col_name], errors='coerce')
+        mean = df[col_name].mean()
+        df[col_name].fillna(mean, inplace=True)
+        
+        dtype_after = df[col_name].dtype
+        print(f"[INFO] Before: {dtype_before} | After: {dtype_after}")
+        
+    return df
 
-#sys.setrecursionlimit(1000000) 
 
 df = pd.read_csv('../../../data/2022_combined.csv', low_memory=False)
 drop_columns = ['uid','id.orig_h','id.orig_p','id.resp_h','id.resp_p']
@@ -78,18 +91,46 @@ df.dropna(axis=0, how='any', inplace=True)
 df.drop_duplicates(subset=None, keep="first", inplace=True)
 df = shuffle(df)
 
+featuresFromStart = [ col for col in df.columns if col not in ["type"]]
+    
+displayInformationDataFrame(df)
+
+
+def history_to_int(history):
+    hist_list = list(history)
+    sum = 0
+    mapping = {'s': 1, 'S': 2, 'h': 3, 'H': 4, 'a': 5, 'A': 6, 'd': 7, 'D': 8, 'f': 9, 'F': 10, 'r': 11, 'R': 12, 'c': 13, 'C': 14, 'g': 15, 'G': 16, 't': 17, 'T': 18, 'w': 19, 'W': 20, 'i': 21, 'I': 22, 'q': 23, 'Q': 24, '^': 25}
+    for char in hist_list:
+        sum = sum + mapping.get(char,0)
+    return sum
+
+df['flow_duration'] = df['flow_duration'].str.replace(',','.')
+df['flow_duration'] = df['flow_duration'].astype(float)
+
+
+df = fix_data_mixed_types(df, ['duration','resp_bytes','orig_bytes'])
+"""
+
+df['duration'] = df['duration'].str.replace('-','0')
+df['duration'] = df['duration'].str.replace(',','.')
+df['duration'] = df['duration'].astype(float)
+
+df['resp_bytes'] = df['resp_bytes'].str.replace('-','0')
+df['resp_bytes'] = df['resp_bytes'].astype(int)
+
+df['orig_bytes'] = df['orig_bytes'].str.replace('-','0')
+df['orig_bytes'] = df['orig_bytes'].astype(int)
+"""
+df['history'] = df.apply(lambda row: history_to_int(row['history']), axis=1)
+
 categorical_columns = []
 for col in df.columns[df.dtypes == object]:
     if col != "type":
         categorical_columns.append(col)
+        
+print(categorical_columns)
+print(df.columns)
 
-featuresFromStart = [ col for col in df.columns if col not in ["type"]]
-#print("-----Features from the start-----")
-#print(featuresFromStart)
-#print("-----Categorial features-----")
-#print(categorical_columns)
-    
-displayInformationDataFrame(df)
 
 colunas_one_hot = {}
 for coluna in categorical_columns:
@@ -99,6 +140,14 @@ for coluna in categorical_columns:
     print(coluna)
 df = pd.get_dummies(data=df, columns=categorical_columns)
 displayInformationDataFrame(df)
+
+
+
+
+
+
+
+
 
 df = shuffle(df)
 n_total = len(df)
@@ -128,11 +177,6 @@ model_norm = standScaler.fit(X_train)
 
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
-#X_valid = model_norm.transform(X_valid)
-
-#sm = SMOTE(random_state=random_state,n_jobs=-1)
-#X_train, y_train = sm.fit_resample(X_train, y_train)
-
 
 # Instantiate model with 1000 decision trees
 clf = tree.DecisionTreeClassifier(max_depth=20, random_state = random_state)#,n_estimators = 10)
@@ -161,11 +205,11 @@ calcula_metricas("Random Forest", y_test, predictions)
 # Pull out one tree from the forest
 tre = tree.plot_tree(clf)
 # Export the image to a dot file
-dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = features, rounded = True, precision = 1)
+#dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = features, rounded = True, precision = 1)
 # Use dot file to create a graph
-(graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
+#(graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
 # Write graph to a png file
-graph.write_png('treeMulti.png')
+#graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
 
