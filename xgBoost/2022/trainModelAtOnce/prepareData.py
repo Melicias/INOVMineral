@@ -8,6 +8,7 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
@@ -241,3 +242,6 @@ plt.savefig("confusion_matrix.png")
 
 predictions = clf_xgb.predict(X_test)
 print(classification_report(y_test, preds_test))
+
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))

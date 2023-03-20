@@ -108,8 +108,6 @@ displayInformationDataFrame(df)
 featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]+["Attack_type"]]
 finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
 
-
-
 #for the SMOTE part, so it can fit in 16gb of RAM
 df_before = df
 df_attacks = df[df["Attack_type"] != "Normal"]

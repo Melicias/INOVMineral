@@ -1,0 +1,75 @@
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/imblearn/over_sampling/_smote/base.py:340: FutureWarning: The parameter `n_jobs` has been deprecated in 0.10 and will be removed in 0.12. You can pass an nearest neighbors estimator where `n_jobs` is already set instead.
+  FutureWarning,
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+['service', 'conn_state']
+Index(['proto', 'service', 'duration', 'orig_bytes', 'resp_bytes',
+       'conn_state', 'missed_bytes', 'history', 'orig_pkts', 'orig_ip_bytes',
+       'resp_pkts', 'resp_ip_bytes', 'flow_duration', 'fwd_pkts_tot',
+       'bwd_pkts_tot', 'fwd_data_pkts_tot', 'bwd_data_pkts_tot',
+       'fwd_pkts_per_sec', 'bwd_pkts_per_sec', 'flow_pkts_per_sec',
+       'down_up_ratio', 'fwd_header_size_tot', 'fwd_header_size_min',
+       'fwd_header_size_max', 'bwd_header_size_tot', 'bwd_header_size_min',
+       'bwd_header_size_max', 'flow_FIN_flag_count', 'flow_SYN_flag_count',
+       'flow_RST_flag_count', 'fwd_PSH_flag_count', 'bwd_PSH_flag_count',
+       'flow_ACK_flag_count', 'fwd_pkts_payload.min', 'fwd_pkts_payload.max',
+       'fwd_pkts_payload.tot', 'fwd_pkts_payload.avg', 'fwd_pkts_payload.std',
+       'bwd_pkts_payload.min', 'bwd_pkts_payload.max', 'bwd_pkts_payload.tot',
+       'bwd_pkts_payload.avg', 'bwd_pkts_payload.std', 'flow_pkts_payload.min',
+       'flow_pkts_payload.max', 'flow_pkts_payload.tot',
+       'flow_pkts_payload.avg', 'flow_pkts_payload.std', 'fwd_iat.min',
+       'fwd_iat.max', 'fwd_iat.tot', 'fwd_iat.avg', 'fwd_iat.std',
+       'bwd_iat.min', 'bwd_iat.max', 'bwd_iat.tot', 'bwd_iat.avg',
+       'bwd_iat.std', 'flow_iat.min', 'flow_iat.max', 'flow_iat.tot',
+       'flow_iat.avg', 'flow_iat.std', 'payload_bytes_per_second',
+       'fwd_subflow_pkts', 'bwd_subflow_pkts', 'fwd_subflow_bytes',
+       'bwd_subflow_bytes', 'fwd_bulk_bytes', 'bwd_bulk_bytes',
+       'fwd_bulk_packets', 'bwd_bulk_packets', 'fwd_bulk_rate',
+       'bwd_bulk_rate', 'active.min', 'active.max', 'active.tot', 'active.avg',
+       'active.std', 'idle.min', 'idle.max', 'idle.tot', 'idle.avg',
+       'idle.std', 'fwd_init_window_size', 'bwd_init_window_size',
+       'fwd_last_window_size', 'bwd_last_window_size', 'type'],
+      dtype='object')
+service
+conn_state
+              precision    recall  f1-score   support
+
+           0       0.38      0.54      0.45       303
+           1       0.00      0.00      0.00         2
+           2       0.45      1.00      0.62       242
+           3       1.00      0.98      0.99      9746
+           4       1.00      1.00      1.00      5908
+           5       1.00      0.98      0.99     13366
+           6       0.83      0.60      0.70      2315
+           7       0.58      0.83      0.69      1028
+           8       0.87      0.98      0.92      1461
+           9       1.00      1.00      1.00     22128
+
+    accuracy                           0.97     56499
+   macro avg       0.71      0.79      0.74     56499
+weighted avg       0.98      0.97      0.97     56499
+
+Elements wrong classified: 1704; Elements correct: 54795
+Desempenho Random Forest - Conjunto de Teste
+ Taxa de Acerto: 96.98%
+ Precisão: 97.59%
+ Sensibilidade: 96.98%
+ Medida F1: 97.11%
+              precision    recall  f1-score   support
+
+           0       0.38      0.54      0.45       303
+           1       0.00      0.00      0.00         2
+           2       0.45      1.00      0.62       242
+           3       1.00      0.98      0.99      9746
+           4       1.00      1.00      1.00      5908
+           5       1.00      0.98      0.99     13366
+           6       0.83      0.60      0.70      2315
+           7       0.58      0.83      0.69      1028
+           8       0.87      0.98      0.92      1461
+           9       1.00      1.00      1.00     22128
+
+    accuracy                           0.97     56499
+   macro avg       0.71      0.79      0.74     56499
+weighted avg       0.98      0.97      0.97     56499
+
