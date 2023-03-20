@@ -224,3 +224,7 @@ cm_display.plot(ax=ax)
 plt.savefig("confusion_matrix.png")
 
 print(classification_report(y_test, y_pred))
+
+from sklearn.metrics import balanced_accuracy_score
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))

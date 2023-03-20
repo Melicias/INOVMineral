@@ -218,3 +218,7 @@ export_graphviz(tree, out_file = 'treeMulti.dot', feature_names = features, roun
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
+
+from sklearn.metrics import balanced_accuracy_score
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))

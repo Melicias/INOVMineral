@@ -71,3 +71,5 @@ Desempenho Random Forest - Conjunto de Teste
    macro avg       0.71      0.71      0.71     56499
 weighted avg       0.97      0.97      0.97     56499
 
+balanced_accuracy
+0.7114915431814401

@@ -208,13 +208,7 @@ plt.show()
 
 calcula_metricas("Random Forest", y_test, predictions)
 
-# Pull out one tree from the forest
-tree = rf.estimators_[5]
-# Export the image to a dot file
-export_graphviz(tree, out_file = 'treeMulti.dot', feature_names = features, rounded = True, precision = 1)
-# Use dot file to create a graph
-(graph, ) = pydot.graph_from_dot_file('treeMulti.dot')
-# Write graph to a png file
-graph.write_png('treeMulti.png')
-
 print(classification_report(y_test, predictions))
+from sklearn.metrics import balanced_accuracy_score
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))
