@@ -88,13 +88,13 @@ def aplica_SMOTENC(df, label, categorical_indices = []):
     X = df.copy()
     X=X.drop(columns=[label])
     y=df[label].copy()
-    print("comecou smote")
-    smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=0, sampling_strategy = 'minority')
-    print("acabou smote")
+    print(f"Started SMOTENC; size of df - {df.size} ")
+    smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=random_state)
     X_resampled, y_resampled = smote_nc.fit_resample(X, y)
-    X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
-    X_resampled[label]=y_resampled
-    return X_resampled
+    df_smote = pd.DataFrame(X_resampled, columns=X.columns)
+    df_smote[label]=y_resampled
+    print(f"finished SMOTENC; size of df - {df_smote.size}")
+    return df_smote
 
 
 df = pd.read_csv('../../../data/2022_combined.csv', low_memory=False)
@@ -175,15 +175,15 @@ le.fit(df["type"].values)
 
 
 train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
-#train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
+train_indices, valid_indices = train_test_split(train_val_indices, test_size=0.25, random_state=random_state) # 0.25 x 0.8 = 0.2
 
-X_train = df[features].values[train_val_indices]
-y_train = df["type"].values[train_val_indices]
+X_train = df[features].values[train_indices]
+y_train = df["type"].values[train_indices]
 y_train = le.transform(y_train)
 
-#X_valid = df[features].values[valid_indices]
-#y_valid = df["Attack_type"].values[valid_indices]
-#y_valid = le.transform(y_valid)
+X_valid = df[features].values[valid_indices]
+y_valid = df["type"].values[valid_indices]
+y_valid = le.transform(y_valid)
 
 X_test = df[features].values[test_indices]
 y_test = df["type"].values[test_indices]
@@ -211,7 +211,7 @@ clf = TabNetClassifier(
     scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
 )
 
-max_epochs = 20 if not os.getenv("CI", False) else 2
+max_epochs = 1000 if not os.getenv("CI", False) else 2
 
 clf.fit(
     X_train=X_train, y_train=y_train,

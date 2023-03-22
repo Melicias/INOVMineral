@@ -67,6 +67,18 @@ def calcula_metricas(nome_modelo, ground_truth, predicao):
   print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
   print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
   #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
+  
+def aplica_SMOTENC(df, label, categorical_indices = []):
+    X = df.copy()
+    X=X.drop(columns=[label])
+    y=df[label].copy()
+    print("comecou smote")
+    smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=random_state)
+    print("acabou smote")
+    X_resampled, y_resampled = smote_nc.fit_resample(X, y)
+    X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
+    X_resampled[label]=y_resampled
+    return X_resampled
 
 #sys.setrecursionlimit(1000000) 
 
@@ -94,6 +106,17 @@ featuresFromStart = [ col for col in df.columns if col not in ["Attack_label"]+[
 #print(categorical_columns)
     
 displayInformationDataFrame(df)
+
+catIndexs = []
+for cc in categorical_columns:
+    catIndexs.append(featuresFromStart.index(cc))
+print("catIndexes ---------------")
+print(catIndexs)
+        
+print(categorical_columns)
+print(df.columns)
+
+df = aplica_SMOTENC(df, "type", categorical_indices = catIndexs)
 
 colunas_one_hot = {}
 for coluna in categorical_columns:

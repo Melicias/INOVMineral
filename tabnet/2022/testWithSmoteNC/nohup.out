@@ -1,0 +1,357 @@
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+catIndexes ---------------
+[1, 5]
+['service', 'conn_state']
+Index(['proto', 'service', 'duration', 'orig_bytes', 'resp_bytes',
+       'conn_state', 'missed_bytes', 'history', 'orig_pkts', 'orig_ip_bytes',
+       'resp_pkts', 'resp_ip_bytes', 'flow_duration', 'fwd_pkts_tot',
+       'bwd_pkts_tot', 'fwd_data_pkts_tot', 'bwd_data_pkts_tot',
+       'fwd_pkts_per_sec', 'bwd_pkts_per_sec', 'flow_pkts_per_sec',
+       'down_up_ratio', 'fwd_header_size_tot', 'fwd_header_size_min',
+       'fwd_header_size_max', 'bwd_header_size_tot', 'bwd_header_size_min',
+       'bwd_header_size_max', 'flow_FIN_flag_count', 'flow_SYN_flag_count',
+       'flow_RST_flag_count', 'fwd_PSH_flag_count', 'bwd_PSH_flag_count',
+       'flow_ACK_flag_count', 'fwd_pkts_payload.min', 'fwd_pkts_payload.max',
+       'fwd_pkts_payload.tot', 'fwd_pkts_payload.avg', 'fwd_pkts_payload.std',
+       'bwd_pkts_payload.min', 'bwd_pkts_payload.max', 'bwd_pkts_payload.tot',
+       'bwd_pkts_payload.avg', 'bwd_pkts_payload.std', 'flow_pkts_payload.min',
+       'flow_pkts_payload.max', 'flow_pkts_payload.tot',
+       'flow_pkts_payload.avg', 'flow_pkts_payload.std', 'fwd_iat.min',
+       'fwd_iat.max', 'fwd_iat.tot', 'fwd_iat.avg', 'fwd_iat.std',
+       'bwd_iat.min', 'bwd_iat.max', 'bwd_iat.tot', 'bwd_iat.avg',
+       'bwd_iat.std', 'flow_iat.min', 'flow_iat.max', 'flow_iat.tot',
+       'flow_iat.avg', 'flow_iat.std', 'payload_bytes_per_second',
+       'fwd_subflow_pkts', 'bwd_subflow_pkts', 'fwd_subflow_bytes',
+       'bwd_subflow_bytes', 'fwd_bulk_bytes', 'bwd_bulk_bytes',
+       'fwd_bulk_packets', 'bwd_bulk_packets', 'fwd_bulk_rate',
+       'bwd_bulk_rate', 'active.min', 'active.max', 'active.tot', 'active.avg',
+       'active.std', 'idle.min', 'idle.max', 'idle.tot', 'idle.avg',
+       'idle.std', 'fwd_init_window_size', 'bwd_init_window_size',
+       'fwd_last_window_size', 'bwd_last_window_size', 'type'],
+      dtype='object')
+comecou smote
+acabou smote
+service
+conn_state
+epoch 0  | loss: 1.57115 | train_accuracy: 0.80821 | valid_accuracy: 0.20812 |  0:00:22s
+epoch 1  | loss: 0.42629 | train_accuracy: 0.92469 | valid_accuracy: 0.16821 |  0:00:43s
+epoch 2  | loss: 0.23974 | train_accuracy: 0.94285 | valid_accuracy: 0.38661 |  0:01:05s
+epoch 3  | loss: 0.16514 | train_accuracy: 0.95399 | valid_accuracy: 0.28112 |  0:01:27s
+epoch 4  | loss: 0.15036 | train_accuracy: 0.94967 | valid_accuracy: 0.24632 |  0:01:48s
+epoch 5  | loss: 0.12724 | train_accuracy: 0.95159 | valid_accuracy: 0.12885 |  0:02:10s
+epoch 6  | loss: 0.11322 | train_accuracy: 0.96288 | valid_accuracy: 0.31188 |  0:02:31s
+epoch 7  | loss: 0.10846 | train_accuracy: 0.96362 | valid_accuracy: 0.15253 |  0:02:53s
+epoch 8  | loss: 0.10264 | train_accuracy: 0.96623 | valid_accuracy: 0.0609  |  0:03:15s
+epoch 9  | loss: 0.09874 | train_accuracy: 0.9617  | valid_accuracy: 0.10803 |  0:03:37s
+epoch 10 | loss: 0.09584 | train_accuracy: 0.96225 | valid_accuracy: 0.2561  |  0:03:58s
+epoch 11 | loss: 0.09697 | train_accuracy: 0.95952 | valid_accuracy: 0.1097  |  0:04:20s
+epoch 12 | loss: 0.09263 | train_accuracy: 0.95995 | valid_accuracy: 0.16632 |  0:04:41s
+epoch 13 | loss: 0.08974 | train_accuracy: 0.96418 | valid_accuracy: 0.13617 |  0:05:03s
+epoch 14 | loss: 0.09846 | train_accuracy: 0.96519 | valid_accuracy: 0.28046 |  0:05:25s
+epoch 15 | loss: 0.09881 | train_accuracy: 0.96123 | valid_accuracy: 0.15028 |  0:05:46s
+epoch 16 | loss: 0.0963  | train_accuracy: 0.96354 | valid_accuracy: 0.13711 |  0:06:08s
+epoch 17 | loss: 0.09106 | train_accuracy: 0.96263 | valid_accuracy: 0.1579  |  0:06:30s
+epoch 18 | loss: 0.08859 | train_accuracy: 0.9613  | valid_accuracy: 0.30175 |  0:06:52s
+epoch 19 | loss: 0.08615 | train_accuracy: 0.9641  | valid_accuracy: 0.23434 |  0:07:14s
+epoch 20 | loss: 0.08717 | train_accuracy: 0.96512 | valid_accuracy: 0.13452 |  0:07:35s
+epoch 21 | loss: 0.08464 | train_accuracy: 0.96294 | valid_accuracy: 0.12937 |  0:07:57s
+epoch 22 | loss: 0.08453 | train_accuracy: 0.96558 | valid_accuracy: 0.12278 |  0:08:19s
+epoch 23 | loss: 0.08368 | train_accuracy: 0.96549 | valid_accuracy: 0.12643 |  0:08:41s
+epoch 24 | loss: 0.08028 | train_accuracy: 0.96545 | valid_accuracy: 0.19011 |  0:09:02s
+epoch 25 | loss: 0.08048 | train_accuracy: 0.96341 | valid_accuracy: 0.14133 |  0:09:24s
+epoch 26 | loss: 0.09001 | train_accuracy: 0.96143 | valid_accuracy: 0.25527 |  0:09:46s
+epoch 27 | loss: 0.09306 | train_accuracy: 0.96147 | valid_accuracy: 0.1784  |  0:10:08s
+epoch 28 | loss: 0.08981 | train_accuracy: 0.96521 | valid_accuracy: 0.14164 |  0:10:29s
+epoch 29 | loss: 0.08507 | train_accuracy: 0.96557 | valid_accuracy: 0.12408 |  0:10:51s
+epoch 30 | loss: 0.07973 | train_accuracy: 0.94965 | valid_accuracy: 0.09938 |  0:11:13s
+epoch 31 | loss: 0.07721 | train_accuracy: 0.96565 | valid_accuracy: 0.15345 |  0:11:34s
+epoch 32 | loss: 0.0895  | train_accuracy: 0.96811 | valid_accuracy: 0.27619 |  0:11:56s
+epoch 33 | loss: 0.08354 | train_accuracy: 0.9683  | valid_accuracy: 0.32144 |  0:12:18s
+epoch 34 | loss: 0.07783 | train_accuracy: 0.96094 | valid_accuracy: 0.2743  |  0:12:40s
+epoch 35 | loss: 0.07697 | train_accuracy: 0.96995 | valid_accuracy: 0.18092 |  0:13:01s
+epoch 36 | loss: 0.07577 | train_accuracy: 0.96488 | valid_accuracy: 0.12086 |  0:13:22s
+epoch 37 | loss: 0.07449 | train_accuracy: 0.96588 | valid_accuracy: 0.14921 |  0:13:44s
+epoch 38 | loss: 0.08334 | train_accuracy: 0.96638 | valid_accuracy: 0.18308 |  0:14:06s
+epoch 39 | loss: 0.08026 | train_accuracy: 0.96507 | valid_accuracy: 0.27556 |  0:14:27s
+epoch 40 | loss: 0.07759 | train_accuracy: 0.96545 | valid_accuracy: 0.26423 |  0:14:49s
+epoch 41 | loss: 0.07627 | train_accuracy: 0.96543 | valid_accuracy: 0.14495 |  0:15:11s
+epoch 42 | loss: 0.07046 | train_accuracy: 0.92169 | valid_accuracy: 0.16393 |  0:15:33s
+epoch 43 | loss: 0.06848 | train_accuracy: 0.96663 | valid_accuracy: 0.15924 |  0:15:54s
+epoch 44 | loss: 0.07889 | train_accuracy: 0.95442 | valid_accuracy: 0.3825  |  0:16:16s
+epoch 45 | loss: 0.07958 | train_accuracy: 0.97022 | valid_accuracy: 0.25039 |  0:16:37s
+epoch 46 | loss: 0.07468 | train_accuracy: 0.96462 | valid_accuracy: 0.23436 |  0:16:59s
+epoch 47 | loss: 0.07774 | train_accuracy: 0.96878 | valid_accuracy: 0.11124 |  0:17:20s
+epoch 48 | loss: 0.07577 | train_accuracy: 0.96642 | valid_accuracy: 0.27615 |  0:17:42s
+epoch 49 | loss: 0.06824 | train_accuracy: 0.96265 | valid_accuracy: 0.05811 |  0:18:04s
+epoch 50 | loss: 0.06728 | train_accuracy: 0.96583 | valid_accuracy: 0.1589  |  0:18:25s
+epoch 51 | loss: 0.06737 | train_accuracy: 0.93574 | valid_accuracy: 0.0905  |  0:18:47s
+epoch 52 | loss: 0.07455 | train_accuracy: 0.96071 | valid_accuracy: 0.08844 |  0:19:08s
+epoch 53 | loss: 0.07253 | train_accuracy: 0.97074 | valid_accuracy: 0.26529 |  0:19:30s
+epoch 54 | loss: 0.07872 | train_accuracy: 0.96541 | valid_accuracy: 0.11913 |  0:19:51s
+epoch 55 | loss: 0.07013 | train_accuracy: 0.96885 | valid_accuracy: 0.23988 |  0:20:13s
+epoch 56 | loss: 0.06592 | train_accuracy: 0.96527 | valid_accuracy: 0.12555 |  0:20:35s
+epoch 57 | loss: 0.06353 | train_accuracy: 0.96487 | valid_accuracy: 0.12343 |  0:20:57s
+epoch 58 | loss: 0.06511 | train_accuracy: 0.96723 | valid_accuracy: 0.10616 |  0:21:19s
+epoch 59 | loss: 0.06643 | train_accuracy: 0.96466 | valid_accuracy: 0.12881 |  0:21:41s
+epoch 60 | loss: 0.06723 | train_accuracy: 0.96516 | valid_accuracy: 0.10582 |  0:22:02s
+epoch 61 | loss: 0.0805  | train_accuracy: 0.95424 | valid_accuracy: 0.17358 |  0:22:24s
+epoch 62 | loss: 0.14817 | train_accuracy: 0.96387 | valid_accuracy: 0.16391 |  0:22:46s
+epoch 63 | loss: 0.10502 | train_accuracy: 0.96323 | valid_accuracy: 0.18737 |  0:23:08s
+epoch 64 | loss: 0.09082 | train_accuracy: 0.96518 | valid_accuracy: 0.26181 |  0:23:29s
+epoch 65 | loss: 0.0857  | train_accuracy: 0.96105 | valid_accuracy: 0.22129 |  0:23:50s
+epoch 66 | loss: 0.08272 | train_accuracy: 0.96569 | valid_accuracy: 0.30428 |  0:24:12s
+epoch 67 | loss: 0.0804  | train_accuracy: 0.96135 | valid_accuracy: 0.20725 |  0:24:34s
+epoch 68 | loss: 0.07766 | train_accuracy: 0.96066 | valid_accuracy: 0.21586 |  0:24:55s/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+
+epoch 69 | loss: 0.07599 | train_accuracy: 0.96322 | valid_accuracy: 0.34232 |  0:25:17s
+epoch 70 | loss: 0.07711 | train_accuracy: 0.93869 | valid_accuracy: 0.20084 |  0:25:39s
+epoch 71 | loss: 0.07683 | train_accuracy: 0.93225 | valid_accuracy: 0.13464 |  0:26:01s
+epoch 72 | loss: 0.07338 | train_accuracy: 0.96996 | valid_accuracy: 0.15888 |  0:26:23s
+epoch 73 | loss: 0.07588 | train_accuracy: 0.95881 | valid_accuracy: 0.11469 |  0:26:45s
+epoch 74 | loss: 0.07635 | train_accuracy: 0.9671  | valid_accuracy: 0.16473 |  0:27:07s
+epoch 75 | loss: 0.07142 | train_accuracy: 0.8897  | valid_accuracy: 0.2028  |  0:27:29s
+epoch 76 | loss: 0.09513 | train_accuracy: 0.95846 | valid_accuracy: 0.21928 |  0:27:50s
+epoch 77 | loss: 0.08047 | train_accuracy: 0.96861 | valid_accuracy: 0.16863 |  0:28:12s
+epoch 78 | loss: 0.0704  | train_accuracy: 0.95825 | valid_accuracy: 0.16668 |  0:28:34s
+epoch 79 | loss: 0.07069 | train_accuracy: 0.94295 | valid_accuracy: 0.08966 |  0:28:55s
+epoch 80 | loss: 0.06918 | train_accuracy: 0.97017 | valid_accuracy: 0.25512 |  0:29:17s
+epoch 81 | loss: 0.06723 | train_accuracy: 0.96586 | valid_accuracy: 0.1508  |  0:29:38s
+epoch 82 | loss: 0.06347 | train_accuracy: 0.87968 | valid_accuracy: 0.12427 |  0:30:00s
+epoch 83 | loss: 0.08926 | train_accuracy: 0.94432 | valid_accuracy: 0.257   |  0:30:21s
+epoch 84 | loss: 0.08466 | train_accuracy: 0.96422 | valid_accuracy: 0.2451  |  0:30:43s
+epoch 85 | loss: 0.07727 | train_accuracy: 0.96582 | valid_accuracy: 0.10831 |  0:31:04s
+epoch 86 | loss: 0.07604 | train_accuracy: 0.90084 | valid_accuracy: 0.1274  |  0:31:26s
+epoch 87 | loss: 0.07255 | train_accuracy: 0.94813 | valid_accuracy: 0.24749 |  0:31:47s
+epoch 88 | loss: 0.07373 | train_accuracy: 0.96943 | valid_accuracy: 0.26321 |  0:32:09s
+epoch 89 | loss: 0.07178 | train_accuracy: 0.86036 | valid_accuracy: 0.15285 |  0:32:30s
+epoch 90 | loss: 0.07526 | train_accuracy: 0.95962 | valid_accuracy: 0.2323  |  0:32:52s
+epoch 91 | loss: 0.0681  | train_accuracy: 0.94702 | valid_accuracy: 0.0724  |  0:33:13s
+epoch 92 | loss: 0.0649  | train_accuracy: 0.95792 | valid_accuracy: 0.08945 |  0:33:34s
+epoch 93 | loss: 0.06117 | train_accuracy: 0.89731 | valid_accuracy: 0.09085 |  0:33:56s
+epoch 94 | loss: 0.06224 | train_accuracy: 0.92128 | valid_accuracy: 0.2527  |  0:34:18s
+epoch 95 | loss: 0.0587  | train_accuracy: 0.96279 | valid_accuracy: 0.07576 |  0:34:39s
+epoch 96 | loss: 0.05754 | train_accuracy: 0.96662 | valid_accuracy: 0.10251 |  0:35:00s
+epoch 97 | loss: 0.05782 | train_accuracy: 0.96661 | valid_accuracy: 0.12303 |  0:35:22s
+epoch 98 | loss: 0.06058 | train_accuracy: 0.96444 | valid_accuracy: 0.20343 |  0:35:43s
+epoch 99 | loss: 0.05944 | train_accuracy: 0.96782 | valid_accuracy: 0.14547 |  0:36:05s
+epoch 100| loss: 0.05721 | train_accuracy: 0.96457 | valid_accuracy: 0.22271 |  0:36:27s
+epoch 101| loss: 0.05835 | train_accuracy: 0.8985  | valid_accuracy: 0.16084 |  0:36:48s
+epoch 102| loss: 0.057   | train_accuracy: 0.96679 | valid_accuracy: 0.21636 |  0:37:10s
+
+Early stopping occurred at epoch 102 with best_epoch = 2 and best_valid_accuracy = 0.38661
+Successfully saved model at modelTabNet.zip
+FINAL TEST SCORE FOR : 0.9441772280755332
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00       283
+           1       0.92      0.98      0.95     22139
+           2       0.41      1.00      0.58       226
+           3       0.99      0.97      0.98      9542
+           4       1.00      1.00      1.00      5795
+           5       0.98      0.97      0.98     13538
+           6       0.75      0.54      0.63      2304
+           7       0.56      0.86      0.68      1052
+           8       0.79      0.87      0.83      1526
+           9       0.98      0.93      0.95     22183
+
+    accuracy                           0.94     78588
+   macro avg       0.74      0.81      0.76     78588
+weighted avg       0.95      0.94      0.94     78588
+
+Elements wrong classified: 4387; Elements correct: 74201
+Desempenho tabnet - Conjunto de Teste
+ Taxa de Acerto: 94.42%
+ Precisão: 94.55%
+ Sensibilidade: 94.42%
+ Medida F1: 94.32%
+balanced_accuracy
+0.8116672217740024
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+catIndexes ---------------
+[1, 5]
+['service', 'conn_state']
+Index(['proto', 'service', 'duration', 'orig_bytes', 'resp_bytes',
+       'conn_state', 'missed_bytes', 'history', 'orig_pkts', 'orig_ip_bytes',
+       'resp_pkts', 'resp_ip_bytes', 'flow_duration', 'fwd_pkts_tot',
+       'bwd_pkts_tot', 'fwd_data_pkts_tot', 'bwd_data_pkts_tot',
+       'fwd_pkts_per_sec', 'bwd_pkts_per_sec', 'flow_pkts_per_sec',
+       'down_up_ratio', 'fwd_header_size_tot', 'fwd_header_size_min',
+       'fwd_header_size_max', 'bwd_header_size_tot', 'bwd_header_size_min',
+       'bwd_header_size_max', 'flow_FIN_flag_count', 'flow_SYN_flag_count',
+       'flow_RST_flag_count', 'fwd_PSH_flag_count', 'bwd_PSH_flag_count',
+       'flow_ACK_flag_count', 'fwd_pkts_payload.min', 'fwd_pkts_payload.max',
+       'fwd_pkts_payload.tot', 'fwd_pkts_payload.avg', 'fwd_pkts_payload.std',
+       'bwd_pkts_payload.min', 'bwd_pkts_payload.max', 'bwd_pkts_payload.tot',
+       'bwd_pkts_payload.avg', 'bwd_pkts_payload.std', 'flow_pkts_payload.min',
+       'flow_pkts_payload.max', 'flow_pkts_payload.tot',
+       'flow_pkts_payload.avg', 'flow_pkts_payload.std', 'fwd_iat.min',
+       'fwd_iat.max', 'fwd_iat.tot', 'fwd_iat.avg', 'fwd_iat.std',
+       'bwd_iat.min', 'bwd_iat.max', 'bwd_iat.tot', 'bwd_iat.avg',
+       'bwd_iat.std', 'flow_iat.min', 'flow_iat.max', 'flow_iat.tot',
+       'flow_iat.avg', 'flow_iat.std', 'payload_bytes_per_second',
+       'fwd_subflow_pkts', 'bwd_subflow_pkts', 'fwd_subflow_bytes',
+       'bwd_subflow_bytes', 'fwd_bulk_bytes', 'bwd_bulk_bytes',
+       'fwd_bulk_packets', 'bwd_bulk_packets', 'fwd_bulk_rate',
+       'bwd_bulk_rate', 'active.min', 'active.max', 'active.tot', 'active.avg',
+       'active.std', 'idle.min', 'idle.max', 'idle.tot', 'idle.avg',
+       'idle.std', 'fwd_init_window_size', 'bwd_init_window_size',
+       'fwd_last_window_size', 'bwd_last_window_size', 'type'],
+      dtype='object')
+Started SMOTENC; size of df - 25141699 
+finished SMOTENC; size of df - 98311180
+service
+conn_state
+epoch 0  | loss: 1.09378 | train_accuracy: 0.73818 | valid_accuracy: 0.18548 |  0:01:02s
+epoch 1  | loss: 0.32823 | train_accuracy: 0.89115 | valid_accuracy: 0.14186 |  0:02:03s
+epoch 2  | loss: 0.27829 | train_accuracy: 0.89384 | valid_accuracy: 0.16316 |  0:03:05s
+epoch 3  | loss: 0.26187 | train_accuracy: 0.89746 | valid_accuracy: 0.05463 |  0:04:06s
+epoch 4  | loss: 0.25827 | train_accuracy: 0.81656 | valid_accuracy: 0.09003 |  0:05:08s
+epoch 5  | loss: 0.24685 | train_accuracy: 0.90368 | valid_accuracy: 0.11176 |  0:06:10s
+epoch 6  | loss: 0.24505 | train_accuracy: 0.90405 | valid_accuracy: 0.11008 |  0:07:12s
+epoch 7  | loss: 0.24275 | train_accuracy: 0.81713 | valid_accuracy: 0.08711 |  0:08:13s
+epoch 8  | loss: 0.24026 | train_accuracy: 0.90522 | valid_accuracy: 0.23217 |  0:09:14s
+epoch 9  | loss: 0.23793 | train_accuracy: 0.9024  | valid_accuracy: 0.15941 |  0:10:15s
+epoch 10 | loss: 0.23886 | train_accuracy: 0.9052  | valid_accuracy: 0.11917 |  0:11:16s
+epoch 11 | loss: 0.2377  | train_accuracy: 0.90249 | valid_accuracy: 0.09215 |  0:12:17s
+epoch 12 | loss: 0.23647 | train_accuracy: 0.90593 | valid_accuracy: 0.15556 |  0:13:18s
+epoch 13 | loss: 0.2353  | train_accuracy: 0.90401 | valid_accuracy: 0.28164 |  0:14:19s
+epoch 14 | loss: 0.31454 | train_accuracy: 0.84723 | valid_accuracy: 0.16003 |  0:15:21s
+epoch 15 | loss: 0.32774 | train_accuracy: 0.88405 | valid_accuracy: 0.07096 |  0:16:22s
+epoch 16 | loss: 0.29216 | train_accuracy: 0.89789 | valid_accuracy: 0.06355 |  0:17:24s
+epoch 17 | loss: 0.2585  | train_accuracy: 0.89812 | valid_accuracy: 0.03705 |  0:18:25s
+epoch 18 | loss: 0.25094 | train_accuracy: 0.90245 | valid_accuracy: 0.0889  |  0:19:27s
+epoch 19 | loss: 0.24864 | train_accuracy: 0.90174 | valid_accuracy: 0.08368 |  0:20:28s
+epoch 20 | loss: 0.24671 | train_accuracy: 0.8956  | valid_accuracy: 0.05454 |  0:21:29s
+epoch 21 | loss: 0.24513 | train_accuracy: 0.81431 | valid_accuracy: 0.05269 |  0:22:30s
+epoch 22 | loss: 0.24532 | train_accuracy: 0.90352 | valid_accuracy: 0.21735 |  0:23:30s
+epoch 23 | loss: 0.24104 | train_accuracy: 0.9038  | valid_accuracy: 0.13417 |  0:24:32s
+epoch 24 | loss: 0.23825 | train_accuracy: 0.90509 | valid_accuracy: 0.08646 |  0:25:32s
+epoch 25 | loss: 0.23678 | train_accuracy: 0.90472 | valid_accuracy: 0.10187 |  0:26:33s
+epoch 26 | loss: 0.24299 | train_accuracy: 0.90561 | valid_accuracy: 0.17527 |  0:27:34s
+epoch 27 | loss: 0.23913 | train_accuracy: 0.76256 | valid_accuracy: 0.12028 |  0:28:36s
+epoch 28 | loss: 0.24573 | train_accuracy: 0.81739 | valid_accuracy: 0.14579 |  0:29:37s
+epoch 29 | loss: 0.24    | train_accuracy: 0.82752 | valid_accuracy: 0.24626 |  0:30:38s
+epoch 30 | loss: 0.23776 | train_accuracy: 0.67327 | valid_accuracy: 0.16142 |  0:31:39s
+epoch 31 | loss: 0.23789 | train_accuracy: 0.90517 | valid_accuracy: 0.14655 |  0:32:41s
+epoch 32 | loss: 0.2363  | train_accuracy: 0.90399 | valid_accuracy: 0.06547 |  0:33:42s
+epoch 33 | loss: 0.23486 | train_accuracy: 0.90542 | valid_accuracy: 0.10444 |  0:34:42s
+epoch 34 | loss: 0.23428 | train_accuracy: 0.90599 | valid_accuracy: 0.13215 |  0:35:43s
+epoch 35 | loss: 0.23275 | train_accuracy: 0.90601 | valid_accuracy: 0.11571 |  0:36:43s
+epoch 36 | loss: 0.23176 | train_accuracy: 0.8203  | valid_accuracy: 0.06832 |  0:37:44s
+epoch 37 | loss: 0.23199 | train_accuracy: 0.90546 | valid_accuracy: 0.0826  |  0:38:45s
+epoch 38 | loss: 0.23172 | train_accuracy: 0.81489 | valid_accuracy: 0.04818 |  0:39:45s
+epoch 39 | loss: 0.23256 | train_accuracy: 0.90391 | valid_accuracy: 0.12992 |  0:40:45s
+epoch 40 | loss: 0.23261 | train_accuracy: 0.90639 | valid_accuracy: 0.11812 |  0:41:45s
+epoch 41 | loss: 0.23018 | train_accuracy: 0.90712 | valid_accuracy: 0.12647 |  0:42:46s
+epoch 42 | loss: 0.22748 | train_accuracy: 0.91015 | valid_accuracy: 0.08111 |  0:43:47s
+epoch 43 | loss: 0.22698 | train_accuracy: 0.90923 | valid_accuracy: 0.09228 |  0:44:47s
+epoch 44 | loss: 0.2245  | train_accuracy: 0.91025 | valid_accuracy: 0.03655 |  0:45:47s
+epoch 45 | loss: 0.22714 | train_accuracy: 0.90872 | valid_accuracy: 0.09438 |  0:46:48s
+epoch 46 | loss: 0.22503 | train_accuracy: 0.90924 | valid_accuracy: 0.09268 |  0:47:49s
+epoch 47 | loss: 0.22595 | train_accuracy: 0.90804 | valid_accuracy: 0.11691 |  0:48:49s
+epoch 48 | loss: 0.22443 | train_accuracy: 0.90714 | valid_accuracy: 0.06168 |  0:49:49s
+epoch 49 | loss: 0.2238  | train_accuracy: 0.90982 | valid_accuracy: 0.08377 |  0:50:49s
+epoch 50 | loss: 0.22208 | train_accuracy: 0.91019 | valid_accuracy: 0.10485 |  0:51:50s
+epoch 51 | loss: 0.22299 | train_accuracy: 0.9105  | valid_accuracy: 0.03165 |  0:52:50s
+epoch 52 | loss: 0.22306 | train_accuracy: 0.90946 | valid_accuracy: 0.06844 |  0:53:50s
+epoch 53 | loss: 0.24967 | train_accuracy: 0.90703 | valid_accuracy: 0.06093 |  0:54:50s
+epoch 54 | loss: 0.23316 | train_accuracy: 0.90757 | valid_accuracy: 0.07463 |  0:55:51s
+epoch 55 | loss: 0.22835 | train_accuracy: 0.9081  | valid_accuracy: 0.1227  |  0:56:51s
+epoch 56 | loss: 0.22704 | train_accuracy: 0.90788 | valid_accuracy: 0.06394 |  0:57:51s
+epoch 57 | loss: 0.22639 | train_accuracy: 0.90706 | valid_accuracy: 0.05822 |  0:58:50s
+epoch 58 | loss: 0.22535 | train_accuracy: 0.90912 | valid_accuracy: 0.06078 |  0:59:50s
+epoch 59 | loss: 0.22575 | train_accuracy: 0.9093  | valid_accuracy: 0.05871 |  1:00:51s
+epoch 60 | loss: 0.25168 | train_accuracy: 0.90681 | valid_accuracy: 0.10691 |  1:01:51s
+epoch 61 | loss: 0.23523 | train_accuracy: 0.90737 | valid_accuracy: 0.06905 |  1:02:52s
+epoch 62 | loss: 0.23102 | train_accuracy: 0.90913 | valid_accuracy: 0.23373 |  1:03:52s
+epoch 63 | loss: 0.22778 | train_accuracy: 0.90679 | valid_accuracy: 0.09568 |  1:04:52s
+epoch 64 | loss: 0.22585 | train_accuracy: 0.9076  | valid_accuracy: 0.10397 |  1:05:53s
+epoch 65 | loss: 0.22365 | train_accuracy: 0.90256 | valid_accuracy: 0.16535 |  1:06:54s
+epoch 66 | loss: 0.22426 | train_accuracy: 0.90784 | valid_accuracy: 0.1143  |  1:07:54s
+epoch 67 | loss: 0.22219 | train_accuracy: 0.90697 | valid_accuracy: 0.1575  |  1:08:57s
+epoch 68 | loss: 0.22136 | train_accuracy: 0.90715 | valid_accuracy: 0.16364 |  1:09:58s/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+
+epoch 69 | loss: 0.22121 | train_accuracy: 0.90772 | valid_accuracy: 0.07567 |  1:10:59s
+epoch 70 | loss: 0.22125 | train_accuracy: 0.90822 | valid_accuracy: 0.15695 |  1:12:00s
+epoch 71 | loss: 0.221   | train_accuracy: 0.90756 | valid_accuracy: 0.07173 |  1:13:01s
+epoch 72 | loss: 0.22229 | train_accuracy: 0.90842 | valid_accuracy: 0.06241 |  1:14:01s
+epoch 73 | loss: 0.22012 | train_accuracy: 0.84158 | valid_accuracy: 0.10863 |  1:15:01s
+epoch 74 | loss: 0.21896 | train_accuracy: 0.9089  | valid_accuracy: 0.10674 |  1:16:01s
+epoch 75 | loss: 0.21876 | train_accuracy: 0.90947 | valid_accuracy: 0.1295  |  1:17:02s
+epoch 76 | loss: 0.21874 | train_accuracy: 0.90965 | valid_accuracy: 0.13202 |  1:18:03s
+epoch 77 | loss: 0.2223  | train_accuracy: 0.90749 | valid_accuracy: 0.12872 |  1:19:02s
+epoch 78 | loss: 0.22887 | train_accuracy: 0.91031 | valid_accuracy: 0.15729 |  1:20:03s
+epoch 79 | loss: 0.22484 | train_accuracy: 0.91062 | valid_accuracy: 0.04402 |  1:21:04s
+epoch 80 | loss: 0.2234  | train_accuracy: 0.90862 | valid_accuracy: 0.12223 |  1:22:05s
+epoch 81 | loss: 0.22394 | train_accuracy: 0.90707 | valid_accuracy: 0.13011 |  1:23:05s
+epoch 82 | loss: 0.22175 | train_accuracy: 0.91063 | valid_accuracy: 0.13002 |  1:24:19s
+epoch 83 | loss: 0.22144 | train_accuracy: 0.9099  | valid_accuracy: 0.14841 |  1:25:19s
+epoch 84 | loss: 0.23947 | train_accuracy: 0.9081  | valid_accuracy: 0.06746 |  1:26:20s
+epoch 85 | loss: 0.22789 | train_accuracy: 0.90902 | valid_accuracy: 0.12403 |  1:27:20s
+epoch 86 | loss: 0.22389 | train_accuracy: 0.90934 | valid_accuracy: 0.10863 |  1:28:21s
+epoch 87 | loss: 0.35949 | train_accuracy: 0.86974 | valid_accuracy: 0.16184 |  1:29:23s
+epoch 88 | loss: 0.27147 | train_accuracy: 0.89882 | valid_accuracy: 0.16666 |  1:30:24s
+epoch 89 | loss: 0.24417 | train_accuracy: 0.90244 | valid_accuracy: 0.16904 |  1:31:25s
+epoch 90 | loss: 0.23802 | train_accuracy: 0.90402 | valid_accuracy: 0.11371 |  1:32:25s
+epoch 91 | loss: 0.23464 | train_accuracy: 0.90155 | valid_accuracy: 0.16661 |  1:33:25s
+epoch 92 | loss: 0.23207 | train_accuracy: 0.90518 | valid_accuracy: 0.19687 |  1:34:26s
+epoch 93 | loss: 0.23151 | train_accuracy: 0.90553 | valid_accuracy: 0.15751 |  1:35:27s
+epoch 94 | loss: 0.23216 | train_accuracy: 0.90461 | valid_accuracy: 0.09941 |  1:36:28s
+epoch 95 | loss: 0.23119 | train_accuracy: 0.90521 | valid_accuracy: 0.09349 |  1:37:29s
+epoch 96 | loss: 0.22848 | train_accuracy: 0.90658 | valid_accuracy: 0.09038 |  1:38:30s
+epoch 97 | loss: 0.2263  | train_accuracy: 0.90541 | valid_accuracy: 0.05348 |  1:39:31s
+epoch 98 | loss: 0.2258  | train_accuracy: 0.90628 | valid_accuracy: 0.05323 |  1:40:31s
+epoch 99 | loss: 0.22598 | train_accuracy: 0.90774 | valid_accuracy: 0.08928 |  1:41:32s
+epoch 100| loss: 0.22477 | train_accuracy: 0.90802 | valid_accuracy: 0.09217 |  1:42:33s
+epoch 101| loss: 0.25379 | train_accuracy: 0.89857 | valid_accuracy: 0.14591 |  1:43:35s
+epoch 102| loss: 0.2503  | train_accuracy: 0.90351 | valid_accuracy: 0.074   |  1:44:36s
+epoch 103| loss: 0.24199 | train_accuracy: 0.90278 | valid_accuracy: 0.06356 |  1:45:37s
+epoch 104| loss: 0.23313 | train_accuracy: 0.90465 | valid_accuracy: 0.14682 |  1:46:38s
+epoch 105| loss: 0.22856 | train_accuracy: 0.90572 | valid_accuracy: 0.11232 |  1:47:39s
+epoch 106| loss: 0.22911 | train_accuracy: 0.9061  | valid_accuracy: 0.19308 |  1:48:40s
+epoch 107| loss: 0.23865 | train_accuracy: 0.9036  | valid_accuracy: 0.17148 |  1:49:41s
+epoch 108| loss: 0.2339  | train_accuracy: 0.90578 | valid_accuracy: 0.17218 |  1:50:42s
+epoch 109| loss: 0.23002 | train_accuracy: 0.9053  | valid_accuracy: 0.15632 |  1:51:43s
+epoch 110| loss: 0.23608 | train_accuracy: 0.90522 | valid_accuracy: 0.16736 |  1:52:43s
+epoch 111| loss: 0.23182 | train_accuracy: 0.90735 | valid_accuracy: 0.2193  |  1:53:44s
+epoch 112| loss: 0.22812 | train_accuracy: 0.90637 | valid_accuracy: 0.16212 |  1:54:44s
+epoch 113| loss: 0.22737 | train_accuracy: 0.90728 | valid_accuracy: 0.16465 |  1:55:44s
+
+Early stopping occurred at epoch 113 with best_epoch = 13 and best_valid_accuracy = 0.28164
+Successfully saved model at modelTabNet.zip
+FINAL TEST SCORE FOR : 0.9038040231029676
+              precision    recall  f1-score   support
+
+           0       0.72      1.00      0.84     21989
+           1       0.96      1.00      0.98     21815
+           2       0.94      1.00      0.97     22158
+           3       1.00      0.98      0.99     22042
+           4       1.00      1.00      1.00     22134
+           5       0.98      0.96      0.97     22227
+           6       0.78      0.24      0.37     22181
+           7       0.73      0.90      0.81     22149
+           8       0.96      0.98      0.97     22181
+           9       1.00      0.98      0.99     22048
+
+    accuracy                           0.90    220924
+   macro avg       0.91      0.90      0.89    220924
+weighted avg       0.91      0.90      0.89    220924
+
+Elements wrong classified: 21252; Elements correct: 199672
+Desempenho tabnet - Conjunto de Teste
+ Taxa de Acerto: 90.38%
+ Precisão: 90.65%
+ Sensibilidade: 90.38%
+ Medida F1: 88.77%
+balanced_accuracy
+0.9041526633288953

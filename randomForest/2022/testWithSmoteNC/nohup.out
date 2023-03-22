@@ -1,0 +1,79 @@
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+[INFO] Before: object | After: float64
+catIndexes ---------------
+[1, 5]
+['service', 'conn_state']
+Index(['proto', 'service', 'duration', 'orig_bytes', 'resp_bytes',
+       'conn_state', 'missed_bytes', 'history', 'orig_pkts', 'orig_ip_bytes',
+       'resp_pkts', 'resp_ip_bytes', 'flow_duration', 'fwd_pkts_tot',
+       'bwd_pkts_tot', 'fwd_data_pkts_tot', 'bwd_data_pkts_tot',
+       'fwd_pkts_per_sec', 'bwd_pkts_per_sec', 'flow_pkts_per_sec',
+       'down_up_ratio', 'fwd_header_size_tot', 'fwd_header_size_min',
+       'fwd_header_size_max', 'bwd_header_size_tot', 'bwd_header_size_min',
+       'bwd_header_size_max', 'flow_FIN_flag_count', 'flow_SYN_flag_count',
+       'flow_RST_flag_count', 'fwd_PSH_flag_count', 'bwd_PSH_flag_count',
+       'flow_ACK_flag_count', 'fwd_pkts_payload.min', 'fwd_pkts_payload.max',
+       'fwd_pkts_payload.tot', 'fwd_pkts_payload.avg', 'fwd_pkts_payload.std',
+       'bwd_pkts_payload.min', 'bwd_pkts_payload.max', 'bwd_pkts_payload.tot',
+       'bwd_pkts_payload.avg', 'bwd_pkts_payload.std', 'flow_pkts_payload.min',
+       'flow_pkts_payload.max', 'flow_pkts_payload.tot',
+       'flow_pkts_payload.avg', 'flow_pkts_payload.std', 'fwd_iat.min',
+       'fwd_iat.max', 'fwd_iat.tot', 'fwd_iat.avg', 'fwd_iat.std',
+       'bwd_iat.min', 'bwd_iat.max', 'bwd_iat.tot', 'bwd_iat.avg',
+       'bwd_iat.std', 'flow_iat.min', 'flow_iat.max', 'flow_iat.tot',
+       'flow_iat.avg', 'flow_iat.std', 'payload_bytes_per_second',
+       'fwd_subflow_pkts', 'bwd_subflow_pkts', 'fwd_subflow_bytes',
+       'bwd_subflow_bytes', 'fwd_bulk_bytes', 'bwd_bulk_bytes',
+       'fwd_bulk_packets', 'bwd_bulk_packets', 'fwd_bulk_rate',
+       'bwd_bulk_rate', 'active.min', 'active.max', 'active.tot', 'active.avg',
+       'active.std', 'idle.min', 'idle.max', 'idle.tot', 'idle.avg',
+       'idle.std', 'fwd_init_window_size', 'bwd_init_window_size',
+       'fwd_last_window_size', 'bwd_last_window_size', 'type'],
+      dtype='object')
+comecou smote
+acabou smote
+service
+conn_state
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99     21989
+           1       1.00      1.00      1.00     21815
+           2       0.94      1.00      0.97     22158
+           3       1.00      0.98      0.99     22042
+           4       1.00      1.00      1.00     22134
+           5       1.00      0.99      0.99     22227
+           6       0.97      0.71      0.81     22181
+           7       0.79      0.96      0.86     22149
+           8       0.99      1.00      0.99     22181
+           9       1.00      1.00      1.00     22048
+
+    accuracy                           0.96    220924
+   macro avg       0.97      0.96      0.96    220924
+weighted avg       0.97      0.96      0.96    220924
+
+Elements wrong classified: 8416; Elements correct: 212508
+Desempenho Random Forest - Conjunto de Teste
+ Taxa de Acerto: 96.19%
+ Precisão: 96.6%
+ Sensibilidade: 96.19%
+ Medida F1: 96.1%
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99     21989
+           1       1.00      1.00      1.00     21815
+           2       0.94      1.00      0.97     22158
+           3       1.00      0.98      0.99     22042
+           4       1.00      1.00      1.00     22134
+           5       1.00      0.99      0.99     22227
+           6       0.97      0.71      0.81     22181
+           7       0.79      0.96      0.86     22149
+           8       0.99      1.00      0.99     22181
+           9       1.00      1.00      1.00     22048
+
+    accuracy                           0.96    220924
+   macro avg       0.97      0.96      0.96    220924
+weighted avg       0.97      0.96      0.96    220924
+
+balanced_accuracy
+0.9620380697814028
