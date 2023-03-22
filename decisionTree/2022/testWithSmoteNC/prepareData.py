@@ -88,12 +88,12 @@ def aplica_SMOTENC(df, label, categorical_indices = []):
     X = df.copy()
     X=X.drop(columns=[label])
     y=df[label].copy()
-    print("comecou smote")
+    print(f"comecou smote - {df.size}")
     smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=random_state, sampling_strategy = 'minority')
-    print("acabou smote")
     X_resampled, y_resampled = smote_nc.fit_resample(X, y)
     X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
     X_resampled[label]=y_resampled
+    print(f"acabou smote - {X_resampled.size}")
     return X_resampled
 
 

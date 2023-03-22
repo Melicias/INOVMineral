@@ -67,22 +67,27 @@ def calcula_metricas(nome_modelo, ground_truth, predicao):
   print(f' Taxa de Acerto: {np.round(acc*100,2)}%\n Precisão: {np.round(precision*100,2)}%')
   print(f' Sensibilidade: {np.round(recall*100,2)}%\n Medida F1: {np.round(f1*100,2)}%')
   #print(f' Área sob a Curva: {np.round(auc_sklearn*100,2)}%')
-  
+
 def aplica_SMOTENC(df, label, categorical_indices = []):
     X = df.copy()
-    X=X.drop(columns=[label])
+    X=X.drop(columns=[label,"Attack_label"])
     y=df[label].copy()
-    print("comecou smote")
-    smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=random_state)
-    print("acabou smote")
-    X_resampled, y_resampled = smote_nc.fit_resample(X, y)
+    print(f"comecou smote - {df.size}")
+    smote_nc = SMOTENC(categorical_features=categorical_indices, random_state=random_state,sampling_strategy="minority")
+    X_resampled = X
+    y_resampled = y
+    for labels in np.unique(y):
+        X_resampled, y_resampled= smote_nc.fit_resample(X_resampled, y_resampled)
+    #X_resampled, y_resampled = smote_nc.fit_resample(X, y)
     X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
     X_resampled[label]=y_resampled
+    print(f"acabou smote - {X_resampled.size}")
+    print(X_resampled.columns)
     return X_resampled
 
 #sys.setrecursionlimit(1000000) 
 
-df = pd.read_csv('../../data/DNN-EdgeIIoT-dataset_SMALL.csv', low_memory=False)
+df = pd.read_csv('../../../data/DNN-EdgeIIoT-dataset.csv', low_memory=False)
 drop_columns = ["frame.time", "ip.src_host", "ip.dst_host", "arp.src.proto_ipv4","arp.dst.proto_ipv4", 
          "http.file_data","http.request.full_uri","icmp.transmit_timestamp",
          "http.request.uri.query", "tcp.options","tcp.payload","tcp.srcport",
@@ -91,6 +96,23 @@ drop_columns = ["frame.time", "ip.src_host", "ip.dst_host", "arp.src.proto_ipv4"
 df.drop(drop_columns, axis=1, inplace=True)
 df.dropna(axis=0, how='any', inplace=True)
 df.drop_duplicates(subset=None, keep="first", inplace=True)
+df = shuffle(df)
+
+#for the SMOTE part, so it can fit in 16gb of RAM
+df_before = df
+df_attacks = df[df["Attack_type"] != "Normal"]
+
+print(len(df))
+df_normal = df[df["Attack_type"] == "Normal"]
+print(len(df_normal))
+df_normal = shuffle(df_normal)
+df_normal = df_normal[:250000]
+#df_normal.head(len(df) - 800000)
+#df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
+print(len(df_normal))
+df = pd.concat([df_attacks,df_normal])
+
+
 df = shuffle(df)
 
 
@@ -116,7 +138,7 @@ print(catIndexs)
 print(categorical_columns)
 print(df.columns)
 
-df = aplica_SMOTENC(df, "type", categorical_indices = catIndexs)
+df = aplica_SMOTENC(df, "Attack_type", categorical_indices = catIndexs)
 
 colunas_one_hot = {}
 for coluna in categorical_columns:
@@ -131,22 +153,6 @@ featuresAfterOneHot = [ col for col in df.columns if col not in ["Attack_label"]
 finalFeaturesCat = [item for item in featuresAfterOneHot if item not in featuresFromStart]
 
 
-
-#for the SMOTE part, so it can fit in 16gb of RAM
-df_before = df
-df_attacks = df[df["Attack_type"] != "Normal"]
-
-print(len(df))
-df_normal = df[df["Attack_type"] == "Normal"]
-print(len(df_normal))
-df_normal = shuffle(df_normal)
-df_normal = df_normal[:150000]
-#df_normal.head(len(df) - 800000)
-#df_normal.drop(df_normal.loc[0:800000].index, inplace=True)
-print(len(df_normal))
-df = pd.concat([df_attacks,df_normal])
-
-
 df = shuffle(df)
 n_total = len(df)
 
@@ -157,6 +163,7 @@ for fe in finalFeaturesCat:
     catIndexs.append(features.index(fe))
 
 le = LabelEncoder()
+print(df.columns)
 le.fit(df["Attack_type"].values)
 
 train_val_indices, test_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
@@ -183,8 +190,8 @@ X_test = model_norm.transform(X_test)
 
 #sm = SMOTE(random_state=random_state,n_jobs=-1)
 #X_train, y_train = sm.fit_resample(X_train, y_train)
-sm = SMOTENC(random_state=42, categorical_features=catIndexs)
-X_res, y_res = sm.fit_resample(X_train, y_train)
+#sm = SMOTENC(random_state=42, categorical_features=catIndexs)
+#X_res, y_res = sm.fit_resample(X_train, y_train)
 
 
 # Import the model we are using
@@ -223,3 +230,8 @@ dot_data = tree.export_graphviz(clf, out_file='treeMulti.dot', feature_names = f
 graph.write_png('treeMulti.png')
 
 print(classification_report(y_test, predictions))
+
+
+from sklearn.metrics import balanced_accuracy_score
+print("balanced_accuracy")
+print(balanced_accuracy_score(y_test, predictions))
