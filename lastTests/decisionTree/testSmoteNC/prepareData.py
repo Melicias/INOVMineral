@@ -36,6 +36,16 @@ np.random.seed(random_state)
 df_train = pd.read_csv('../../../data/EdgeIIot_train.csv', low_memory=False)
 df_test = pd.read_csv('../../../data/EdgeIIot_test.csv', low_memory=False)
 
+#for the SMOTE part, so it can fit in 16gb of RAM
+df_before = df_train
+df_attacks = df_train[df_train["Attack_type"] != "Normal"]
+
+df_normal = df_train[df_train["Attack_type"] == "Normal"]
+df_normal = shuffle(df_normal)
+df_normal = df_normal[:100000]
+df_train = pd.concat([df_attacks,df_normal])
+df_train = shuffle(df_train)
+
 functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
 
 #print(df_train["Attack_type"].value_counts())
@@ -57,6 +67,21 @@ for cc in categorical_columns:
 
 functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
 
+#join the 2 df with keys so we can split it
+df = pd.concat([df_train,df_test],keys=[0,1])
+
+colunas_one_hot = {}
+for coluna in categorical_columns:
+    codes, uniques = pd.factorize(df[coluna].unique())
+    colunas_one_hot[coluna] = {"uniques": uniques, "codes":codes}
+    df[coluna] = df[coluna].replace(colunas_one_hot[coluna]["uniques"], colunas_one_hot[coluna]["codes"])
+    
+df = pd.get_dummies(data=df, columns=categorical_columns)
+
+df_train,df_test = df.xs(0),df.xs(1)
+
+features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
+
 #Encoding
 le = LabelEncoder()
 le.fit(df_train["Attack_type"].values)
@@ -74,11 +99,6 @@ model_norm = standScaler.fit(X_train)
 
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
-
-
-#FAZER SMOTE AQUI
-sm = SMOTE(random_state=random_state,n_jobs=-1)
-X_train, y_train = sm.fit_resample(X_train, y_train)
 
 
 start_time = functions.start_measures()
