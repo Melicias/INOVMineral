@@ -33,18 +33,8 @@ random_state=42
 np.random.seed(random_state)
 
 
-df_train = pd.read_csv('../../../data/EdgeIIot_train.csv', low_memory=False)
-df_test = pd.read_csv('../../../data/EdgeIIot_test.csv', low_memory=False)
-
-#for the SMOTE part, so it can fit in 16gb of RAM
-df_before = df_train
-df_attacks = df_train[df_train["Attack_type"] != "Normal"]
-
-df_normal = df_train[df_train["Attack_type"] == "Normal"]
-df_normal = shuffle(df_normal)
-df_normal = df_normal[:100000]
-df_train = pd.concat([df_attacks,df_normal])
-df_train = shuffle(df_train)
+df_train = pd.read_csv('../../../data/EdgeIIot_train_dummies.csv', low_memory=False)
+df_test = pd.read_csv('../../../data/EdgeIIot_test_dummies.csv', low_memory=False)
 
 functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
 
@@ -55,32 +45,17 @@ df_test.drop(["Attack_label"], axis=1, inplace=True)
 
 features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
-featuresFromStart = [ col for col in df_train.columns if col not in ["Attack_type"]]
-categorical_columns = []
-for col in df_train.columns[df_train.dtypes == object]:
-    if col != "Attack_type":
-        categorical_columns.append(col)
-        
-catIndexs = []
-for cc in categorical_columns:
-    catIndexs.append(featuresFromStart.index(cc))
 
-functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
+#for the SMOTE part, so it can fit in 16gb of RAM
+df_before = df_train
+df_attacks = df_train[df_train["Attack_type"] != "Normal"]
 
-#join the 2 df with keys so we can split it
-df = pd.concat([df_train,df_test],keys=[0,1])
+df_normal = df_train[df_train["Attack_type"] == "Normal"]
+df_normal = shuffle(df_normal)
+df_normal = df_normal[:750000]
+df_train = pd.concat([df_attacks,df_normal])
+df_train = shuffle(df_train)
 
-colunas_one_hot = {}
-for coluna in categorical_columns:
-    codes, uniques = pd.factorize(df[coluna].unique())
-    colunas_one_hot[coluna] = {"uniques": uniques, "codes":codes}
-    df[coluna] = df[coluna].replace(colunas_one_hot[coluna]["uniques"], colunas_one_hot[coluna]["codes"])
-    
-df = pd.get_dummies(data=df, columns=categorical_columns)
-
-df_train,df_test = df.xs(0),df.xs(1)
-
-features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
 #Encoding
 le = LabelEncoder()
@@ -101,15 +76,19 @@ X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
 
 
+#FAZER SMOTE AQUI
+sm = SMOTE(random_state=random_state,n_jobs=-1)
+X_train, y_train = sm.fit_resample(X_train, y_train)
+
+
 start_time = functions.start_measures()
 
-from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = RandomForestClassifier(n_estimators = 10, random_state = random_state)
+clf = tree.DecisionTreeClassifier()
 # Train the model on training data
 clf.fit(X_train, y_train)
 
-joblib.dump(clf, "./modelRandomForest.joblib")
+joblib.dump(clf, "./modelDecisionTree.joblib")
 #loaded_rf = joblib.load("./random_forest.joblib")
 
 predictions = clf.predict(X_test)
