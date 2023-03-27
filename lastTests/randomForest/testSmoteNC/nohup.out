@@ -1,0 +1,177 @@
+---
+Lines: 536515
+Columns: 48 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['http.request.method', 'http.referer', 'http.request.version', 'dns.qry.name.len', 'mqtt.conack.flags', 'mqtt.protoname', 'mqtt.topic', 'Attack_type']
+
+--- Details for categorical columns ---
+http.request.method: 
+['0' '0.0' 'GET' 'POST' 'TRACE' 'OPTIONS' 'PROPFIND' 'PUT' 'SEARCH']
+
+http.referer: 
+['0' '0.0' '127.0.0.1'
+ '() { _; } >_[$($())] { echo 93e4r0-CVE-2014-6278: true; echo;echo; }'
+ 'TESTING_PURPOSES_ONLY']
+
+http.request.version: 
+['0' '0.0' 'HTTP/1.1' 'script>alert(1)/script><\\" HTTP/1.1' 'HTTP/1.0'
+ "name=a><input name=i value=XSS>&lt;script>alert('Vulnerable')</script> HTTP/1.1"
+ '-al&_PHPLIB[libdir]=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ '-al&ABSOLUTE_PATH_STUDIP=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ '/etc/passwd|?data=Download HTTP/1.1' 'By Dr HTTP/1.1' '-a HTTP/1.1'
+ 'Src=javascript:alert(\'Vulnerable\')><Img Src=\\" HTTP/1.1' '> HTTP/1.1']
+
+dns.qry.name.len: 
+['0.0' '0' '3.debian.pool.ntp.org' '1.0' '0.debian.pool.ntp.org'
+ '2.debian.pool.ntp.org' '1.debian.pool.ntp.org' 'raspberrypi.local']
+
+mqtt.conack.flags: 
+['0.0' '0x00000000' '0' '1461383' '1461589' '1574359' '1574358']
+
+mqtt.protoname: 
+['0.0' '0' 'MQTT']
+
+mqtt.topic: 
+['0.0' '0' 'Temperature_and_Humidity']
+
+Attack_type: 
+['DDoS_HTTP' 'DDoS_UDP' 'Port_Scanning' 'Normal' 'Password' 'XSS'
+ 'DDoS_TCP' 'DDoS_ICMP' 'Backdoor' 'SQL_injection' 'Uploading'
+ 'Vulnerability_scanner' 'Fingerprinting' 'Ransomware' 'MITM']
+
+   Data Type                Column Name  \
+0    float64                 arp.opcode   
+1    float64                arp.hw.size   
+2    float64              icmp.checksum   
+3    float64                icmp.seq_le   
+4    float64                icmp.unused   
+5    float64        http.content_length   
+6     object        http.request.method   
+7     object               http.referer   
+8     object       http.request.version   
+9    float64              http.response   
+10   float64              http.tls_port   
+11   float64                    tcp.ack   
+12   float64                tcp.ack_raw   
+13   float64               tcp.checksum   
+14   float64         tcp.connection.fin   
+15   float64         tcp.connection.rst   
+16   float64         tcp.connection.syn   
+17   float64      tcp.connection.synack   
+18   float64                  tcp.flags   
+19   float64              tcp.flags.ack   
+20   float64                    tcp.len   
+21   float64                    tcp.seq   
+22   float64                 udp.stream   
+23   float64             udp.time_delta   
+24   float64               dns.qry.name   
+25    object           dns.qry.name.len   
+26   float64                 dns.qry.qu   
+27   float64               dns.qry.type   
+28   float64         dns.retransmission   
+29   float64     dns.retransmit_request   
+30   float64  dns.retransmit_request_in   
+31    object          mqtt.conack.flags   
+32   float64     mqtt.conflag.cleansess   
+33   float64              mqtt.conflags   
+34   float64              mqtt.hdrflags   
+35   float64                   mqtt.len   
+36   float64        mqtt.msg_decoded_as   
+37   float64               mqtt.msgtype   
+38   float64             mqtt.proto_len   
+39    object             mqtt.protoname   
+40    object                 mqtt.topic   
+41   float64             mqtt.topic_len   
+42   float64                   mqtt.ver   
+43   float64                  mbtcp.len   
+44   float64             mbtcp.trans_id   
+45   float64              mbtcp.unit_id   
+46     int64               Attack_label   
+47    object                Attack_type   
+
+                                        Unique Values  
+0                                     [0.0, 1.0, 2.0]  
+1                                          [0.0, 6.0]  
+2   [0.0, 39813.0, 10638.0, 3216.0, 65447.0, 25047...  
+3   [0.0, 29461.0, 27271.0, 26788.0, 20657.0, 8535...  
+4                                               [0.0]  
+5   [0.0, 164.0, 36.0, 298.0, 277.0, 5.0, 57.0, 12...  
+6   [0, 0.0, GET, POST, TRACE, OPTIONS, PROPFIND, ...  
+7   [0, 0.0, 127.0.0.1, () { _; } >_[$($())] { ech...  
+8   [0, 0.0, HTTP/1.1, script>alert(1)/script><\" ...  
+9                                          [0.0, 1.0]  
+10                                              [0.0]  
+11  [0.0, 1.0, 15.0, 2.0, 152201873.0, 56.0, 486.0...  
+12  [0.0, 2069710094.0, 1614372990.0, 3475944524.0...  
+13  [9780.0, 0.0, 17128.0, 17936.0, 57910.0, 9376....  
+14                                         [0.0, 1.0]  
+15                                         [1.0, 0.0]  
+16                                         [0.0, 1.0]  
+17                                         [0.0, 1.0]  
+18  [4.0, 0.0, 20.0, 24.0, 17.0, 18.0, 2.0, 16.0, ...  
+19                                         [0.0, 1.0]  
+20  [0.0, 4.0, 299.0, 14.0, 120.0, 480.0, 149.0, 3...  
+21  [1.0, 0.0, 5.0, 120.0, 461441.0, 429.0, 6.0, 3...  
+22  [0.0, 1857147.0, 2584360.0, 2630367.0, 2544572...  
+23  [0.0, 346.0, 255.0, 375.0, 12.0, 438.0, 505.0,...  
+24  [0.0, 1402383.0, 951261.0, 431634.0, 1506598.0...  
+25  [0.0, 0, 3.debian.pool.ntp.org, 1.0, 0.debian....  
+26  [0.0, 21.0, 848.0, 243.0, 954.0, 517.0, 731.0,...  
+27                                              [0.0]  
+28                                   [0.0, 1.0, 28.0]  
+29                                         [0.0, 1.0]  
+30                                         [0.0, 1.0]  
+31  [0.0, 0x00000000, 0, 1461383, 1461589, 1574359...  
+32                                         [0.0, 1.0]  
+33                                         [0.0, 2.0]  
+34                     [0.0, 32.0, 16.0, 224.0, 48.0]  
+35                             [0.0, 2.0, 12.0, 39.0]  
+36                                              [0.0]  
+37                         [0.0, 2.0, 1.0, 14.0, 3.0]  
+38                                         [0.0, 4.0]  
+39                                     [0.0, 0, MQTT]  
+40                 [0.0, 0, Temperature_and_Humidity]  
+41                                        [0.0, 24.0]  
+42                                         [0.0, 4.0]  
+43                  [0.0, 21.0, 9.0, 27.0, 6.0, 17.0]  
+44  [0.0, 48.0, 3.0, 130.0, 115.0, 47.0, 147.0, 62...  
+45                                    [0.0, 1.0, 2.0]  
+46                                             [1, 0]  
+47  [DDoS_HTTP, DDoS_UDP, Port_Scanning, Normal, P...  
+Started SMOTENC; size of df - 25216205 
+finished SMOTENC; size of df - 70500000
+----- Time and memory usage -----
+(current, peak) (3177644, 245265018)
+--- 8.56 segundos ---
+------------------------------------
+--- Performance of decision tree ---
+Accuracy : 98.02%
+Precision: 98.02%
+Recall: 98.02%
+F1-score: 98.01%
+Balanced accuracy: 90.62%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.96      0.97      4782
+           1       0.88      0.95      0.92      9628
+           2       1.00      1.00      1.00     13501
+           3       1.00      1.00      1.00     10009
+           4       1.00      1.00      1.00     24601
+           5       0.74      0.68      0.71       146
+           6       1.00      1.00      1.00        76
+           7       1.00      1.00      1.00    272776
+           8       0.79      0.80      0.80     10108
+           9       0.96      0.99      0.98      4062
+          10       0.95      0.92      0.93      1926
+          11       0.82      0.83      0.82     10071
+          12       0.80      0.77      0.79      7273
+          13       0.98      0.95      0.96      9940
+          14       0.86      0.73      0.79      3035
+
+    accuracy                           0.98    381934
+   macro avg       0.92      0.91      0.91    381934
+weighted avg       0.98      0.98      0.98    381934
+
