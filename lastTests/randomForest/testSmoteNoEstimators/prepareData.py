@@ -52,7 +52,7 @@ df_attacks = df_train[df_train["Attack_type"] != "Normal"]
 
 df_normal = df_train[df_train["Attack_type"] == "Normal"]
 df_normal = shuffle(df_normal)
-df_normal = df_normal[:500000]
+df_normal = df_normal[:100000]
 df_train = pd.concat([df_attacks,df_normal])
 df_train = shuffle(df_train)
 
@@ -85,7 +85,7 @@ start_time = functions.start_measures()
 
 from sklearn.ensemble import RandomForestClassifier
 # Instantiate model with 1000 decision trees
-clf = RandomForestClassifier(n_estimators = 10, random_state = random_state)
+clf = RandomForestClassifier(random_state = random_state)
 # Train the model on training data
 clf.fit(X_train, y_train)
 
