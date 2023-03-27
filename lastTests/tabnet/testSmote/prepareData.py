@@ -61,12 +61,19 @@ df_train = shuffle(df_train)
 le = LabelEncoder()
 le.fit(df_train["Attack_type"].values)
 
+n_total = len(df_test)
+test_indices, valid_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
+
 X_train = df_train[features].values
 y_train = df_train["Attack_type"].values
 y_train = le.transform(y_train)
 
-X_test = df_test[features].values
-y_test = df_test["Attack_type"].values
+X_valid = df_test[features].values[valid_indices]
+y_valid = df_test["Attack_type"].values[valid_indices]
+y_valid = le.transform(y_valid)
+
+X_test = df_test[features].values[test_indices]
+y_test = df_test["Attack_type"].values[test_indices]
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
@@ -74,6 +81,7 @@ model_norm = standScaler.fit(X_train)
 
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
+X_valid = model_norm.transform(X_valid)
 
 
 #FAZER SMOTE AQUI
@@ -83,13 +91,30 @@ X_train, y_train = sm.fit_resample(X_train, y_train)
 
 start_time = functions.start_measures()
 
-# Instantiate model with 1000 decision trees
-clf = tree.DecisionTreeClassifier()
-# Train the model on training data
-clf.fit(X_train, y_train)
+clf = TabNetClassifier(
+    n_d=64, n_a=64, n_steps=5,
+    gamma=1.5, n_independent=2, n_shared=2,
+    cat_idxs=[],
+    cat_dims=[],
+    cat_emb_dim=1,
+    lambda_sparse=1e-4, momentum=0.3, clip_value=2.,
+    optimizer_fn=torch.optim.Adam,
+    optimizer_params=dict(lr=2e-2),
+    scheduler_params = {"gamma": 0.95, "step_size": 20},
+    scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
+)
 
-joblib.dump(clf, "./modelDecisionTree.joblib")
-#loaded_rf = joblib.load("./random_forest.joblib")
+max_epochs = 100 if not os.getenv("CI", False) else 2
+
+clf.fit(
+    X_train=X_train, y_train=y_train,
+    eval_set=[(X_train, y_train), (X_valid, y_valid)],
+    eval_name=['train', 'valid'],
+    max_epochs=max_epochs, patience=100,
+    batch_size=16384, virtual_batch_size=256
+)
+
+saved_filename = clf.save_model('modelTabNet')
 
 predictions = clf.predict(X_test)
 
