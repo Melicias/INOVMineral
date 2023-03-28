@@ -147,7 +147,7 @@ clf.fit(X_train, y_train,
 clf.save_model("XGBClassifier.json")
 
 
-predictions = np.array(clf.predict(X_valid))
+predictions = np.array(clf.predict(X_test))
 
 functions.stop_measures(start_time)
 
