@@ -120,14 +120,17 @@ clf = XGBClassifier(max_depth=8,
     #num_class= 2)
 
 
+"""
 clf.fit(X_train, y_train,
             eval_set=[(X_valid, y_valid)],
             early_stopping_rounds=40,
             verbose=10)
-clf.save_model("XGBClassifier.json")
+"""
+#clf.save_model("XGBClassifier.json")
+clf.load_model("XGBClassifier.json")
 
 
-predictions = np.array(clf.predict(X_valid))
+predictions = np.array(clf.predict(X_test))
 
 functions.stop_measures(start_time)
 
