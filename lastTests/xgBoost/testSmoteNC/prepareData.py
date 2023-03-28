@@ -111,32 +111,43 @@ X_valid = model_norm.transform(X_valid)
 
 start_time = functions.start_measures()
 
-clf = TabNetClassifier(
-    n_d=64, n_a=64, n_steps=5,
-    gamma=1.5, n_independent=2, n_shared=2,
-    cat_idxs=[],
-    cat_dims=[],
-    cat_emb_dim=1,
-    lambda_sparse=1e-4, momentum=0.3, clip_value=2.,
-    optimizer_fn=torch.optim.Adam,
-    optimizer_params=dict(lr=2e-2),
-    scheduler_params = {"gamma": 0.95, "step_size": 20},
-    scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
-)
+n_estimators = 100 if not os.getenv("CI", False) else 20
 
-max_epochs = 100 if not os.getenv("CI", False) else 2
+clf = XGBClassifier(max_depth=8,
+    learning_rate=0.1,
+    n_estimators=n_estimators,
+    verbosity=0,
+    silent=None,
+    #objective="multi:softmax",
+    objective="multi:softprob",
+    booster='gbtree',
+    n_jobs=1,
+    nthread=None,
+    gamma=0,
+    min_child_weight=1,
+    max_delta_step=0,
+    subsample=0.7,
+    colsample_bytree=1,
+    colsample_bylevel=1,
+    colsample_bynode=1,
+    reg_alpha=0,
+    reg_lambda=1,
+    scale_pos_weight=1,
+    base_score=0.5,
+    random_state=random_state,
+    seed=None,
+    num_class= (le.classes_).size)
+    #num_class= 2)
 
-clf.fit(
-    X_train=X_train, y_train=y_train,
-    eval_set=[(X_train, y_train), (X_valid, y_valid)],
-    eval_name=['train', 'valid'],
-    max_epochs=max_epochs, patience=100,
-    batch_size=16384, virtual_batch_size=256
-)
 
-saved_filename = clf.save_model('modelTabNet')
+clf.fit(X_train, y_train,
+            eval_set=[(X_valid, y_valid)],
+            early_stopping_rounds=40,
+            verbose=10)
+clf.save_model("XGBClassifier.json")
 
-predictions = clf.predict(X_test)
+
+predictions = np.array(clf.predict(X_valid))
 
 functions.stop_measures(start_time)
 

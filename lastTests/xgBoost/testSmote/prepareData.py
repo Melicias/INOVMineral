@@ -33,8 +33,18 @@ random_state=42
 np.random.seed(random_state)
 
 
-df_train = pd.read_csv('../../../data/EdgeIIot_train.csv', low_memory=False)
-df_test = pd.read_csv('../../../data/EdgeIIot_test.csv', low_memory=False)
+df_train = pd.read_csv('../../../data/EdgeIIot_train_dummies.csv', low_memory=False)
+df_test = pd.read_csv('../../../data/EdgeIIot_test_dummies.csv', low_memory=False)
+
+functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
+
+#print(df_train["Attack_type"].value_counts())
+
+df_train.drop(["Attack_label"], axis=1, inplace=True)
+df_test.drop(["Attack_label"], axis=1, inplace=True)
+
+features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
+
 
 #for the SMOTE part, so it can fit in 16gb of RAM
 df_before = df_train
@@ -46,41 +56,6 @@ df_normal = df_normal[:100000]
 df_train = pd.concat([df_attacks,df_normal])
 df_train = shuffle(df_train)
 
-functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
-
-#print(df_train["Attack_type"].value_counts())
-
-df_train.drop(["Attack_label"], axis=1, inplace=True)
-df_test.drop(["Attack_label"], axis=1, inplace=True)
-
-features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
-
-featuresFromStart = [ col for col in df_train.columns if col not in ["Attack_type"]]
-categorical_columns = []
-for col in df_train.columns[df_train.dtypes == object]:
-    if col != "Attack_type":
-        categorical_columns.append(col)
-        
-catIndexs = []
-for cc in categorical_columns:
-    catIndexs.append(featuresFromStart.index(cc))
-
-functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
-
-#join the 2 df with keys so we can split it
-df = pd.concat([df_train,df_test],keys=[0,1])
-
-colunas_one_hot = {}
-for coluna in categorical_columns:
-    codes, uniques = pd.factorize(df[coluna].unique())
-    colunas_one_hot[coluna] = {"uniques": uniques, "codes":codes}
-    df[coluna] = df[coluna].replace(colunas_one_hot[coluna]["uniques"], colunas_one_hot[coluna]["codes"])
-    
-df = pd.get_dummies(data=df, columns=categorical_columns)
-
-df_train,df_test = df.xs(0),df.xs(1)
-
-features = [ col for col in df_train.columns if col not in ["Attack_label"]+["Attack_type"]] 
 
 #Encoding
 le = LabelEncoder()
@@ -109,34 +84,50 @@ X_test = model_norm.transform(X_test)
 X_valid = model_norm.transform(X_valid)
 
 
+#FAZER SMOTE AQUI
+sm = SMOTE(random_state=random_state,n_jobs=-1)
+X_train, y_train = sm.fit_resample(X_train, y_train)
+
+
 start_time = functions.start_measures()
 
-clf = TabNetClassifier(
-    n_d=64, n_a=64, n_steps=5,
-    gamma=1.5, n_independent=2, n_shared=2,
-    cat_idxs=[],
-    cat_dims=[],
-    cat_emb_dim=1,
-    lambda_sparse=1e-4, momentum=0.3, clip_value=2.,
-    optimizer_fn=torch.optim.Adam,
-    optimizer_params=dict(lr=2e-2),
-    scheduler_params = {"gamma": 0.95, "step_size": 20},
-    scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
-)
+n_estimators = 100 if not os.getenv("CI", False) else 20
 
-max_epochs = 100 if not os.getenv("CI", False) else 2
+clf = XGBClassifier(max_depth=8,
+    learning_rate=0.1,
+    n_estimators=n_estimators,
+    verbosity=0,
+    silent=None,
+    #objective="multi:softmax",
+    objective="multi:softprob",
+    booster='gbtree',
+    n_jobs=1,
+    nthread=None,
+    gamma=0,
+    min_child_weight=1,
+    max_delta_step=0,
+    subsample=0.7,
+    colsample_bytree=1,
+    colsample_bylevel=1,
+    colsample_bynode=1,
+    reg_alpha=0,
+    reg_lambda=1,
+    scale_pos_weight=1,
+    base_score=0.5,
+    random_state=random_state,
+    seed=None,
+    num_class= (le.classes_).size)
+    #num_class= 2)
 
-clf.fit(
-    X_train=X_train, y_train=y_train,
-    eval_set=[(X_train, y_train), (X_valid, y_valid)],
-    eval_name=['train', 'valid'],
-    max_epochs=max_epochs, patience=100,
-    batch_size=16384, virtual_batch_size=256
-)
 
-saved_filename = clf.save_model('modelTabNet')
+clf.fit(X_train, y_train,
+            eval_set=[(X_valid, y_valid)],
+            early_stopping_rounds=40,
+            verbose=10)
+clf.save_model("XGBClassifier.json")
 
-predictions = clf.predict(X_test)
+
+predictions = np.array(clf.predict(X_valid))
 
 functions.stop_measures(start_time)
 

@@ -1,0 +1,283 @@
+---
+Lines: 536515
+Columns: 48 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['http.request.method', 'http.referer', 'http.request.version', 'dns.qry.name.len', 'mqtt.conack.flags', 'mqtt.protoname', 'mqtt.topic', 'Attack_type']
+
+--- Details for categorical columns ---
+http.request.method: 
+['0' '0.0' 'GET' 'POST' 'TRACE' 'OPTIONS' 'PROPFIND' 'PUT' 'SEARCH']
+
+http.referer: 
+['0' '0.0' '127.0.0.1'
+ '() { _; } >_[$($())] { echo 93e4r0-CVE-2014-6278: true; echo;echo; }'
+ 'TESTING_PURPOSES_ONLY']
+
+http.request.version: 
+['0' '0.0' 'HTTP/1.1' 'script>alert(1)/script><\\" HTTP/1.1' 'HTTP/1.0'
+ "name=a><input name=i value=XSS>&lt;script>alert('Vulnerable')</script> HTTP/1.1"
+ '-al&_PHPLIB[libdir]=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ '-al&ABSOLUTE_PATH_STUDIP=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ '/etc/passwd|?data=Download HTTP/1.1' 'By Dr HTTP/1.1' '-a HTTP/1.1'
+ 'Src=javascript:alert(\'Vulnerable\')><Img Src=\\" HTTP/1.1' '> HTTP/1.1']
+
+dns.qry.name.len: 
+['0.0' '0' '3.debian.pool.ntp.org' '1.0' '0.debian.pool.ntp.org'
+ '2.debian.pool.ntp.org' '1.debian.pool.ntp.org' 'raspberrypi.local']
+
+mqtt.conack.flags: 
+['0.0' '0x00000000' '0' '1461383' '1461589' '1574359' '1574358']
+
+mqtt.protoname: 
+['0.0' '0' 'MQTT']
+
+mqtt.topic: 
+['0.0' '0' 'Temperature_and_Humidity']
+
+Attack_type: 
+['DDoS_HTTP' 'DDoS_UDP' 'Port_Scanning' 'Normal' 'Password' 'XSS'
+ 'DDoS_TCP' 'DDoS_ICMP' 'Backdoor' 'SQL_injection' 'Uploading'
+ 'Vulnerability_scanner' 'Fingerprinting' 'Ransomware' 'MITM']
+
+   Data Type                Column Name  \
+0    float64                 arp.opcode   
+1    float64                arp.hw.size   
+2    float64              icmp.checksum   
+3    float64                icmp.seq_le   
+4    float64                icmp.unused   
+5    float64        http.content_length   
+6     object        http.request.method   
+7     object               http.referer   
+8     object       http.request.version   
+9    float64              http.response   
+10   float64              http.tls_port   
+11   float64                    tcp.ack   
+12   float64                tcp.ack_raw   
+13   float64               tcp.checksum   
+14   float64         tcp.connection.fin   
+15   float64         tcp.connection.rst   
+16   float64         tcp.connection.syn   
+17   float64      tcp.connection.synack   
+18   float64                  tcp.flags   
+19   float64              tcp.flags.ack   
+20   float64                    tcp.len   
+21   float64                    tcp.seq   
+22   float64                 udp.stream   
+23   float64             udp.time_delta   
+24   float64               dns.qry.name   
+25    object           dns.qry.name.len   
+26   float64                 dns.qry.qu   
+27   float64               dns.qry.type   
+28   float64         dns.retransmission   
+29   float64     dns.retransmit_request   
+30   float64  dns.retransmit_request_in   
+31    object          mqtt.conack.flags   
+32   float64     mqtt.conflag.cleansess   
+33   float64              mqtt.conflags   
+34   float64              mqtt.hdrflags   
+35   float64                   mqtt.len   
+36   float64        mqtt.msg_decoded_as   
+37   float64               mqtt.msgtype   
+38   float64             mqtt.proto_len   
+39    object             mqtt.protoname   
+40    object                 mqtt.topic   
+41   float64             mqtt.topic_len   
+42   float64                   mqtt.ver   
+43   float64                  mbtcp.len   
+44   float64             mbtcp.trans_id   
+45   float64              mbtcp.unit_id   
+46     int64               Attack_label   
+47    object                Attack_type   
+
+                                        Unique Values  
+0                                     [0.0, 1.0, 2.0]  
+1                                          [0.0, 6.0]  
+2   [0.0, 39813.0, 10638.0, 3216.0, 65447.0, 25047...  
+3   [0.0, 29461.0, 27271.0, 26788.0, 20657.0, 8535...  
+4                                               [0.0]  
+5   [0.0, 164.0, 36.0, 298.0, 277.0, 5.0, 57.0, 12...  
+6   [0, 0.0, GET, POST, TRACE, OPTIONS, PROPFIND, ...  
+7   [0, 0.0, 127.0.0.1, () { _; } >_[$($())] { ech...  
+8   [0, 0.0, HTTP/1.1, script>alert(1)/script><\" ...  
+9                                          [0.0, 1.0]  
+10                                              [0.0]  
+11  [0.0, 1.0, 15.0, 2.0, 152201873.0, 56.0, 486.0...  
+12  [0.0, 2069710094.0, 1614372990.0, 3475944524.0...  
+13  [9780.0, 0.0, 17128.0, 17936.0, 57910.0, 9376....  
+14                                         [0.0, 1.0]  
+15                                         [1.0, 0.0]  
+16                                         [0.0, 1.0]  
+17                                         [0.0, 1.0]  
+18  [4.0, 0.0, 20.0, 24.0, 17.0, 18.0, 2.0, 16.0, ...  
+19                                         [0.0, 1.0]  
+20  [0.0, 4.0, 299.0, 14.0, 120.0, 480.0, 149.0, 3...  
+21  [1.0, 0.0, 5.0, 120.0, 461441.0, 429.0, 6.0, 3...  
+22  [0.0, 1857147.0, 2584360.0, 2630367.0, 2544572...  
+23  [0.0, 346.0, 255.0, 375.0, 12.0, 438.0, 505.0,...  
+24  [0.0, 1402383.0, 951261.0, 431634.0, 1506598.0...  
+25  [0.0, 0, 3.debian.pool.ntp.org, 1.0, 0.debian....  
+26  [0.0, 21.0, 848.0, 243.0, 954.0, 517.0, 731.0,...  
+27                                              [0.0]  
+28                                   [0.0, 1.0, 28.0]  
+29                                         [0.0, 1.0]  
+30                                         [0.0, 1.0]  
+31  [0.0, 0x00000000, 0, 1461383, 1461589, 1574359...  
+32                                         [0.0, 1.0]  
+33                                         [0.0, 2.0]  
+34                     [0.0, 32.0, 16.0, 224.0, 48.0]  
+35                             [0.0, 2.0, 12.0, 39.0]  
+36                                              [0.0]  
+37                         [0.0, 2.0, 1.0, 14.0, 3.0]  
+38                                         [0.0, 4.0]  
+39                                     [0.0, 0, MQTT]  
+40                 [0.0, 0, Temperature_and_Humidity]  
+41                                        [0.0, 24.0]  
+42                                         [0.0, 4.0]  
+43                  [0.0, 21.0, 9.0, 27.0, 6.0, 17.0]  
+44  [0.0, 48.0, 3.0, 130.0, 115.0, 47.0, 147.0, 62...  
+45                                    [0.0, 1.0, 2.0]  
+46                                             [1, 0]  
+47  [DDoS_HTTP, DDoS_UDP, Port_Scanning, Normal, P...  
+Started SMOTENC; size of df - 25216205 
+finished SMOTENC; size of df - 70500000
+epoch 0  | loss: 1.17646 | train_accuracy: 0.78675 | valid_accuracy: 0.9258  |  0:00:47s
+epoch 1  | loss: 0.42788 | train_accuracy: 0.80863 | valid_accuracy: 0.93338 |  0:01:36s
+epoch 2  | loss: 0.40204 | train_accuracy: 0.81111 | valid_accuracy: 0.9335  |  0:02:24s
+epoch 3  | loss: 0.39063 | train_accuracy: 0.8151  | valid_accuracy: 0.93542 |  0:03:13s
+epoch 4  | loss: 0.38821 | train_accuracy: 0.81552 | valid_accuracy: 0.93564 |  0:04:01s
+epoch 5  | loss: 0.38124 | train_accuracy: 0.81589 | valid_accuracy: 0.93538 |  0:04:50s
+epoch 6  | loss: 0.37869 | train_accuracy: 0.83318 | valid_accuracy: 0.94198 |  0:05:39s
+epoch 7  | loss: 0.34667 | train_accuracy: 0.83387 | valid_accuracy: 0.94218 |  0:06:27s
+epoch 8  | loss: 0.34115 | train_accuracy: 0.8385  | valid_accuracy: 0.94354 |  0:07:16s
+epoch 9  | loss: 0.34515 | train_accuracy: 0.83799 | valid_accuracy: 0.94286 |  0:08:04s
+epoch 10 | loss: 0.34102 | train_accuracy: 0.8406  | valid_accuracy: 0.94409 |  0:08:53s
+epoch 11 | loss: 0.33231 | train_accuracy: 0.83537 | valid_accuracy: 0.94151 |  0:09:42s
+epoch 12 | loss: 0.3256  | train_accuracy: 0.82842 | valid_accuracy: 0.93989 |  0:10:31s
+epoch 13 | loss: 0.32021 | train_accuracy: 0.83701 | valid_accuracy: 0.9421  |  0:11:19s
+epoch 14 | loss: 0.33695 | train_accuracy: 0.8338  | valid_accuracy: 0.94156 |  0:12:08s
+epoch 15 | loss: 0.34076 | train_accuracy: 0.83066 | valid_accuracy: 0.94036 |  0:12:56s
+epoch 16 | loss: 0.33469 | train_accuracy: 0.83645 | valid_accuracy: 0.94223 |  0:13:45s
+epoch 17 | loss: 0.32456 | train_accuracy: 0.84532 | valid_accuracy: 0.94588 |  0:14:33s
+epoch 18 | loss: 0.32835 | train_accuracy: 0.8452  | valid_accuracy: 0.94544 |  0:15:21s
+epoch 19 | loss: 0.32999 | train_accuracy: 0.83911 | valid_accuracy: 0.94381 |  0:16:10s
+epoch 20 | loss: 0.3284  | train_accuracy: 0.84523 | valid_accuracy: 0.94544 |  0:16:58s
+epoch 21 | loss: 0.32357 | train_accuracy: 0.8405  | valid_accuracy: 0.94349 |  0:17:46s
+epoch 22 | loss: 0.31774 | train_accuracy: 0.84317 | valid_accuracy: 0.9444  |  0:18:35s
+epoch 23 | loss: 0.32591 | train_accuracy: 0.82838 | valid_accuracy: 0.93977 |  0:19:23s
+epoch 24 | loss: 0.31752 | train_accuracy: 0.83058 | valid_accuracy: 0.94081 |  0:20:13s
+epoch 25 | loss: 0.31471 | train_accuracy: 0.84604 | valid_accuracy: 0.94551 |  0:21:01s
+epoch 26 | loss: 0.31502 | train_accuracy: 0.8459  | valid_accuracy: 0.94575 |  0:21:49s
+epoch 27 | loss: 0.33821 | train_accuracy: 0.82998 | valid_accuracy: 0.94006 |  0:22:37s
+epoch 28 | loss: 0.35013 | train_accuracy: 0.82823 | valid_accuracy: 0.93944 |  0:23:26s
+epoch 29 | loss: 0.3375  | train_accuracy: 0.58571 | valid_accuracy: 0.85318 |  0:24:14s
+epoch 30 | loss: 0.37441 | train_accuracy: 0.83545 | valid_accuracy: 0.94195 |  0:25:02s
+epoch 31 | loss: 0.34002 | train_accuracy: 0.82631 | valid_accuracy: 0.93952 |  0:25:51s
+epoch 32 | loss: 0.32621 | train_accuracy: 0.83735 | valid_accuracy: 0.9429  |  0:26:40s
+epoch 33 | loss: 0.32114 | train_accuracy: 0.84588 | valid_accuracy: 0.94575 |  0:27:30s
+epoch 34 | loss: 0.31797 | train_accuracy: 0.83576 | valid_accuracy: 0.94235 |  0:28:18s
+epoch 35 | loss: 0.32343 | train_accuracy: 0.81949 | valid_accuracy: 0.93614 |  0:29:06s
+epoch 36 | loss: 0.33179 | train_accuracy: 0.81705 | valid_accuracy: 0.93638 |  0:29:55s
+epoch 37 | loss: 0.33127 | train_accuracy: 0.84377 | valid_accuracy: 0.94519 |  0:30:42s
+epoch 38 | loss: 0.32713 | train_accuracy: 0.83233 | valid_accuracy: 0.94026 |  0:31:32s
+epoch 39 | loss: 0.32445 | train_accuracy: 0.83004 | valid_accuracy: 0.94021 |  0:32:23s
+epoch 40 | loss: 0.32166 | train_accuracy: 0.84454 | valid_accuracy: 0.94487 |  0:33:14s
+epoch 41 | loss: 0.32028 | train_accuracy: 0.84289 | valid_accuracy: 0.94499 |  0:34:02s
+epoch 42 | loss: 0.33846 | train_accuracy: 0.83577 | valid_accuracy: 0.94244 |  0:34:50s
+epoch 43 | loss: 0.32621 | train_accuracy: 0.84351 | valid_accuracy: 0.94439 |  0:35:38s
+epoch 44 | loss: 0.31928 | train_accuracy: 0.84619 | valid_accuracy: 0.94583 |  0:36:25s
+epoch 45 | loss: 0.31792 | train_accuracy: 0.8161  | valid_accuracy: 0.93533 |  0:37:13s
+epoch 46 | loss: 0.31954 | train_accuracy: 0.829   | valid_accuracy: 0.94029 |  0:38:00s
+epoch 47 | loss: 0.33261 | train_accuracy: 0.83369 | valid_accuracy: 0.94105 |  0:38:47s
+epoch 48 | loss: 0.32485 | train_accuracy: 0.82808 | valid_accuracy: 0.93973 |  0:39:35s
+epoch 49 | loss: 0.32315 | train_accuracy: 0.84426 | valid_accuracy: 0.94523 |  0:40:22s
+epoch 50 | loss: 0.31982 | train_accuracy: 0.82938 | valid_accuracy: 0.94029 |  0:41:09s
+epoch 51 | loss: 0.3183  | train_accuracy: 0.84713 | valid_accuracy: 0.94626 |  0:41:57s
+epoch 52 | loss: 0.31793 | train_accuracy: 0.83389 | valid_accuracy: 0.94185 |  0:42:44s
+epoch 53 | loss: 0.318   | train_accuracy: 0.83435 | valid_accuracy: 0.94177 |  0:43:32s
+epoch 54 | loss: 0.31884 | train_accuracy: 0.81801 | valid_accuracy: 0.93623 |  0:44:22s
+epoch 55 | loss: 0.34527 | train_accuracy: 0.82786 | valid_accuracy: 0.9394  |  0:45:11s
+epoch 56 | loss: 0.32818 | train_accuracy: 0.84196 | valid_accuracy: 0.94392 |  0:45:59s
+epoch 57 | loss: 0.32311 | train_accuracy: 0.8323  | valid_accuracy: 0.94075 |  0:46:47s
+epoch 58 | loss: 0.3196  | train_accuracy: 0.83312 | valid_accuracy: 0.94118 |  0:47:34s
+epoch 59 | loss: 0.31952 | train_accuracy: 0.83453 | valid_accuracy: 0.94212 |  0:48:22s
+epoch 60 | loss: 0.31535 | train_accuracy: 0.83457 | valid_accuracy: 0.94215 |  0:49:09s
+epoch 61 | loss: 0.3136  | train_accuracy: 0.84674 | valid_accuracy: 0.94548 |  0:49:57s
+epoch 62 | loss: 0.31262 | train_accuracy: 0.83449 | valid_accuracy: 0.94212 |  0:50:44s
+epoch 63 | loss: 0.31229 | train_accuracy: 0.84816 | valid_accuracy: 0.94655 |  0:51:32s
+epoch 64 | loss: 0.31075 | train_accuracy: 0.82871 | valid_accuracy: 0.93989 |  0:52:19s
+epoch 65 | loss: 0.31152 | train_accuracy: 0.83467 | valid_accuracy: 0.94218 |  0:53:07s
+epoch 66 | loss: 0.30882 | train_accuracy: 0.83899 | valid_accuracy: 0.94341 |  0:53:54s
+epoch 67 | loss: 0.30777 | train_accuracy: 0.84859 | valid_accuracy: 0.94609 |  0:54:41s
+epoch 68 | loss: 0.30771 | train_accuracy: 0.82582 | valid_accuracy: 0.93948 |  0:55:29s
+epoch 69 | loss: 0.31223 | train_accuracy: 0.84254 | valid_accuracy: 0.94458 |  0:56:16s
+epoch 70 | loss: 0.30867 | train_accuracy: 0.84821 | valid_accuracy: 0.9464  |  0:57:04s
+epoch 71 | loss: 0.30453 | train_accuracy: 0.84784 | valid_accuracy: 0.94618 |  0:57:51s
+epoch 72 | loss: 0.3027  | train_accuracy: 0.84093 | valid_accuracy: 0.94439 |  0:58:39s
+epoch 73 | loss: 0.30401 | train_accuracy: 0.84795 | valid_accuracy: 0.94629 |  0:59:26s
+epoch 74 | loss: 0.30375 | train_accuracy: 0.84885 | valid_accuracy: 0.94656 |  1:00:13s
+epoch 75 | loss: 0.30179 | train_accuracy: 0.83976 | valid_accuracy: 0.94351 |  1:01:01s
+epoch 76 | loss: 0.30519 | train_accuracy: 0.84842 | valid_accuracy: 0.94654 |  1:01:48s
+epoch 77 | loss: 0.30318 | train_accuracy: 0.84319 | valid_accuracy: 0.94428 |  1:02:36s
+epoch 78 | loss: 0.30244 | train_accuracy: 0.84403 | valid_accuracy: 0.94536 |  1:03:24s
+epoch 79 | loss: 0.30389 | train_accuracy: 0.84941 | valid_accuracy: 0.94716 |  1:04:11s
+epoch 80 | loss: 0.30196 | train_accuracy: 0.83916 | valid_accuracy: 0.94312 |  1:04:58s
+epoch 81 | loss: 0.30095 | train_accuracy: 0.84947 | valid_accuracy: 0.94723 |  1:05:45s
+epoch 82 | loss: 0.30131 | train_accuracy: 0.84789 | valid_accuracy: 0.94612 |  1:06:33s
+epoch 83 | loss: 0.3008  | train_accuracy: 0.84173 | valid_accuracy: 0.94377 |  1:07:20s
+epoch 84 | loss: 0.30291 | train_accuracy: 0.83897 | valid_accuracy: 0.94335 |  1:08:08s
+epoch 85 | loss: 0.30666 | train_accuracy: 0.84042 | valid_accuracy: 0.94386 |  1:08:55s
+epoch 86 | loss: 0.32525 | train_accuracy: 0.83947 | valid_accuracy: 0.94322 |  1:09:43s
+epoch 87 | loss: 0.31109 | train_accuracy: 0.82509 | valid_accuracy: 0.93896 |  1:10:30s
+epoch 88 | loss: 0.30493 | train_accuracy: 0.84933 | valid_accuracy: 0.9465  |  1:11:18s
+epoch 89 | loss: 0.30314 | train_accuracy: 0.84806 | valid_accuracy: 0.9463  |  1:12:05s
+epoch 90 | loss: 0.30202 | train_accuracy: 0.84983 | valid_accuracy: 0.94682 |  1:12:52s
+epoch 91 | loss: 0.32461 | train_accuracy: 0.83507 | valid_accuracy: 0.94189 |  1:13:41s
+epoch 92 | loss: 0.32806 | train_accuracy: 0.83602 | valid_accuracy: 0.94242 |  1:14:30s
+epoch 93 | loss: 0.32605 | train_accuracy: 0.84185 | valid_accuracy: 0.94413 |  1:15:17s
+epoch 94 | loss: 0.32454 | train_accuracy: 0.84265 | valid_accuracy: 0.94479 |  1:16:05s
+epoch 95 | loss: 0.32433 | train_accuracy: 0.84276 | valid_accuracy: 0.94469 |  1:16:53s
+epoch 96 | loss: 0.324   | train_accuracy: 0.83507 | valid_accuracy: 0.94205 |  1:17:41s
+epoch 97 | loss: 0.32382 | train_accuracy: 0.83499 | valid_accuracy: 0.9416  |  1:18:31s
+epoch 98 | loss: 0.32323 | train_accuracy: 0.82595 | valid_accuracy: 0.93875 |  1:19:19s
+epoch 99 | loss: 0.32369 | train_accuracy: 0.83506 | valid_accuracy: 0.9422  |  1:20:06s
+Stop training because you reached max_epochs = 100 with best_epoch = 81 and best_valid_accuracy = 0.94723
+Successfully saved model at modelTabNet.zip
+----- Time and memory usage -----
+(current, peak) (3654644, 3242626769)
+--- 4840.12 segundos ---
+------------------------------------
+--- Performance of decision tree ---
+Accuracy : 94.71%
+Precision: 95.9%
+Recall: 94.71%
+F1-score: 94.18%
+Balanced accuracy: 73.34%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97      3859
+           1       0.74      0.94      0.83      7744
+           2       0.99      1.00      1.00     10777
+           3       0.82      1.00      0.90      7993
+           4       1.00      1.00      1.00     19708
+           5       1.00      0.07      0.13       112
+           6       1.00      1.00      1.00        63
+           7       1.00      1.00      1.00    218119
+           8       0.92      0.17      0.29      8130
+           9       1.00      0.50      0.67      3239
+          10       1.00      0.89      0.94      1561
+          11       0.44      0.92      0.60      8014
+          12       0.64      0.43      0.52      5790
+          13       0.94      0.85      0.89      7998
+          14       0.52      0.25      0.34      2440
+
+    accuracy                           0.95    305547
+   macro avg       0.87      0.73      0.74    305547
+weighted avg       0.96      0.95      0.94    305547
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+

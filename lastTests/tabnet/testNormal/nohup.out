@@ -209,3 +209,163 @@ Attack_type:
 94                                             [0, 1]  
 95                                             [1, 0]  
 96                                             [0, 1]  
+epoch 0  | loss: 0.36953 | train_accuracy: 0.92979 | valid_accuracy: 0.92973 |  0:02:18s
+epoch 1  | loss: 0.14828 | train_accuracy: 0.93209 | valid_accuracy: 0.93261 |  0:04:37s
+epoch 2  | loss: 0.1482  | train_accuracy: 0.93253 | valid_accuracy: 0.93284 |  0:06:56s
+epoch 3  | loss: 0.1446  | train_accuracy: 0.93313 | valid_accuracy: 0.933   |  0:09:16s
+epoch 4  | loss: 0.14142 | train_accuracy: 0.93286 | valid_accuracy: 0.93286 |  0:11:37s
+epoch 5  | loss: 0.13813 | train_accuracy: 0.93863 | valid_accuracy: 0.93824 |  0:13:57s
+epoch 6  | loss: 0.13242 | train_accuracy: 0.939   | valid_accuracy: 0.9391  |  0:16:18s
+epoch 7  | loss: 0.12984 | train_accuracy: 0.94338 | valid_accuracy: 0.94309 |  0:18:38s
+epoch 8  | loss: 0.12242 | train_accuracy: 0.94449 | valid_accuracy: 0.94477 |  0:20:56s
+epoch 9  | loss: 0.11397 | train_accuracy: 0.94692 | valid_accuracy: 0.94727 |  0:23:19s
+epoch 10 | loss: 0.11431 | train_accuracy: 0.89775 | valid_accuracy: 0.89808 |  0:25:38s
+epoch 11 | loss: 0.10906 | train_accuracy: 0.93015 | valid_accuracy: 0.92997 |  0:27:58s
+epoch 12 | loss: 0.10745 | train_accuracy: 0.94635 | valid_accuracy: 0.94621 |  0:30:18s
+epoch 13 | loss: 0.10666 | train_accuracy: 0.91267 | valid_accuracy: 0.91207 |  0:32:36s
+epoch 14 | loss: 0.10596 | train_accuracy: 0.94683 | valid_accuracy: 0.94664 |  0:34:58s
+epoch 15 | loss: 0.10526 | train_accuracy: 0.92478 | valid_accuracy: 0.92484 |  0:37:17s
+epoch 16 | loss: 0.1055  | train_accuracy: 0.94269 | valid_accuracy: 0.94229 |  0:39:37s
+epoch 17 | loss: 0.10974 | train_accuracy: 0.94511 | valid_accuracy: 0.94457 |  0:41:58s
+epoch 18 | loss: 0.10643 | train_accuracy: 0.94759 | valid_accuracy: 0.94741 |  0:44:21s
+epoch 19 | loss: 0.10459 | train_accuracy: 0.94844 | valid_accuracy: 0.94821 |  0:46:44s
+epoch 20 | loss: 0.1044  | train_accuracy: 0.94818 | valid_accuracy: 0.94787 |  0:49:03s
+epoch 21 | loss: 0.10573 | train_accuracy: 0.94709 | valid_accuracy: 0.94631 |  0:51:21s
+epoch 22 | loss: 0.10483 | train_accuracy: 0.94817 | valid_accuracy: 0.94809 |  0:53:42s
+epoch 23 | loss: 0.10443 | train_accuracy: 0.94855 | valid_accuracy: 0.94796 |  0:56:02s
+epoch 24 | loss: 0.10379 | train_accuracy: 0.9469  | valid_accuracy: 0.94652 |  0:58:20s
+epoch 25 | loss: 0.10962 | train_accuracy: 0.94766 | valid_accuracy: 0.94781 |  1:00:39s
+epoch 26 | loss: 0.10472 | train_accuracy: 0.94415 | valid_accuracy: 0.94384 |  1:02:58s
+epoch 27 | loss: 0.10384 | train_accuracy: 0.94632 | valid_accuracy: 0.94587 |  1:05:17s
+epoch 28 | loss: 0.10407 | train_accuracy: 0.9464  | valid_accuracy: 0.9455  |  1:07:36s
+epoch 29 | loss: 0.1035  | train_accuracy: 0.9472  | valid_accuracy: 0.9466  |  1:09:55s
+epoch 30 | loss: 0.1038  | train_accuracy: 0.94712 | valid_accuracy: 0.94647 |  1:12:16s
+epoch 31 | loss: 0.1032  | train_accuracy: 0.94818 | valid_accuracy: 0.94771 |  1:14:34s
+epoch 32 | loss: 0.10311 | train_accuracy: 0.94809 | valid_accuracy: 0.9477  |  1:16:52s
+epoch 33 | loss: 0.10319 | train_accuracy: 0.94781 | valid_accuracy: 0.94733 |  1:19:10s
+epoch 34 | loss: 0.10321 | train_accuracy: 0.94656 | valid_accuracy: 0.9464  |  1:21:30s
+epoch 35 | loss: 0.10576 | train_accuracy: 0.947   | valid_accuracy: 0.94667 |  1:23:48s
+epoch 36 | loss: 0.1052  | train_accuracy: 0.94197 | valid_accuracy: 0.94223 |  1:26:10s
+epoch 37 | loss: 0.10337 | train_accuracy: 0.94819 | valid_accuracy: 0.94821 |  1:28:28s
+epoch 38 | loss: 0.103   | train_accuracy: 0.94774 | valid_accuracy: 0.94729 |  1:30:47s
+epoch 39 | loss: 0.10294 | train_accuracy: 0.90093 | valid_accuracy: 0.90087 |  1:33:08s
+epoch 40 | loss: 0.20324 | train_accuracy: 0.92124 | valid_accuracy: 0.92192 |  1:35:25s
+epoch 41 | loss: 0.15162 | train_accuracy: 0.93902 | valid_accuracy: 0.93914 |  1:37:41s
+epoch 42 | loss: 0.12439 | train_accuracy: 0.94011 | valid_accuracy: 0.94009 |  1:39:58s
+epoch 43 | loss: 0.12148 | train_accuracy: 0.94053 | valid_accuracy: 0.94105 |  1:42:15s
+epoch 44 | loss: 0.11901 | train_accuracy: 0.94063 | valid_accuracy: 0.94087 |  1:44:34s
+epoch 45 | loss: 0.11855 | train_accuracy: 0.94075 | valid_accuracy: 0.94096 |  1:46:51s
+epoch 46 | loss: 0.11637 | train_accuracy: 0.94118 | valid_accuracy: 0.94098 |  1:49:11s
+epoch 47 | loss: 0.11359 | train_accuracy: 0.94607 | valid_accuracy: 0.94554 |  1:51:30s
+epoch 48 | loss: 0.11213 | train_accuracy: 0.94516 | valid_accuracy: 0.94503 |  1:53:48s
+epoch 49 | loss: 0.11055 | train_accuracy: 0.94711 | valid_accuracy: 0.94693 |  1:56:06s
+epoch 50 | loss: 0.11013 | train_accuracy: 0.94368 | valid_accuracy: 0.94334 |  1:58:22s
+epoch 51 | loss: 0.11006 | train_accuracy: 0.94764 | valid_accuracy: 0.94761 |  2:00:39s
+epoch 52 | loss: 0.10899 | train_accuracy: 0.94586 | valid_accuracy: 0.9454  |  2:02:55s
+epoch 53 | loss: 0.10864 | train_accuracy: 0.94545 | valid_accuracy: 0.94496 |  2:05:12s
+epoch 54 | loss: 0.10808 | train_accuracy: 0.94534 | valid_accuracy: 0.94512 |  2:07:28s
+epoch 55 | loss: 0.10819 | train_accuracy: 0.94209 | valid_accuracy: 0.94218 |  2:09:45s
+epoch 56 | loss: 0.10784 | train_accuracy: 0.94521 | valid_accuracy: 0.94479 |  2:12:02s
+epoch 57 | loss: 0.10887 | train_accuracy: 0.94294 | valid_accuracy: 0.94349 |  2:14:19s
+epoch 58 | loss: 0.10778 | train_accuracy: 0.9454  | valid_accuracy: 0.9451  |  2:16:36s
+epoch 59 | loss: 0.10777 | train_accuracy: 0.94507 | valid_accuracy: 0.94507 |  2:18:52s
+epoch 60 | loss: 0.10666 | train_accuracy: 0.94575 | valid_accuracy: 0.94568 |  2:21:10s
+epoch 61 | loss: 0.10809 | train_accuracy: 0.94589 | valid_accuracy: 0.94617 |  2:23:29s
+epoch 62 | loss: 0.10825 | train_accuracy: 0.94572 | valid_accuracy: 0.9457  |  2:25:47s
+epoch 63 | loss: 0.10695 | train_accuracy: 0.94585 | valid_accuracy: 0.94597 |  2:28:05s
+epoch 64 | loss: 0.10681 | train_accuracy: 0.94032 | valid_accuracy: 0.94064 |  2:30:23s
+epoch 65 | loss: 0.10699 | train_accuracy: 0.94565 | valid_accuracy: 0.94555 |  2:32:41s
+epoch 66 | loss: 0.10648 | train_accuracy: 0.94582 | valid_accuracy: 0.94529 |  2:34:59s
+epoch 67 | loss: 0.10669 | train_accuracy: 0.94601 | valid_accuracy: 0.94618 |  2:37:19s
+epoch 68 | loss: 0.10719 | train_accuracy: 0.9458  | valid_accuracy: 0.94582 |  2:39:36s
+epoch 69 | loss: 0.10731 | train_accuracy: 0.94562 | valid_accuracy: 0.94542 |  2:41:54s
+epoch 70 | loss: 0.10655 | train_accuracy: 0.94353 | valid_accuracy: 0.94346 |  2:44:12s
+epoch 71 | loss: 0.10886 | train_accuracy: 0.94236 | valid_accuracy: 0.9428  |  2:46:30s
+epoch 72 | loss: 0.11018 | train_accuracy: 0.94648 | valid_accuracy: 0.94654 |  2:48:48s
+epoch 73 | loss: 0.10634 | train_accuracy: 0.94638 | valid_accuracy: 0.9465  |  2:51:05s
+epoch 74 | loss: 0.1063  | train_accuracy: 0.94591 | valid_accuracy: 0.94609 |  2:53:23s
+epoch 75 | loss: 0.10594 | train_accuracy: 0.94528 | valid_accuracy: 0.94553 |  2:55:41s
+epoch 76 | loss: 0.10676 | train_accuracy: 0.94561 | valid_accuracy: 0.9454  |  2:57:59s
+epoch 77 | loss: 0.10575 | train_accuracy: 0.94549 | valid_accuracy: 0.945   |  3:00:17s
+epoch 78 | loss: 0.10555 | train_accuracy: 0.94598 | valid_accuracy: 0.94521 |  3:02:36s
+epoch 79 | loss: 0.10513 | train_accuracy: 0.94601 | valid_accuracy: 0.94599 |  3:04:54s
+epoch 80 | loss: 0.10512 | train_accuracy: 0.94618 | valid_accuracy: 0.94623 |  3:07:11s
+epoch 81 | loss: 0.10543 | train_accuracy: 0.94575 | valid_accuracy: 0.94538 |  3:09:28s
+epoch 82 | loss: 0.10508 | train_accuracy: 0.94637 | valid_accuracy: 0.9465  |  3:11:45s
+epoch 83 | loss: 0.10498 | train_accuracy: 0.946   | valid_accuracy: 0.946   |  3:14:02s
+epoch 84 | loss: 0.10535 | train_accuracy: 0.94591 | valid_accuracy: 0.94587 |  3:16:23s
+epoch 85 | loss: 0.1048  | train_accuracy: 0.94604 | valid_accuracy: 0.94605 |  3:18:40s
+epoch 86 | loss: 0.10925 | train_accuracy: 0.94341 | valid_accuracy: 0.94351 |  3:20:57s
+epoch 87 | loss: 0.11195 | train_accuracy: 0.94452 | valid_accuracy: 0.94473 |  3:23:14s
+epoch 88 | loss: 0.10692 | train_accuracy: 0.94394 | valid_accuracy: 0.94351 |  3:25:30s
+epoch 89 | loss: 0.10596 | train_accuracy: 0.94516 | valid_accuracy: 0.94506 |  3:27:46s
+epoch 90 | loss: 0.10561 | train_accuracy: 0.94557 | valid_accuracy: 0.94527 |  3:30:02s
+epoch 91 | loss: 0.10553 | train_accuracy: 0.94566 | valid_accuracy: 0.94572 |  3:32:18s
+epoch 92 | loss: 0.10572 | train_accuracy: 0.94533 | valid_accuracy: 0.94502 |  3:34:33s/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+
+epoch 93 | loss: 0.10544 | train_accuracy: 0.94563 | valid_accuracy: 0.94575 |  3:36:54s
+epoch 94 | loss: 0.10526 | train_accuracy: 0.94483 | valid_accuracy: 0.94479 |  3:39:10s
+epoch 95 | loss: 0.10487 | train_accuracy: 0.94593 | valid_accuracy: 0.94614 |  3:41:27s
+epoch 96 | loss: 0.10484 | train_accuracy: 0.94569 | valid_accuracy: 0.94599 |  3:43:44s
+epoch 97 | loss: 0.10522 | train_accuracy: 0.94594 | valid_accuracy: 0.94604 |  3:46:00s
+epoch 98 | loss: 0.10531 | train_accuracy: 0.9455  | valid_accuracy: 0.94512 |  3:48:17s
+epoch 99 | loss: 0.10523 | train_accuracy: 0.94585 | valid_accuracy: 0.94608 |  3:50:34s
+epoch 100| loss: 0.10456 | train_accuracy: 0.94582 | valid_accuracy: 0.94582 |  3:52:53s
+epoch 101| loss: 0.10448 | train_accuracy: 0.94544 | valid_accuracy: 0.94512 |  3:55:13s
+epoch 102| loss: 0.10438 | train_accuracy: 0.94564 | valid_accuracy: 0.94557 |  3:57:35s
+epoch 103| loss: 0.10537 | train_accuracy: 0.94377 | valid_accuracy: 0.944   |  3:59:52s
+epoch 104| loss: 0.10577 | train_accuracy: 0.94329 | valid_accuracy: 0.94345 |  4:02:08s
+epoch 105| loss: 0.10845 | train_accuracy: 0.94736 | valid_accuracy: 0.94672 |  4:04:24s
+epoch 106| loss: 0.10649 | train_accuracy: 0.94424 | valid_accuracy: 0.94381 |  4:06:44s
+epoch 107| loss: 0.10525 | train_accuracy: 0.94514 | valid_accuracy: 0.94521 |  4:09:04s
+epoch 108| loss: 0.10513 | train_accuracy: 0.94479 | valid_accuracy: 0.94477 |  4:11:26s
+epoch 109| loss: 0.10487 | train_accuracy: 0.94589 | valid_accuracy: 0.94506 |  4:13:43s
+epoch 110| loss: 0.10432 | train_accuracy: 0.94661 | valid_accuracy: 0.94627 |  4:16:00s
+epoch 111| loss: 0.10421 | train_accuracy: 0.94635 | valid_accuracy: 0.94601 |  4:18:19s
+epoch 112| loss: 0.10487 | train_accuracy: 0.94638 | valid_accuracy: 0.94661 |  4:20:36s
+epoch 113| loss: 0.10409 | train_accuracy: 0.94552 | valid_accuracy: 0.94565 |  4:22:52s
+epoch 114| loss: 0.10474 | train_accuracy: 0.94667 | valid_accuracy: 0.9461  |  4:25:09s
+epoch 115| loss: 0.10424 | train_accuracy: 0.94556 | valid_accuracy: 0.9458  |  4:27:26s
+epoch 116| loss: 0.10483 | train_accuracy: 0.94647 | valid_accuracy: 0.94595 |  4:29:43s
+epoch 117| loss: 0.10453 | train_accuracy: 0.94659 | valid_accuracy: 0.94592 |  4:32:01s
+epoch 118| loss: 0.10433 | train_accuracy: 0.94679 | valid_accuracy: 0.94618 |  4:34:18s
+epoch 119| loss: 0.10441 | train_accuracy: 0.94646 | valid_accuracy: 0.9458  |  4:36:35s
+
+Early stopping occurred at epoch 119 with best_epoch = 19 and best_valid_accuracy = 0.94821
+Successfully saved model at modelTabNet.zip
+----- Time and memory usage -----
+(current, peak) (3641512, 9373072716)
+--- 16760.49 segundos ---
+------------------------------------
+--- Performance of decision tree ---
+Accuracy : 94.82%
+Precision: 95.21%
+Recall: 94.82%
+F1-score: 94.57%
+Balanced accuracy: 77.43%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.93      0.96      3859
+           1       0.74      0.95      0.83      7744
+           2       1.00      1.00      1.00     10777
+           3       0.82      1.00      0.90      7993
+           4       1.00      1.00      1.00     19708
+           5       0.60      0.58      0.59       112
+           6       1.00      0.98      0.99        63
+           7       1.00      1.00      1.00    218119
+           8       0.59      0.31      0.41      8130
+           9       1.00      0.50      0.67      3239
+          10       0.86      0.98      0.92      1561
+          11       0.46      0.77      0.58      8014
+          12       0.67      0.48      0.56      5790
+          13       0.96      0.85      0.90      7998
+          14       0.59      0.29      0.39      2440
+
+    accuracy                           0.95    305547
+   macro avg       0.82      0.77      0.78    305547
+weighted avg       0.95      0.95      0.95    305547
+
