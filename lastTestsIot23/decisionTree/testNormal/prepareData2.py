@@ -164,10 +164,11 @@ cols_to_zscore = [
 
 df = zscore_normalization(df, cols_to_zscore)
 
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
 
-df['is_attack'] = df['type'].apply(lambda x: 0 if x == "normal" else 1)
-df.groupby('is_attack')['is_attack'].count()
-
+le.fit(df['type'].values)
+df['type'] = le.transform(df['type'])
 
 cols_to_del = [
     'uid',
@@ -178,7 +179,6 @@ cols_to_del = [
     'active.min',
     'service',
     'history',
-    'type',
     'local_orig',
     'local_resp',
     'tunnel_parents',
@@ -189,3 +189,41 @@ cols_to_del = [
     ]
 
 df = delete_columns(df,cols_to_del)
+
+print("----------------------")
+# Split into input and output variables
+x_columns = df.columns.drop('type')
+x = df[x_columns].values
+y = df['type'].values
+print("----------------------")
+
+print(x.shape)
+print(y.shape)
+oversample = SMOTE()
+x, y = oversample.fit_resample(x, y)
+print(x.shape)
+print(y.shape)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42)
+
+from sklearn import tree
+# Instantiate model with 1000 decision trees
+rf = tree.DecisionTreeClassifier()
+# Train the model on training data
+rf.fit(x_train, y_train)
+
+predictions = rf.predict(x_test)
+
+from mlciic import functions
+from mlciic import metrics as met
+
+met.calculate_metrics("decision tree", y_test, predictions, average='weighted')
+
+
+#Confusion Matrix 
+fig,ax = plt.subplots(figsize=(20, 20))
+confusion_matrix = metrics.confusion_matrix(y_test, predictions)
+cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix)
+cm_display.plot(ax=ax)
+plt.savefig("confusion_matrix.png")
+plt.show()
