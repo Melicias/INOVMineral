@@ -65,7 +65,7 @@ catIndexs = []
 for cc in categorical_columns:
     catIndexs.append(featuresFromStart.index(cc))
 
-functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
+df_train = functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
 
 #join the 2 df with keys so we can split it
 df = pd.concat([df_train,df_test],keys=[0,1])
