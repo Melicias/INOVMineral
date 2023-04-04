@@ -86,19 +86,19 @@ features = [ col for col in df_train.columns if col not in ["Attack_label"]+["At
 le = LabelEncoder()
 le.fit(df_train["Attack_type"].values)
 
-n_total = len(df_test)
+n_total = len(df_train)
 test_indices, valid_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 
-X_train = df_train[features].values
-y_train = df_train["Attack_type"].values
+X_train = df_train[features].values[test_indices]
+y_train = df_train["Attack_type"].values[test_indices]
 y_train = le.transform(y_train)
 
-X_valid = df_test[features].values[valid_indices]
-y_valid = df_test["Attack_type"].values[valid_indices]
+X_valid = df_train[features].values[valid_indices]
+y_valid = df_train["Attack_type"].values[valid_indices]
 y_valid = le.transform(y_valid)
 
-X_test = df_test[features].values[test_indices]
-y_test = df_test["Attack_type"].values[test_indices]
+X_test = df_test[features].values
+y_test = df_test["Attack_type"].values
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
