@@ -1,0 +1,537 @@
+---
+Lines: 890900
+Columns: 159 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['type']
+
+--- Details for categorical columns ---
+type: 
+['udp_flood' 'mqtt_flood' 'http_flood' 'normal' 'tcp_flood'
+ 'http_flood_node_red' 'icmp_flood' 'port_scanning' 'arp_spoofing'
+ 'http_botnet']
+
+    Data Type               Column Name  \
+0     float64                  duration   
+1     float64                orig_bytes   
+2     float64                resp_bytes   
+3       int64              missed_bytes   
+4     float64                 orig_pkts   
+5     float64             orig_ip_bytes   
+6     float64                 resp_pkts   
+7     float64             resp_ip_bytes   
+8     float64             flow_duration   
+9     float64              fwd_pkts_tot   
+10    float64              bwd_pkts_tot   
+11    float64         fwd_data_pkts_tot   
+12    float64         bwd_data_pkts_tot   
+13    float64          fwd_pkts_per_sec   
+14    float64          bwd_pkts_per_sec   
+15    float64         flow_pkts_per_sec   
+16    float64             down_up_ratio   
+17    float64       fwd_header_size_tot   
+18    float64       bwd_header_size_tot   
+19    float64        fwd_PSH_flag_count   
+20    float64        bwd_PSH_flag_count   
+21    float64       flow_ACK_flag_count   
+22    float64      fwd_pkts_payload.min   
+23    float64      fwd_pkts_payload.max   
+24    float64      fwd_pkts_payload.tot   
+25    float64      fwd_pkts_payload.avg   
+26    float64      fwd_pkts_payload.std   
+27    float64      bwd_pkts_payload.min   
+28    float64      bwd_pkts_payload.max   
+29    float64      bwd_pkts_payload.tot   
+30    float64      bwd_pkts_payload.avg   
+31    float64      bwd_pkts_payload.std   
+32    float64     flow_pkts_payload.min   
+33    float64     flow_pkts_payload.max   
+34    float64     flow_pkts_payload.tot   
+35    float64     flow_pkts_payload.avg   
+36    float64     flow_pkts_payload.std   
+37    float64               fwd_iat.min   
+38    float64               fwd_iat.max   
+39    float64               fwd_iat.tot   
+40    float64               fwd_iat.avg   
+41    float64               fwd_iat.std   
+42    float64               bwd_iat.min   
+43    float64               bwd_iat.max   
+44    float64               bwd_iat.tot   
+45    float64               bwd_iat.avg   
+46    float64               bwd_iat.std   
+47    float64              flow_iat.min   
+48    float64              flow_iat.max   
+49    float64              flow_iat.tot   
+50    float64              flow_iat.avg   
+51    float64              flow_iat.std   
+52    float64  payload_bytes_per_second   
+53    float64          fwd_subflow_pkts   
+54    float64          bwd_subflow_pkts   
+55    float64         fwd_subflow_bytes   
+56    float64         bwd_subflow_bytes   
+57    float64            fwd_bulk_bytes   
+58    float64            bwd_bulk_bytes   
+59    float64          fwd_bulk_packets   
+60    float64          bwd_bulk_packets   
+61    float64             fwd_bulk_rate   
+62    float64             bwd_bulk_rate   
+63    float64                active.max   
+64    float64                active.tot   
+65    float64                active.avg   
+66    float64                active.std   
+67    float64                  idle.min   
+68    float64                  idle.max   
+69    float64                  idle.tot   
+70    float64                  idle.avg   
+71    float64                  idle.std   
+72    float64      fwd_init_window_size   
+73    float64      bwd_init_window_size   
+74    float64      fwd_last_window_size   
+75    float64      bwd_last_window_size   
+76     object                      type   
+77      int64                proto_icmp   
+78      int64                 proto_tcp   
+79      int64                 proto_udp   
+80      int64            conn_state_OTH   
+81      int64            conn_state_REJ   
+82      int64           conn_state_RSTO   
+83      int64         conn_state_RSTOS0   
+84      int64           conn_state_RSTR   
+85      int64          conn_state_RSTRH   
+86      int64             conn_state_S0   
+87      int64             conn_state_S1   
+88      int64             conn_state_S2   
+89      int64             conn_state_S3   
+90      int64             conn_state_SF   
+91      int64             conn_state_SH   
+92      int64            conn_state_SHR   
+93      int64     fwd_header_size_min_0   
+94      int64     fwd_header_size_min_8   
+95      int64    fwd_header_size_min_20   
+96      int64    fwd_header_size_min_24   
+97      int64    fwd_header_size_min_32   
+98      int64    fwd_header_size_min_40   
+99      int64    fwd_header_size_min_44   
+100     int64     fwd_header_size_max_0   
+101     int64     fwd_header_size_max_8   
+102     int64    fwd_header_size_max_20   
+103     int64    fwd_header_size_max_24   
+104     int64    fwd_header_size_max_32   
+105     int64    fwd_header_size_max_40   
+106     int64    fwd_header_size_max_44   
+107     int64     bwd_header_size_min_0   
+108     int64     bwd_header_size_min_8   
+109     int64    bwd_header_size_min_20   
+110     int64    bwd_header_size_min_24   
+111     int64    bwd_header_size_min_32   
+112     int64    bwd_header_size_min_40   
+113     int64    bwd_header_size_min_44   
+114     int64     bwd_header_size_max_0   
+115     int64     bwd_header_size_max_8   
+116     int64    bwd_header_size_max_20   
+117     int64    bwd_header_size_max_24   
+118     int64    bwd_header_size_max_32   
+119     int64    bwd_header_size_max_40   
+120     int64    bwd_header_size_max_44   
+121     int64    bwd_header_size_max_52   
+122     int64     flow_FIN_flag_count_0   
+123     int64     flow_FIN_flag_count_1   
+124     int64     flow_FIN_flag_count_2   
+125     int64     flow_FIN_flag_count_3   
+126     int64     flow_FIN_flag_count_4   
+127     int64     flow_FIN_flag_count_5   
+128     int64     flow_FIN_flag_count_6   
+129     int64     flow_FIN_flag_count_7   
+130     int64     flow_SYN_flag_count_0   
+131     int64     flow_SYN_flag_count_1   
+132     int64     flow_SYN_flag_count_2   
+133     int64     flow_SYN_flag_count_3   
+134     int64     flow_SYN_flag_count_4   
+135     int64     flow_SYN_flag_count_5   
+136     int64     flow_SYN_flag_count_6   
+137     int64     flow_SYN_flag_count_7   
+138     int64     flow_SYN_flag_count_8   
+139     int64     flow_SYN_flag_count_9   
+140     int64    flow_SYN_flag_count_10   
+141     int64     flow_RST_flag_count_0   
+142     int64     flow_RST_flag_count_1   
+143     int64     flow_RST_flag_count_2   
+144     int64     flow_RST_flag_count_3   
+145     int64     flow_RST_flag_count_4   
+146     int64      history_originator_0   
+147     int64      history_originator_1   
+148     int64      history_originator_2   
+149     int64      history_originator_3   
+150     int64      history_originator_4   
+151     int64      history_originator_5   
+152     int64      history_originator_6   
+153     int64       history_responder_0   
+154     int64       history_responder_1   
+155     int64       history_responder_2   
+156     int64       history_responder_3   
+157     int64       history_responder_4   
+158     int64       history_responder_5   
+
+                                         Unique Values  
+0    [-0.0146794852089584, -0.4057007074806505, -0....  
+1    [-0.1798294178884204, -0.1798284914145006, 5.0...  
+2    [-0.0050909125602386, -0.0050749461149235, -0....  
+3                                               [0, 1]  
+4    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+5    [-0.2235051422612725, -0.2701244830698416, -0....  
+6    [-0.756566237085908, 0.113379129033401, 2.7232...  
+7    [-0.65132992298557, 0.0761837856163627, 0.0100...  
+8    [-0.0146794852089584, -0.4057007074806505, -0....  
+9    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+10   [-0.756566237085908, 0.113379129033401, 2.7232...  
+11   [-0.1841505084302839, 1.8849776192465009, 2.91...  
+12   [-0.0468426670141985, 15.094668954347924, 30.2...  
+13   [-0.7784400498089381, -0.7784161600321544, -0....  
+14   [-0.7778685962767037, -0.777780086048685, 1.31...  
+15   [-0.7784992390061136, -0.7784872839061784, -0....  
+16   [-1.303155859508906, 0.7080096245472669, 0.037...  
+17   [-0.5632548105483247, -0.4759722062381907, -0....  
+18   [-0.5899833859035155, 0.0606276880264669, -0.0...  
+19   [-0.1847802841859509, 1.9741081084026069, 3.05...  
+20   [-0.0400030915305518, 17.674125540826264, 35.3...  
+21   [-0.4998346498111727, -0.0539362824453553, 3.5...  
+22   [-0.0715485643139634, 3.915326526805518, 4.733...  
+23   [-0.2240566597355144, 1.7390343359970422, 2.41...  
+24   [-0.1700283834593249, 0.4782412227926198, 1.49...  
+25   [-0.202207993037164, 0.5625309784999971, 2.751...  
+26   [-0.2180729836878303, 1.5162121242004258, 3.06...  
+27   [-0.0268542124667472, 35.75915639532795, 32.97...  
+28   [-0.0415997877172178, 19.401657524859345, 8.83...  
+29   [-0.0425570558754673, 18.57474482657504, 8.452...  
+30   [-0.0348008605996162, 33.5905000562465, 2.5224...  
+31   [-0.0298206347677357, 8.991496232710693, 8.322...  
+32   [-0.0331878993021227, 11.642130649671818, 14.0...  
+33   [-0.2246240054143394, 1.737063313551674, 2.409...  
+34   [-0.1706558309600847, 0.4767949484126132, 1.49...  
+35   [-0.2080860613189242, 0.646748724811026, 2.935...  
+36   [-0.2211732043688052, 1.350672247020747, 3.018...  
+37   [0.7127558178183264, -0.1241863594563378, -0.4...  
+38   [0.2733864256711472, -0.3354093518719633, -0.5...  
+39   [-0.0028152123596323, -0.3933972387175649, -0....  
+40   [0.5051920576769914, -0.2519777043187228, -0.5...  
+41   [-0.3664930315787462, -0.0066253488630917, 1.4...  
+42   [-0.0943335427477205, -0.0942693179403854, 0.2...  
+43   [-0.1919051737110198, 2.452781667564118, 0.523...  
+44   [-0.136594453953829, 0.572018528282717, 0.0948...  
+45   [-0.1760385217376787, 1.2357883632501545, 0.51...  
+46   [-0.1701881005640612, 3.1116935451146284, 0.68...  
+47   [0.7007557821325137, -0.1404231255835309, -0.3...  
+48   [0.2580938529997307, -0.3551824923609279, -0.5...  
+49   [-0.0147052155493456, -0.4057263732713586, -0....  
+50   [0.4947340760258622, -0.2672872228429325, -0.4...  
+51   [-0.3717570839796863, -0.1029017127743767, -0....  
+52   [-0.0167643314864417, -0.0162993341521579, -0....  
+53   [-0.1664665308562612, 4.051102316774855, -1.22...  
+54   [-1.229441762620637, 0.6387953628886931, 2.507...  
+55   [-0.211129749304483, 1.0516171041470712, 3.039...  
+56   [-0.0335462033978086, 21.33447097684775, 2.404...  
+57   [-0.0045563503109509, 234.63874932947647, 138....  
+58   [-0.003094060504225, 333.5791545891124, 50.847...  
+59   [-0.0046737429031634, 216.44925318646543, 180....  
+60   [-0.0033419406315067, 299.22733832322217, 211....  
+61   [-0.0022212486057844, 0.0106504297139593, 50.1...  
+62   [-0.0014985658322627, 0.4679980432883466, 0.72...  
+63   [-0.2104019440618189, 0.591378013080404, -0.06...  
+64   [-0.2110921674416496, 0.5694058858568176, -0.0...  
+65   [-0.2074104452541365, 0.6109421180480645, -0.0...  
+66   [-0.0579698713082919, -0.0555156831535085, -0....  
+67   [0.5670191944053457, -0.4771993911044491, -0.0...  
+68   [0.2791260775230978, -0.5365049285270181, -0.2...  
+69   [0.0220513888074027, -0.5105013742139537, -0.3...  
+70   [0.428915493265397, -0.5282022665843201, -0.17...  
+71   [-0.3039416991711032, 1.877159182437583, 2.359...  
+72   [-0.8016621040909139, -0.7851928581929801, 1.2...  
+73   [-0.7083135508908369, 1.4079016290762738, 1.43...  
+74   [-0.7251696633681214, -0.7082262240141926, 1.4...  
+75   [-0.6538613341045789, 1.5307894976787302, 1.52...  
+76   [udp_flood, mqtt_flood, http_flood, normal, tc...  
+77                                              [0, 1]  
+78                                              [0, 1]  
+79                                              [1, 0]  
+80                                              [0, 1]  
+81                                              [0, 1]  
+82                                              [0, 1]  
+83                                              [0, 1]  
+84                                              [0, 1]  
+85                                              [0, 1]  
+86                                              [1, 0]  
+87                                              [0, 1]  
+88                                              [0, 1]  
+89                                              [0, 1]  
+90                                              [0, 1]  
+91                                              [0, 1]  
+92                                              [0, 1]  
+93                                              [0, 1]  
+94                                              [1, 0]  
+95                                              [0, 1]  
+96                                              [0, 1]  
+97                                              [0, 1]  
+98                                              [0, 1]  
+99                                              [0, 1]  
+100                                             [0, 1]  
+101                                             [1, 0]  
+102                                             [0, 1]  
+103                                             [0, 1]  
+104                                             [0, 1]  
+105                                             [0, 1]  
+106                                             [0, 1]  
+107                                             [1, 0]  
+108                                             [0, 1]  
+109                                             [0, 1]  
+110                                             [0, 1]  
+111                                             [0, 1]  
+112                                             [0, 1]  
+113                                             [0, 1]  
+114                                             [1, 0]  
+115                                             [0, 1]  
+116                                             [0, 1]  
+117                                             [0, 1]  
+118                                             [0, 1]  
+119                                             [0, 1]  
+120                                             [0, 1]  
+121                                             [0, 1]  
+122                                             [1, 0]  
+123                                             [0, 1]  
+124                                             [0, 1]  
+125                                             [0, 1]  
+126                                             [0, 1]  
+127                                             [0, 1]  
+128                                             [0, 1]  
+129                                             [0, 1]  
+130                                             [1, 0]  
+131                                             [0, 1]  
+132                                             [0, 1]  
+133                                             [0, 1]  
+134                                             [0, 1]  
+135                                             [0, 1]  
+136                                             [0, 1]  
+137                                             [0, 1]  
+138                                             [0, 1]  
+139                                             [0, 1]  
+140                                                [0]  
+141                                             [1, 0]  
+142                                             [0, 1]  
+143                                             [0, 1]  
+144                                             [0, 1]  
+145                                             [0, 1]  
+146                                             [0, 1]  
+147                                             [1, 0]  
+148                                             [0, 1]  
+149                                             [0, 1]  
+150                                             [0, 1]  
+151                                             [0, 1]  
+152                                             [0, 1]  
+153                                             [1, 0]  
+154                                             [0, 1]  
+155                                             [0, 1]  
+156                                             [0, 1]  
+157                                             [0, 1]  
+158                                             [0, 1]  
+is_attack
+attack    801810
+normal     89090
+Name: is_attack, dtype: int64
+is_attack
+attack    87228
+normal     2310
+Name: is_attack, dtype: int64
+epoch 0  | loss: 0.29736 | train_auc: 0.69827 | valid_auc: 0.69852 |  0:01:14s
+epoch 1  | loss: 0.21215 | train_auc: 0.84795 | valid_auc: 0.8494  |  0:02:28s
+epoch 2  | loss: 0.19244 | train_auc: 0.87738 | valid_auc: 0.87774 |  0:03:42s
+epoch 3  | loss: 0.18504 | train_auc: 0.90127 | valid_auc: 0.9026  |  0:04:56s
+epoch 4  | loss: 0.18131 | train_auc: 0.917   | valid_auc: 0.918   |  0:06:10s
+epoch 5  | loss: 0.18165 | train_auc: 0.91981 | valid_auc: 0.9205  |  0:07:24s
+epoch 6  | loss: 0.17931 | train_auc: 0.91255 | valid_auc: 0.91302 |  0:08:39s
+epoch 7  | loss: 0.17853 | train_auc: 0.91272 | valid_auc: 0.91348 |  0:09:54s
+epoch 8  | loss: 0.17892 | train_auc: 0.92143 | valid_auc: 0.92181 |  0:11:08s
+epoch 9  | loss: 0.17578 | train_auc: 0.92339 | valid_auc: 0.92387 |  0:12:22s
+epoch 10 | loss: 0.17399 | train_auc: 0.92381 | valid_auc: 0.92418 |  0:13:36s
+epoch 11 | loss: 0.17357 | train_auc: 0.92465 | valid_auc: 0.92465 |  0:14:51s
+epoch 12 | loss: 0.17368 | train_auc: 0.9245  | valid_auc: 0.92439 |  0:16:05s
+epoch 13 | loss: 0.17677 | train_auc: 0.92305 | valid_auc: 0.92317 |  0:17:20s
+epoch 14 | loss: 0.1772  | train_auc: 0.92265 | valid_auc: 0.92298 |  0:18:34s
+epoch 15 | loss: 0.17503 | train_auc: 0.92358 | valid_auc: 0.92394 |  0:19:48s
+epoch 16 | loss: 0.17444 | train_auc: 0.92452 | valid_auc: 0.92464 |  0:21:03s
+epoch 17 | loss: 0.17324 | train_auc: 0.92439 | valid_auc: 0.92472 |  0:22:18s
+epoch 18 | loss: 0.17238 | train_auc: 0.92449 | valid_auc: 0.92455 |  0:23:32s
+epoch 19 | loss: 0.17218 | train_auc: 0.9247  | valid_auc: 0.92491 |  0:24:47s
+epoch 20 | loss: 0.17158 | train_auc: 0.92492 | valid_auc: 0.92499 |  0:26:05s
+epoch 21 | loss: 0.17191 | train_auc: 0.92471 | valid_auc: 0.92458 |  0:27:21s
+epoch 22 | loss: 0.17195 | train_auc: 0.92526 | valid_auc: 0.92545 |  0:28:35s
+epoch 23 | loss: 0.17117 | train_auc: 0.92507 | valid_auc: 0.92501 |  0:29:54s
+epoch 24 | loss: 0.17133 | train_auc: 0.92446 | valid_auc: 0.92446 |  0:31:08s
+epoch 25 | loss: 0.17082 | train_auc: 0.9249  | valid_auc: 0.92455 |  0:32:22s
+epoch 26 | loss: 0.17036 | train_auc: 0.92484 | valid_auc: 0.92462 |  0:33:36s
+epoch 27 | loss: 0.17031 | train_auc: 0.92522 | valid_auc: 0.92516 |  0:34:50s
+epoch 28 | loss: 0.17002 | train_auc: 0.92536 | valid_auc: 0.92529 |  0:36:05s
+epoch 29 | loss: 0.16975 | train_auc: 0.92589 | valid_auc: 0.92584 |  0:37:20s
+epoch 30 | loss: 0.17006 | train_auc: 0.92536 | valid_auc: 0.92513 |  0:38:34s
+epoch 31 | loss: 0.16962 | train_auc: 0.92647 | valid_auc: 0.92648 |  0:39:49s
+epoch 32 | loss: 0.16925 | train_auc: 0.92638 | valid_auc: 0.92628 |  0:41:04s
+epoch 33 | loss: 0.17492 | train_auc: 0.91709 | valid_auc: 0.9175  |  0:42:19s
+epoch 34 | loss: 0.17542 | train_auc: 0.92262 | valid_auc: 0.92283 |  0:43:33s
+epoch 35 | loss: 0.17311 | train_auc: 0.92421 | valid_auc: 0.92404 |  0:44:52s
+epoch 36 | loss: 0.17152 | train_auc: 0.92477 | valid_auc: 0.92458 |  0:46:09s
+epoch 37 | loss: 0.17018 | train_auc: 0.92584 | valid_auc: 0.92569 |  0:47:23s
+epoch 38 | loss: 0.17092 | train_auc: 0.92501 | valid_auc: 0.92488 |  0:48:38s
+epoch 39 | loss: 0.17038 | train_auc: 0.92645 | valid_auc: 0.92635 |  0:49:55s
+epoch 40 | loss: 0.17174 | train_auc: 0.92526 | valid_auc: 0.9252  |  0:51:10s
+epoch 41 | loss: 0.17055 | train_auc: 0.92423 | valid_auc: 0.92403 |  0:52:24s
+epoch 42 | loss: 0.17038 | train_auc: 0.92172 | valid_auc: 0.92108 |  0:53:38s
+epoch 43 | loss: 0.17084 | train_auc: 0.92512 | valid_auc: 0.92511 |  0:54:52s
+epoch 44 | loss: 0.16856 | train_auc: 0.92877 | valid_auc: 0.92879 |  0:56:05s
+epoch 45 | loss: 0.16951 | train_auc: 0.92677 | valid_auc: 0.92691 |  0:57:20s
+epoch 46 | loss: 0.16972 | train_auc: 0.92148 | valid_auc: 0.92166 |  0:58:33s
+epoch 47 | loss: 0.16913 | train_auc: 0.92646 | valid_auc: 0.9263  |  0:59:47s
+epoch 48 | loss: 0.16718 | train_auc: 0.93097 | valid_auc: 0.93097 |  1:01:02s
+epoch 49 | loss: 0.16732 | train_auc: 0.93116 | valid_auc: 0.93113 |  1:02:16s
+epoch 50 | loss: 0.1655  | train_auc: 0.92642 | valid_auc: 0.92643 |  1:03:30s
+epoch 51 | loss: 0.16414 | train_auc: 0.93104 | valid_auc: 0.93098 |  1:04:45s
+epoch 52 | loss: 0.16413 | train_auc: 0.93125 | valid_auc: 0.93118 |  1:06:00s
+epoch 53 | loss: 0.16257 | train_auc: 0.93155 | valid_auc: 0.93152 |  1:07:14s
+epoch 54 | loss: 0.15923 | train_auc: 0.93198 | valid_auc: 0.93194 |  1:08:29s
+epoch 55 | loss: 0.15925 | train_auc: 0.93184 | valid_auc: 0.93177 |  1:09:42s
+epoch 56 | loss: 0.15901 | train_auc: 0.93186 | valid_auc: 0.9318  |  1:10:57s
+epoch 57 | loss: 0.15902 | train_auc: 0.93157 | valid_auc: 0.93151 |  1:12:11s
+epoch 58 | loss: 0.15988 | train_auc: 0.92678 | valid_auc: 0.9272  |  1:13:27s
+epoch 59 | loss: 0.16691 | train_auc: 0.93048 | valid_auc: 0.93051 |  1:14:41s
+epoch 60 | loss: 0.16055 | train_auc: 0.92542 | valid_auc: 0.92535 |  1:15:56s
+epoch 61 | loss: 0.16946 | train_auc: 0.92243 | valid_auc: 0.92281 |  1:17:10s
+epoch 62 | loss: 0.17166 | train_auc: 0.92569 | valid_auc: 0.92596 |  1:18:25s
+epoch 63 | loss: 0.16581 | train_auc: 0.93038 | valid_auc: 0.93049 |  1:19:40s
+epoch 64 | loss: 0.16118 | train_auc: 0.93161 | valid_auc: 0.93162 |  1:20:54s
+epoch 65 | loss: 0.16063 | train_auc: 0.93128 | valid_auc: 0.93134 |  1:22:07s
+epoch 66 | loss: 0.15974 | train_auc: 0.93234 | valid_auc: 0.9322  |  1:23:21s
+epoch 67 | loss: 0.15953 | train_auc: 0.93188 | valid_auc: 0.93173 |  1:24:34s
+epoch 68 | loss: 0.15953 | train_auc: 0.93198 | valid_auc: 0.93186 |  1:25:48s
+epoch 69 | loss: 0.15911 | train_auc: 0.93199 | valid_auc: 0.93188 |  1:27:02s
+epoch 70 | loss: 0.15902 | train_auc: 0.93193 | valid_auc: 0.93168 |  1:28:15s
+epoch 71 | loss: 0.15913 | train_auc: 0.93108 | valid_auc: 0.93104 |  1:29:29s
+epoch 72 | loss: 0.16031 | train_auc: 0.93169 | valid_auc: 0.93156 |  1:30:43s
+epoch 73 | loss: 0.1738  | train_auc: 0.92389 | valid_auc: 0.92405 |  1:31:56s
+epoch 74 | loss: 0.17441 | train_auc: 0.92462 | valid_auc: 0.92491 |  1:33:10s
+epoch 75 | loss: 0.1723  | train_auc: 0.92513 | valid_auc: 0.92515 |  1:34:24s
+epoch 76 | loss: 0.1728  | train_auc: 0.92503 | valid_auc: 0.92512 |  1:35:37s
+epoch 77 | loss: 0.17197 | train_auc: 0.9254  | valid_auc: 0.92542 |  1:36:50s
+epoch 78 | loss: 0.17052 | train_auc: 0.92569 | valid_auc: 0.92566 |  1:38:04s
+epoch 79 | loss: 0.17104 | train_auc: 0.9253  | valid_auc: 0.92532 |  1:39:18s
+epoch 80 | loss: 0.17041 | train_auc: 0.92575 | valid_auc: 0.92574 |  1:40:34s
+epoch 81 | loss: 0.17004 | train_auc: 0.92574 | valid_auc: 0.92558 |  1:41:51s
+epoch 82 | loss: 0.16985 | train_auc: 0.92619 | valid_auc: 0.92605 |  1:43:05s
+epoch 83 | loss: 0.16959 | train_auc: 0.92589 | valid_auc: 0.9258  |  1:44:20s
+epoch 84 | loss: 0.16959 | train_auc: 0.92649 | valid_auc: 0.92663 |  1:45:34s
+epoch 85 | loss: 0.16991 | train_auc: 0.92626 | valid_auc: 0.92635 |  1:46:49s
+epoch 86 | loss: 0.17013 | train_auc: 0.92643 | valid_auc: 0.92631 |  1:48:03s
+epoch 87 | loss: 0.16968 | train_auc: 0.92602 | valid_auc: 0.92591 |  1:49:17s
+epoch 88 | loss: 0.16965 | train_auc: 0.92577 | valid_auc: 0.9257  |  1:50:31s
+epoch 89 | loss: 0.17144 | train_auc: 0.92397 | valid_auc: 0.92446 |  1:51:47s
+epoch 90 | loss: 0.17178 | train_auc: 0.92606 | valid_auc: 0.92615 |  1:53:01s
+epoch 91 | loss: 0.17011 | train_auc: 0.92665 | valid_auc: 0.92658 |  1:54:15s
+epoch 92 | loss: 0.16983 | train_auc: 0.92538 | valid_auc: 0.92539 |  1:55:29s
+epoch 93 | loss: 0.16995 | train_auc: 0.9272  | valid_auc: 0.92706 |  1:56:42s
+epoch 94 | loss: 0.17021 | train_auc: 0.92547 | valid_auc: 0.92555 |  1:57:55s
+epoch 95 | loss: 0.17117 | train_auc: 0.9256  | valid_auc: 0.92589 |  1:59:08s
+epoch 96 | loss: 0.16994 | train_auc: 0.92594 | valid_auc: 0.92595 |  2:00:22s
+epoch 97 | loss: 0.16953 | train_auc: 0.92614 | valid_auc: 0.92608 |  2:01:36s
+epoch 98 | loss: 0.16937 | train_auc: 0.92609 | valid_auc: 0.92592 |  2:02:49s
+epoch 99 | loss: 0.16929 | train_auc: 0.92613 | valid_auc: 0.92592 |  2:04:02s
+epoch 100| loss: 0.1693  | train_auc: 0.92582 | valid_auc: 0.92583 |  2:05:15s
+epoch 101| loss: 0.16891 | train_auc: 0.92697 | valid_auc: 0.92679 |  2:06:29s
+epoch 102| loss: 0.1686  | train_auc: 0.92697 | valid_auc: 0.92677 |  2:07:42s
+epoch 103| loss: 0.16856 | train_auc: 0.92694 | valid_auc: 0.92671 |  2:08:56s
+epoch 104| loss: 0.16875 | train_auc: 0.92693 | valid_auc: 0.92684 |  2:10:10s
+epoch 105| loss: 0.16873 | train_auc: 0.92737 | valid_auc: 0.92729 |  2:11:24s
+epoch 106| loss: 0.16876 | train_auc: 0.92711 | valid_auc: 0.9269  |  2:12:38s
+epoch 107| loss: 0.16846 | train_auc: 0.92724 | valid_auc: 0.92708 |  2:13:52s
+epoch 108| loss: 0.16833 | train_auc: 0.92665 | valid_auc: 0.9265  |  2:15:05s
+epoch 109| loss: 0.16927 | train_auc: 0.92635 | valid_auc: 0.92643 |  2:16:18s
+epoch 110| loss: 0.16911 | train_auc: 0.92659 | valid_auc: 0.92639 |  2:17:32s
+epoch 111| loss: 0.16885 | train_auc: 0.92714 | valid_auc: 0.92699 |  2:18:46s
+epoch 112| loss: 0.16889 | train_auc: 0.92639 | valid_auc: 0.92643 |  2:20:00s
+epoch 113| loss: 0.16874 | train_auc: 0.92712 | valid_auc: 0.92699 |  2:21:17s
+epoch 114| loss: 0.16841 | train_auc: 0.92738 | valid_auc: 0.92725 |  2:22:31s
+epoch 115| loss: 0.1684  | train_auc: 0.92721 | valid_auc: 0.927   |  2:23:45s
+epoch 116| loss: 0.16936 | train_auc: 0.92024 | valid_auc: 0.91926 |  2:24:58s
+epoch 117| loss: 0.16901 | train_auc: 0.92879 | valid_auc: 0.92869 |  2:26:11s
+epoch 118| loss: 0.17027 | train_auc: 0.91386 | valid_auc: 0.91433 |  2:27:24s
+epoch 119| loss: 0.18774 | train_auc: 0.91781 | valid_auc: 0.91834 |  2:28:39s
+epoch 120| loss: 0.17706 | train_auc: 0.92412 | valid_auc: 0.92435 |  2:29:54s
+epoch 121| loss: 0.17305 | train_auc: 0.92437 | valid_auc: 0.9246  |  2:31:08s
+epoch 122| loss: 0.17213 | train_auc: 0.92533 | valid_auc: 0.92533 |  2:32:21s
+epoch 123| loss: 0.17093 | train_auc: 0.92653 | valid_auc: 0.92655 |  2:33:34s
+epoch 124| loss: 0.17039 | train_auc: 0.92612 | valid_auc: 0.92596 |  2:34:48s
+epoch 125| loss: 0.16976 | train_auc: 0.92645 | valid_auc: 0.92625 |  2:36:01s
+epoch 126| loss: 0.16957 | train_auc: 0.92664 | valid_auc: 0.9265  |  2:37:13s
+epoch 127| loss: 0.16929 | train_auc: 0.92669 | valid_auc: 0.92652 |  2:38:27s
+epoch 128| loss: 0.16901 | train_auc: 0.92693 | valid_auc: 0.92665 |  2:39:41s
+epoch 129| loss: 0.16904 | train_auc: 0.92678 | valid_auc: 0.92648 |  2:40:54s
+epoch 130| loss: 0.16857 | train_auc: 0.92794 | valid_auc: 0.92769 |  2:42:07s
+epoch 131| loss: 0.16807 | train_auc: 0.92849 | valid_auc: 0.92834 |  2:43:21s
+epoch 132| loss: 0.16988 | train_auc: 0.9268  | valid_auc: 0.92662 |  2:44:33s
+epoch 133| loss: 0.16915 | train_auc: 0.92652 | valid_auc: 0.92639 |  2:45:46s
+epoch 134| loss: 0.17045 | train_auc: 0.92613 | valid_auc: 0.92612 |  2:46:59s
+epoch 135| loss: 0.16939 | train_auc: 0.92643 | valid_auc: 0.92635 |  2:48:12s
+epoch 136| loss: 0.16897 | train_auc: 0.92685 | valid_auc: 0.92668 |  2:49:25s
+epoch 137| loss: 0.16926 | train_auc: 0.92681 | valid_auc: 0.92656 |  2:50:38s
+epoch 138| loss: 0.16895 | train_auc: 0.9266  | valid_auc: 0.92644 |  2:51:51s
+epoch 139| loss: 0.16901 | train_auc: 0.92679 | valid_auc: 0.92669 |  2:53:04s
+epoch 140| loss: 0.16909 | train_auc: 0.92599 | valid_auc: 0.92588 |  2:54:16s
+epoch 141| loss: 0.1689  | train_auc: 0.92611 | valid_auc: 0.926   |  2:55:30s
+epoch 142| loss: 0.16867 | train_auc: 0.92613 | valid_auc: 0.92592 |  2:56:43s
+epoch 143| loss: 0.16867 | train_auc: 0.92654 | valid_auc: 0.9264  |  2:57:56s
+epoch 144| loss: 0.16867 | train_auc: 0.92658 | valid_auc: 0.92641 |  2:59:09s
+epoch 145| loss: 0.16868 | train_auc: 0.92634 | valid_auc: 0.92635 |  3:00:23s
+epoch 146| loss: 0.1686  | train_auc: 0.92623 | valid_auc: 0.92605 |  3:01:36s
+epoch 147| loss: 0.16891 | train_auc: 0.92667 | valid_auc: 0.92641 |  3:02:49s
+epoch 148| loss: 0.17096 | train_auc: 0.92609 | valid_auc: 0.92594 |  3:04:02s
+epoch 149| loss: 0.16913 | train_auc: 0.9267  | valid_auc: 0.92652 |  3:05:14s
+epoch 150| loss: 0.16871 | train_auc: 0.92663 | valid_auc: 0.9265  |  3:06:28s
+epoch 151| loss: 0.16876 | train_auc: 0.92684 | valid_auc: 0.92655 |  3:07:41s
+epoch 152| loss: 0.16959 | train_auc: 0.92512 | valid_auc: 0.92527 |  3:08:54s
+epoch 153| loss: 0.16881 | train_auc: 0.9229  | valid_auc: 0.92269 |  3:10:09s
+epoch 154| loss: 0.1696  | train_auc: 0.92659 | valid_auc: 0.92654 |  3:11:24s
+epoch 155| loss: 0.16579 | train_auc: 0.93048 | valid_auc: 0.93068 |  3:12:39s
+epoch 156| loss: 0.16999 | train_auc: 0.92286 | valid_auc: 0.92328 |  3:13:51s
+epoch 157| loss: 0.17147 | train_auc: 0.92509 | valid_auc: 0.92519 |  3:15:04s
+epoch 158| loss: 0.17035 | train_auc: 0.92532 | valid_auc: 0.92532 |  3:16:18s
+epoch 159| loss: 0.16877 | train_auc: 0.92554 | valid_auc: 0.92555 |  3:17:31s
+epoch 160| loss: 0.16968 | train_auc: 0.92691 | valid_auc: 0.92703 |  3:18:45s
+epoch 161| loss: 0.16971 | train_auc: 0.9256  | valid_auc: 0.92568 |  3:19:58s
+epoch 162| loss: 0.16929 | train_auc: 0.92686 | valid_auc: 0.92699 |  3:21:11s
+epoch 163| loss: 0.16904 | train_auc: 0.92675 | valid_auc: 0.92664 |  3:22:25s
+epoch 164| loss: 0.16868 | train_auc: 0.92658 | valid_auc: 0.92645 |  3:23:38s
+epoch 165| loss: 0.16927 | train_auc: 0.91653 | valid_auc: 0.9168  |  3:24:52s
+epoch 166| loss: 0.16944 | train_auc: 0.91488 | valid_auc: 0.91467 |  3:26:06s
+
+Early stopping occurred at epoch 166 with best_epoch = 66 and best_valid_auc = 0.9322
+----- Time and memory usage -----
+(current, peak) (1899909, 7385636736)
+--- 12437.65 segundos ---
+------------------------------------
+--- Performance of tabnet smotenc normal ---
+Accuracy : 98.16%
+Precision: 99.4%
+Recall: 28.74%
+F1-score: 44.59%
+Balanced accuracy: 64.37%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99     87228
+           1       0.99      0.29      0.45      2310
+
+    accuracy                           0.98     89538
+   macro avg       0.99      0.64      0.72     89538
+weighted avg       0.98      0.98      0.98     89538
+
+[('duration', 0.0), ('orig_bytes', 0.0), ('resp_bytes', 0.0), ('missed_bytes', 0.0003), ('orig_pkts', 0.0009), ('orig_ip_bytes', 0.0), ('resp_pkts', 0.0002), ('resp_ip_bytes', 0.0117), ('flow_duration', 0.0), ('fwd_pkts_tot', 0.0), ('bwd_pkts_tot', 0.0004), ('fwd_data_pkts_tot', 0.0), ('bwd_data_pkts_tot', 0.0), ('fwd_pkts_per_sec', 0.0167), ('bwd_pkts_per_sec', 0.1475), ('flow_pkts_per_sec', 0.0), ('down_up_ratio', 0.0002), ('fwd_header_size_tot', 0.0), ('bwd_header_size_tot', 0.0), ('fwd_PSH_flag_count', 0.0008), ('bwd_PSH_flag_count', 0.0), ('flow_ACK_flag_count', 0.0), ('fwd_pkts_payload.min', 0.0434), ('fwd_pkts_payload.max', 0.0563), ('fwd_pkts_payload.tot', 0.0), ('fwd_pkts_payload.avg', 0.0028), ('fwd_pkts_payload.std', 0.0), ('bwd_pkts_payload.min', 0.0), ('bwd_pkts_payload.max', 0.0), ('bwd_pkts_payload.tot', 0.0385), ('bwd_pkts_payload.avg', 0.0), ('bwd_pkts_payload.std', 0.0001), ('flow_pkts_payload.min', 0.0), ('flow_pkts_payload.max', 0.0), ('flow_pkts_payload.tot', 0.0065), ('flow_pkts_payload.avg', 0.0011), ('flow_pkts_payload.std', 0.0), ('fwd_iat.min', 0.0), ('fwd_iat.max', 0.0), ('fwd_iat.tot', 0.0246), ('fwd_iat.avg', 0.0011), ('fwd_iat.std', 0.0), ('bwd_iat.min', 0.0), ('bwd_iat.max', 0.0021), ('bwd_iat.tot', 0.0), ('bwd_iat.avg', 0.0), ('bwd_iat.std', 0.0), ('flow_iat.min', 0.0), ('flow_iat.max', 0.0), ('flow_iat.tot', 0.0047), ('flow_iat.avg', 0.0), ('flow_iat.std', 0.0), ('payload_bytes_per_second', 0.0203), ('fwd_subflow_pkts', 0.0466), ('bwd_subflow_pkts', 0.0), ('fwd_subflow_bytes', 0.0), ('bwd_subflow_bytes', 0.0041), ('fwd_bulk_bytes', 0.0), ('bwd_bulk_bytes', 0.0), ('fwd_bulk_packets', 0.0018), ('bwd_bulk_packets', 0.0), ('fwd_bulk_rate', 0.0148), ('bwd_bulk_rate', 0.0), ('active.max', 0.0), ('active.tot', 0.0), ('active.avg', 0.0206), ('active.std', 0.0), ('idle.min', 0.0058), ('idle.max', 0.0), ('idle.tot', 0.0), ('idle.avg', 0.0082), ('idle.std', 0.0), ('fwd_init_window_size', 0.0), ('bwd_init_window_size', 0.0001), ('fwd_last_window_size', 0.0112), ('bwd_last_window_size', 0.0), ('proto_icmp', 0.0), ('proto_tcp', 0.02), ('proto_udp', 0.0), ('conn_state_OTH', 0.0), ('conn_state_REJ', 0.0012), ('conn_state_RSTO', 0.0), ('conn_state_RSTOS0', 0.0), ('conn_state_RSTR', 0.0), ('conn_state_RSTRH', 0.0001), ('conn_state_S0', 0.0), ('conn_state_S1', 0.0003), ('conn_state_S2', 0.0), ('conn_state_S3', 0.0), ('conn_state_SF', 0.0), ('conn_state_SH', 0.0), ('conn_state_SHR', 0.0045), ('fwd_header_size_min_0', 0.0), ('fwd_header_size_min_8', 0.0352), ('fwd_header_size_min_20', 0.0), ('fwd_header_size_min_24', 0.0), ('fwd_header_size_min_32', 0.0), ('fwd_header_size_min_40', 0.0001), ('fwd_header_size_min_44', 0.0), ('fwd_header_size_max_0', 0.0003), ('fwd_header_size_max_8', 0.0), ('fwd_header_size_max_20', 0.0022), ('fwd_header_size_max_24', 0.0), ('fwd_header_size_max_32', 0.0), ('fwd_header_size_max_40', 0.0), ('fwd_header_size_max_44', 0.0001), ('bwd_header_size_min_0', 0.0), ('bwd_header_size_min_8', 0.0), ('bwd_header_size_min_20', 0.0), ('bwd_header_size_min_24', 0.0), ('bwd_header_size_min_32', 0.0), ('bwd_header_size_min_40', 0.0), ('bwd_header_size_min_44', 0.0217), ('bwd_header_size_max_0', 0.0), ('bwd_header_size_max_8', 0.0069), ('bwd_header_size_max_20', 0.0009), ('bwd_header_size_max_24', 0.0767), ('bwd_header_size_max_32', 0.0), ('bwd_header_size_max_40', 0.0), ('bwd_header_size_max_44', 0.0003), ('bwd_header_size_max_52', 0.0001), ('flow_FIN_flag_count_0', 0.1136), ('flow_FIN_flag_count_1', 0.0001), ('flow_FIN_flag_count_2', 0.0), ('flow_FIN_flag_count_3', 0.0138), ('flow_FIN_flag_count_4', 0.0028), ('flow_FIN_flag_count_5', 0.0), ('flow_FIN_flag_count_6', 0.0004), ('flow_FIN_flag_count_7', 0.0), ('flow_SYN_flag_count_0', 0.0), ('flow_SYN_flag_count_1', 0.0), ('flow_SYN_flag_count_2', 0.0), ('flow_SYN_flag_count_3', 0.0), ('flow_SYN_flag_count_4', 0.0), ('flow_SYN_flag_count_5', 0.0014), ('flow_SYN_flag_count_6', 0.0), ('flow_SYN_flag_count_7', 0.0001), ('flow_SYN_flag_count_8', 0.0), ('flow_SYN_flag_count_9', 0.0018), ('flow_SYN_flag_count_10', 0.0), ('flow_RST_flag_count_0', 0.0), ('flow_RST_flag_count_1', 0.0981), ('flow_RST_flag_count_2', 0.0023), ('flow_RST_flag_count_3', 0.0), ('flow_RST_flag_count_4', 0.0), ('history_originator_0', 0.0104), ('history_originator_1', 0.0), ('history_originator_2', 0.0), ('history_originator_3', 0.0024), ('history_originator_4', 0.0095), ('history_originator_5', 0.0), ('history_originator_6', 0.0252), ('history_responder_0', 0.0), ('history_responder_1', 0.0), ('history_responder_2', 0.0), ('history_responder_3', 0.0528), ('history_responder_4', 0.0), ('history_responder_5', 0.0009)]/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+

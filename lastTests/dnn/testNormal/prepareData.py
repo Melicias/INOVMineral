@@ -109,22 +109,22 @@ def f1_m(y_true, y_pred):
 model = Sequential()
 model.add(Dense(256, input_dim=X_train.shape[1], activation='relu'))
 model.add(BatchNormalization())
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(128, activation='relu'))
 model.add(BatchNormalization())
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(64, activation='relu'))
 model.add(BatchNormalization())
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(32, activation='relu'))
 model.add(BatchNormalization())
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(len(le.classes_), activation='softmax')) 
 
 # Compile the model
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy']) 
 
-monitor = tf.keras.callbacks.ReduceLROnPlateau(monitor="loss",factor=0.5,mode="min",patience=10,verbose=1,min_lr=1e-7)
+monitor = tf.keras.callbacks.ReduceLROnPlateau(monitor="loss",factor=0.3,mode="min",patience=10,verbose=1,min_lr=1e-8)
 checkpoint = ModelCheckpoint('best_model_multiclass.h5', monitor='val_loss', save_best_only=True)
 
 # Train the model
@@ -150,10 +150,12 @@ ax.set_title('Model Loss')
 ax.set_ylabel('Loss')
 ax.set_xlabel('Epoch')
 ax.legend(['Train', 'Test'], loc='upper right')
+plt.savefig("val_loss.png")
 plt.show()
 
 
 predictions = model.predict(X_test)
+predictions = np.argmax(predictions, axis=1)
 
 functions.stop_measures(start_time)
 

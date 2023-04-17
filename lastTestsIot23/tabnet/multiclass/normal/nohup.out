@@ -1,0 +1,1942 @@
+---
+Lines: 358152
+Columns: 159 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['type']
+
+--- Details for categorical columns ---
+type: 
+['udp_flood' 'mqtt_flood' 'http_flood' 'normal' 'tcp_flood'
+ 'http_flood_node_red' 'icmp_flood' 'port_scanning' 'arp_spoofing'
+ 'http_botnet']
+
+    Data Type               Column Name  \
+0     float64                  duration   
+1     float64                orig_bytes   
+2     float64                resp_bytes   
+3       int64              missed_bytes   
+4     float64                 orig_pkts   
+5     float64             orig_ip_bytes   
+6     float64                 resp_pkts   
+7     float64             resp_ip_bytes   
+8     float64             flow_duration   
+9     float64              fwd_pkts_tot   
+10    float64              bwd_pkts_tot   
+11    float64         fwd_data_pkts_tot   
+12    float64         bwd_data_pkts_tot   
+13    float64          fwd_pkts_per_sec   
+14    float64          bwd_pkts_per_sec   
+15    float64         flow_pkts_per_sec   
+16    float64             down_up_ratio   
+17    float64       fwd_header_size_tot   
+18    float64       bwd_header_size_tot   
+19    float64        fwd_PSH_flag_count   
+20    float64        bwd_PSH_flag_count   
+21    float64       flow_ACK_flag_count   
+22    float64      fwd_pkts_payload.min   
+23    float64      fwd_pkts_payload.max   
+24    float64      fwd_pkts_payload.tot   
+25    float64      fwd_pkts_payload.avg   
+26    float64      fwd_pkts_payload.std   
+27    float64      bwd_pkts_payload.min   
+28    float64      bwd_pkts_payload.max   
+29    float64      bwd_pkts_payload.tot   
+30    float64      bwd_pkts_payload.avg   
+31    float64      bwd_pkts_payload.std   
+32    float64     flow_pkts_payload.min   
+33    float64     flow_pkts_payload.max   
+34    float64     flow_pkts_payload.tot   
+35    float64     flow_pkts_payload.avg   
+36    float64     flow_pkts_payload.std   
+37    float64               fwd_iat.min   
+38    float64               fwd_iat.max   
+39    float64               fwd_iat.tot   
+40    float64               fwd_iat.avg   
+41    float64               fwd_iat.std   
+42    float64               bwd_iat.min   
+43    float64               bwd_iat.max   
+44    float64               bwd_iat.tot   
+45    float64               bwd_iat.avg   
+46    float64               bwd_iat.std   
+47    float64              flow_iat.min   
+48    float64              flow_iat.max   
+49    float64              flow_iat.tot   
+50    float64              flow_iat.avg   
+51    float64              flow_iat.std   
+52    float64  payload_bytes_per_second   
+53    float64          fwd_subflow_pkts   
+54    float64          bwd_subflow_pkts   
+55    float64         fwd_subflow_bytes   
+56    float64         bwd_subflow_bytes   
+57    float64            fwd_bulk_bytes   
+58    float64            bwd_bulk_bytes   
+59    float64          fwd_bulk_packets   
+60    float64          bwd_bulk_packets   
+61    float64             fwd_bulk_rate   
+62    float64             bwd_bulk_rate   
+63    float64                active.max   
+64    float64                active.tot   
+65    float64                active.avg   
+66    float64                active.std   
+67    float64                  idle.min   
+68    float64                  idle.max   
+69    float64                  idle.tot   
+70    float64                  idle.avg   
+71    float64                  idle.std   
+72    float64      fwd_init_window_size   
+73    float64      bwd_init_window_size   
+74    float64      fwd_last_window_size   
+75    float64      bwd_last_window_size   
+76     object                      type   
+77      int64                proto_icmp   
+78      int64                 proto_tcp   
+79      int64                 proto_udp   
+80      int64            conn_state_OTH   
+81      int64            conn_state_REJ   
+82      int64           conn_state_RSTO   
+83      int64         conn_state_RSTOS0   
+84      int64           conn_state_RSTR   
+85      int64          conn_state_RSTRH   
+86      int64             conn_state_S0   
+87      int64             conn_state_S1   
+88      int64             conn_state_S2   
+89      int64             conn_state_S3   
+90      int64             conn_state_SF   
+91      int64             conn_state_SH   
+92      int64            conn_state_SHR   
+93      int64     fwd_header_size_min_0   
+94      int64     fwd_header_size_min_8   
+95      int64    fwd_header_size_min_20   
+96      int64    fwd_header_size_min_24   
+97      int64    fwd_header_size_min_32   
+98      int64    fwd_header_size_min_40   
+99      int64    fwd_header_size_min_44   
+100     int64     fwd_header_size_max_0   
+101     int64     fwd_header_size_max_8   
+102     int64    fwd_header_size_max_20   
+103     int64    fwd_header_size_max_24   
+104     int64    fwd_header_size_max_32   
+105     int64    fwd_header_size_max_40   
+106     int64    fwd_header_size_max_44   
+107     int64     bwd_header_size_min_0   
+108     int64     bwd_header_size_min_8   
+109     int64    bwd_header_size_min_20   
+110     int64    bwd_header_size_min_24   
+111     int64    bwd_header_size_min_32   
+112     int64    bwd_header_size_min_40   
+113     int64    bwd_header_size_min_44   
+114     int64     bwd_header_size_max_0   
+115     int64     bwd_header_size_max_8   
+116     int64    bwd_header_size_max_20   
+117     int64    bwd_header_size_max_24   
+118     int64    bwd_header_size_max_32   
+119     int64    bwd_header_size_max_40   
+120     int64    bwd_header_size_max_44   
+121     int64    bwd_header_size_max_52   
+122     int64     flow_FIN_flag_count_0   
+123     int64     flow_FIN_flag_count_1   
+124     int64     flow_FIN_flag_count_2   
+125     int64     flow_FIN_flag_count_3   
+126     int64     flow_FIN_flag_count_4   
+127     int64     flow_FIN_flag_count_5   
+128     int64     flow_FIN_flag_count_6   
+129     int64     flow_FIN_flag_count_7   
+130     int64     flow_SYN_flag_count_0   
+131     int64     flow_SYN_flag_count_1   
+132     int64     flow_SYN_flag_count_2   
+133     int64     flow_SYN_flag_count_3   
+134     int64     flow_SYN_flag_count_4   
+135     int64     flow_SYN_flag_count_5   
+136     int64     flow_SYN_flag_count_6   
+137     int64     flow_SYN_flag_count_7   
+138     int64     flow_SYN_flag_count_8   
+139     int64     flow_SYN_flag_count_9   
+140     int64    flow_SYN_flag_count_10   
+141     int64     flow_RST_flag_count_0   
+142     int64     flow_RST_flag_count_1   
+143     int64     flow_RST_flag_count_2   
+144     int64     flow_RST_flag_count_3   
+145     int64     flow_RST_flag_count_4   
+146     int64      history_originator_0   
+147     int64      history_originator_1   
+148     int64      history_originator_2   
+149     int64      history_originator_3   
+150     int64      history_originator_4   
+151     int64      history_originator_5   
+152     int64      history_originator_6   
+153     int64       history_responder_0   
+154     int64       history_responder_1   
+155     int64       history_responder_2   
+156     int64       history_responder_3   
+157     int64       history_responder_4   
+158     int64       history_responder_5   
+
+                                         Unique Values  
+0    [-0.0146794852089584, -0.4057007074806505, -0....  
+1    [-0.1798294178884204, -0.1798284914145006, 5.0...  
+2    [-0.0050909125602386, -0.0050749461149235, -0....  
+3                                               [0, 1]  
+4    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+5    [-0.2235051422612725, -0.2701244830698416, -0....  
+6    [-0.756566237085908, 0.113379129033401, 2.7232...  
+7    [-0.65132992298557, 0.0761837856163627, 0.0100...  
+8    [-0.0146794852089584, -0.4057007074806505, -0....  
+9    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+10   [-0.756566237085908, 0.113379129033401, 2.7232...  
+11   [-0.1841505084302839, 1.8849776192465009, 2.91...  
+12   [-0.0468426670141985, 15.094668954347924, 30.2...  
+13   [-0.7784400498089381, -0.7784161600321544, -0....  
+14   [-0.7778685962767037, -0.777780086048685, 1.31...  
+15   [-0.7784992390061136, -0.7784872839061784, -0....  
+16   [-1.303155859508906, 0.7080096245472669, 0.037...  
+17   [-0.5632548105483247, -0.4759722062381907, -0....  
+18   [-0.5899833859035155, 0.0606276880264669, -0.0...  
+19   [-0.1847802841859509, 1.9741081084026069, 3.05...  
+20   [-0.0400030915305518, 17.674125540826264, 35.3...  
+21   [-0.4998346498111727, -0.0539362824453553, 3.5...  
+22   [-0.0715485643139634, 3.915326526805518, 4.733...  
+23   [-0.2240566597355144, 1.7390343359970422, 2.41...  
+24   [-0.1700283834593249, 0.4782412227926198, 1.49...  
+25   [-0.202207993037164, 0.5625309784999971, 2.751...  
+26   [-0.2180729836878303, 1.5162121242004258, 3.06...  
+27   [-0.0268542124667472, 35.75915639532795, 32.97...  
+28   [-0.0415997877172178, 19.401657524859345, 8.83...  
+29   [-0.0425570558754673, 18.57474482657504, 8.452...  
+30   [-0.0348008605996162, 33.5905000562465, 2.5224...  
+31   [-0.0298206347677357, 8.991496232710693, 8.322...  
+32   [-0.0331878993021227, 11.642130649671818, 14.0...  
+33   [-0.2246240054143394, 1.737063313551674, 2.409...  
+34   [-0.1706558309600847, 0.4767949484126132, 1.49...  
+35   [-0.2080860613189242, 0.646748724811026, 2.935...  
+36   [-0.2211732043688052, 1.350672247020747, 3.018...  
+37   [0.7127558178183264, -0.1241863594563378, -0.4...  
+38   [0.2733864256711472, -0.3354093518719633, -0.5...  
+39   [-0.0028152123596323, -0.3933972387175649, -0....  
+40   [0.5051920576769914, -0.2519777043187228, -0.5...  
+41   [-0.3664930315787462, -0.0066253488630917, 1.4...  
+42   [-0.0943335427477205, -0.0942693179403854, 0.2...  
+43   [-0.1919051737110198, 2.452781667564118, 0.523...  
+44   [-0.136594453953829, 0.572018528282717, 0.0948...  
+45   [-0.1760385217376787, 1.2357883632501545, 0.51...  
+46   [-0.1701881005640612, 3.1116935451146284, 0.68...  
+47   [0.7007557821325137, -0.1404231255835309, -0.3...  
+48   [0.2580938529997307, -0.3551824923609279, -0.5...  
+49   [-0.0147052155493456, -0.4057263732713586, -0....  
+50   [0.4947340760258622, -0.2672872228429325, -0.4...  
+51   [-0.3717570839796863, -0.1029017127743767, -0....  
+52   [-0.0167643314864417, -0.0162993341521579, -0....  
+53   [-0.1664665308562612, 4.051102316774855, -1.22...  
+54   [-1.229441762620637, 0.6387953628886931, 2.507...  
+55   [-0.211129749304483, 1.0516171041470712, 3.039...  
+56   [-0.0335462033978086, 21.33447097684775, 2.404...  
+57   [-0.0045563503109509, 234.63874932947647, 138....  
+58   [-0.003094060504225, 333.5791545891124, 50.847...  
+59   [-0.0046737429031634, 216.44925318646543, 180....  
+60           [-0.0033419406315067, 299.22733832322217]  
+61   [-0.0022212486057844, 0.0106504297139593, 50.1...  
+62   [-0.0014985658322627, 0.4679980432883466, 0.72...  
+63   [-0.2104019440618189, 0.591378013080404, -0.06...  
+64   [-0.2110921674416496, 0.5694058858568176, -0.0...  
+65   [-0.2074104452541365, 0.6109421180480645, -0.0...  
+66   [-0.0579698713082919, -0.0555156831535085, -0....  
+67   [0.5670191944053457, -0.4771993911044491, -0.0...  
+68   [0.2791260775230978, -0.5365049285270181, -0.2...  
+69   [0.0220513888074027, -0.5105013742139537, -0.3...  
+70   [0.428915493265397, -0.5282022665843201, -0.17...  
+71   [-0.3039416991711032, 1.877159182437583, 2.359...  
+72   [-0.8016621040909139, -0.7851928581929801, 1.2...  
+73   [-0.7083135508908369, 1.4079016290762738, 1.43...  
+74   [-0.7251696633681214, -0.7082262240141926, 1.4...  
+75   [-0.6538613341045789, 1.5307894976787302, 1.52...  
+76   [udp_flood, mqtt_flood, http_flood, normal, tc...  
+77                                              [0, 1]  
+78                                              [0, 1]  
+79                                              [1, 0]  
+80                                              [0, 1]  
+81                                              [0, 1]  
+82                                              [0, 1]  
+83                                              [0, 1]  
+84                                              [0, 1]  
+85                                              [0, 1]  
+86                                              [1, 0]  
+87                                              [0, 1]  
+88                                              [0, 1]  
+89                                              [0, 1]  
+90                                              [0, 1]  
+91                                              [0, 1]  
+92                                              [0, 1]  
+93                                              [0, 1]  
+94                                              [1, 0]  
+95                                              [0, 1]  
+96                                              [0, 1]  
+97                                              [0, 1]  
+98                                              [0, 1]  
+99                                              [0, 1]  
+100                                             [0, 1]  
+101                                             [1, 0]  
+102                                             [0, 1]  
+103                                             [0, 1]  
+104                                             [0, 1]  
+105                                             [0, 1]  
+106                                             [0, 1]  
+107                                             [1, 0]  
+108                                             [0, 1]  
+109                                             [0, 1]  
+110                                             [0, 1]  
+111                                             [0, 1]  
+112                                             [0, 1]  
+113                                             [0, 1]  
+114                                             [1, 0]  
+115                                             [0, 1]  
+116                                             [0, 1]  
+117                                             [0, 1]  
+118                                             [0, 1]  
+119                                             [0, 1]  
+120                                             [0, 1]  
+121                                             [0, 1]  
+122                                             [1, 0]  
+123                                             [0, 1]  
+124                                             [0, 1]  
+125                                             [0, 1]  
+126                                             [0, 1]  
+127                                             [0, 1]  
+128                                             [0, 1]  
+129                                             [0, 1]  
+130                                             [1, 0]  
+131                                             [0, 1]  
+132                                             [0, 1]  
+133                                             [0, 1]  
+134                                             [0, 1]  
+135                                             [0, 1]  
+136                                             [0, 1]  
+137                                             [0, 1]  
+138                                             [0, 1]  
+139                                             [0, 1]  
+140                                                [0]  
+141                                             [1, 0]  
+142                                             [0, 1]  
+143                                             [0, 1]  
+144                                             [0, 1]  
+145                                             [0, 1]  
+146                                             [0, 1]  
+147                                             [1, 0]  
+148                                             [0, 1]  
+149                                             [0, 1]  
+150                                             [0, 1]  
+151                                             [0, 1]  
+152                                             [0, 1]  
+153                                             [1, 0]  
+154                                             [0, 1]  
+155                                             [0, 1]  
+156                                             [0, 1]  
+157                                             [0, 1]  
+158                                             [0, 1]  
+epoch 0  | loss: 1.37802 | train_accuracy: 0.64182 | valid_accuracy: 0.64353 |  0:13:22s
+epoch 1  | loss: 0.52005 | train_accuracy: 0.78127 | valid_accuracy: 0.78268 |  0:27:42s
+epoch 2  | loss: 0.42049 | train_accuracy: 0.74757 | valid_accuracy: 0.74959 |  0:40:49s
+epoch 3  | loss: 0.35428 | train_accuracy: 0.80577 | valid_accuracy: 0.80555 |  0:55:05s
+epoch 4  | loss: 0.32688 | train_accuracy: 0.7709  | valid_accuracy: 0.76964 |  1:07:34s
+epoch 5  | loss: 0.32063 | train_accuracy: 0.78037 | valid_accuracy: 0.7805  |  1:21:01s
+epoch 6  | loss: 0.31471 | train_accuracy: 0.76578 | valid_accuracy: 0.76486 |  1:35:55s
+epoch 7  | loss: 0.31328 | train_accuracy: 0.76586 | valid_accuracy: 0.7659  |  1:50:29s
+epoch 8  | loss: 0.31111 | train_accuracy: 0.76993 | valid_accuracy: 0.76908 |  2:04:07s
+epoch 9  | loss: 0.31173 | train_accuracy: 0.74126 | valid_accuracy: 0.74091 |  2:19:15s
+epoch 10 | loss: 0.30999 | train_accuracy: 0.82203 | valid_accuracy: 0.82124 |  2:32:56s
+epoch 11 | loss: 0.3112  | train_accuracy: 0.84503 | valid_accuracy: 0.84423 |  2:44:07s
+epoch 12 | loss: 0.31079 | train_accuracy: 0.72827 | valid_accuracy: 0.7283  |  2:59:20s
+epoch 13 | loss: 0.30858 | train_accuracy: 0.84092 | valid_accuracy: 0.84052 |  3:12:35s
+epoch 14 | loss: 0.30642 | train_accuracy: 0.81773 | valid_accuracy: 0.81639 |  3:25:30s
+epoch 15 | loss: 0.30541 | train_accuracy: 0.80781 | valid_accuracy: 0.80684 |  3:41:03s
+epoch 16 | loss: 0.30487 | train_accuracy: 0.84761 | valid_accuracy: 0.84786 |  3:55:02s
+epoch 17 | loss: 0.30398 | train_accuracy: 0.84623 | valid_accuracy: 0.84624 |  4:09:35s
+epoch 18 | loss: 0.3033  | train_accuracy: 0.84966 | valid_accuracy: 0.8497  |  4:22:25s
+epoch 19 | loss: 0.30321 | train_accuracy: 0.84645 | valid_accuracy: 0.84727 |  4:37:57s
+epoch 20 | loss: 0.30688 | train_accuracy: 0.7545  | valid_accuracy: 0.75533 |  4:50:35s
+epoch 21 | loss: 0.30771 | train_accuracy: 0.84464 | valid_accuracy: 0.84409 |  5:02:55s
+epoch 22 | loss: 0.3066  | train_accuracy: 0.81981 | valid_accuracy: 0.81867 |  5:16:40s
+epoch 23 | loss: 0.30397 | train_accuracy: 0.84696 | valid_accuracy: 0.84712 |  5:30:32s
+epoch 24 | loss: 0.30842 | train_accuracy: 0.84683 | valid_accuracy: 0.84726 |  5:43:00s
+epoch 25 | loss: 0.32884 | train_accuracy: 0.8454  | valid_accuracy: 0.84484 |  5:58:39s
+epoch 26 | loss: 0.30974 | train_accuracy: 0.84619 | valid_accuracy: 0.84564 |  6:11:38s
+epoch 27 | loss: 0.30555 | train_accuracy: 0.84625 | valid_accuracy: 0.84589 |  6:26:08s
+epoch 28 | loss: 0.30471 | train_accuracy: 0.84919 | valid_accuracy: 0.84924 |  6:41:00s
+epoch 29 | loss: 0.30284 | train_accuracy: 0.84828 | valid_accuracy: 0.84727 |  6:51:59s
+epoch 30 | loss: 0.30245 | train_accuracy: 0.8482  | valid_accuracy: 0.84835 |  6:53:24s
+epoch 31 | loss: 0.30187 | train_accuracy: 0.8488  | valid_accuracy: 0.84879 |  6:53:54s
+epoch 32 | loss: 0.30245 | train_accuracy: 0.84905 | valid_accuracy: 0.84919 |  6:54:23s
+epoch 33 | loss: 0.30109 | train_accuracy: 0.85041 | valid_accuracy: 0.85051 |  6:54:53s
+epoch 34 | loss: 0.30068 | train_accuracy: 0.8513  | valid_accuracy: 0.85115 |  6:55:22s
+epoch 35 | loss: 0.3008  | train_accuracy: 0.85088 | valid_accuracy: 0.85064 |  6:55:52s
+epoch 36 | loss: 0.2994  | train_accuracy: 0.8516  | valid_accuracy: 0.85125 |  6:56:21s
+epoch 37 | loss: 0.29951 | train_accuracy: 0.85073 | valid_accuracy: 0.85011 |  6:56:50s
+epoch 38 | loss: 0.30066 | train_accuracy: 0.84907 | valid_accuracy: 0.84818 |  6:57:20s
+epoch 39 | loss: 0.30167 | train_accuracy: 0.84995 | valid_accuracy: 0.8502  |  6:57:49s
+epoch 40 | loss: 0.30221 | train_accuracy: 0.84621 | valid_accuracy: 0.84516 |  6:58:19s
+epoch 41 | loss: 0.30532 | train_accuracy: 0.84924 | valid_accuracy: 0.84833 |  6:58:48s
+epoch 42 | loss: 0.30298 | train_accuracy: 0.85007 | valid_accuracy: 0.84973 |  6:59:18s
+epoch 43 | loss: 0.3077  | train_accuracy: 0.84668 | valid_accuracy: 0.84553 |  6:59:47s
+epoch 44 | loss: 0.32348 | train_accuracy: 0.84762 | valid_accuracy: 0.84645 |  7:00:16s
+epoch 45 | loss: 0.30754 | train_accuracy: 0.84949 | valid_accuracy: 0.8491  |  7:00:46s
+epoch 46 | loss: 0.30488 | train_accuracy: 0.84901 | valid_accuracy: 0.84752 |  7:01:15s
+epoch 47 | loss: 0.30724 | train_accuracy: 0.84755 | valid_accuracy: 0.84656 |  7:01:45s
+epoch 48 | loss: 0.30314 | train_accuracy: 0.85137 | valid_accuracy: 0.85106 |  7:02:14s
+epoch 49 | loss: 0.30135 | train_accuracy: 0.85138 | valid_accuracy: 0.8504  |  7:02:43s
+epoch 50 | loss: 0.30061 | train_accuracy: 0.84903 | valid_accuracy: 0.84906 |  7:03:13s
+epoch 51 | loss: 0.29907 | train_accuracy: 0.84857 | valid_accuracy: 0.84818 |  7:03:43s
+epoch 52 | loss: 0.30118 | train_accuracy: 0.85221 | valid_accuracy: 0.85195 |  7:04:12s
+epoch 53 | loss: 0.29938 | train_accuracy: 0.85066 | valid_accuracy: 0.85099 |  7:04:41s
+epoch 54 | loss: 0.29889 | train_accuracy: 0.85135 | valid_accuracy: 0.85097 |  7:05:11s
+epoch 55 | loss: 0.29824 | train_accuracy: 0.85228 | valid_accuracy: 0.85194 |  7:05:40s
+epoch 56 | loss: 0.2983  | train_accuracy: 0.85063 | valid_accuracy: 0.85079 |  7:06:10s
+epoch 57 | loss: 0.29768 | train_accuracy: 0.85245 | valid_accuracy: 0.85163 |  7:06:40s
+epoch 58 | loss: 0.29727 | train_accuracy: 0.85178 | valid_accuracy: 0.85145 |  7:07:09s
+epoch 59 | loss: 0.29714 | train_accuracy: 0.85242 | valid_accuracy: 0.85194 |  7:07:39s
+epoch 60 | loss: 0.29667 | train_accuracy: 0.85145 | valid_accuracy: 0.85106 |  7:08:09s
+epoch 61 | loss: 0.29659 | train_accuracy: 0.85142 | valid_accuracy: 0.85121 |  7:08:39s
+epoch 62 | loss: 0.29671 | train_accuracy: 0.85195 | valid_accuracy: 0.85115 |  7:09:08s
+epoch 63 | loss: 0.29638 | train_accuracy: 0.85119 | valid_accuracy: 0.85099 |  7:09:38s
+epoch 64 | loss: 0.29637 | train_accuracy: 0.85122 | valid_accuracy: 0.8511  |  7:10:08s
+epoch 65 | loss: 0.29616 | train_accuracy: 0.85204 | valid_accuracy: 0.85157 |  7:10:37s
+epoch 66 | loss: 0.29612 | train_accuracy: 0.85096 | valid_accuracy: 0.85048 |  7:11:06s
+epoch 67 | loss: 0.296   | train_accuracy: 0.85236 | valid_accuracy: 0.85221 |  7:11:35s
+epoch 68 | loss: 0.29538 | train_accuracy: 0.85159 | valid_accuracy: 0.85143 |  7:12:06s
+epoch 69 | loss: 0.29556 | train_accuracy: 0.85228 | valid_accuracy: 0.85182 |  7:12:36s
+epoch 70 | loss: 0.29512 | train_accuracy: 0.85155 | valid_accuracy: 0.85152 |  7:13:05s
+epoch 71 | loss: 0.29832 | train_accuracy: 0.84879 | valid_accuracy: 0.84826 |  7:13:36s
+epoch 72 | loss: 0.29714 | train_accuracy: 0.85188 | valid_accuracy: 0.85168 |  7:14:07s
+epoch 73 | loss: 0.29603 | train_accuracy: 0.85269 | valid_accuracy: 0.85212 |  7:14:37s
+epoch 74 | loss: 0.29571 | train_accuracy: 0.85151 | valid_accuracy: 0.85146 |  7:15:07s
+epoch 75 | loss: 0.29547 | train_accuracy: 0.85205 | valid_accuracy: 0.85191 |  7:15:38s
+epoch 76 | loss: 0.29553 | train_accuracy: 0.85108 | valid_accuracy: 0.85094 |  7:16:09s
+epoch 77 | loss: 0.29497 | train_accuracy: 0.8512  | valid_accuracy: 0.85089 |  7:16:38s
+epoch 78 | loss: 0.29479 | train_accuracy: 0.85167 | valid_accuracy: 0.85138 |  7:17:08s
+epoch 79 | loss: 0.29529 | train_accuracy: 0.85162 | valid_accuracy: 0.85159 |  7:17:37s
+epoch 80 | loss: 0.2949  | train_accuracy: 0.85264 | valid_accuracy: 0.85235 |  7:18:06s
+epoch 81 | loss: 0.29527 | train_accuracy: 0.85097 | valid_accuracy: 0.85078 |  7:18:36s
+epoch 82 | loss: 0.29484 | train_accuracy: 0.85248 | valid_accuracy: 0.85182 |  7:19:05s
+epoch 83 | loss: 0.29498 | train_accuracy: 0.85157 | valid_accuracy: 0.85118 |  7:19:35s
+epoch 84 | loss: 0.29474 | train_accuracy: 0.85194 | valid_accuracy: 0.8508  |  7:20:04s
+epoch 85 | loss: 0.29448 | train_accuracy: 0.8518  | valid_accuracy: 0.85166 |  7:20:34s
+epoch 86 | loss: 0.29457 | train_accuracy: 0.85212 | valid_accuracy: 0.85189 |  7:21:03s
+epoch 87 | loss: 0.29392 | train_accuracy: 0.85267 | valid_accuracy: 0.85231 |  7:21:34s
+epoch 88 | loss: 0.29464 | train_accuracy: 0.85196 | valid_accuracy: 0.85191 |  7:22:05s
+epoch 89 | loss: 0.29433 | train_accuracy: 0.85268 | valid_accuracy: 0.85238 |  7:22:36s
+epoch 90 | loss: 0.29501 | train_accuracy: 0.85222 | valid_accuracy: 0.85203 |  7:23:06s
+epoch 91 | loss: 0.29461 | train_accuracy: 0.85215 | valid_accuracy: 0.85199 |  7:23:35s
+epoch 92 | loss: 0.29396 | train_accuracy: 0.85216 | valid_accuracy: 0.8521  |  7:24:05s
+epoch 93 | loss: 0.29415 | train_accuracy: 0.85263 | valid_accuracy: 0.85244 |  7:24:35s
+epoch 94 | loss: 0.29351 | train_accuracy: 0.8525  | valid_accuracy: 0.85181 |  7:25:04s
+epoch 95 | loss: 0.29668 | train_accuracy: 0.85147 | valid_accuracy: 0.85152 |  7:25:34s
+epoch 96 | loss: 0.30397 | train_accuracy: 0.84967 | valid_accuracy: 0.84942 |  7:26:04s
+epoch 97 | loss: 0.30032 | train_accuracy: 0.85067 | valid_accuracy: 0.85062 |  7:26:33s
+epoch 98 | loss: 0.29851 | train_accuracy: 0.84986 | valid_accuracy: 0.84958 |  7:27:03s
+epoch 99 | loss: 0.29698 | train_accuracy: 0.85154 | valid_accuracy: 0.85149 |  7:27:32s
+epoch 100| loss: 0.29514 | train_accuracy: 0.85149 | valid_accuracy: 0.85196 |  7:28:02s
+epoch 101| loss: 0.29472 | train_accuracy: 0.85192 | valid_accuracy: 0.85206 |  7:28:31s
+epoch 102| loss: 0.29437 | train_accuracy: 0.85109 | valid_accuracy: 0.85118 |  7:29:01s
+epoch 103| loss: 0.29399 | train_accuracy: 0.85184 | valid_accuracy: 0.85192 |  7:29:30s
+epoch 104| loss: 0.29429 | train_accuracy: 0.85214 | valid_accuracy: 0.85189 |  7:29:59s
+epoch 105| loss: 0.29432 | train_accuracy: 0.85189 | valid_accuracy: 0.8521  |  7:30:29s
+epoch 106| loss: 0.29423 | train_accuracy: 0.85311 | valid_accuracy: 0.85265 |  7:30:58s
+epoch 107| loss: 0.29419 | train_accuracy: 0.84901 | valid_accuracy: 0.84861 |  7:31:27s
+epoch 108| loss: 0.29276 | train_accuracy: 0.85193 | valid_accuracy: 0.85157 |  7:31:57s
+epoch 109| loss: 0.29245 | train_accuracy: 0.85096 | valid_accuracy: 0.85085 |  7:32:26s
+epoch 110| loss: 0.29231 | train_accuracy: 0.85232 | valid_accuracy: 0.85287 |  7:32:56s
+epoch 111| loss: 0.29212 | train_accuracy: 0.85219 | valid_accuracy: 0.85154 |  7:33:25s
+epoch 112| loss: 0.2923  | train_accuracy: 0.85186 | valid_accuracy: 0.85146 |  7:33:54s
+epoch 113| loss: 0.29218 | train_accuracy: 0.85274 | valid_accuracy: 0.85226 |  7:34:23s
+epoch 114| loss: 0.29165 | train_accuracy: 0.85297 | valid_accuracy: 0.85167 |  7:34:53s
+epoch 115| loss: 0.29168 | train_accuracy: 0.85304 | valid_accuracy: 0.8534  |  7:35:23s
+epoch 116| loss: 0.29165 | train_accuracy: 0.85078 | valid_accuracy: 0.85125 |  7:35:53s
+epoch 117| loss: 0.29237 | train_accuracy: 0.85279 | valid_accuracy: 0.85241 |  7:36:22s
+epoch 118| loss: 0.29087 | train_accuracy: 0.8539  | valid_accuracy: 0.85323 |  7:36:52s
+epoch 119| loss: 0.29161 | train_accuracy: 0.85103 | valid_accuracy: 0.85093 |  7:37:21s
+epoch 120| loss: 0.29093 | train_accuracy: 0.85281 | valid_accuracy: 0.85284 |  7:37:50s
+epoch 121| loss: 0.29148 | train_accuracy: 0.85336 | valid_accuracy: 0.8523  |  7:38:20s
+epoch 122| loss: 0.29162 | train_accuracy: 0.85333 | valid_accuracy: 0.85322 |  7:38:49s
+epoch 123| loss: 0.29153 | train_accuracy: 0.85267 | valid_accuracy: 0.85279 |  7:39:18s
+epoch 124| loss: 0.2913  | train_accuracy: 0.85196 | valid_accuracy: 0.85187 |  7:39:48s
+epoch 125| loss: 0.29058 | train_accuracy: 0.85354 | valid_accuracy: 0.85343 |  7:40:17s
+epoch 126| loss: 0.29109 | train_accuracy: 0.85067 | valid_accuracy: 0.85041 |  7:40:47s
+epoch 127| loss: 0.29069 | train_accuracy: 0.85205 | valid_accuracy: 0.85146 |  7:41:16s
+epoch 128| loss: 0.29105 | train_accuracy: 0.85361 | valid_accuracy: 0.85346 |  7:41:45s
+epoch 129| loss: 0.29041 | train_accuracy: 0.85117 | valid_accuracy: 0.85128 |  7:42:14s
+epoch 130| loss: 0.29041 | train_accuracy: 0.85388 | valid_accuracy: 0.85347 |  7:42:44s
+epoch 131| loss: 0.29051 | train_accuracy: 0.85213 | valid_accuracy: 0.85209 |  7:43:13s
+epoch 132| loss: 0.29093 | train_accuracy: 0.85285 | valid_accuracy: 0.85314 |  7:43:42s
+epoch 133| loss: 0.29064 | train_accuracy: 0.85317 | valid_accuracy: 0.85342 |  7:44:11s
+epoch 134| loss: 0.29038 | train_accuracy: 0.85242 | valid_accuracy: 0.85166 |  7:44:43s
+epoch 135| loss: 0.29068 | train_accuracy: 0.85335 | valid_accuracy: 0.85297 |  7:45:13s
+epoch 136| loss: 0.29088 | train_accuracy: 0.85254 | valid_accuracy: 0.85298 |  7:45:44s
+epoch 137| loss: 0.2911  | train_accuracy: 0.85237 | valid_accuracy: 0.85196 |  7:46:13s
+epoch 138| loss: 0.29126 | train_accuracy: 0.85217 | valid_accuracy: 0.85209 |  7:46:42s
+epoch 139| loss: 0.29072 | train_accuracy: 0.85253 | valid_accuracy: 0.85288 |  7:47:12s
+epoch 140| loss: 0.29086 | train_accuracy: 0.85236 | valid_accuracy: 0.85223 |  7:47:42s
+epoch 141| loss: 0.29073 | train_accuracy: 0.85244 | valid_accuracy: 0.85248 |  7:48:11s
+epoch 142| loss: 0.29081 | train_accuracy: 0.85222 | valid_accuracy: 0.85224 |  7:48:41s
+epoch 143| loss: 0.29056 | train_accuracy: 0.85281 | valid_accuracy: 0.8524  |  7:49:10s
+epoch 144| loss: 0.29035 | train_accuracy: 0.85283 | valid_accuracy: 0.8529  |  7:49:39s
+epoch 145| loss: 0.29009 | train_accuracy: 0.85054 | valid_accuracy: 0.85108 |  7:50:09s
+epoch 146| loss: 0.29092 | train_accuracy: 0.85257 | valid_accuracy: 0.85263 |  7:50:39s
+epoch 147| loss: 0.29063 | train_accuracy: 0.85207 | valid_accuracy: 0.85192 |  7:51:09s
+epoch 148| loss: 0.29004 | train_accuracy: 0.85344 | valid_accuracy: 0.85323 |  7:51:38s
+epoch 149| loss: 0.29059 | train_accuracy: 0.85218 | valid_accuracy: 0.85216 |  7:52:07s
+epoch 150| loss: 0.29018 | train_accuracy: 0.85384 | valid_accuracy: 0.85382 |  7:52:37s
+epoch 151| loss: 0.29006 | train_accuracy: 0.85344 | valid_accuracy: 0.85356 |  7:53:06s
+epoch 152| loss: 0.29044 | train_accuracy: 0.8525  | valid_accuracy: 0.85298 |  7:53:36s
+epoch 153| loss: 0.29029 | train_accuracy: 0.85382 | valid_accuracy: 0.85367 |  7:54:05s
+epoch 154| loss: 0.28999 | train_accuracy: 0.85219 | valid_accuracy: 0.85168 |  7:54:34s
+epoch 155| loss: 0.29    | train_accuracy: 0.85377 | valid_accuracy: 0.85282 |  7:55:04s
+epoch 156| loss: 0.28996 | train_accuracy: 0.8529  | valid_accuracy: 0.85283 |  7:55:34s
+epoch 157| loss: 0.29005 | train_accuracy: 0.85442 | valid_accuracy: 0.85353 |  7:56:04s
+epoch 158| loss: 0.29062 | train_accuracy: 0.85379 | valid_accuracy: 0.85349 |  7:56:34s
+epoch 159| loss: 0.29044 | train_accuracy: 0.85335 | valid_accuracy: 0.85351 |  7:57:03s
+epoch 160| loss: 0.29033 | train_accuracy: 0.85413 | valid_accuracy: 0.85386 |  7:57:33s
+epoch 161| loss: 0.29039 | train_accuracy: 0.8512  | valid_accuracy: 0.85078 |  7:58:04s
+epoch 162| loss: 0.29029 | train_accuracy: 0.85329 | valid_accuracy: 0.85328 |  7:58:34s
+epoch 163| loss: 0.28991 | train_accuracy: 0.85399 | valid_accuracy: 0.85381 |  7:59:04s
+epoch 164| loss: 0.28994 | train_accuracy: 0.85314 | valid_accuracy: 0.85293 |  7:59:33s
+epoch 165| loss: 0.29023 | train_accuracy: 0.85164 | valid_accuracy: 0.85064 |  8:00:03s
+epoch 166| loss: 0.29008 | train_accuracy: 0.85099 | valid_accuracy: 0.85092 |  8:00:32s
+epoch 167| loss: 0.29018 | train_accuracy: 0.85354 | valid_accuracy: 0.85287 |  8:01:02s
+epoch 168| loss: 0.29025 | train_accuracy: 0.85184 | valid_accuracy: 0.8515  |  8:01:31s
+epoch 169| loss: 0.28977 | train_accuracy: 0.85172 | valid_accuracy: 0.85106 |  8:02:01s
+epoch 170| loss: 0.29026 | train_accuracy: 0.85272 | valid_accuracy: 0.8523  |  8:02:32s
+epoch 171| loss: 0.29044 | train_accuracy: 0.85212 | valid_accuracy: 0.85146 |  8:03:01s
+epoch 172| loss: 0.2904  | train_accuracy: 0.85209 | valid_accuracy: 0.85217 |  8:03:30s
+epoch 173| loss: 0.28991 | train_accuracy: 0.85393 | valid_accuracy: 0.85265 |  8:04:00s
+epoch 174| loss: 0.28991 | train_accuracy: 0.85257 | valid_accuracy: 0.8523  |  8:04:30s
+epoch 175| loss: 0.28997 | train_accuracy: 0.85213 | valid_accuracy: 0.85156 |  8:05:01s
+epoch 176| loss: 0.29005 | train_accuracy: 0.85394 | valid_accuracy: 0.85356 |  8:05:31s
+epoch 177| loss: 0.28985 | train_accuracy: 0.852   | valid_accuracy: 0.85061 |  8:06:00s
+epoch 178| loss: 0.28972 | train_accuracy: 0.8536  | valid_accuracy: 0.85302 |  8:06:30s
+epoch 179| loss: 0.28977 | train_accuracy: 0.85362 | valid_accuracy: 0.85337 |  8:06:59s
+epoch 180| loss: 0.29014 | train_accuracy: 0.85127 | valid_accuracy: 0.85147 |  8:07:28s
+epoch 181| loss: 0.28967 | train_accuracy: 0.85268 | valid_accuracy: 0.85201 |  8:07:58s
+epoch 182| loss: 0.28981 | train_accuracy: 0.85291 | valid_accuracy: 0.8518  |  8:08:27s
+epoch 183| loss: 0.29015 | train_accuracy: 0.85414 | valid_accuracy: 0.8536  |  8:08:56s
+epoch 184| loss: 0.28923 | train_accuracy: 0.85142 | valid_accuracy: 0.85127 |  8:09:25s
+epoch 185| loss: 0.28952 | train_accuracy: 0.85165 | valid_accuracy: 0.85082 |  8:09:54s
+epoch 186| loss: 0.28945 | train_accuracy: 0.85373 | valid_accuracy: 0.85349 |  8:10:23s
+epoch 187| loss: 0.28959 | train_accuracy: 0.85406 | valid_accuracy: 0.85297 |  8:10:53s
+epoch 188| loss: 0.28974 | train_accuracy: 0.85448 | valid_accuracy: 0.85424 |  8:11:22s
+epoch 189| loss: 0.2896  | train_accuracy: 0.85372 | valid_accuracy: 0.85347 |  8:11:51s
+epoch 190| loss: 0.28961 | train_accuracy: 0.85391 | valid_accuracy: 0.85375 |  8:12:20s
+epoch 191| loss: 0.28976 | train_accuracy: 0.85093 | valid_accuracy: 0.84995 |  8:12:50s
+epoch 192| loss: 0.28966 | train_accuracy: 0.85424 | valid_accuracy: 0.85305 |  8:13:21s
+epoch 193| loss: 0.28962 | train_accuracy: 0.85383 | valid_accuracy: 0.85291 |  8:13:51s
+epoch 194| loss: 0.29023 | train_accuracy: 0.85391 | valid_accuracy: 0.85263 |  8:14:21s
+epoch 195| loss: 0.28951 | train_accuracy: 0.85391 | valid_accuracy: 0.85378 |  8:14:50s
+epoch 196| loss: 0.28963 | train_accuracy: 0.85437 | valid_accuracy: 0.85381 |  8:15:20s
+epoch 197| loss: 0.28961 | train_accuracy: 0.85332 | valid_accuracy: 0.85263 |  8:15:49s
+epoch 198| loss: 0.28997 | train_accuracy: 0.85326 | valid_accuracy: 0.85279 |  8:16:18s
+epoch 199| loss: 0.28975 | train_accuracy: 0.85427 | valid_accuracy: 0.85402 |  8:16:48s
+epoch 200| loss: 0.28926 | train_accuracy: 0.8536  | valid_accuracy: 0.85353 |  8:17:17s
+epoch 201| loss: 0.28961 | train_accuracy: 0.85361 | valid_accuracy: 0.85337 |  8:17:46s
+epoch 202| loss: 0.28969 | train_accuracy: 0.85123 | valid_accuracy: 0.85043 |  8:18:15s
+epoch 203| loss: 0.28937 | train_accuracy: 0.85374 | valid_accuracy: 0.85328 |  8:18:44s
+epoch 204| loss: 0.28952 | train_accuracy: 0.85378 | valid_accuracy: 0.85364 |  8:19:13s
+epoch 205| loss: 0.28946 | train_accuracy: 0.85425 | valid_accuracy: 0.85403 |  8:19:44s
+epoch 206| loss: 0.28938 | train_accuracy: 0.85393 | valid_accuracy: 0.85354 |  8:20:14s
+epoch 207| loss: 0.2895  | train_accuracy: 0.85393 | valid_accuracy: 0.85315 |  8:20:43s
+epoch 208| loss: 0.28961 | train_accuracy: 0.85392 | valid_accuracy: 0.85364 |  8:21:12s
+epoch 209| loss: 0.28966 | train_accuracy: 0.85306 | valid_accuracy: 0.85248 |  8:21:41s
+epoch 210| loss: 0.28947 | train_accuracy: 0.85325 | valid_accuracy: 0.85269 |  8:22:10s
+epoch 211| loss: 0.29002 | train_accuracy: 0.85241 | valid_accuracy: 0.85185 |  8:22:39s
+epoch 212| loss: 0.28982 | train_accuracy: 0.85394 | valid_accuracy: 0.85318 |  8:23:09s
+epoch 213| loss: 0.28955 | train_accuracy: 0.85385 | valid_accuracy: 0.85315 |  8:23:38s
+epoch 214| loss: 0.28969 | train_accuracy: 0.85414 | valid_accuracy: 0.85404 |  8:24:07s
+epoch 215| loss: 0.28952 | train_accuracy: 0.85383 | valid_accuracy: 0.85371 |  8:24:36s
+epoch 216| loss: 0.28944 | train_accuracy: 0.85391 | valid_accuracy: 0.85322 |  8:25:06s
+epoch 217| loss: 0.28959 | train_accuracy: 0.85342 | valid_accuracy: 0.85261 |  8:25:35s
+epoch 218| loss: 0.28941 | train_accuracy: 0.85391 | valid_accuracy: 0.85309 |  8:26:04s
+epoch 219| loss: 0.28972 | train_accuracy: 0.85138 | valid_accuracy: 0.85108 |  8:26:34s
+epoch 220| loss: 0.28966 | train_accuracy: 0.85316 | valid_accuracy: 0.85337 |  8:27:04s
+epoch 221| loss: 0.28934 | train_accuracy: 0.8533  | valid_accuracy: 0.85266 |  8:27:33s
+epoch 222| loss: 0.28948 | train_accuracy: 0.85377 | valid_accuracy: 0.85319 |  8:28:03s
+epoch 223| loss: 0.28938 | train_accuracy: 0.85357 | valid_accuracy: 0.85319 |  8:28:34s
+epoch 224| loss: 0.28894 | train_accuracy: 0.85414 | valid_accuracy: 0.85385 |  8:29:03s
+epoch 225| loss: 0.2898  | train_accuracy: 0.85346 | valid_accuracy: 0.85262 |  8:29:32s
+epoch 226| loss: 0.28962 | train_accuracy: 0.85453 | valid_accuracy: 0.85436 |  8:30:01s
+epoch 227| loss: 0.28901 | train_accuracy: 0.85401 | valid_accuracy: 0.85329 |  8:30:31s
+epoch 228| loss: 0.28969 | train_accuracy: 0.85327 | valid_accuracy: 0.8527  |  8:30:59s
+epoch 229| loss: 0.28953 | train_accuracy: 0.85422 | valid_accuracy: 0.85358 |  8:31:28s
+epoch 230| loss: 0.28928 | train_accuracy: 0.85243 | valid_accuracy: 0.85191 |  8:31:57s
+epoch 231| loss: 0.2896  | train_accuracy: 0.85422 | valid_accuracy: 0.85386 |  8:32:26s
+epoch 232| loss: 0.28947 | train_accuracy: 0.85357 | valid_accuracy: 0.85272 |  8:32:57s
+epoch 233| loss: 0.28929 | train_accuracy: 0.85404 | valid_accuracy: 0.85268 |  8:33:28s
+epoch 234| loss: 0.2893  | train_accuracy: 0.85434 | valid_accuracy: 0.85365 |  8:33:58s
+epoch 235| loss: 0.28915 | train_accuracy: 0.8541  | valid_accuracy: 0.85358 |  8:34:27s
+epoch 236| loss: 0.28967 | train_accuracy: 0.85477 | valid_accuracy: 0.85409 |  8:34:57s
+epoch 237| loss: 0.28919 | train_accuracy: 0.85388 | valid_accuracy: 0.85343 |  8:35:28s
+epoch 238| loss: 0.28921 | train_accuracy: 0.85418 | valid_accuracy: 0.85411 |  8:35:57s
+epoch 239| loss: 0.28923 | train_accuracy: 0.85407 | valid_accuracy: 0.85417 |  8:36:26s
+epoch 240| loss: 0.28907 | train_accuracy: 0.85331 | valid_accuracy: 0.85242 |  8:36:55s
+epoch 241| loss: 0.28923 | train_accuracy: 0.85415 | valid_accuracy: 0.85376 |  8:37:24s
+epoch 242| loss: 0.2891  | train_accuracy: 0.85391 | valid_accuracy: 0.85404 |  8:37:53s
+epoch 243| loss: 0.28902 | train_accuracy: 0.85423 | valid_accuracy: 0.85329 |  8:38:22s
+epoch 244| loss: 0.28912 | train_accuracy: 0.85383 | valid_accuracy: 0.85381 |  8:38:51s
+epoch 245| loss: 0.28906 | train_accuracy: 0.85384 | valid_accuracy: 0.85349 |  8:39:21s
+epoch 246| loss: 0.2894  | train_accuracy: 0.85361 | valid_accuracy: 0.85369 |  8:39:51s
+epoch 247| loss: 0.2894  | train_accuracy: 0.85406 | valid_accuracy: 0.85393 |  8:40:20s
+epoch 248| loss: 0.28945 | train_accuracy: 0.85406 | valid_accuracy: 0.85336 |  8:40:49s
+epoch 249| loss: 0.28944 | train_accuracy: 0.85373 | valid_accuracy: 0.85258 |  8:41:18s
+epoch 250| loss: 0.28891 | train_accuracy: 0.85387 | valid_accuracy: 0.85286 |  8:41:48s
+epoch 251| loss: 0.28902 | train_accuracy: 0.85447 | valid_accuracy: 0.85424 |  8:42:18s
+epoch 252| loss: 0.2891  | train_accuracy: 0.85485 | valid_accuracy: 0.85418 |  8:42:47s
+epoch 253| loss: 0.28909 | train_accuracy: 0.85422 | valid_accuracy: 0.8533  |  8:43:16s
+epoch 254| loss: 0.28921 | train_accuracy: 0.85385 | valid_accuracy: 0.85354 |  8:43:45s
+epoch 255| loss: 0.29037 | train_accuracy: 0.84804 | valid_accuracy: 0.84716 |  8:44:14s
+epoch 256| loss: 0.2891  | train_accuracy: 0.85309 | valid_accuracy: 0.85191 |  8:44:44s
+epoch 257| loss: 0.28939 | train_accuracy: 0.85373 | valid_accuracy: 0.85314 |  8:45:13s
+epoch 258| loss: 0.28927 | train_accuracy: 0.85369 | valid_accuracy: 0.85312 |  8:45:42s
+epoch 259| loss: 0.28929 | train_accuracy: 0.85399 | valid_accuracy: 0.85323 |  8:46:11s
+epoch 260| loss: 0.28928 | train_accuracy: 0.85413 | valid_accuracy: 0.85309 |  8:46:40s
+epoch 261| loss: 0.28936 | train_accuracy: 0.85346 | valid_accuracy: 0.85325 |  8:47:09s
+epoch 262| loss: 0.28924 | train_accuracy: 0.85417 | valid_accuracy: 0.85382 |  8:47:38s
+epoch 263| loss: 0.28923 | train_accuracy: 0.85443 | valid_accuracy: 0.85431 |  8:48:07s
+epoch 264| loss: 0.28908 | train_accuracy: 0.85435 | valid_accuracy: 0.85413 |  8:48:36s
+epoch 265| loss: 0.28889 | train_accuracy: 0.85411 | valid_accuracy: 0.85376 |  8:49:05s
+epoch 266| loss: 0.28886 | train_accuracy: 0.85459 | valid_accuracy: 0.85414 |  8:49:34s
+epoch 267| loss: 0.28898 | train_accuracy: 0.85408 | valid_accuracy: 0.85367 |  8:50:03s
+epoch 268| loss: 0.28935 | train_accuracy: 0.85362 | valid_accuracy: 0.85315 |  8:50:33s
+epoch 269| loss: 0.28944 | train_accuracy: 0.85469 | valid_accuracy: 0.85442 |  8:51:02s
+epoch 270| loss: 0.2892  | train_accuracy: 0.85335 | valid_accuracy: 0.85286 |  8:51:31s
+epoch 271| loss: 0.2894  | train_accuracy: 0.85046 | valid_accuracy: 0.84987 |  8:52:00s
+epoch 272| loss: 0.2893  | train_accuracy: 0.85324 | valid_accuracy: 0.85293 |  8:52:29s
+epoch 273| loss: 0.28894 | train_accuracy: 0.85319 | valid_accuracy: 0.85298 |  8:52:58s
+epoch 274| loss: 0.28929 | train_accuracy: 0.85449 | valid_accuracy: 0.8542  |  8:53:28s
+epoch 275| loss: 0.28876 | train_accuracy: 0.85231 | valid_accuracy: 0.85203 |  8:53:57s
+epoch 276| loss: 0.28897 | train_accuracy: 0.85449 | valid_accuracy: 0.8539  |  8:54:26s
+epoch 277| loss: 0.28935 | train_accuracy: 0.85424 | valid_accuracy: 0.85397 |  8:54:55s
+epoch 278| loss: 0.28915 | train_accuracy: 0.85175 | valid_accuracy: 0.85129 |  8:55:24s
+epoch 279| loss: 0.28914 | train_accuracy: 0.8543  | valid_accuracy: 0.8539  |  8:55:52s
+epoch 280| loss: 0.289   | train_accuracy: 0.85395 | valid_accuracy: 0.85337 |  8:56:21s
+epoch 281| loss: 0.28888 | train_accuracy: 0.85385 | valid_accuracy: 0.85332 |  8:56:50s
+epoch 282| loss: 0.28877 | train_accuracy: 0.85411 | valid_accuracy: 0.85333 |  8:57:19s
+epoch 283| loss: 0.28899 | train_accuracy: 0.85356 | valid_accuracy: 0.85286 |  8:57:48s
+epoch 284| loss: 0.289   | train_accuracy: 0.85369 | valid_accuracy: 0.85333 |  8:58:17s
+epoch 285| loss: 0.28865 | train_accuracy: 0.85431 | valid_accuracy: 0.85323 |  8:58:46s
+epoch 286| loss: 0.28865 | train_accuracy: 0.8532  | valid_accuracy: 0.85275 |  8:59:15s
+epoch 287| loss: 0.28886 | train_accuracy: 0.84562 | valid_accuracy: 0.84542 |  8:59:44s
+epoch 288| loss: 0.28882 | train_accuracy: 0.85227 | valid_accuracy: 0.85177 |  9:00:13s
+epoch 289| loss: 0.28894 | train_accuracy: 0.85151 | valid_accuracy: 0.85094 |  9:00:42s
+epoch 290| loss: 0.28975 | train_accuracy: 0.85339 | valid_accuracy: 0.85358 |  9:01:11s
+epoch 291| loss: 0.28949 | train_accuracy: 0.84968 | valid_accuracy: 0.84991 |  9:01:40s
+epoch 292| loss: 0.28923 | train_accuracy: 0.85088 | valid_accuracy: 0.85046 |  9:02:09s
+epoch 293| loss: 0.28864 | train_accuracy: 0.85392 | valid_accuracy: 0.85371 |  9:02:38s
+epoch 294| loss: 0.28894 | train_accuracy: 0.85104 | valid_accuracy: 0.85079 |  9:03:07s
+epoch 295| loss: 0.28915 | train_accuracy: 0.84671 | valid_accuracy: 0.84678 |  9:03:37s
+epoch 296| loss: 0.28868 | train_accuracy: 0.85392 | valid_accuracy: 0.85442 |  9:04:06s
+epoch 297| loss: 0.28854 | train_accuracy: 0.84858 | valid_accuracy: 0.84856 |  9:04:34s
+epoch 298| loss: 0.28899 | train_accuracy: 0.85114 | valid_accuracy: 0.85067 |  9:05:03s
+epoch 299| loss: 0.28895 | train_accuracy: 0.84984 | valid_accuracy: 0.84976 |  9:05:32s
+epoch 300| loss: 0.28878 | train_accuracy: 0.85443 | valid_accuracy: 0.85431 |  9:06:01s
+epoch 301| loss: 0.28861 | train_accuracy: 0.85405 | valid_accuracy: 0.85356 |  9:06:30s
+epoch 302| loss: 0.28896 | train_accuracy: 0.85415 | valid_accuracy: 0.8534  |  9:06:59s
+epoch 303| loss: 0.28872 | train_accuracy: 0.83582 | valid_accuracy: 0.83672 |  9:07:28s
+epoch 304| loss: 0.28908 | train_accuracy: 0.85019 | valid_accuracy: 0.85036 |  9:07:57s
+epoch 305| loss: 0.28914 | train_accuracy: 0.84457 | valid_accuracy: 0.8447  |  9:08:27s
+epoch 306| loss: 0.2886  | train_accuracy: 0.85406 | valid_accuracy: 0.85383 |  9:08:56s
+epoch 307| loss: 0.28897 | train_accuracy: 0.85414 | valid_accuracy: 0.85388 |  9:09:25s
+epoch 308| loss: 0.28842 | train_accuracy: 0.83787 | valid_accuracy: 0.83908 |  9:09:54s
+epoch 309| loss: 0.2886  | train_accuracy: 0.83149 | valid_accuracy: 0.83256 |  9:10:23s
+epoch 310| loss: 0.28832 | train_accuracy: 0.84577 | valid_accuracy: 0.84568 |  9:10:52s
+epoch 311| loss: 0.28869 | train_accuracy: 0.85338 | valid_accuracy: 0.85287 |  9:11:21s
+epoch 312| loss: 0.28908 | train_accuracy: 0.83746 | valid_accuracy: 0.83832 |  9:11:49s
+epoch 313| loss: 0.28921 | train_accuracy: 0.84377 | valid_accuracy: 0.8444  |  9:12:18s
+epoch 314| loss: 0.28914 | train_accuracy: 0.84364 | valid_accuracy: 0.84429 |  9:12:47s
+epoch 315| loss: 0.28913 | train_accuracy: 0.85234 | valid_accuracy: 0.85205 |  9:13:16s
+epoch 316| loss: 0.28895 | train_accuracy: 0.85451 | valid_accuracy: 0.85315 |  9:13:45s
+epoch 317| loss: 0.2891  | train_accuracy: 0.85245 | valid_accuracy: 0.85209 |  9:14:14s
+epoch 318| loss: 0.28945 | train_accuracy: 0.85188 | valid_accuracy: 0.85136 |  9:14:42s
+epoch 319| loss: 0.29041 | train_accuracy: 0.84968 | valid_accuracy: 0.84946 |  9:15:11s
+epoch 320| loss: 0.28967 | train_accuracy: 0.84348 | valid_accuracy: 0.84429 |  9:15:40s
+epoch 321| loss: 0.28953 | train_accuracy: 0.85316 | valid_accuracy: 0.8528  |  9:16:09s
+epoch 322| loss: 0.28909 | train_accuracy: 0.85445 | valid_accuracy: 0.85329 |  9:16:38s
+epoch 323| loss: 0.28874 | train_accuracy: 0.85427 | valid_accuracy: 0.85365 |  9:17:07s
+epoch 324| loss: 0.28857 | train_accuracy: 0.84841 | valid_accuracy: 0.84803 |  9:17:36s
+epoch 325| loss: 0.28879 | train_accuracy: 0.85308 | valid_accuracy: 0.85234 |  9:18:05s
+epoch 326| loss: 0.28888 | train_accuracy: 0.85193 | valid_accuracy: 0.85118 |  9:18:35s
+epoch 327| loss: 0.28966 | train_accuracy: 0.85482 | valid_accuracy: 0.85429 |  9:19:04s
+epoch 328| loss: 0.2891  | train_accuracy: 0.85456 | valid_accuracy: 0.8539  |  9:19:33s
+epoch 329| loss: 0.28882 | train_accuracy: 0.84377 | valid_accuracy: 0.84394 |  9:20:02s
+epoch 330| loss: 0.2887  | train_accuracy: 0.84255 | valid_accuracy: 0.84357 |  9:20:32s
+epoch 331| loss: 0.28838 | train_accuracy: 0.85463 | valid_accuracy: 0.85375 |  9:21:01s
+epoch 332| loss: 0.28835 | train_accuracy: 0.8549  | valid_accuracy: 0.85374 |  9:21:30s
+epoch 333| loss: 0.28921 | train_accuracy: 0.85401 | valid_accuracy: 0.85275 |  9:21:59s
+epoch 334| loss: 0.28875 | train_accuracy: 0.85434 | valid_accuracy: 0.8533  |  9:22:28s
+epoch 335| loss: 0.28868 | train_accuracy: 0.85181 | valid_accuracy: 0.85115 |  9:22:58s
+epoch 336| loss: 0.28852 | train_accuracy: 0.84625 | valid_accuracy: 0.84677 |  9:23:27s
+epoch 337| loss: 0.28879 | train_accuracy: 0.85098 | valid_accuracy: 0.85026 |  9:23:56s
+epoch 338| loss: 0.28866 | train_accuracy: 0.84059 | valid_accuracy: 0.84144 |  9:24:25s
+epoch 339| loss: 0.28892 | train_accuracy: 0.85232 | valid_accuracy: 0.85182 |  9:24:54s
+epoch 340| loss: 0.28842 | train_accuracy: 0.83637 | valid_accuracy: 0.83731 |  9:25:23s
+epoch 341| loss: 0.28845 | train_accuracy: 0.85302 | valid_accuracy: 0.8528  |  9:25:52s
+epoch 342| loss: 0.28912 | train_accuracy: 0.85431 | valid_accuracy: 0.85402 |  9:26:21s
+epoch 343| loss: 0.28868 | train_accuracy: 0.8535  | valid_accuracy: 0.85305 |  9:26:50s
+epoch 344| loss: 0.28839 | train_accuracy: 0.85362 | valid_accuracy: 0.85308 |  9:27:19s
+epoch 345| loss: 0.28849 | train_accuracy: 0.85103 | valid_accuracy: 0.85022 |  9:27:48s
+epoch 346| loss: 0.28851 | train_accuracy: 0.85232 | valid_accuracy: 0.85161 |  9:28:17s
+epoch 347| loss: 0.2885  | train_accuracy: 0.85396 | valid_accuracy: 0.85309 |  9:28:47s
+epoch 348| loss: 0.28841 | train_accuracy: 0.85348 | valid_accuracy: 0.85318 |  9:29:16s
+epoch 349| loss: 0.28903 | train_accuracy: 0.85443 | valid_accuracy: 0.85336 |  9:29:45s
+epoch 350| loss: 0.28871 | train_accuracy: 0.84134 | valid_accuracy: 0.84209 |  9:30:14s
+epoch 351| loss: 0.28874 | train_accuracy: 0.8455  | valid_accuracy: 0.84606 |  9:30:43s
+epoch 352| loss: 0.28844 | train_accuracy: 0.84579 | valid_accuracy: 0.84642 |  9:31:13s
+epoch 353| loss: 0.28807 | train_accuracy: 0.8381  | valid_accuracy: 0.83884 |  9:31:42s
+epoch 354| loss: 0.2887  | train_accuracy: 0.85481 | valid_accuracy: 0.85392 |  9:32:11s
+epoch 355| loss: 0.28809 | train_accuracy: 0.85369 | valid_accuracy: 0.85287 |  9:32:41s
+epoch 356| loss: 0.28857 | train_accuracy: 0.84879 | valid_accuracy: 0.84839 |  9:33:11s
+epoch 357| loss: 0.28866 | train_accuracy: 0.85162 | valid_accuracy: 0.8509  |  9:33:41s
+epoch 358| loss: 0.28875 | train_accuracy: 0.84754 | valid_accuracy: 0.84731 |  9:34:10s
+epoch 359| loss: 0.28816 | train_accuracy: 0.83337 | valid_accuracy: 0.83465 |  9:34:39s
+epoch 360| loss: 0.28814 | train_accuracy: 0.85429 | valid_accuracy: 0.85351 |  9:35:08s
+epoch 361| loss: 0.28857 | train_accuracy: 0.85465 | valid_accuracy: 0.85425 |  9:35:37s
+epoch 362| loss: 0.28846 | train_accuracy: 0.85325 | valid_accuracy: 0.85245 |  9:36:06s
+epoch 363| loss: 0.28847 | train_accuracy: 0.8375  | valid_accuracy: 0.83841 |  9:36:35s
+epoch 364| loss: 0.28844 | train_accuracy: 0.84396 | valid_accuracy: 0.84496 |  9:37:04s
+epoch 365| loss: 0.28836 | train_accuracy: 0.85446 | valid_accuracy: 0.85452 |  9:37:34s
+epoch 366| loss: 0.28873 | train_accuracy: 0.85373 | valid_accuracy: 0.85283 |  9:38:03s
+epoch 367| loss: 0.28907 | train_accuracy: 0.84918 | valid_accuracy: 0.8492  |  9:38:32s
+epoch 368| loss: 0.28854 | train_accuracy: 0.84447 | valid_accuracy: 0.84533 |  9:39:01s
+epoch 369| loss: 0.28853 | train_accuracy: 0.85395 | valid_accuracy: 0.85354 |  9:39:30s
+epoch 370| loss: 0.28835 | train_accuracy: 0.85102 | valid_accuracy: 0.85057 |  9:39:59s
+epoch 371| loss: 0.28839 | train_accuracy: 0.82997 | valid_accuracy: 0.83132 |  9:40:28s
+epoch 372| loss: 0.28851 | train_accuracy: 0.84974 | valid_accuracy: 0.84956 |  9:40:57s
+epoch 373| loss: 0.28842 | train_accuracy: 0.85319 | valid_accuracy: 0.85265 |  9:41:26s
+epoch 374| loss: 0.28843 | train_accuracy: 0.85249 | valid_accuracy: 0.85182 |  9:41:55s
+epoch 375| loss: 0.28837 | train_accuracy: 0.85439 | valid_accuracy: 0.85304 |  9:42:24s
+epoch 376| loss: 0.28823 | train_accuracy: 0.85248 | valid_accuracy: 0.85184 |  9:42:53s
+epoch 377| loss: 0.28819 | train_accuracy: 0.85423 | valid_accuracy: 0.85382 |  9:43:22s
+epoch 378| loss: 0.28778 | train_accuracy: 0.83715 | valid_accuracy: 0.83809 |  9:43:51s
+epoch 379| loss: 0.28782 | train_accuracy: 0.84206 | valid_accuracy: 0.84278 |  9:44:20s
+epoch 380| loss: 0.28826 | train_accuracy: 0.85427 | valid_accuracy: 0.85354 |  9:44:49s
+epoch 381| loss: 0.28823 | train_accuracy: 0.83866 | valid_accuracy: 0.83936 |  9:45:19s
+epoch 382| loss: 0.2877  | train_accuracy: 0.84209 | valid_accuracy: 0.84269 |  9:45:49s
+epoch 383| loss: 0.28817 | train_accuracy: 0.83744 | valid_accuracy: 0.8383  |  9:46:18s
+epoch 384| loss: 0.28811 | train_accuracy: 0.85281 | valid_accuracy: 0.85194 |  9:46:47s
+epoch 385| loss: 0.28776 | train_accuracy: 0.85485 | valid_accuracy: 0.85434 |  9:47:16s
+epoch 386| loss: 0.28841 | train_accuracy: 0.84348 | valid_accuracy: 0.84419 |  9:47:45s
+epoch 387| loss: 0.28792 | train_accuracy: 0.85494 | valid_accuracy: 0.85403 |  9:48:14s
+epoch 388| loss: 0.28821 | train_accuracy: 0.83116 | valid_accuracy: 0.83243 |  9:48:43s
+epoch 389| loss: 0.28844 | train_accuracy: 0.85467 | valid_accuracy: 0.85357 |  9:49:12s
+epoch 390| loss: 0.2876  | train_accuracy: 0.85409 | valid_accuracy: 0.85346 |  9:49:43s
+epoch 391| loss: 0.28773 | train_accuracy: 0.84301 | valid_accuracy: 0.84396 |  9:50:12s
+epoch 392| loss: 0.28819 | train_accuracy: 0.84512 | valid_accuracy: 0.84582 |  9:50:41s
+epoch 393| loss: 0.28829 | train_accuracy: 0.85204 | valid_accuracy: 0.85131 |  9:51:09s
+epoch 394| loss: 0.2882  | train_accuracy: 0.85417 | valid_accuracy: 0.85374 |  9:51:38s
+epoch 395| loss: 0.28847 | train_accuracy: 0.85419 | valid_accuracy: 0.85441 |  9:52:07s
+epoch 396| loss: 0.28891 | train_accuracy: 0.84524 | valid_accuracy: 0.84599 |  9:52:36s
+epoch 397| loss: 0.28862 | train_accuracy: 0.85412 | valid_accuracy: 0.85374 |  9:53:05s
+epoch 398| loss: 0.28979 | train_accuracy: 0.85393 | valid_accuracy: 0.85344 |  9:53:34s
+epoch 399| loss: 0.29118 | train_accuracy: 0.85307 | valid_accuracy: 0.85244 |  9:54:04s
+epoch 400| loss: 0.29005 | train_accuracy: 0.8544  | valid_accuracy: 0.85393 |  9:54:33s
+epoch 401| loss: 0.28909 | train_accuracy: 0.84738 | valid_accuracy: 0.84833 |  9:55:02s
+epoch 402| loss: 0.28877 | train_accuracy: 0.84668 | valid_accuracy: 0.84681 |  9:55:31s
+epoch 403| loss: 0.28844 | train_accuracy: 0.85079 | valid_accuracy: 0.85044 |  9:56:01s
+epoch 404| loss: 0.28843 | train_accuracy: 0.84722 | valid_accuracy: 0.84738 |  9:56:30s
+epoch 405| loss: 0.28818 | train_accuracy: 0.85377 | valid_accuracy: 0.85316 |  9:56:59s
+epoch 406| loss: 0.28861 | train_accuracy: 0.85456 | valid_accuracy: 0.85372 |  9:57:29s
+epoch 407| loss: 0.28858 | train_accuracy: 0.84667 | valid_accuracy: 0.84712 |  9:57:58s
+epoch 408| loss: 0.28807 | train_accuracy: 0.84862 | valid_accuracy: 0.84804 |  9:58:27s
+epoch 409| loss: 0.28834 | train_accuracy: 0.85449 | valid_accuracy: 0.85354 |  9:58:56s
+epoch 410| loss: 0.28798 | train_accuracy: 0.84723 | valid_accuracy: 0.84736 |  9:59:25s
+epoch 411| loss: 0.28794 | train_accuracy: 0.85486 | valid_accuracy: 0.85471 |  9:59:54s
+epoch 412| loss: 0.2878  | train_accuracy: 0.85239 | valid_accuracy: 0.85164 |  10:00:23s
+epoch 413| loss: 0.28841 | train_accuracy: 0.85271 | valid_accuracy: 0.85227 |  10:00:52s
+epoch 414| loss: 0.2882  | train_accuracy: 0.84433 | valid_accuracy: 0.84472 |  10:01:21s
+epoch 415| loss: 0.28797 | train_accuracy: 0.85462 | valid_accuracy: 0.85397 |  10:01:50s
+epoch 416| loss: 0.28807 | train_accuracy: 0.84521 | valid_accuracy: 0.84604 |  10:02:20s
+epoch 417| loss: 0.28821 | train_accuracy: 0.85434 | valid_accuracy: 0.85328 |  10:02:49s
+epoch 418| loss: 0.28828 | train_accuracy: 0.85475 | valid_accuracy: 0.85396 |  10:03:18s
+epoch 419| loss: 0.28806 | train_accuracy: 0.84431 | valid_accuracy: 0.84526 |  10:03:48s
+epoch 420| loss: 0.28823 | train_accuracy: 0.84205 | valid_accuracy: 0.84258 |  10:04:17s
+epoch 421| loss: 0.2881  | train_accuracy: 0.85088 | valid_accuracy: 0.85033 |  10:04:46s
+epoch 422| loss: 0.28798 | train_accuracy: 0.85468 | valid_accuracy: 0.85347 |  10:05:15s
+epoch 423| loss: 0.288   | train_accuracy: 0.84014 | valid_accuracy: 0.84091 |  10:05:44s
+epoch 424| loss: 0.28884 | train_accuracy: 0.8543  | valid_accuracy: 0.85397 |  10:06:14s
+epoch 425| loss: 0.28838 | train_accuracy: 0.8522  | valid_accuracy: 0.85142 |  10:06:43s
+epoch 426| loss: 0.28846 | train_accuracy: 0.85462 | valid_accuracy: 0.85388 |  10:07:12s
+epoch 427| loss: 0.28782 | train_accuracy: 0.85142 | valid_accuracy: 0.85079 |  10:07:41s
+epoch 428| loss: 0.28792 | train_accuracy: 0.85382 | valid_accuracy: 0.85329 |  10:08:11s
+epoch 429| loss: 0.28781 | train_accuracy: 0.85441 | valid_accuracy: 0.85411 |  10:08:40s
+epoch 430| loss: 0.28909 | train_accuracy: 0.85401 | valid_accuracy: 0.85362 |  10:09:09s
+epoch 431| loss: 0.28859 | train_accuracy: 0.85376 | valid_accuracy: 0.85323 |  10:09:38s
+epoch 432| loss: 0.28871 | train_accuracy: 0.85503 | valid_accuracy: 0.85509 |  10:10:07s
+epoch 433| loss: 0.28829 | train_accuracy: 0.85246 | valid_accuracy: 0.85149 |  10:10:38s
+epoch 434| loss: 0.28802 | train_accuracy: 0.8545  | valid_accuracy: 0.85403 |  10:11:10s
+epoch 435| loss: 0.28815 | train_accuracy: 0.85512 | valid_accuracy: 0.85509 |  10:11:39s
+epoch 436| loss: 0.28807 | train_accuracy: 0.85494 | valid_accuracy: 0.85436 |  10:12:10s
+epoch 437| loss: 0.28768 | train_accuracy: 0.85468 | valid_accuracy: 0.85386 |  10:12:39s
+epoch 438| loss: 0.28771 | train_accuracy: 0.84518 | valid_accuracy: 0.8461  |  10:13:08s
+epoch 439| loss: 0.2877  | train_accuracy: 0.8553  | valid_accuracy: 0.85386 |  10:13:37s
+epoch 440| loss: 0.28838 | train_accuracy: 0.8526  | valid_accuracy: 0.85203 |  10:14:06s
+epoch 441| loss: 0.28834 | train_accuracy: 0.85438 | valid_accuracy: 0.85329 |  10:14:35s
+epoch 442| loss: 0.28797 | train_accuracy: 0.85468 | valid_accuracy: 0.85441 |  10:15:04s
+epoch 443| loss: 0.28782 | train_accuracy: 0.85502 | valid_accuracy: 0.85491 |  10:15:33s
+epoch 444| loss: 0.28786 | train_accuracy: 0.85464 | valid_accuracy: 0.8546  |  10:16:02s
+epoch 445| loss: 0.28801 | train_accuracy: 0.83846 | valid_accuracy: 0.83912 |  10:16:31s
+epoch 446| loss: 0.28796 | train_accuracy: 0.85112 | valid_accuracy: 0.8505  |  10:17:00s
+epoch 447| loss: 0.28771 | train_accuracy: 0.85457 | valid_accuracy: 0.85417 |  10:17:30s
+epoch 448| loss: 0.28793 | train_accuracy: 0.85495 | valid_accuracy: 0.85452 |  10:17:59s
+epoch 449| loss: 0.28774 | train_accuracy: 0.84748 | valid_accuracy: 0.84831 |  10:18:28s
+epoch 450| loss: 0.28772 | train_accuracy: 0.85496 | valid_accuracy: 0.85383 |  10:18:57s
+epoch 451| loss: 0.28761 | train_accuracy: 0.84051 | valid_accuracy: 0.84123 |  10:19:26s
+epoch 452| loss: 0.28767 | train_accuracy: 0.85477 | valid_accuracy: 0.85323 |  10:19:55s
+epoch 453| loss: 0.28825 | train_accuracy: 0.84555 | valid_accuracy: 0.84624 |  10:20:24s
+epoch 454| loss: 0.28757 | train_accuracy: 0.83743 | valid_accuracy: 0.83824 |  10:20:54s
+epoch 455| loss: 0.28802 | train_accuracy: 0.85476 | valid_accuracy: 0.85469 |  10:21:23s
+epoch 456| loss: 0.28761 | train_accuracy: 0.85512 | valid_accuracy: 0.85474 |  10:21:52s
+epoch 457| loss: 0.28758 | train_accuracy: 0.85506 | valid_accuracy: 0.85464 |  10:22:21s
+epoch 458| loss: 0.28776 | train_accuracy: 0.85469 | valid_accuracy: 0.85445 |  10:22:51s
+epoch 459| loss: 0.28824 | train_accuracy: 0.84537 | valid_accuracy: 0.84618 |  10:23:20s
+epoch 460| loss: 0.28803 | train_accuracy: 0.8424  | valid_accuracy: 0.843   |  10:23:49s
+epoch 461| loss: 0.28785 | train_accuracy: 0.85198 | valid_accuracy: 0.85168 |  10:24:18s
+epoch 462| loss: 0.28782 | train_accuracy: 0.85503 | valid_accuracy: 0.85492 |  10:24:47s
+epoch 463| loss: 0.28795 | train_accuracy: 0.83714 | valid_accuracy: 0.83778 |  10:25:17s
+epoch 464| loss: 0.28773 | train_accuracy: 0.8379  | valid_accuracy: 0.83891 |  10:25:46s
+epoch 465| loss: 0.28819 | train_accuracy: 0.8441  | valid_accuracy: 0.84501 |  10:26:14s
+epoch 466| loss: 0.28765 | train_accuracy: 0.85486 | valid_accuracy: 0.85421 |  10:26:43s
+epoch 467| loss: 0.28767 | train_accuracy: 0.85481 | valid_accuracy: 0.85397 |  10:27:12s
+epoch 468| loss: 0.28789 | train_accuracy: 0.85442 | valid_accuracy: 0.85372 |  10:27:41s
+epoch 469| loss: 0.28758 | train_accuracy: 0.83225 | valid_accuracy: 0.83393 |  10:28:10s
+epoch 470| loss: 0.28806 | train_accuracy: 0.85411 | valid_accuracy: 0.85361 |  10:28:39s
+epoch 471| loss: 0.2878  | train_accuracy: 0.85533 | valid_accuracy: 0.85428 |  10:29:08s
+epoch 472| loss: 0.28758 | train_accuracy: 0.85482 | valid_accuracy: 0.85411 |  10:29:37s
+epoch 473| loss: 0.28822 | train_accuracy: 0.85493 | valid_accuracy: 0.85453 |  10:30:06s
+epoch 474| loss: 0.28772 | train_accuracy: 0.83746 | valid_accuracy: 0.83818 |  10:30:35s
+epoch 475| loss: 0.28785 | train_accuracy: 0.84248 | valid_accuracy: 0.84315 |  10:31:04s
+epoch 476| loss: 0.28822 | train_accuracy: 0.84742 | valid_accuracy: 0.84759 |  10:31:33s
+epoch 477| loss: 0.28802 | train_accuracy: 0.85354 | valid_accuracy: 0.85302 |  10:32:02s
+epoch 478| loss: 0.28792 | train_accuracy: 0.82631 | valid_accuracy: 0.82844 |  10:32:31s
+epoch 479| loss: 0.28795 | train_accuracy: 0.83805 | valid_accuracy: 0.83897 |  10:33:00s
+epoch 480| loss: 0.2879  | train_accuracy: 0.85487 | valid_accuracy: 0.85358 |  10:33:29s
+epoch 481| loss: 0.28734 | train_accuracy: 0.85531 | valid_accuracy: 0.85429 |  10:33:58s
+epoch 482| loss: 0.28731 | train_accuracy: 0.85528 | valid_accuracy: 0.85474 |  10:34:27s
+epoch 483| loss: 0.28762 | train_accuracy: 0.83072 | valid_accuracy: 0.83176 |  10:34:56s
+epoch 484| loss: 0.28819 | train_accuracy: 0.85502 | valid_accuracy: 0.8542  |  10:35:25s
+epoch 485| loss: 0.28819 | train_accuracy: 0.83705 | valid_accuracy: 0.83764 |  10:35:54s
+epoch 486| loss: 0.28804 | train_accuracy: 0.83551 | valid_accuracy: 0.8368  |  10:36:23s
+epoch 487| loss: 0.2878  | train_accuracy: 0.85395 | valid_accuracy: 0.85342 |  10:36:52s
+epoch 488| loss: 0.28759 | train_accuracy: 0.85093 | valid_accuracy: 0.85075 |  10:37:22s
+epoch 489| loss: 0.28764 | train_accuracy: 0.85041 | valid_accuracy: 0.85013 |  10:37:51s
+epoch 490| loss: 0.28768 | train_accuracy: 0.83631 | valid_accuracy: 0.83704 |  10:38:20s
+epoch 491| loss: 0.28754 | train_accuracy: 0.83467 | valid_accuracy: 0.83573 |  10:38:49s
+epoch 492| loss: 0.28777 | train_accuracy: 0.84986 | valid_accuracy: 0.8499  |  10:39:18s
+epoch 493| loss: 0.28777 | train_accuracy: 0.85494 | valid_accuracy: 0.85416 |  10:39:47s
+epoch 494| loss: 0.28746 | train_accuracy: 0.84767 | valid_accuracy: 0.84769 |  10:40:16s
+epoch 495| loss: 0.28773 | train_accuracy: 0.85459 | valid_accuracy: 0.85347 |  10:40:45s
+epoch 496| loss: 0.28847 | train_accuracy: 0.8551  | valid_accuracy: 0.8539  |  10:41:14s
+epoch 497| loss: 0.28859 | train_accuracy: 0.85452 | valid_accuracy: 0.85413 |  10:41:43s
+epoch 498| loss: 0.28802 | train_accuracy: 0.84719 | valid_accuracy: 0.8479  |  10:42:12s
+epoch 499| loss: 0.28768 | train_accuracy: 0.85242 | valid_accuracy: 0.85188 |  10:42:41s
+epoch 500| loss: 0.28795 | train_accuracy: 0.8382  | valid_accuracy: 0.83888 |  10:43:10s
+epoch 501| loss: 0.2879  | train_accuracy: 0.85432 | valid_accuracy: 0.85383 |  10:43:39s
+epoch 502| loss: 0.28801 | train_accuracy: 0.85497 | valid_accuracy: 0.85519 |  10:44:08s
+epoch 503| loss: 0.28754 | train_accuracy: 0.85512 | valid_accuracy: 0.8542  |  10:44:37s
+epoch 504| loss: 0.28826 | train_accuracy: 0.85317 | valid_accuracy: 0.85266 |  10:45:06s
+epoch 505| loss: 0.28752 | train_accuracy: 0.82583 | valid_accuracy: 0.82812 |  10:45:35s
+epoch 506| loss: 0.28744 | train_accuracy: 0.84544 | valid_accuracy: 0.84592 |  10:46:05s
+epoch 507| loss: 0.28765 | train_accuracy: 0.83802 | valid_accuracy: 0.83899 |  10:46:34s
+epoch 508| loss: 0.28757 | train_accuracy: 0.85245 | valid_accuracy: 0.85194 |  10:47:03s
+epoch 509| loss: 0.28793 | train_accuracy: 0.847   | valid_accuracy: 0.84713 |  10:47:31s
+epoch 510| loss: 0.28762 | train_accuracy: 0.84747 | valid_accuracy: 0.84755 |  10:48:00s
+epoch 511| loss: 0.28804 | train_accuracy: 0.85153 | valid_accuracy: 0.851   |  10:48:29s
+epoch 512| loss: 0.28817 | train_accuracy: 0.85467 | valid_accuracy: 0.85304 |  10:48:58s
+epoch 513| loss: 0.28792 | train_accuracy: 0.85489 | valid_accuracy: 0.85388 |  10:49:27s
+epoch 514| loss: 0.28773 | train_accuracy: 0.85489 | valid_accuracy: 0.8539  |  10:49:56s
+epoch 515| loss: 0.28764 | train_accuracy: 0.85458 | valid_accuracy: 0.85358 |  10:50:25s
+epoch 516| loss: 0.28763 | train_accuracy: 0.83805 | valid_accuracy: 0.83865 |  10:50:54s
+epoch 517| loss: 0.28863 | train_accuracy: 0.84011 | valid_accuracy: 0.84077 |  10:51:23s
+epoch 518| loss: 0.28825 | train_accuracy: 0.85247 | valid_accuracy: 0.8518  |  10:51:52s
+epoch 519| loss: 0.28801 | train_accuracy: 0.85082 | valid_accuracy: 0.85075 |  10:52:21s
+epoch 520| loss: 0.28783 | train_accuracy: 0.85445 | valid_accuracy: 0.8541  |  10:52:50s
+epoch 521| loss: 0.28786 | train_accuracy: 0.85462 | valid_accuracy: 0.85362 |  10:53:19s
+epoch 522| loss: 0.28762 | train_accuracy: 0.85488 | valid_accuracy: 0.85424 |  10:53:49s
+epoch 523| loss: 0.2878  | train_accuracy: 0.85416 | valid_accuracy: 0.85383 |  10:54:17s
+epoch 524| loss: 0.2878  | train_accuracy: 0.85436 | valid_accuracy: 0.85312 |  10:54:46s
+epoch 525| loss: 0.28722 | train_accuracy: 0.85486 | valid_accuracy: 0.85385 |  10:55:15s
+epoch 526| loss: 0.28766 | train_accuracy: 0.85088 | valid_accuracy: 0.85079 |  10:55:44s
+epoch 527| loss: 0.28749 | train_accuracy: 0.83472 | valid_accuracy: 0.83524 |  10:56:13s
+epoch 528| loss: 0.28824 | train_accuracy: 0.85385 | valid_accuracy: 0.85353 |  10:56:42s
+epoch 529| loss: 0.28765 | train_accuracy: 0.85483 | valid_accuracy: 0.85343 |  10:57:10s
+epoch 530| loss: 0.28794 | train_accuracy: 0.85496 | valid_accuracy: 0.85483 |  10:57:39s
+epoch 531| loss: 0.28805 | train_accuracy: 0.85467 | valid_accuracy: 0.85302 |  10:58:08s
+epoch 532| loss: 0.28826 | train_accuracy: 0.85494 | valid_accuracy: 0.85439 |  10:58:37s
+epoch 533| loss: 0.28864 | train_accuracy: 0.85371 | valid_accuracy: 0.85305 |  10:59:06s
+epoch 534| loss: 0.2882  | train_accuracy: 0.83818 | valid_accuracy: 0.83873 |  10:59:35s
+epoch 535| loss: 0.28831 | train_accuracy: 0.85381 | valid_accuracy: 0.85342 |  11:00:05s
+epoch 536| loss: 0.28785 | train_accuracy: 0.83677 | valid_accuracy: 0.83733 |  11:00:35s
+epoch 537| loss: 0.28794 | train_accuracy: 0.83228 | valid_accuracy: 0.83288 |  11:01:04s
+epoch 538| loss: 0.28784 | train_accuracy: 0.85496 | valid_accuracy: 0.85452 |  11:01:33s
+epoch 539| loss: 0.28789 | train_accuracy: 0.82993 | valid_accuracy: 0.83109 |  11:02:02s
+epoch 540| loss: 0.28767 | train_accuracy: 0.85334 | valid_accuracy: 0.8528  |  11:02:31s
+epoch 541| loss: 0.28794 | train_accuracy: 0.85479 | valid_accuracy: 0.85429 |  11:03:00s
+epoch 542| loss: 0.2873  | train_accuracy: 0.85468 | valid_accuracy: 0.85411 |  11:03:29s
+epoch 543| loss: 0.28726 | train_accuracy: 0.85236 | valid_accuracy: 0.8516  |  11:03:58s
+epoch 544| loss: 0.28784 | train_accuracy: 0.85458 | valid_accuracy: 0.85399 |  11:04:27s
+epoch 545| loss: 0.28986 | train_accuracy: 0.85325 | valid_accuracy: 0.85251 |  11:04:56s
+epoch 546| loss: 0.2918  | train_accuracy: 0.85403 | valid_accuracy: 0.85349 |  11:05:26s
+epoch 547| loss: 0.28943 | train_accuracy: 0.85386 | valid_accuracy: 0.85372 |  11:05:55s
+epoch 548| loss: 0.2907  | train_accuracy: 0.85368 | valid_accuracy: 0.85288 |  11:06:24s
+epoch 549| loss: 0.29112 | train_accuracy: 0.85396 | valid_accuracy: 0.85374 |  11:06:53s
+epoch 550| loss: 0.28941 | train_accuracy: 0.8543  | valid_accuracy: 0.85364 |  11:07:21s
+epoch 551| loss: 0.28861 | train_accuracy: 0.85436 | valid_accuracy: 0.85322 |  11:07:50s
+epoch 552| loss: 0.28883 | train_accuracy: 0.84988 | valid_accuracy: 0.84934 |  11:08:20s
+epoch 553| loss: 0.28825 | train_accuracy: 0.85355 | valid_accuracy: 0.85308 |  11:08:49s
+epoch 554| loss: 0.28854 | train_accuracy: 0.85439 | valid_accuracy: 0.85411 |  11:09:18s
+epoch 555| loss: 0.29057 | train_accuracy: 0.85384 | valid_accuracy: 0.85288 |  11:09:47s/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+
+epoch 556| loss: 0.28902 | train_accuracy: 0.85282 | valid_accuracy: 0.85227 |  11:10:16s
+epoch 557| loss: 0.28862 | train_accuracy: 0.85438 | valid_accuracy: 0.85361 |  11:10:45s
+epoch 558| loss: 0.28853 | train_accuracy: 0.8542  | valid_accuracy: 0.85365 |  11:11:14s
+epoch 559| loss: 0.28772 | train_accuracy: 0.85483 | valid_accuracy: 0.85388 |  11:11:43s
+epoch 560| loss: 0.28774 | train_accuracy: 0.82626 | valid_accuracy: 0.82739 |  11:12:12s
+epoch 561| loss: 0.28809 | train_accuracy: 0.85439 | valid_accuracy: 0.85368 |  11:12:41s
+epoch 562| loss: 0.28792 | train_accuracy: 0.8549  | valid_accuracy: 0.85436 |  11:13:10s
+epoch 563| loss: 0.28795 | train_accuracy: 0.83251 | valid_accuracy: 0.83351 |  11:13:39s
+epoch 564| loss: 0.2879  | train_accuracy: 0.85443 | valid_accuracy: 0.85376 |  11:14:08s
+epoch 565| loss: 0.28784 | train_accuracy: 0.85224 | valid_accuracy: 0.85199 |  11:14:37s
+epoch 566| loss: 0.28772 | train_accuracy: 0.82982 | valid_accuracy: 0.83164 |  11:15:06s
+epoch 567| loss: 0.28743 | train_accuracy: 0.85398 | valid_accuracy: 0.85342 |  11:15:35s
+epoch 568| loss: 0.28795 | train_accuracy: 0.85435 | valid_accuracy: 0.85385 |  11:16:04s
+epoch 569| loss: 0.28761 | train_accuracy: 0.85479 | valid_accuracy: 0.8546  |  11:16:34s
+epoch 570| loss: 0.28752 | train_accuracy: 0.832   | valid_accuracy: 0.83275 |  11:17:03s
+epoch 571| loss: 0.28758 | train_accuracy: 0.85485 | valid_accuracy: 0.85443 |  11:17:32s
+epoch 572| loss: 0.28752 | train_accuracy: 0.85216 | valid_accuracy: 0.85138 |  11:18:00s
+epoch 573| loss: 0.28763 | train_accuracy: 0.82972 | valid_accuracy: 0.83094 |  11:18:29s
+epoch 574| loss: 0.28765 | train_accuracy: 0.85478 | valid_accuracy: 0.85392 |  11:18:58s
+epoch 575| loss: 0.28745 | train_accuracy: 0.85478 | valid_accuracy: 0.85407 |  11:19:27s
+epoch 576| loss: 0.28734 | train_accuracy: 0.85491 | valid_accuracy: 0.85434 |  11:19:56s
+epoch 577| loss: 0.28774 | train_accuracy: 0.8543  | valid_accuracy: 0.85393 |  11:20:25s
+epoch 578| loss: 0.28821 | train_accuracy: 0.8544  | valid_accuracy: 0.85431 |  11:20:54s
+epoch 579| loss: 0.2877  | train_accuracy: 0.84246 | valid_accuracy: 0.84286 |  11:21:23s
+epoch 580| loss: 0.28775 | train_accuracy: 0.85483 | valid_accuracy: 0.85382 |  11:21:52s
+epoch 581| loss: 0.2874  | train_accuracy: 0.85307 | valid_accuracy: 0.85223 |  11:22:22s
+epoch 582| loss: 0.28754 | train_accuracy: 0.85415 | valid_accuracy: 0.85434 |  11:22:53s
+epoch 583| loss: 0.28736 | train_accuracy: 0.83561 | valid_accuracy: 0.83643 |  11:23:23s
+epoch 584| loss: 0.28769 | train_accuracy: 0.85412 | valid_accuracy: 0.85364 |  11:23:52s
+epoch 585| loss: 0.28743 | train_accuracy: 0.85213 | valid_accuracy: 0.8516  |  11:24:22s
+epoch 586| loss: 0.2873  | train_accuracy: 0.85364 | valid_accuracy: 0.85298 |  11:24:52s
+epoch 587| loss: 0.28782 | train_accuracy: 0.85493 | valid_accuracy: 0.85449 |  11:25:23s
+epoch 588| loss: 0.28757 | train_accuracy: 0.85489 | valid_accuracy: 0.85481 |  11:25:52s
+epoch 589| loss: 0.28724 | train_accuracy: 0.85044 | valid_accuracy: 0.8503  |  11:26:21s
+epoch 590| loss: 0.28795 | train_accuracy: 0.85495 | valid_accuracy: 0.85455 |  11:26:50s
+epoch 591| loss: 0.28712 | train_accuracy: 0.85531 | valid_accuracy: 0.85473 |  11:27:19s
+epoch 592| loss: 0.28725 | train_accuracy: 0.85486 | valid_accuracy: 0.85413 |  11:27:48s
+epoch 593| loss: 0.28754 | train_accuracy: 0.85505 | valid_accuracy: 0.85485 |  11:28:17s
+epoch 594| loss: 0.28683 | train_accuracy: 0.85111 | valid_accuracy: 0.85074 |  11:28:46s
+epoch 595| loss: 0.28722 | train_accuracy: 0.83675 | valid_accuracy: 0.83763 |  11:29:15s
+epoch 596| loss: 0.2875  | train_accuracy: 0.85502 | valid_accuracy: 0.85456 |  11:29:44s
+epoch 597| loss: 0.28713 | train_accuracy: 0.85531 | valid_accuracy: 0.85429 |  11:30:13s
+epoch 598| loss: 0.28734 | train_accuracy: 0.85538 | valid_accuracy: 0.85453 |  11:30:43s
+epoch 599| loss: 0.28698 | train_accuracy: 0.83667 | valid_accuracy: 0.83814 |  11:31:12s
+epoch 600| loss: 0.28757 | train_accuracy: 0.84668 | valid_accuracy: 0.84649 |  11:31:41s
+epoch 601| loss: 0.28768 | train_accuracy: 0.85472 | valid_accuracy: 0.85469 |  11:32:10s
+epoch 602| loss: 0.28743 | train_accuracy: 0.83179 | valid_accuracy: 0.8328  |  11:32:38s
+
+Early stopping occurred at epoch 602 with best_epoch = 502 and best_valid_accuracy = 0.85519
+----- Time and memory usage -----
+(current, peak) (1940905, 2999574323)
+--- 41580.16 segundos ---
+------------------------------------
+--- Performance of tabnet multiclass normal ---
+Traceback (most recent call last):
+  File "prepareData.py", line 92, in <module>
+    met.calculate_metrics("tabnet multiclass normal", y_test, predictions, average='binary')
+  File "/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/mlciic/metrics.py", line 55, in calculate_metrics
+    precision = precision_score(y_true = yTrue, y_pred = yPred, average = average)
+  File "/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py", line 1765, in precision_score
+    zero_division=zero_division,
+  File "/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py", line 1544, in precision_recall_fscore_support
+    labels = _check_set_wise_labels(y_true, y_pred, average, labels, pos_label)
+  File "/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py", line 1367, in _check_set_wise_labels
+    "choose another average setting, one of %r." % (y_type, average_options)
+ValueError: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].
+---
+Lines: 358152
+Columns: 159 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['type']
+
+--- Details for categorical columns ---
+type: 
+['udp_flood' 'mqtt_flood' 'http_flood' 'normal' 'tcp_flood'
+ 'http_flood_node_red' 'icmp_flood' 'port_scanning' 'arp_spoofing'
+ 'http_botnet']
+
+    Data Type               Column Name  \
+0     float64                  duration   
+1     float64                orig_bytes   
+2     float64                resp_bytes   
+3       int64              missed_bytes   
+4     float64                 orig_pkts   
+5     float64             orig_ip_bytes   
+6     float64                 resp_pkts   
+7     float64             resp_ip_bytes   
+8     float64             flow_duration   
+9     float64              fwd_pkts_tot   
+10    float64              bwd_pkts_tot   
+11    float64         fwd_data_pkts_tot   
+12    float64         bwd_data_pkts_tot   
+13    float64          fwd_pkts_per_sec   
+14    float64          bwd_pkts_per_sec   
+15    float64         flow_pkts_per_sec   
+16    float64             down_up_ratio   
+17    float64       fwd_header_size_tot   
+18    float64       bwd_header_size_tot   
+19    float64        fwd_PSH_flag_count   
+20    float64        bwd_PSH_flag_count   
+21    float64       flow_ACK_flag_count   
+22    float64      fwd_pkts_payload.min   
+23    float64      fwd_pkts_payload.max   
+24    float64      fwd_pkts_payload.tot   
+25    float64      fwd_pkts_payload.avg   
+26    float64      fwd_pkts_payload.std   
+27    float64      bwd_pkts_payload.min   
+28    float64      bwd_pkts_payload.max   
+29    float64      bwd_pkts_payload.tot   
+30    float64      bwd_pkts_payload.avg   
+31    float64      bwd_pkts_payload.std   
+32    float64     flow_pkts_payload.min   
+33    float64     flow_pkts_payload.max   
+34    float64     flow_pkts_payload.tot   
+35    float64     flow_pkts_payload.avg   
+36    float64     flow_pkts_payload.std   
+37    float64               fwd_iat.min   
+38    float64               fwd_iat.max   
+39    float64               fwd_iat.tot   
+40    float64               fwd_iat.avg   
+41    float64               fwd_iat.std   
+42    float64               bwd_iat.min   
+43    float64               bwd_iat.max   
+44    float64               bwd_iat.tot   
+45    float64               bwd_iat.avg   
+46    float64               bwd_iat.std   
+47    float64              flow_iat.min   
+48    float64              flow_iat.max   
+49    float64              flow_iat.tot   
+50    float64              flow_iat.avg   
+51    float64              flow_iat.std   
+52    float64  payload_bytes_per_second   
+53    float64          fwd_subflow_pkts   
+54    float64          bwd_subflow_pkts   
+55    float64         fwd_subflow_bytes   
+56    float64         bwd_subflow_bytes   
+57    float64            fwd_bulk_bytes   
+58    float64            bwd_bulk_bytes   
+59    float64          fwd_bulk_packets   
+60    float64          bwd_bulk_packets   
+61    float64             fwd_bulk_rate   
+62    float64             bwd_bulk_rate   
+63    float64                active.max   
+64    float64                active.tot   
+65    float64                active.avg   
+66    float64                active.std   
+67    float64                  idle.min   
+68    float64                  idle.max   
+69    float64                  idle.tot   
+70    float64                  idle.avg   
+71    float64                  idle.std   
+72    float64      fwd_init_window_size   
+73    float64      bwd_init_window_size   
+74    float64      fwd_last_window_size   
+75    float64      bwd_last_window_size   
+76     object                      type   
+77      int64                proto_icmp   
+78      int64                 proto_tcp   
+79      int64                 proto_udp   
+80      int64            conn_state_OTH   
+81      int64            conn_state_REJ   
+82      int64           conn_state_RSTO   
+83      int64         conn_state_RSTOS0   
+84      int64           conn_state_RSTR   
+85      int64          conn_state_RSTRH   
+86      int64             conn_state_S0   
+87      int64             conn_state_S1   
+88      int64             conn_state_S2   
+89      int64             conn_state_S3   
+90      int64             conn_state_SF   
+91      int64             conn_state_SH   
+92      int64            conn_state_SHR   
+93      int64     fwd_header_size_min_0   
+94      int64     fwd_header_size_min_8   
+95      int64    fwd_header_size_min_20   
+96      int64    fwd_header_size_min_24   
+97      int64    fwd_header_size_min_32   
+98      int64    fwd_header_size_min_40   
+99      int64    fwd_header_size_min_44   
+100     int64     fwd_header_size_max_0   
+101     int64     fwd_header_size_max_8   
+102     int64    fwd_header_size_max_20   
+103     int64    fwd_header_size_max_24   
+104     int64    fwd_header_size_max_32   
+105     int64    fwd_header_size_max_40   
+106     int64    fwd_header_size_max_44   
+107     int64     bwd_header_size_min_0   
+108     int64     bwd_header_size_min_8   
+109     int64    bwd_header_size_min_20   
+110     int64    bwd_header_size_min_24   
+111     int64    bwd_header_size_min_32   
+112     int64    bwd_header_size_min_40   
+113     int64    bwd_header_size_min_44   
+114     int64     bwd_header_size_max_0   
+115     int64     bwd_header_size_max_8   
+116     int64    bwd_header_size_max_20   
+117     int64    bwd_header_size_max_24   
+118     int64    bwd_header_size_max_32   
+119     int64    bwd_header_size_max_40   
+120     int64    bwd_header_size_max_44   
+121     int64    bwd_header_size_max_52   
+122     int64     flow_FIN_flag_count_0   
+123     int64     flow_FIN_flag_count_1   
+124     int64     flow_FIN_flag_count_2   
+125     int64     flow_FIN_flag_count_3   
+126     int64     flow_FIN_flag_count_4   
+127     int64     flow_FIN_flag_count_5   
+128     int64     flow_FIN_flag_count_6   
+129     int64     flow_FIN_flag_count_7   
+130     int64     flow_SYN_flag_count_0   
+131     int64     flow_SYN_flag_count_1   
+132     int64     flow_SYN_flag_count_2   
+133     int64     flow_SYN_flag_count_3   
+134     int64     flow_SYN_flag_count_4   
+135     int64     flow_SYN_flag_count_5   
+136     int64     flow_SYN_flag_count_6   
+137     int64     flow_SYN_flag_count_7   
+138     int64     flow_SYN_flag_count_8   
+139     int64     flow_SYN_flag_count_9   
+140     int64    flow_SYN_flag_count_10   
+141     int64     flow_RST_flag_count_0   
+142     int64     flow_RST_flag_count_1   
+143     int64     flow_RST_flag_count_2   
+144     int64     flow_RST_flag_count_3   
+145     int64     flow_RST_flag_count_4   
+146     int64      history_originator_0   
+147     int64      history_originator_1   
+148     int64      history_originator_2   
+149     int64      history_originator_3   
+150     int64      history_originator_4   
+151     int64      history_originator_5   
+152     int64      history_originator_6   
+153     int64       history_responder_0   
+154     int64       history_responder_1   
+155     int64       history_responder_2   
+156     int64       history_responder_3   
+157     int64       history_responder_4   
+158     int64       history_responder_5   
+
+                                         Unique Values  
+0    [-0.0146794852089584, -0.4057007074806505, -0....  
+1    [-0.1798294178884204, -0.1798284914145006, 5.0...  
+2    [-0.0050909125602386, -0.0050749461149235, -0....  
+3                                               [0, 1]  
+4    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+5    [-0.2235051422612725, -0.2701244830698416, -0....  
+6    [-0.756566237085908, 0.113379129033401, 2.7232...  
+7    [-0.65132992298557, 0.0761837856163627, 0.0100...  
+8    [-0.0146794852089584, -0.4057007074806505, -0....  
+9    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+10   [-0.756566237085908, 0.113379129033401, 2.7232...  
+11   [-0.1841505084302839, 1.8849776192465009, 2.91...  
+12   [-0.0468426670141985, 15.094668954347924, 30.2...  
+13   [-0.7784400498089381, -0.7784161600321544, -0....  
+14   [-0.7778685962767037, -0.777780086048685, 1.31...  
+15   [-0.7784992390061136, -0.7784872839061784, -0....  
+16   [-1.303155859508906, 0.7080096245472669, 0.037...  
+17   [-0.5632548105483247, -0.4759722062381907, -0....  
+18   [-0.5899833859035155, 0.0606276880264669, -0.0...  
+19   [-0.1847802841859509, 1.9741081084026069, 3.05...  
+20   [-0.0400030915305518, 17.674125540826264, 35.3...  
+21   [-0.4998346498111727, -0.0539362824453553, 3.5...  
+22   [-0.0715485643139634, 3.915326526805518, 4.733...  
+23   [-0.2240566597355144, 1.7390343359970422, 2.41...  
+24   [-0.1700283834593249, 0.4782412227926198, 1.49...  
+25   [-0.202207993037164, 0.5625309784999971, 2.751...  
+26   [-0.2180729836878303, 1.5162121242004258, 3.06...  
+27   [-0.0268542124667472, 35.75915639532795, 32.97...  
+28   [-0.0415997877172178, 19.401657524859345, 8.83...  
+29   [-0.0425570558754673, 18.57474482657504, 8.452...  
+30   [-0.0348008605996162, 33.5905000562465, 2.5224...  
+31   [-0.0298206347677357, 8.991496232710693, 8.322...  
+32   [-0.0331878993021227, 11.642130649671818, 14.0...  
+33   [-0.2246240054143394, 1.737063313551674, 2.409...  
+34   [-0.1706558309600847, 0.4767949484126132, 1.49...  
+35   [-0.2080860613189242, 0.646748724811026, 2.935...  
+36   [-0.2211732043688052, 1.350672247020747, 3.018...  
+37   [0.7127558178183264, -0.1241863594563378, -0.4...  
+38   [0.2733864256711472, -0.3354093518719633, -0.5...  
+39   [-0.0028152123596323, -0.3933972387175649, -0....  
+40   [0.5051920576769914, -0.2519777043187228, -0.5...  
+41   [-0.3664930315787462, -0.0066253488630917, 1.4...  
+42   [-0.0943335427477205, -0.0942693179403854, 0.2...  
+43   [-0.1919051737110198, 2.452781667564118, 0.523...  
+44   [-0.136594453953829, 0.572018528282717, 0.0948...  
+45   [-0.1760385217376787, 1.2357883632501545, 0.51...  
+46   [-0.1701881005640612, 3.1116935451146284, 0.68...  
+47   [0.7007557821325137, -0.1404231255835309, -0.3...  
+48   [0.2580938529997307, -0.3551824923609279, -0.5...  
+49   [-0.0147052155493456, -0.4057263732713586, -0....  
+50   [0.4947340760258622, -0.2672872228429325, -0.4...  
+51   [-0.3717570839796863, -0.1029017127743767, -0....  
+52   [-0.0167643314864417, -0.0162993341521579, -0....  
+53   [-0.1664665308562612, 4.051102316774855, -1.22...  
+54   [-1.229441762620637, 0.6387953628886931, 2.507...  
+55   [-0.211129749304483, 1.0516171041470712, 3.039...  
+56   [-0.0335462033978086, 21.33447097684775, 2.404...  
+57   [-0.0045563503109509, 234.63874932947647, 138....  
+58   [-0.003094060504225, 333.5791545891124, 50.847...  
+59   [-0.0046737429031634, 216.44925318646543, 180....  
+60           [-0.0033419406315067, 299.22733832322217]  
+61   [-0.0022212486057844, 0.0106504297139593, 50.1...  
+62   [-0.0014985658322627, 0.4679980432883466, 0.72...  
+63   [-0.2104019440618189, 0.591378013080404, -0.06...  
+64   [-0.2110921674416496, 0.5694058858568176, -0.0...  
+65   [-0.2074104452541365, 0.6109421180480645, -0.0...  
+66   [-0.0579698713082919, -0.0555156831535085, -0....  
+67   [0.5670191944053457, -0.4771993911044491, -0.0...  
+68   [0.2791260775230978, -0.5365049285270181, -0.2...  
+69   [0.0220513888074027, -0.5105013742139537, -0.3...  
+70   [0.428915493265397, -0.5282022665843201, -0.17...  
+71   [-0.3039416991711032, 1.877159182437583, 2.359...  
+72   [-0.8016621040909139, -0.7851928581929801, 1.2...  
+73   [-0.7083135508908369, 1.4079016290762738, 1.43...  
+74   [-0.7251696633681214, -0.7082262240141926, 1.4...  
+75   [-0.6538613341045789, 1.5307894976787302, 1.52...  
+76   [udp_flood, mqtt_flood, http_flood, normal, tc...  
+77                                              [0, 1]  
+78                                              [0, 1]  
+79                                              [1, 0]  
+80                                              [0, 1]  
+81                                              [0, 1]  
+82                                              [0, 1]  
+83                                              [0, 1]  
+84                                              [0, 1]  
+85                                              [0, 1]  
+86                                              [1, 0]  
+87                                              [0, 1]  
+88                                              [0, 1]  
+89                                              [0, 1]  
+90                                              [0, 1]  
+91                                              [0, 1]  
+92                                              [0, 1]  
+93                                              [0, 1]  
+94                                              [1, 0]  
+95                                              [0, 1]  
+96                                              [0, 1]  
+97                                              [0, 1]  
+98                                              [0, 1]  
+99                                              [0, 1]  
+100                                             [0, 1]  
+101                                             [1, 0]  
+102                                             [0, 1]  
+103                                             [0, 1]  
+104                                             [0, 1]  
+105                                             [0, 1]  
+106                                             [0, 1]  
+107                                             [1, 0]  
+108                                             [0, 1]  
+109                                             [0, 1]  
+110                                             [0, 1]  
+111                                             [0, 1]  
+112                                             [0, 1]  
+113                                             [0, 1]  
+114                                             [1, 0]  
+115                                             [0, 1]  
+116                                             [0, 1]  
+117                                             [0, 1]  
+118                                             [0, 1]  
+119                                             [0, 1]  
+120                                             [0, 1]  
+121                                             [0, 1]  
+122                                             [1, 0]  
+123                                             [0, 1]  
+124                                             [0, 1]  
+125                                             [0, 1]  
+126                                             [0, 1]  
+127                                             [0, 1]  
+128                                             [0, 1]  
+129                                             [0, 1]  
+130                                             [1, 0]  
+131                                             [0, 1]  
+132                                             [0, 1]  
+133                                             [0, 1]  
+134                                             [0, 1]  
+135                                             [0, 1]  
+136                                             [0, 1]  
+137                                             [0, 1]  
+138                                             [0, 1]  
+139                                             [0, 1]  
+140                                                [0]  
+141                                             [1, 0]  
+142                                             [0, 1]  
+143                                             [0, 1]  
+144                                             [0, 1]  
+145                                             [0, 1]  
+146                                             [0, 1]  
+147                                             [1, 0]  
+148                                             [0, 1]  
+149                                             [0, 1]  
+150                                             [0, 1]  
+151                                             [0, 1]  
+152                                             [0, 1]  
+153                                             [1, 0]  
+154                                             [0, 1]  
+155                                             [0, 1]  
+156                                             [0, 1]  
+157                                             [0, 1]  
+158                                             [0, 1]  
+epoch 0  | loss: 1.37802 | train_accuracy: 0.64182 | valid_accuracy: 0.64353 |  0:00:37s
+epoch 1  | loss: 0.52005 | train_accuracy: 0.78127 | valid_accuracy: 0.78268 |  0:01:07s
+epoch 2  | loss: 0.42049 | train_accuracy: 0.74757 | valid_accuracy: 0.74959 |  0:01:37s
+epoch 3  | loss: 0.35428 | train_accuracy: 0.80577 | valid_accuracy: 0.80555 |  0:02:06s
+epoch 4  | loss: 0.32688 | train_accuracy: 0.7709  | valid_accuracy: 0.76964 |  0:02:36s
+epoch 5  | loss: 0.32063 | train_accuracy: 0.78037 | valid_accuracy: 0.7805  |  0:03:06s
+epoch 6  | loss: 0.31471 | train_accuracy: 0.76578 | valid_accuracy: 0.76486 |  0:03:35s
+epoch 7  | loss: 0.31328 | train_accuracy: 0.76586 | valid_accuracy: 0.7659  |  0:04:05s
+epoch 8  | loss: 0.31111 | train_accuracy: 0.76993 | valid_accuracy: 0.76908 |  0:04:35s
+epoch 9  | loss: 0.31173 | train_accuracy: 0.74126 | valid_accuracy: 0.74091 |  0:05:04s
+epoch 10 | loss: 0.30999 | train_accuracy: 0.82203 | valid_accuracy: 0.82124 |  0:05:34s
+epoch 11 | loss: 0.3112  | train_accuracy: 0.84503 | valid_accuracy: 0.84423 |  0:06:03s
+epoch 12 | loss: 0.31079 | train_accuracy: 0.72827 | valid_accuracy: 0.7283  |  0:06:33s
+epoch 13 | loss: 0.30858 | train_accuracy: 0.84092 | valid_accuracy: 0.84052 |  0:07:02s
+epoch 14 | loss: 0.30642 | train_accuracy: 0.81773 | valid_accuracy: 0.81639 |  0:07:31s
+epoch 15 | loss: 0.30541 | train_accuracy: 0.80781 | valid_accuracy: 0.80684 |  0:08:01s
+epoch 16 | loss: 0.30487 | train_accuracy: 0.84761 | valid_accuracy: 0.84786 |  0:08:31s
+epoch 17 | loss: 0.30398 | train_accuracy: 0.84623 | valid_accuracy: 0.84624 |  0:09:00s
+epoch 18 | loss: 0.3033  | train_accuracy: 0.84966 | valid_accuracy: 0.8497  |  0:09:30s
+epoch 19 | loss: 0.30321 | train_accuracy: 0.84645 | valid_accuracy: 0.84727 |  0:10:00s
+epoch 20 | loss: 0.30688 | train_accuracy: 0.7545  | valid_accuracy: 0.75533 |  0:10:29s
+epoch 21 | loss: 0.30771 | train_accuracy: 0.84464 | valid_accuracy: 0.84409 |  0:10:59s
+epoch 22 | loss: 0.3066  | train_accuracy: 0.81981 | valid_accuracy: 0.81867 |  0:11:28s
+epoch 23 | loss: 0.30397 | train_accuracy: 0.84696 | valid_accuracy: 0.84712 |  0:11:58s
+epoch 24 | loss: 0.30842 | train_accuracy: 0.84683 | valid_accuracy: 0.84726 |  0:12:27s
+epoch 25 | loss: 0.32884 | train_accuracy: 0.8454  | valid_accuracy: 0.84484 |  0:12:57s
+epoch 26 | loss: 0.30974 | train_accuracy: 0.84619 | valid_accuracy: 0.84564 |  0:13:26s
+epoch 27 | loss: 0.30555 | train_accuracy: 0.84625 | valid_accuracy: 0.84589 |  0:13:56s
+epoch 28 | loss: 0.30471 | train_accuracy: 0.84919 | valid_accuracy: 0.84924 |  0:14:25s
+epoch 29 | loss: 0.30284 | train_accuracy: 0.84828 | valid_accuracy: 0.84727 |  0:14:55s
+epoch 30 | loss: 0.30245 | train_accuracy: 0.8482  | valid_accuracy: 0.84835 |  0:15:24s
+epoch 31 | loss: 0.30187 | train_accuracy: 0.8488  | valid_accuracy: 0.84879 |  0:15:54s
+epoch 32 | loss: 0.30245 | train_accuracy: 0.84905 | valid_accuracy: 0.84919 |  0:16:23s
+epoch 33 | loss: 0.30109 | train_accuracy: 0.85041 | valid_accuracy: 0.85051 |  0:16:53s
+epoch 34 | loss: 0.30068 | train_accuracy: 0.8513  | valid_accuracy: 0.85115 |  0:17:22s
+epoch 35 | loss: 0.3008  | train_accuracy: 0.85088 | valid_accuracy: 0.85064 |  0:17:51s
+epoch 36 | loss: 0.2994  | train_accuracy: 0.8516  | valid_accuracy: 0.85125 |  0:18:20s
+epoch 37 | loss: 0.29951 | train_accuracy: 0.85073 | valid_accuracy: 0.85011 |  0:18:49s
+epoch 38 | loss: 0.30066 | train_accuracy: 0.84907 | valid_accuracy: 0.84818 |  0:19:18s
+epoch 39 | loss: 0.30167 | train_accuracy: 0.84995 | valid_accuracy: 0.8502  |  0:19:48s
+epoch 40 | loss: 0.30221 | train_accuracy: 0.84621 | valid_accuracy: 0.84516 |  0:20:17s
+epoch 41 | loss: 0.30532 | train_accuracy: 0.84924 | valid_accuracy: 0.84833 |  0:20:47s
+epoch 42 | loss: 0.30298 | train_accuracy: 0.85007 | valid_accuracy: 0.84973 |  0:21:17s
+epoch 43 | loss: 0.3077  | train_accuracy: 0.84668 | valid_accuracy: 0.84553 |  0:21:47s
+epoch 44 | loss: 0.32348 | train_accuracy: 0.84762 | valid_accuracy: 0.84645 |  0:22:17s
+epoch 45 | loss: 0.30754 | train_accuracy: 0.84949 | valid_accuracy: 0.8491  |  0:22:46s
+epoch 46 | loss: 0.30488 | train_accuracy: 0.84901 | valid_accuracy: 0.84752 |  0:23:15s
+epoch 47 | loss: 0.30724 | train_accuracy: 0.84755 | valid_accuracy: 0.84656 |  0:23:44s
+epoch 48 | loss: 0.30314 | train_accuracy: 0.85137 | valid_accuracy: 0.85106 |  0:24:13s
+epoch 49 | loss: 0.30135 | train_accuracy: 0.85138 | valid_accuracy: 0.8504  |  0:24:42s
+epoch 50 | loss: 0.30061 | train_accuracy: 0.84903 | valid_accuracy: 0.84906 |  0:25:12s
+epoch 51 | loss: 0.29907 | train_accuracy: 0.84857 | valid_accuracy: 0.84818 |  0:25:41s
+epoch 52 | loss: 0.30118 | train_accuracy: 0.85221 | valid_accuracy: 0.85195 |  0:26:10s
+epoch 53 | loss: 0.29938 | train_accuracy: 0.85066 | valid_accuracy: 0.85099 |  0:26:40s
+epoch 54 | loss: 0.29889 | train_accuracy: 0.85135 | valid_accuracy: 0.85097 |  0:27:09s
+epoch 55 | loss: 0.29824 | train_accuracy: 0.85228 | valid_accuracy: 0.85194 |  0:27:38s
+epoch 56 | loss: 0.2983  | train_accuracy: 0.85063 | valid_accuracy: 0.85079 |  0:28:08s
+epoch 57 | loss: 0.29768 | train_accuracy: 0.85245 | valid_accuracy: 0.85163 |  0:28:37s
+epoch 58 | loss: 0.29727 | train_accuracy: 0.85178 | valid_accuracy: 0.85145 |  0:29:06s
+epoch 59 | loss: 0.29714 | train_accuracy: 0.85242 | valid_accuracy: 0.85194 |  0:29:35s
+epoch 60 | loss: 0.29667 | train_accuracy: 0.85145 | valid_accuracy: 0.85106 |  0:30:05s
+epoch 61 | loss: 0.29659 | train_accuracy: 0.85142 | valid_accuracy: 0.85121 |  0:30:34s
+epoch 62 | loss: 0.29671 | train_accuracy: 0.85195 | valid_accuracy: 0.85115 |  0:31:03s
+epoch 63 | loss: 0.29638 | train_accuracy: 0.85119 | valid_accuracy: 0.85099 |  0:31:32s
+epoch 64 | loss: 0.29637 | train_accuracy: 0.85122 | valid_accuracy: 0.8511  |  0:32:03s
+epoch 65 | loss: 0.29616 | train_accuracy: 0.85204 | valid_accuracy: 0.85157 |  0:32:35s
+epoch 66 | loss: 0.29612 | train_accuracy: 0.85096 | valid_accuracy: 0.85048 |  0:33:06s
+epoch 67 | loss: 0.296   | train_accuracy: 0.85236 | valid_accuracy: 0.85221 |  0:33:36s
+epoch 68 | loss: 0.29538 | train_accuracy: 0.85159 | valid_accuracy: 0.85143 |  0:34:05s
+epoch 69 | loss: 0.29556 | train_accuracy: 0.85228 | valid_accuracy: 0.85182 |  0:34:35s
+epoch 70 | loss: 0.29512 | train_accuracy: 0.85155 | valid_accuracy: 0.85152 |  0:35:03s
+epoch 71 | loss: 0.29832 | train_accuracy: 0.84879 | valid_accuracy: 0.84826 |  0:35:33s
+epoch 72 | loss: 0.29714 | train_accuracy: 0.85188 | valid_accuracy: 0.85168 |  0:36:02s
+epoch 73 | loss: 0.29603 | train_accuracy: 0.85269 | valid_accuracy: 0.85212 |  0:36:31s
+epoch 74 | loss: 0.29571 | train_accuracy: 0.85151 | valid_accuracy: 0.85146 |  0:37:00s
+epoch 75 | loss: 0.29547 | train_accuracy: 0.85205 | valid_accuracy: 0.85191 |  0:37:29s
+epoch 76 | loss: 0.29553 | train_accuracy: 0.85108 | valid_accuracy: 0.85094 |  0:37:58s
+epoch 77 | loss: 0.29497 | train_accuracy: 0.8512  | valid_accuracy: 0.85089 |  0:38:27s
+epoch 78 | loss: 0.29479 | train_accuracy: 0.85167 | valid_accuracy: 0.85138 |  0:38:56s
+epoch 79 | loss: 0.29529 | train_accuracy: 0.85162 | valid_accuracy: 0.85159 |  0:39:25s
+epoch 80 | loss: 0.2949  | train_accuracy: 0.85264 | valid_accuracy: 0.85235 |  0:39:54s
+epoch 81 | loss: 0.29527 | train_accuracy: 0.85097 | valid_accuracy: 0.85078 |  0:40:23s
+epoch 82 | loss: 0.29484 | train_accuracy: 0.85248 | valid_accuracy: 0.85182 |  0:40:53s
+epoch 83 | loss: 0.29498 | train_accuracy: 0.85157 | valid_accuracy: 0.85118 |  0:41:22s
+epoch 84 | loss: 0.29474 | train_accuracy: 0.85194 | valid_accuracy: 0.8508  |  0:41:52s
+epoch 85 | loss: 0.29448 | train_accuracy: 0.8518  | valid_accuracy: 0.85166 |  0:42:22s
+epoch 86 | loss: 0.29457 | train_accuracy: 0.85212 | valid_accuracy: 0.85189 |  0:42:51s
+epoch 87 | loss: 0.29392 | train_accuracy: 0.85267 | valid_accuracy: 0.85231 |  0:43:21s
+epoch 88 | loss: 0.29464 | train_accuracy: 0.85196 | valid_accuracy: 0.85191 |  0:43:50s
+epoch 89 | loss: 0.29433 | train_accuracy: 0.85268 | valid_accuracy: 0.85238 |  0:44:20s
+epoch 90 | loss: 0.29501 | train_accuracy: 0.85222 | valid_accuracy: 0.85203 |  0:44:49s
+epoch 91 | loss: 0.29461 | train_accuracy: 0.85215 | valid_accuracy: 0.85199 |  0:45:18s
+epoch 92 | loss: 0.29396 | train_accuracy: 0.85216 | valid_accuracy: 0.8521  |  0:45:48s
+epoch 93 | loss: 0.29415 | train_accuracy: 0.85263 | valid_accuracy: 0.85244 |  0:46:17s
+epoch 94 | loss: 0.29351 | train_accuracy: 0.8525  | valid_accuracy: 0.85181 |  0:46:46s
+epoch 95 | loss: 0.29668 | train_accuracy: 0.85147 | valid_accuracy: 0.85152 |  0:47:16s
+epoch 96 | loss: 0.30397 | train_accuracy: 0.84967 | valid_accuracy: 0.84942 |  0:47:45s
+epoch 97 | loss: 0.30032 | train_accuracy: 0.85067 | valid_accuracy: 0.85062 |  0:48:15s
+epoch 98 | loss: 0.29851 | train_accuracy: 0.84986 | valid_accuracy: 0.84958 |  0:48:45s
+epoch 99 | loss: 0.29698 | train_accuracy: 0.85154 | valid_accuracy: 0.85149 |  0:49:14s
+epoch 100| loss: 0.29514 | train_accuracy: 0.85149 | valid_accuracy: 0.85196 |  0:49:45s
+epoch 101| loss: 0.29472 | train_accuracy: 0.85192 | valid_accuracy: 0.85206 |  0:50:17s
+epoch 102| loss: 0.29437 | train_accuracy: 0.85109 | valid_accuracy: 0.85118 |  0:50:47s
+epoch 103| loss: 0.29399 | train_accuracy: 0.85184 | valid_accuracy: 0.85192 |  0:51:16s
+epoch 104| loss: 0.29429 | train_accuracy: 0.85214 | valid_accuracy: 0.85189 |  0:51:46s
+epoch 105| loss: 0.29432 | train_accuracy: 0.85189 | valid_accuracy: 0.8521  |  0:52:15s
+epoch 106| loss: 0.29423 | train_accuracy: 0.85311 | valid_accuracy: 0.85265 |  0:52:44s
+epoch 107| loss: 0.29419 | train_accuracy: 0.84901 | valid_accuracy: 0.84861 |  0:53:13s
+epoch 108| loss: 0.29276 | train_accuracy: 0.85193 | valid_accuracy: 0.85157 |  0:53:42s
+epoch 109| loss: 0.29245 | train_accuracy: 0.85096 | valid_accuracy: 0.85085 |  0:54:11s
+epoch 110| loss: 0.29231 | train_accuracy: 0.85232 | valid_accuracy: 0.85287 |  0:54:40s
+epoch 111| loss: 0.29212 | train_accuracy: 0.85219 | valid_accuracy: 0.85154 |  0:55:09s
+epoch 112| loss: 0.2923  | train_accuracy: 0.85186 | valid_accuracy: 0.85146 |  0:55:38s
+epoch 113| loss: 0.29218 | train_accuracy: 0.85274 | valid_accuracy: 0.85226 |  0:56:07s
+epoch 114| loss: 0.29165 | train_accuracy: 0.85297 | valid_accuracy: 0.85167 |  0:56:36s
+epoch 115| loss: 0.29168 | train_accuracy: 0.85304 | valid_accuracy: 0.8534  |  0:57:06s
+epoch 116| loss: 0.29165 | train_accuracy: 0.85078 | valid_accuracy: 0.85125 |  0:57:35s
+epoch 117| loss: 0.29237 | train_accuracy: 0.85279 | valid_accuracy: 0.85241 |  0:58:05s
+epoch 118| loss: 0.29087 | train_accuracy: 0.8539  | valid_accuracy: 0.85323 |  0:58:34s
+epoch 119| loss: 0.29161 | train_accuracy: 0.85103 | valid_accuracy: 0.85093 |  0:59:03s
+epoch 120| loss: 0.29093 | train_accuracy: 0.85281 | valid_accuracy: 0.85284 |  0:59:32s
+epoch 121| loss: 0.29148 | train_accuracy: 0.85336 | valid_accuracy: 0.8523  |  1:00:02s
+epoch 122| loss: 0.29162 | train_accuracy: 0.85333 | valid_accuracy: 0.85322 |  1:00:31s
+epoch 123| loss: 0.29153 | train_accuracy: 0.85267 | valid_accuracy: 0.85279 |  1:01:00s
+epoch 124| loss: 0.2913  | train_accuracy: 0.85196 | valid_accuracy: 0.85187 |  1:01:29s
+epoch 125| loss: 0.29058 | train_accuracy: 0.85354 | valid_accuracy: 0.85343 |  1:01:58s
+epoch 126| loss: 0.29109 | train_accuracy: 0.85067 | valid_accuracy: 0.85041 |  1:02:28s
+epoch 127| loss: 0.29069 | train_accuracy: 0.85205 | valid_accuracy: 0.85146 |  1:02:58s
+epoch 128| loss: 0.29105 | train_accuracy: 0.85361 | valid_accuracy: 0.85346 |  1:03:27s
+epoch 129| loss: 0.29041 | train_accuracy: 0.85117 | valid_accuracy: 0.85128 |  1:03:56s
+epoch 130| loss: 0.29041 | train_accuracy: 0.85388 | valid_accuracy: 0.85347 |  1:04:25s
+epoch 131| loss: 0.29051 | train_accuracy: 0.85213 | valid_accuracy: 0.85209 |  1:04:54s
+epoch 132| loss: 0.29093 | train_accuracy: 0.85285 | valid_accuracy: 0.85314 |  1:05:24s
+epoch 133| loss: 0.29064 | train_accuracy: 0.85317 | valid_accuracy: 0.85342 |  1:05:54s
+epoch 134| loss: 0.29038 | train_accuracy: 0.85242 | valid_accuracy: 0.85166 |  1:06:24s
+epoch 135| loss: 0.29068 | train_accuracy: 0.85335 | valid_accuracy: 0.85297 |  1:06:54s
+epoch 136| loss: 0.29088 | train_accuracy: 0.85254 | valid_accuracy: 0.85298 |  1:07:24s
+epoch 137| loss: 0.2911  | train_accuracy: 0.85237 | valid_accuracy: 0.85196 |  1:07:54s
+epoch 138| loss: 0.29126 | train_accuracy: 0.85217 | valid_accuracy: 0.85209 |  1:08:23s
+epoch 139| loss: 0.29072 | train_accuracy: 0.85253 | valid_accuracy: 0.85288 |  1:08:53s
+epoch 140| loss: 0.29086 | train_accuracy: 0.85236 | valid_accuracy: 0.85223 |  1:09:22s
+epoch 141| loss: 0.29073 | train_accuracy: 0.85244 | valid_accuracy: 0.85248 |  1:09:51s
+epoch 142| loss: 0.29081 | train_accuracy: 0.85222 | valid_accuracy: 0.85224 |  1:10:20s
+epoch 143| loss: 0.29056 | train_accuracy: 0.85281 | valid_accuracy: 0.8524  |  1:10:49s
+epoch 144| loss: 0.29035 | train_accuracy: 0.85283 | valid_accuracy: 0.8529  |  1:11:19s
+epoch 145| loss: 0.29009 | train_accuracy: 0.85054 | valid_accuracy: 0.85108 |  1:11:49s
+epoch 146| loss: 0.29092 | train_accuracy: 0.85257 | valid_accuracy: 0.85263 |  1:12:19s
+epoch 147| loss: 0.29063 | train_accuracy: 0.85207 | valid_accuracy: 0.85192 |  1:12:48s
+epoch 148| loss: 0.29004 | train_accuracy: 0.85344 | valid_accuracy: 0.85323 |  1:13:18s
+epoch 149| loss: 0.29059 | train_accuracy: 0.85218 | valid_accuracy: 0.85216 |  1:13:47s
+epoch 150| loss: 0.29018 | train_accuracy: 0.85384 | valid_accuracy: 0.85382 |  1:14:17s
+epoch 151| loss: 0.29006 | train_accuracy: 0.85344 | valid_accuracy: 0.85356 |  1:14:47s
+epoch 152| loss: 0.29044 | train_accuracy: 0.8525  | valid_accuracy: 0.85298 |  1:15:17s
+epoch 153| loss: 0.29029 | train_accuracy: 0.85382 | valid_accuracy: 0.85367 |  1:15:46s
+epoch 154| loss: 0.28999 | train_accuracy: 0.85219 | valid_accuracy: 0.85168 |  1:16:15s
+epoch 155| loss: 0.29    | train_accuracy: 0.85377 | valid_accuracy: 0.85282 |  1:16:45s
+epoch 156| loss: 0.28996 | train_accuracy: 0.8529  | valid_accuracy: 0.85283 |  1:17:14s
+epoch 157| loss: 0.29005 | train_accuracy: 0.85442 | valid_accuracy: 0.85353 |  1:17:43s
+epoch 158| loss: 0.29062 | train_accuracy: 0.85379 | valid_accuracy: 0.85349 |  1:18:12s
+epoch 159| loss: 0.29044 | train_accuracy: 0.85335 | valid_accuracy: 0.85351 |  1:18:42s
+epoch 160| loss: 0.29033 | train_accuracy: 0.85413 | valid_accuracy: 0.85386 |  1:19:12s
+epoch 161| loss: 0.29039 | train_accuracy: 0.8512  | valid_accuracy: 0.85078 |  1:19:41s
+epoch 162| loss: 0.29029 | train_accuracy: 0.85329 | valid_accuracy: 0.85328 |  1:20:10s
+epoch 163| loss: 0.28991 | train_accuracy: 0.85399 | valid_accuracy: 0.85381 |  1:20:40s
+epoch 164| loss: 0.28994 | train_accuracy: 0.85314 | valid_accuracy: 0.85293 |  1:21:09s
+epoch 165| loss: 0.29023 | train_accuracy: 0.85164 | valid_accuracy: 0.85064 |  1:21:39s
+epoch 166| loss: 0.29008 | train_accuracy: 0.85099 | valid_accuracy: 0.85092 |  1:22:10s
+epoch 167| loss: 0.29018 | train_accuracy: 0.85354 | valid_accuracy: 0.85287 |  1:22:41s
+epoch 168| loss: 0.29025 | train_accuracy: 0.85184 | valid_accuracy: 0.8515  |  1:23:12s
+epoch 169| loss: 0.28977 | train_accuracy: 0.85172 | valid_accuracy: 0.85106 |  1:23:42s
+epoch 170| loss: 0.29026 | train_accuracy: 0.85272 | valid_accuracy: 0.8523  |  1:24:11s
+epoch 171| loss: 0.29044 | train_accuracy: 0.85212 | valid_accuracy: 0.85146 |  1:24:41s
+epoch 172| loss: 0.2904  | train_accuracy: 0.85209 | valid_accuracy: 0.85217 |  1:25:10s
+epoch 173| loss: 0.28991 | train_accuracy: 0.85393 | valid_accuracy: 0.85265 |  1:25:40s
+epoch 174| loss: 0.28991 | train_accuracy: 0.85257 | valid_accuracy: 0.8523  |  1:26:09s
+epoch 175| loss: 0.28997 | train_accuracy: 0.85213 | valid_accuracy: 0.85156 |  1:26:40s
+epoch 176| loss: 0.29005 | train_accuracy: 0.85394 | valid_accuracy: 0.85356 |  1:27:09s
+epoch 177| loss: 0.28985 | train_accuracy: 0.852   | valid_accuracy: 0.85061 |  1:27:38s
+epoch 178| loss: 0.28972 | train_accuracy: 0.8536  | valid_accuracy: 0.85302 |  1:28:07s
+epoch 179| loss: 0.28977 | train_accuracy: 0.85362 | valid_accuracy: 0.85337 |  1:28:37s
+epoch 180| loss: 0.29014 | train_accuracy: 0.85127 | valid_accuracy: 0.85147 |  1:29:06s
+epoch 181| loss: 0.28967 | train_accuracy: 0.85268 | valid_accuracy: 0.85201 |  1:29:35s
+epoch 182| loss: 0.28981 | train_accuracy: 0.85291 | valid_accuracy: 0.8518  |  1:30:05s
+epoch 183| loss: 0.29015 | train_accuracy: 0.85414 | valid_accuracy: 0.8536  |  1:30:34s
+epoch 184| loss: 0.28923 | train_accuracy: 0.85142 | valid_accuracy: 0.85127 |  1:31:03s
+epoch 185| loss: 0.28952 | train_accuracy: 0.85165 | valid_accuracy: 0.85082 |  1:31:32s
+epoch 186| loss: 0.28945 | train_accuracy: 0.85373 | valid_accuracy: 0.85349 |  1:32:02s
+epoch 187| loss: 0.28959 | train_accuracy: 0.85406 | valid_accuracy: 0.85297 |  1:32:31s
+epoch 188| loss: 0.28974 | train_accuracy: 0.85448 | valid_accuracy: 0.85424 |  1:33:01s
+epoch 189| loss: 0.2896  | train_accuracy: 0.85372 | valid_accuracy: 0.85347 |  1:33:30s
+epoch 190| loss: 0.28961 | train_accuracy: 0.85391 | valid_accuracy: 0.85375 |  1:33:59s
+epoch 191| loss: 0.28976 | train_accuracy: 0.85093 | valid_accuracy: 0.84995 |  1:34:29s
+epoch 192| loss: 0.28966 | train_accuracy: 0.85424 | valid_accuracy: 0.85305 |  1:34:58s
+epoch 193| loss: 0.28962 | train_accuracy: 0.85383 | valid_accuracy: 0.85291 |  1:35:27s
+epoch 194| loss: 0.29023 | train_accuracy: 0.85391 | valid_accuracy: 0.85263 |  1:35:56s
+epoch 195| loss: 0.28951 | train_accuracy: 0.85391 | valid_accuracy: 0.85378 |  1:36:26s
+epoch 196| loss: 0.28963 | train_accuracy: 0.85437 | valid_accuracy: 0.85381 |  1:36:55s
+epoch 197| loss: 0.28961 | train_accuracy: 0.85332 | valid_accuracy: 0.85263 |  1:37:24s
+epoch 198| loss: 0.28997 | train_accuracy: 0.85326 | valid_accuracy: 0.85279 |  1:37:54s
+epoch 199| loss: 0.28975 | train_accuracy: 0.85427 | valid_accuracy: 0.85402 |  1:38:23s
+epoch 200| loss: 0.28926 | train_accuracy: 0.8536  | valid_accuracy: 0.85353 |  1:38:52s
+epoch 201| loss: 0.28961 | train_accuracy: 0.85361 | valid_accuracy: 0.85337 |  1:39:21s
+epoch 202| loss: 0.28969 | train_accuracy: 0.85123 | valid_accuracy: 0.85043 |  1:39:49s
+epoch 203| loss: 0.28937 | train_accuracy: 0.85374 | valid_accuracy: 0.85328 |  1:40:18s
+epoch 204| loss: 0.28952 | train_accuracy: 0.85378 | valid_accuracy: 0.85364 |  1:40:47s
+epoch 205| loss: 0.28946 | train_accuracy: 0.85425 | valid_accuracy: 0.85403 |  1:41:16s
+epoch 206| loss: 0.28938 | train_accuracy: 0.85393 | valid_accuracy: 0.85354 |  1:41:46s
+epoch 207| loss: 0.2895  | train_accuracy: 0.85393 | valid_accuracy: 0.85315 |  1:42:15s
+epoch 208| loss: 0.28961 | train_accuracy: 0.85392 | valid_accuracy: 0.85364 |  1:42:44s
+epoch 209| loss: 0.28966 | train_accuracy: 0.85306 | valid_accuracy: 0.85248 |  1:43:13s
+epoch 210| loss: 0.28947 | train_accuracy: 0.85325 | valid_accuracy: 0.85269 |  1:43:42s
+epoch 211| loss: 0.29002 | train_accuracy: 0.85241 | valid_accuracy: 0.85185 |  1:44:11s
+epoch 212| loss: 0.28982 | train_accuracy: 0.85394 | valid_accuracy: 0.85318 |  1:44:41s
+epoch 213| loss: 0.28955 | train_accuracy: 0.85385 | valid_accuracy: 0.85315 |  1:45:10s
+epoch 214| loss: 0.28969 | train_accuracy: 0.85414 | valid_accuracy: 0.85404 |  1:45:40s
+epoch 215| loss: 0.28952 | train_accuracy: 0.85383 | valid_accuracy: 0.85371 |  1:46:09s
+epoch 216| loss: 0.28944 | train_accuracy: 0.85391 | valid_accuracy: 0.85322 |  1:46:38s
+epoch 217| loss: 0.28959 | train_accuracy: 0.85342 | valid_accuracy: 0.85261 |  1:47:07s
+epoch 218| loss: 0.28941 | train_accuracy: 0.85391 | valid_accuracy: 0.85309 |  1:47:37s
+epoch 219| loss: 0.28972 | train_accuracy: 0.85138 | valid_accuracy: 0.85108 |  1:48:06s
+epoch 220| loss: 0.28966 | train_accuracy: 0.85316 | valid_accuracy: 0.85337 |  1:48:35s
+epoch 221| loss: 0.28934 | train_accuracy: 0.8533  | valid_accuracy: 0.85266 |  1:49:04s
+epoch 222| loss: 0.28948 | train_accuracy: 0.85377 | valid_accuracy: 0.85319 |  1:49:33s
+epoch 223| loss: 0.28938 | train_accuracy: 0.85357 | valid_accuracy: 0.85319 |  1:50:02s
+epoch 224| loss: 0.28894 | train_accuracy: 0.85414 | valid_accuracy: 0.85385 |  1:50:32s
+epoch 225| loss: 0.2898  | train_accuracy: 0.85346 | valid_accuracy: 0.85262 |  1:51:01s
+epoch 226| loss: 0.28962 | train_accuracy: 0.85453 | valid_accuracy: 0.85436 |  1:51:30s
+epoch 227| loss: 0.28901 | train_accuracy: 0.85401 | valid_accuracy: 0.85329 |  1:52:00s
+epoch 228| loss: 0.28969 | train_accuracy: 0.85327 | valid_accuracy: 0.8527  |  1:52:29s
+epoch 229| loss: 0.28953 | train_accuracy: 0.85422 | valid_accuracy: 0.85358 |  1:52:58s
+epoch 230| loss: 0.28928 | train_accuracy: 0.85243 | valid_accuracy: 0.85191 |  1:53:27s
+epoch 231| loss: 0.2896  | train_accuracy: 0.85422 | valid_accuracy: 0.85386 |  1:53:57s
+epoch 232| loss: 0.28947 | train_accuracy: 0.85357 | valid_accuracy: 0.85272 |  1:54:28s
+epoch 233| loss: 0.28929 | train_accuracy: 0.85404 | valid_accuracy: 0.85268 |  1:54:57s
+epoch 234| loss: 0.2893  | train_accuracy: 0.85434 | valid_accuracy: 0.85365 |  1:55:26s
+epoch 235| loss: 0.28915 | train_accuracy: 0.8541  | valid_accuracy: 0.85358 |  1:55:55s
+epoch 236| loss: 0.28967 | train_accuracy: 0.85477 | valid_accuracy: 0.85409 |  1:56:24s
+epoch 237| loss: 0.28919 | train_accuracy: 0.85388 | valid_accuracy: 0.85343 |  1:56:53s
+epoch 238| loss: 0.28921 | train_accuracy: 0.85418 | valid_accuracy: 0.85411 |  1:57:24s
+epoch 239| loss: 0.28923 | train_accuracy: 0.85407 | valid_accuracy: 0.85417 |  1:57:53s
+epoch 240| loss: 0.28907 | train_accuracy: 0.85331 | valid_accuracy: 0.85242 |  1:58:22s
+epoch 241| loss: 0.28923 | train_accuracy: 0.85415 | valid_accuracy: 0.85376 |  1:58:52s
+epoch 242| loss: 0.2891  | train_accuracy: 0.85391 | valid_accuracy: 0.85404 |  1:59:20s
+epoch 243| loss: 0.28902 | train_accuracy: 0.85423 | valid_accuracy: 0.85329 |  1:59:50s
+epoch 244| loss: 0.28912 | train_accuracy: 0.85383 | valid_accuracy: 0.85381 |  2:00:19s
+epoch 245| loss: 0.28906 | train_accuracy: 0.85384 | valid_accuracy: 0.85349 |  2:00:48s
+epoch 246| loss: 0.2894  | train_accuracy: 0.85361 | valid_accuracy: 0.85369 |  2:01:18s
+epoch 247| loss: 0.2894  | train_accuracy: 0.85406 | valid_accuracy: 0.85393 |  2:01:47s
+epoch 248| loss: 0.28945 | train_accuracy: 0.85406 | valid_accuracy: 0.85336 |  2:02:16s
+epoch 249| loss: 0.28944 | train_accuracy: 0.85373 | valid_accuracy: 0.85258 |  2:02:45s
+epoch 250| loss: 0.28891 | train_accuracy: 0.85387 | valid_accuracy: 0.85286 |  2:03:15s
+epoch 251| loss: 0.28902 | train_accuracy: 0.85447 | valid_accuracy: 0.85424 |  2:03:44s
+epoch 252| loss: 0.2891  | train_accuracy: 0.85485 | valid_accuracy: 0.85418 |  2:04:13s
+epoch 253| loss: 0.28909 | train_accuracy: 0.85422 | valid_accuracy: 0.8533  |  2:04:42s
+epoch 254| loss: 0.28921 | train_accuracy: 0.85385 | valid_accuracy: 0.85354 |  2:05:11s
+epoch 255| loss: 0.29037 | train_accuracy: 0.84804 | valid_accuracy: 0.84716 |  2:05:41s
+epoch 256| loss: 0.2891  | train_accuracy: 0.85309 | valid_accuracy: 0.85191 |  2:06:10s
+epoch 257| loss: 0.28939 | train_accuracy: 0.85373 | valid_accuracy: 0.85314 |  2:06:38s
+epoch 258| loss: 0.28927 | train_accuracy: 0.85369 | valid_accuracy: 0.85312 |  2:07:07s
+epoch 259| loss: 0.28929 | train_accuracy: 0.85399 | valid_accuracy: 0.85323 |  2:07:36s
+epoch 260| loss: 0.28928 | train_accuracy: 0.85413 | valid_accuracy: 0.85309 |  2:08:06s
+epoch 261| loss: 0.28936 | train_accuracy: 0.85346 | valid_accuracy: 0.85325 |  2:08:35s
+epoch 262| loss: 0.28924 | train_accuracy: 0.85417 | valid_accuracy: 0.85382 |  2:09:04s
+epoch 263| loss: 0.28923 | train_accuracy: 0.85443 | valid_accuracy: 0.85431 |  2:09:34s
+epoch 264| loss: 0.28908 | train_accuracy: 0.85435 | valid_accuracy: 0.85413 |  2:10:03s
+epoch 265| loss: 0.28889 | train_accuracy: 0.85411 | valid_accuracy: 0.85376 |  2:10:33s
+epoch 266| loss: 0.28886 | train_accuracy: 0.85459 | valid_accuracy: 0.85414 |  2:11:02s
+epoch 267| loss: 0.28898 | train_accuracy: 0.85408 | valid_accuracy: 0.85367 |  2:11:31s
+epoch 268| loss: 0.28935 | train_accuracy: 0.85362 | valid_accuracy: 0.85315 |  2:12:01s
+epoch 269| loss: 0.28944 | train_accuracy: 0.85469 | valid_accuracy: 0.85442 |  2:12:30s
+epoch 270| loss: 0.2892  | train_accuracy: 0.85335 | valid_accuracy: 0.85286 |  2:13:00s
+epoch 271| loss: 0.2894  | train_accuracy: 0.85046 | valid_accuracy: 0.84987 |  2:13:29s
+epoch 272| loss: 0.2893  | train_accuracy: 0.85324 | valid_accuracy: 0.85293 |  2:13:59s
+epoch 273| loss: 0.28894 | train_accuracy: 0.85319 | valid_accuracy: 0.85298 |  2:14:28s
+epoch 274| loss: 0.28929 | train_accuracy: 0.85449 | valid_accuracy: 0.8542  |  2:14:56s
+epoch 275| loss: 0.28876 | train_accuracy: 0.85231 | valid_accuracy: 0.85203 |  2:15:26s
+epoch 276| loss: 0.28897 | train_accuracy: 0.85449 | valid_accuracy: 0.8539  |  2:15:55s
+epoch 277| loss: 0.28935 | train_accuracy: 0.85424 | valid_accuracy: 0.85397 |  2:16:24s
+epoch 278| loss: 0.28915 | train_accuracy: 0.85175 | valid_accuracy: 0.85129 |  2:16:53s
+epoch 279| loss: 0.28914 | train_accuracy: 0.8543  | valid_accuracy: 0.8539  |  2:17:22s
+epoch 280| loss: 0.289   | train_accuracy: 0.85395 | valid_accuracy: 0.85337 |  2:17:51s
+epoch 281| loss: 0.28888 | train_accuracy: 0.85385 | valid_accuracy: 0.85332 |  2:18:20s
+epoch 282| loss: 0.28877 | train_accuracy: 0.85411 | valid_accuracy: 0.85333 |  2:18:49s
+epoch 283| loss: 0.28899 | train_accuracy: 0.85356 | valid_accuracy: 0.85286 |  2:19:18s
+epoch 284| loss: 0.289   | train_accuracy: 0.85369 | valid_accuracy: 0.85333 |  2:19:48s
+epoch 285| loss: 0.28865 | train_accuracy: 0.85431 | valid_accuracy: 0.85323 |  2:20:19s
+epoch 286| loss: 0.28865 | train_accuracy: 0.8532  | valid_accuracy: 0.85275 |  2:20:50s
+epoch 287| loss: 0.28886 | train_accuracy: 0.84562 | valid_accuracy: 0.84542 |  2:21:19s
+epoch 288| loss: 0.28882 | train_accuracy: 0.85227 | valid_accuracy: 0.85177 |  2:21:48s
+epoch 289| loss: 0.28894 | train_accuracy: 0.85151 | valid_accuracy: 0.85094 |  2:22:16s
+epoch 290| loss: 0.28975 | train_accuracy: 0.85339 | valid_accuracy: 0.85358 |  2:22:45s
+epoch 291| loss: 0.28949 | train_accuracy: 0.84968 | valid_accuracy: 0.84991 |  2:23:14s
+epoch 292| loss: 0.28923 | train_accuracy: 0.85088 | valid_accuracy: 0.85046 |  2:23:43s
+epoch 293| loss: 0.28864 | train_accuracy: 0.85392 | valid_accuracy: 0.85371 |  2:24:12s
+epoch 294| loss: 0.28894 | train_accuracy: 0.85104 | valid_accuracy: 0.85079 |  2:24:41s
+epoch 295| loss: 0.28915 | train_accuracy: 0.84671 | valid_accuracy: 0.84678 |  2:25:11s
+epoch 296| loss: 0.28868 | train_accuracy: 0.85392 | valid_accuracy: 0.85442 |  2:25:40s
+epoch 297| loss: 0.28854 | train_accuracy: 0.84858 | valid_accuracy: 0.84856 |  2:26:09s
+epoch 298| loss: 0.28899 | train_accuracy: 0.85114 | valid_accuracy: 0.85067 |  2:26:38s
+epoch 299| loss: 0.28895 | train_accuracy: 0.84984 | valid_accuracy: 0.84976 |  2:27:08s
+epoch 300| loss: 0.28878 | train_accuracy: 0.85443 | valid_accuracy: 0.85431 |  2:27:37s
+epoch 301| loss: 0.28861 | train_accuracy: 0.85405 | valid_accuracy: 0.85356 |  2:28:06s
+epoch 302| loss: 0.28896 | train_accuracy: 0.85415 | valid_accuracy: 0.8534  |  2:28:35s
+epoch 303| loss: 0.28872 | train_accuracy: 0.83582 | valid_accuracy: 0.83672 |  2:29:05s
+epoch 304| loss: 0.28908 | train_accuracy: 0.85019 | valid_accuracy: 0.85036 |  2:29:34s
+epoch 305| loss: 0.28914 | train_accuracy: 0.84457 | valid_accuracy: 0.8447  |  2:30:03s
+epoch 306| loss: 0.2886  | train_accuracy: 0.85406 | valid_accuracy: 0.85383 |  2:30:32s
+epoch 307| loss: 0.28897 | train_accuracy: 0.85414 | valid_accuracy: 0.85388 |  2:31:01s
+epoch 308| loss: 0.28842 | train_accuracy: 0.83787 | valid_accuracy: 0.83908 |  2:31:31s
+epoch 309| loss: 0.2886  | train_accuracy: 0.83149 | valid_accuracy: 0.83256 |  2:32:00s
+epoch 310| loss: 0.28832 | train_accuracy: 0.84577 | valid_accuracy: 0.84568 |  2:32:29s
+epoch 311| loss: 0.28869 | train_accuracy: 0.85338 | valid_accuracy: 0.85287 |  2:32:58s
+epoch 312| loss: 0.28908 | train_accuracy: 0.83746 | valid_accuracy: 0.83832 |  2:33:27s
+epoch 313| loss: 0.28921 | train_accuracy: 0.84377 | valid_accuracy: 0.8444  |  2:33:56s
+epoch 314| loss: 0.28914 | train_accuracy: 0.84364 | valid_accuracy: 0.84429 |  2:34:25s
+epoch 315| loss: 0.28913 | train_accuracy: 0.85234 | valid_accuracy: 0.85205 |  2:34:55s
+epoch 316| loss: 0.28895 | train_accuracy: 0.85451 | valid_accuracy: 0.85315 |  2:35:25s
+epoch 317| loss: 0.2891  | train_accuracy: 0.85245 | valid_accuracy: 0.85209 |  2:35:53s
+epoch 318| loss: 0.28945 | train_accuracy: 0.85188 | valid_accuracy: 0.85136 |  2:36:23s
+epoch 319| loss: 0.29041 | train_accuracy: 0.84968 | valid_accuracy: 0.84946 |  2:36:52s
+epoch 320| loss: 0.28967 | train_accuracy: 0.84348 | valid_accuracy: 0.84429 |  2:37:21s
+epoch 321| loss: 0.28953 | train_accuracy: 0.85316 | valid_accuracy: 0.8528  |  2:37:51s
+epoch 322| loss: 0.28909 | train_accuracy: 0.85445 | valid_accuracy: 0.85329 |  2:38:21s
+epoch 323| loss: 0.28874 | train_accuracy: 0.85427 | valid_accuracy: 0.85365 |  2:38:50s
+epoch 324| loss: 0.28857 | train_accuracy: 0.84841 | valid_accuracy: 0.84803 |  2:39:19s
+epoch 325| loss: 0.28879 | train_accuracy: 0.85308 | valid_accuracy: 0.85234 |  2:39:48s
+epoch 326| loss: 0.28888 | train_accuracy: 0.85193 | valid_accuracy: 0.85118 |  2:40:16s
+epoch 327| loss: 0.28966 | train_accuracy: 0.85482 | valid_accuracy: 0.85429 |  2:40:46s
+epoch 328| loss: 0.2891  | train_accuracy: 0.85456 | valid_accuracy: 0.8539  |  2:41:15s
+epoch 329| loss: 0.28882 | train_accuracy: 0.84377 | valid_accuracy: 0.84394 |  2:41:44s
+epoch 330| loss: 0.2887  | train_accuracy: 0.84255 | valid_accuracy: 0.84357 |  2:42:14s
+epoch 331| loss: 0.28838 | train_accuracy: 0.85463 | valid_accuracy: 0.85375 |  2:42:43s
+epoch 332| loss: 0.28835 | train_accuracy: 0.8549  | valid_accuracy: 0.85374 |  2:43:12s
+epoch 333| loss: 0.28921 | train_accuracy: 0.85401 | valid_accuracy: 0.85275 |  2:43:42s
+epoch 334| loss: 0.28875 | train_accuracy: 0.85434 | valid_accuracy: 0.8533  |  2:44:11s
+epoch 335| loss: 0.28868 | train_accuracy: 0.85181 | valid_accuracy: 0.85115 |  2:44:40s
+epoch 336| loss: 0.28852 | train_accuracy: 0.84625 | valid_accuracy: 0.84677 |  2:45:10s
+epoch 337| loss: 0.28879 | train_accuracy: 0.85098 | valid_accuracy: 0.85026 |  2:45:39s
+epoch 338| loss: 0.28866 | train_accuracy: 0.84059 | valid_accuracy: 0.84144 |  2:46:08s
+epoch 339| loss: 0.28892 | train_accuracy: 0.85232 | valid_accuracy: 0.85182 |  2:46:37s
+epoch 340| loss: 0.28842 | train_accuracy: 0.83637 | valid_accuracy: 0.83731 |  2:47:07s
+epoch 341| loss: 0.28845 | train_accuracy: 0.85302 | valid_accuracy: 0.8528  |  2:47:36s
+epoch 342| loss: 0.28912 | train_accuracy: 0.85431 | valid_accuracy: 0.85402 |  2:48:05s
+epoch 343| loss: 0.28868 | train_accuracy: 0.8535  | valid_accuracy: 0.85305 |  2:48:34s
+epoch 344| loss: 0.28839 | train_accuracy: 0.85362 | valid_accuracy: 0.85308 |  2:49:03s
+epoch 345| loss: 0.28849 | train_accuracy: 0.85103 | valid_accuracy: 0.85022 |  2:49:33s
+epoch 346| loss: 0.28851 | train_accuracy: 0.85232 | valid_accuracy: 0.85161 |  2:50:02s
+epoch 347| loss: 0.2885  | train_accuracy: 0.85396 | valid_accuracy: 0.85309 |  2:50:31s
+epoch 348| loss: 0.28841 | train_accuracy: 0.85348 | valid_accuracy: 0.85318 |  2:51:01s
+epoch 349| loss: 0.28903 | train_accuracy: 0.85443 | valid_accuracy: 0.85336 |  2:51:31s
+epoch 350| loss: 0.28871 | train_accuracy: 0.84134 | valid_accuracy: 0.84209 |  2:52:00s
+epoch 351| loss: 0.28874 | train_accuracy: 0.8455  | valid_accuracy: 0.84606 |  2:52:29s
+epoch 352| loss: 0.28844 | train_accuracy: 0.84579 | valid_accuracy: 0.84642 |  2:52:59s
+epoch 353| loss: 0.28807 | train_accuracy: 0.8381  | valid_accuracy: 0.83884 |  2:53:28s
+epoch 354| loss: 0.2887  | train_accuracy: 0.85481 | valid_accuracy: 0.85392 |  2:53:58s
+epoch 355| loss: 0.28809 | train_accuracy: 0.85369 | valid_accuracy: 0.85287 |  2:54:27s
+epoch 356| loss: 0.28857 | train_accuracy: 0.84879 | valid_accuracy: 0.84839 |  2:54:57s
+epoch 357| loss: 0.28866 | train_accuracy: 0.85162 | valid_accuracy: 0.8509  |  2:55:26s
+epoch 358| loss: 0.28875 | train_accuracy: 0.84754 | valid_accuracy: 0.84731 |  2:55:56s
+epoch 359| loss: 0.28816 | train_accuracy: 0.83337 | valid_accuracy: 0.83465 |  2:56:25s
+epoch 360| loss: 0.28814 | train_accuracy: 0.85429 | valid_accuracy: 0.85351 |  2:56:54s
+epoch 361| loss: 0.28857 | train_accuracy: 0.85465 | valid_accuracy: 0.85425 |  2:57:23s
+epoch 362| loss: 0.28846 | train_accuracy: 0.85325 | valid_accuracy: 0.85245 |  2:57:53s
+epoch 363| loss: 0.28847 | train_accuracy: 0.8375  | valid_accuracy: 0.83841 |  2:58:22s
+epoch 364| loss: 0.28844 | train_accuracy: 0.84396 | valid_accuracy: 0.84496 |  2:58:51s
+epoch 365| loss: 0.28836 | train_accuracy: 0.85446 | valid_accuracy: 0.85452 |  2:59:21s
+epoch 366| loss: 0.28873 | train_accuracy: 0.85373 | valid_accuracy: 0.85283 |  2:59:50s
+epoch 367| loss: 0.28907 | train_accuracy: 0.84918 | valid_accuracy: 0.8492  |  3:00:20s
+epoch 368| loss: 0.28854 | train_accuracy: 0.84447 | valid_accuracy: 0.84533 |  3:00:49s
+epoch 369| loss: 0.28853 | train_accuracy: 0.85395 | valid_accuracy: 0.85354 |  3:01:18s
+epoch 370| loss: 0.28835 | train_accuracy: 0.85102 | valid_accuracy: 0.85057 |  3:01:47s
+epoch 371| loss: 0.28839 | train_accuracy: 0.82997 | valid_accuracy: 0.83132 |  3:02:17s
+epoch 372| loss: 0.28851 | train_accuracy: 0.84974 | valid_accuracy: 0.84956 |  3:02:46s
+epoch 373| loss: 0.28842 | train_accuracy: 0.85319 | valid_accuracy: 0.85265 |  3:03:15s
+epoch 374| loss: 0.28843 | train_accuracy: 0.85249 | valid_accuracy: 0.85182 |  3:03:44s
+epoch 375| loss: 0.28837 | train_accuracy: 0.85439 | valid_accuracy: 0.85304 |  3:04:13s
+epoch 376| loss: 0.28823 | train_accuracy: 0.85248 | valid_accuracy: 0.85184 |  3:04:43s
+epoch 377| loss: 0.28819 | train_accuracy: 0.85423 | valid_accuracy: 0.85382 |  3:05:12s
+epoch 378| loss: 0.28778 | train_accuracy: 0.83715 | valid_accuracy: 0.83809 |  3:05:41s
+epoch 379| loss: 0.28782 | train_accuracy: 0.84206 | valid_accuracy: 0.84278 |  3:06:11s
+epoch 380| loss: 0.28826 | train_accuracy: 0.85427 | valid_accuracy: 0.85354 |  3:06:40s
+epoch 381| loss: 0.28823 | train_accuracy: 0.83866 | valid_accuracy: 0.83936 |  3:07:10s
+epoch 382| loss: 0.2877  | train_accuracy: 0.84209 | valid_accuracy: 0.84269 |  3:07:39s
+epoch 383| loss: 0.28817 | train_accuracy: 0.83744 | valid_accuracy: 0.8383  |  3:08:08s
+epoch 384| loss: 0.28811 | train_accuracy: 0.85281 | valid_accuracy: 0.85194 |  3:08:38s
+epoch 385| loss: 0.28776 | train_accuracy: 0.85485 | valid_accuracy: 0.85434 |  3:09:07s
+epoch 386| loss: 0.28841 | train_accuracy: 0.84348 | valid_accuracy: 0.84419 |  3:09:36s
+epoch 387| loss: 0.28792 | train_accuracy: 0.85494 | valid_accuracy: 0.85403 |  3:10:05s
+epoch 388| loss: 0.28821 | train_accuracy: 0.83116 | valid_accuracy: 0.83243 |  3:10:34s
+epoch 389| loss: 0.28844 | train_accuracy: 0.85467 | valid_accuracy: 0.85357 |  3:11:03s
+epoch 390| loss: 0.2876  | train_accuracy: 0.85409 | valid_accuracy: 0.85346 |  3:11:33s
+epoch 391| loss: 0.28773 | train_accuracy: 0.84301 | valid_accuracy: 0.84396 |  3:12:02s
+epoch 392| loss: 0.28819 | train_accuracy: 0.84512 | valid_accuracy: 0.84582 |  3:12:32s
+epoch 393| loss: 0.28829 | train_accuracy: 0.85204 | valid_accuracy: 0.85131 |  3:13:01s
+epoch 394| loss: 0.2882  | train_accuracy: 0.85417 | valid_accuracy: 0.85374 |  3:13:29s
+epoch 395| loss: 0.28847 | train_accuracy: 0.85419 | valid_accuracy: 0.85441 |  3:13:59s
+epoch 396| loss: 0.28891 | train_accuracy: 0.84524 | valid_accuracy: 0.84599 |  3:14:28s
+epoch 397| loss: 0.28862 | train_accuracy: 0.85412 | valid_accuracy: 0.85374 |  3:14:57s
+epoch 398| loss: 0.28979 | train_accuracy: 0.85393 | valid_accuracy: 0.85344 |  3:15:28s
+epoch 399| loss: 0.29118 | train_accuracy: 0.85307 | valid_accuracy: 0.85244 |  3:15:57s
+epoch 400| loss: 0.29005 | train_accuracy: 0.8544  | valid_accuracy: 0.85393 |  3:16:27s
+epoch 401| loss: 0.28909 | train_accuracy: 0.84738 | valid_accuracy: 0.84833 |  3:16:56s
+epoch 402| loss: 0.28877 | train_accuracy: 0.84668 | valid_accuracy: 0.84681 |  3:17:26s
+epoch 403| loss: 0.28844 | train_accuracy: 0.85079 | valid_accuracy: 0.85044 |  3:17:56s
+epoch 404| loss: 0.28843 | train_accuracy: 0.84722 | valid_accuracy: 0.84738 |  3:18:25s
+epoch 405| loss: 0.28818 | train_accuracy: 0.85377 | valid_accuracy: 0.85316 |  3:18:55s
+epoch 406| loss: 0.28861 | train_accuracy: 0.85456 | valid_accuracy: 0.85372 |  3:19:24s
+epoch 407| loss: 0.28858 | train_accuracy: 0.84667 | valid_accuracy: 0.84712 |  3:19:54s
+epoch 408| loss: 0.28807 | train_accuracy: 0.84862 | valid_accuracy: 0.84804 |  3:20:23s
+epoch 409| loss: 0.28834 | train_accuracy: 0.85449 | valid_accuracy: 0.85354 |  3:20:53s
+epoch 410| loss: 0.28798 | train_accuracy: 0.84723 | valid_accuracy: 0.84736 |  3:21:22s
+epoch 411| loss: 0.28794 | train_accuracy: 0.85486 | valid_accuracy: 0.85471 |  3:21:52s
+epoch 412| loss: 0.2878  | train_accuracy: 0.85239 | valid_accuracy: 0.85164 |  3:22:22s
+epoch 413| loss: 0.28841 | train_accuracy: 0.85271 | valid_accuracy: 0.85227 |  3:22:53s
+epoch 414| loss: 0.2882  | train_accuracy: 0.84433 | valid_accuracy: 0.84472 |  3:23:24s
+epoch 415| loss: 0.28797 | train_accuracy: 0.85462 | valid_accuracy: 0.85397 |  3:23:53s
+epoch 416| loss: 0.28807 | train_accuracy: 0.84521 | valid_accuracy: 0.84604 |  3:24:22s
+epoch 417| loss: 0.28821 | train_accuracy: 0.85434 | valid_accuracy: 0.85328 |  3:24:51s
+epoch 418| loss: 0.28828 | train_accuracy: 0.85475 | valid_accuracy: 0.85396 |  3:25:20s
+epoch 419| loss: 0.28806 | train_accuracy: 0.84431 | valid_accuracy: 0.84526 |  3:25:50s
+epoch 420| loss: 0.28823 | train_accuracy: 0.84205 | valid_accuracy: 0.84258 |  3:26:20s
+epoch 421| loss: 0.2881  | train_accuracy: 0.85088 | valid_accuracy: 0.85033 |  3:26:49s
+epoch 422| loss: 0.28798 | train_accuracy: 0.85468 | valid_accuracy: 0.85347 |  3:27:20s
+epoch 423| loss: 0.288   | train_accuracy: 0.84014 | valid_accuracy: 0.84091 |  3:27:50s
+epoch 424| loss: 0.28884 | train_accuracy: 0.8543  | valid_accuracy: 0.85397 |  3:28:19s
+epoch 425| loss: 0.28838 | train_accuracy: 0.8522  | valid_accuracy: 0.85142 |  3:28:49s
+epoch 426| loss: 0.28846 | train_accuracy: 0.85462 | valid_accuracy: 0.85388 |  3:29:18s
+epoch 427| loss: 0.28782 | train_accuracy: 0.85142 | valid_accuracy: 0.85079 |  3:29:48s
+epoch 428| loss: 0.28792 | train_accuracy: 0.85382 | valid_accuracy: 0.85329 |  3:30:17s
+epoch 429| loss: 0.28781 | train_accuracy: 0.85441 | valid_accuracy: 0.85411 |  3:30:46s
+epoch 430| loss: 0.28909 | train_accuracy: 0.85401 | valid_accuracy: 0.85362 |  3:31:16s
+epoch 431| loss: 0.28859 | train_accuracy: 0.85376 | valid_accuracy: 0.85323 |  3:31:45s
+epoch 432| loss: 0.28871 | train_accuracy: 0.85503 | valid_accuracy: 0.85509 |  3:32:15s
+epoch 433| loss: 0.28829 | train_accuracy: 0.85246 | valid_accuracy: 0.85149 |  3:32:44s
+epoch 434| loss: 0.28802 | train_accuracy: 0.8545  | valid_accuracy: 0.85403 |  3:33:14s
+epoch 435| loss: 0.28815 | train_accuracy: 0.85512 | valid_accuracy: 0.85509 |  3:33:43s
+epoch 436| loss: 0.28807 | train_accuracy: 0.85494 | valid_accuracy: 0.85436 |  3:34:12s
+epoch 437| loss: 0.28768 | train_accuracy: 0.85468 | valid_accuracy: 0.85386 |  3:34:41s
+epoch 438| loss: 0.28771 | train_accuracy: 0.84518 | valid_accuracy: 0.8461  |  3:35:11s
+epoch 439| loss: 0.2877  | train_accuracy: 0.8553  | valid_accuracy: 0.85386 |  3:35:40s
+epoch 440| loss: 0.28838 | train_accuracy: 0.8526  | valid_accuracy: 0.85203 |  3:36:09s
+epoch 441| loss: 0.28834 | train_accuracy: 0.85438 | valid_accuracy: 0.85329 |  3:36:39s
+epoch 442| loss: 0.28797 | train_accuracy: 0.85468 | valid_accuracy: 0.85441 |  3:37:08s
+epoch 443| loss: 0.28782 | train_accuracy: 0.85502 | valid_accuracy: 0.85491 |  3:37:37s
+epoch 444| loss: 0.28786 | train_accuracy: 0.85464 | valid_accuracy: 0.8546  |  3:38:07s
+epoch 445| loss: 0.28801 | train_accuracy: 0.83846 | valid_accuracy: 0.83912 |  3:38:38s
+epoch 446| loss: 0.28796 | train_accuracy: 0.85112 | valid_accuracy: 0.8505  |  3:39:08s
+epoch 447| loss: 0.28771 | train_accuracy: 0.85457 | valid_accuracy: 0.85417 |  3:39:38s
+epoch 448| loss: 0.28793 | train_accuracy: 0.85495 | valid_accuracy: 0.85452 |  3:40:07s
+epoch 449| loss: 0.28774 | train_accuracy: 0.84748 | valid_accuracy: 0.84831 |  3:40:37s
+epoch 450| loss: 0.28772 | train_accuracy: 0.85496 | valid_accuracy: 0.85383 |  3:41:06s
+epoch 451| loss: 0.28761 | train_accuracy: 0.84051 | valid_accuracy: 0.84123 |  3:41:36s
+epoch 452| loss: 0.28767 | train_accuracy: 0.85477 | valid_accuracy: 0.85323 |  3:42:05s
+epoch 453| loss: 0.28825 | train_accuracy: 0.84555 | valid_accuracy: 0.84624 |  3:42:34s
+epoch 454| loss: 0.28757 | train_accuracy: 0.83743 | valid_accuracy: 0.83824 |  3:43:03s
+epoch 455| loss: 0.28802 | train_accuracy: 0.85476 | valid_accuracy: 0.85469 |  3:43:33s
+epoch 456| loss: 0.28761 | train_accuracy: 0.85512 | valid_accuracy: 0.85474 |  3:44:02s
+epoch 457| loss: 0.28758 | train_accuracy: 0.85506 | valid_accuracy: 0.85464 |  3:44:32s
+epoch 458| loss: 0.28776 | train_accuracy: 0.85469 | valid_accuracy: 0.85445 |  3:45:02s
+epoch 459| loss: 0.28824 | train_accuracy: 0.84537 | valid_accuracy: 0.84618 |  3:45:32s
+epoch 460| loss: 0.28803 | train_accuracy: 0.8424  | valid_accuracy: 0.843   |  3:46:03s
+epoch 461| loss: 0.28785 | train_accuracy: 0.85198 | valid_accuracy: 0.85168 |  3:46:33s
+epoch 462| loss: 0.28782 | train_accuracy: 0.85503 | valid_accuracy: 0.85492 |  3:47:02s
+epoch 463| loss: 0.28795 | train_accuracy: 0.83714 | valid_accuracy: 0.83778 |  3:47:32s
+epoch 464| loss: 0.28773 | train_accuracy: 0.8379  | valid_accuracy: 0.83891 |  3:48:01s
+epoch 465| loss: 0.28819 | train_accuracy: 0.8441  | valid_accuracy: 0.84501 |  3:48:30s
+epoch 466| loss: 0.28765 | train_accuracy: 0.85486 | valid_accuracy: 0.85421 |  3:48:59s
+epoch 467| loss: 0.28767 | train_accuracy: 0.85481 | valid_accuracy: 0.85397 |  3:49:29s
+epoch 468| loss: 0.28789 | train_accuracy: 0.85442 | valid_accuracy: 0.85372 |  3:49:59s
+epoch 469| loss: 0.28758 | train_accuracy: 0.83225 | valid_accuracy: 0.83393 |  3:50:28s
+epoch 470| loss: 0.28806 | train_accuracy: 0.85411 | valid_accuracy: 0.85361 |  3:50:56s
+epoch 471| loss: 0.2878  | train_accuracy: 0.85533 | valid_accuracy: 0.85428 |  3:51:26s
+epoch 472| loss: 0.28758 | train_accuracy: 0.85482 | valid_accuracy: 0.85411 |  3:51:55s
+epoch 473| loss: 0.28822 | train_accuracy: 0.85493 | valid_accuracy: 0.85453 |  3:52:24s
+epoch 474| loss: 0.28772 | train_accuracy: 0.83746 | valid_accuracy: 0.83818 |  3:52:53s
+epoch 475| loss: 0.28785 | train_accuracy: 0.84248 | valid_accuracy: 0.84315 |  3:53:22s
+epoch 476| loss: 0.28822 | train_accuracy: 0.84742 | valid_accuracy: 0.84759 |  3:53:51s
+epoch 477| loss: 0.28802 | train_accuracy: 0.85354 | valid_accuracy: 0.85302 |  3:54:20s
+epoch 478| loss: 0.28792 | train_accuracy: 0.82631 | valid_accuracy: 0.82844 |  3:54:49s
+epoch 479| loss: 0.28795 | train_accuracy: 0.83805 | valid_accuracy: 0.83897 |  3:55:18s
+epoch 480| loss: 0.2879  | train_accuracy: 0.85487 | valid_accuracy: 0.85358 |  3:55:47s
+epoch 481| loss: 0.28734 | train_accuracy: 0.85531 | valid_accuracy: 0.85429 |  3:56:16s
+epoch 482| loss: 0.28731 | train_accuracy: 0.85528 | valid_accuracy: 0.85474 |  3:56:45s
+epoch 483| loss: 0.28762 | train_accuracy: 0.83072 | valid_accuracy: 0.83176 |  3:57:14s
+epoch 484| loss: 0.28819 | train_accuracy: 0.85502 | valid_accuracy: 0.8542  |  3:57:42s
+epoch 485| loss: 0.28819 | train_accuracy: 0.83705 | valid_accuracy: 0.83764 |  3:58:12s
+epoch 486| loss: 0.28804 | train_accuracy: 0.83551 | valid_accuracy: 0.8368  |  3:58:41s
+epoch 487| loss: 0.2878  | train_accuracy: 0.85395 | valid_accuracy: 0.85342 |  3:59:10s
+epoch 488| loss: 0.28759 | train_accuracy: 0.85093 | valid_accuracy: 0.85075 |  3:59:39s
+epoch 489| loss: 0.28764 | train_accuracy: 0.85041 | valid_accuracy: 0.85013 |  4:00:09s
+epoch 490| loss: 0.28768 | train_accuracy: 0.83631 | valid_accuracy: 0.83704 |  4:00:38s
+epoch 491| loss: 0.28754 | train_accuracy: 0.83467 | valid_accuracy: 0.83573 |  4:01:07s
+epoch 492| loss: 0.28777 | train_accuracy: 0.84986 | valid_accuracy: 0.8499  |  4:01:36s
+epoch 493| loss: 0.28777 | train_accuracy: 0.85494 | valid_accuracy: 0.85416 |  4:02:05s
+epoch 494| loss: 0.28746 | train_accuracy: 0.84767 | valid_accuracy: 0.84769 |  4:02:35s
+epoch 495| loss: 0.28773 | train_accuracy: 0.85459 | valid_accuracy: 0.85347 |  4:03:04s
+epoch 496| loss: 0.28847 | train_accuracy: 0.8551  | valid_accuracy: 0.8539  |  4:03:33s
+epoch 497| loss: 0.28859 | train_accuracy: 0.85452 | valid_accuracy: 0.85413 |  4:04:02s
+epoch 498| loss: 0.28802 | train_accuracy: 0.84719 | valid_accuracy: 0.8479  |  4:04:31s
+epoch 499| loss: 0.28768 | train_accuracy: 0.85242 | valid_accuracy: 0.85188 |  4:05:00s
+epoch 500| loss: 0.28795 | train_accuracy: 0.8382  | valid_accuracy: 0.83888 |  4:05:31s
+epoch 501| loss: 0.2879  | train_accuracy: 0.85432 | valid_accuracy: 0.85383 |  4:06:01s
+epoch 502| loss: 0.28801 | train_accuracy: 0.85497 | valid_accuracy: 0.85519 |  4:06:30s
+epoch 503| loss: 0.28754 | train_accuracy: 0.85512 | valid_accuracy: 0.8542  |  4:06:59s
+epoch 504| loss: 0.28826 | train_accuracy: 0.85317 | valid_accuracy: 0.85266 |  4:07:28s
+epoch 505| loss: 0.28752 | train_accuracy: 0.82583 | valid_accuracy: 0.82812 |  4:07:57s
+epoch 506| loss: 0.28744 | train_accuracy: 0.84544 | valid_accuracy: 0.84592 |  4:08:27s
+epoch 507| loss: 0.28765 | train_accuracy: 0.83802 | valid_accuracy: 0.83899 |  4:08:56s
+epoch 508| loss: 0.28757 | train_accuracy: 0.85245 | valid_accuracy: 0.85194 |  4:09:25s
+epoch 509| loss: 0.28793 | train_accuracy: 0.847   | valid_accuracy: 0.84713 |  4:09:54s
+epoch 510| loss: 0.28762 | train_accuracy: 0.84747 | valid_accuracy: 0.84755 |  4:10:23s
+epoch 511| loss: 0.28804 | train_accuracy: 0.85153 | valid_accuracy: 0.851   |  4:10:53s
+epoch 512| loss: 0.28817 | train_accuracy: 0.85467 | valid_accuracy: 0.85304 |  4:11:22s
+epoch 513| loss: 0.28792 | train_accuracy: 0.85489 | valid_accuracy: 0.85388 |  4:11:51s
+epoch 514| loss: 0.28773 | train_accuracy: 0.85489 | valid_accuracy: 0.8539  |  4:12:20s
+epoch 515| loss: 0.28764 | train_accuracy: 0.85458 | valid_accuracy: 0.85358 |  4:12:50s
+epoch 516| loss: 0.28763 | train_accuracy: 0.83805 | valid_accuracy: 0.83865 |  4:13:19s
+epoch 517| loss: 0.28863 | train_accuracy: 0.84011 | valid_accuracy: 0.84077 |  4:13:48s
+epoch 518| loss: 0.28825 | train_accuracy: 0.85247 | valid_accuracy: 0.8518  |  4:14:17s
+epoch 519| loss: 0.28801 | train_accuracy: 0.85082 | valid_accuracy: 0.85075 |  4:14:47s
+epoch 520| loss: 0.28783 | train_accuracy: 0.85445 | valid_accuracy: 0.8541  |  4:15:16s
+epoch 521| loss: 0.28786 | train_accuracy: 0.85462 | valid_accuracy: 0.85362 |  4:15:46s
+epoch 522| loss: 0.28762 | train_accuracy: 0.85488 | valid_accuracy: 0.85424 |  4:16:15s
+epoch 523| loss: 0.2878  | train_accuracy: 0.85416 | valid_accuracy: 0.85383 |  4:16:44s
+epoch 524| loss: 0.2878  | train_accuracy: 0.85436 | valid_accuracy: 0.85312 |  4:17:13s
+epoch 525| loss: 0.28722 | train_accuracy: 0.85486 | valid_accuracy: 0.85385 |  4:17:42s
+epoch 526| loss: 0.28766 | train_accuracy: 0.85088 | valid_accuracy: 0.85079 |  4:18:12s
+epoch 527| loss: 0.28749 | train_accuracy: 0.83472 | valid_accuracy: 0.83524 |  4:18:40s
+epoch 528| loss: 0.28824 | train_accuracy: 0.85385 | valid_accuracy: 0.85353 |  4:19:10s
+epoch 529| loss: 0.28765 | train_accuracy: 0.85483 | valid_accuracy: 0.85343 |  4:19:39s
+epoch 530| loss: 0.28794 | train_accuracy: 0.85496 | valid_accuracy: 0.85483 |  4:20:08s
+epoch 531| loss: 0.28805 | train_accuracy: 0.85467 | valid_accuracy: 0.85302 |  4:20:37s
+epoch 532| loss: 0.28826 | train_accuracy: 0.85494 | valid_accuracy: 0.85439 |  4:21:07s
+epoch 533| loss: 0.28864 | train_accuracy: 0.85371 | valid_accuracy: 0.85305 |  4:21:36s
+epoch 534| loss: 0.2882  | train_accuracy: 0.83818 | valid_accuracy: 0.83873 |  4:22:05s
+epoch 535| loss: 0.28831 | train_accuracy: 0.85381 | valid_accuracy: 0.85342 |  4:22:35s
+epoch 536| loss: 0.28785 | train_accuracy: 0.83677 | valid_accuracy: 0.83733 |  4:23:04s
+epoch 537| loss: 0.28794 | train_accuracy: 0.83228 | valid_accuracy: 0.83288 |  4:23:33s
+epoch 538| loss: 0.28784 | train_accuracy: 0.85496 | valid_accuracy: 0.85452 |  4:24:02s
+epoch 539| loss: 0.28789 | train_accuracy: 0.82993 | valid_accuracy: 0.83109 |  4:24:31s
+epoch 540| loss: 0.28767 | train_accuracy: 0.85334 | valid_accuracy: 0.8528  |  4:25:00s
+epoch 541| loss: 0.28794 | train_accuracy: 0.85479 | valid_accuracy: 0.85429 |  4:25:29s
+epoch 542| loss: 0.2873  | train_accuracy: 0.85468 | valid_accuracy: 0.85411 |  4:25:58s
+epoch 543| loss: 0.28726 | train_accuracy: 0.85236 | valid_accuracy: 0.8516  |  4:26:28s
+epoch 544| loss: 0.28784 | train_accuracy: 0.85458 | valid_accuracy: 0.85399 |  4:26:57s
+epoch 545| loss: 0.28986 | train_accuracy: 0.85325 | valid_accuracy: 0.85251 |  4:27:25s
+epoch 546| loss: 0.2918  | train_accuracy: 0.85403 | valid_accuracy: 0.85349 |  4:27:55s
+epoch 547| loss: 0.28943 | train_accuracy: 0.85386 | valid_accuracy: 0.85372 |  4:28:23s
+epoch 548| loss: 0.2907  | train_accuracy: 0.85368 | valid_accuracy: 0.85288 |  4:28:52s
+epoch 549| loss: 0.29112 | train_accuracy: 0.85396 | valid_accuracy: 0.85374 |  4:29:21s
+epoch 550| loss: 0.28941 | train_accuracy: 0.8543  | valid_accuracy: 0.85364 |  4:29:50s
+epoch 551| loss: 0.28861 | train_accuracy: 0.85436 | valid_accuracy: 0.85322 |  4:30:20s
+epoch 552| loss: 0.28883 | train_accuracy: 0.84988 | valid_accuracy: 0.84934 |  4:30:50s
+epoch 553| loss: 0.28825 | train_accuracy: 0.85355 | valid_accuracy: 0.85308 |  4:31:19s
+epoch 554| loss: 0.28854 | train_accuracy: 0.85439 | valid_accuracy: 0.85411 |  4:31:48s
+epoch 555| loss: 0.29057 | train_accuracy: 0.85384 | valid_accuracy: 0.85288 |  4:32:18s
+epoch 556| loss: 0.28902 | train_accuracy: 0.85282 | valid_accuracy: 0.85227 |  4:33:07s
+epoch 557| loss: 0.28862 | train_accuracy: 0.85438 | valid_accuracy: 0.85361 |  4:33:36s
+epoch 558| loss: 0.28853 | train_accuracy: 0.8542  | valid_accuracy: 0.85365 |  4:34:05s
+epoch 559| loss: 0.28772 | train_accuracy: 0.85483 | valid_accuracy: 0.85388 |  4:34:35s
+epoch 560| loss: 0.28774 | train_accuracy: 0.82626 | valid_accuracy: 0.82739 |  4:35:04s
+epoch 561| loss: 0.28809 | train_accuracy: 0.85439 | valid_accuracy: 0.85368 |  4:35:33s
+epoch 562| loss: 0.28792 | train_accuracy: 0.8549  | valid_accuracy: 0.85436 |  4:36:01s
+epoch 563| loss: 0.28795 | train_accuracy: 0.83251 | valid_accuracy: 0.83351 |  4:36:30s
+epoch 564| loss: 0.2879  | train_accuracy: 0.85443 | valid_accuracy: 0.85376 |  4:36:59s
+epoch 565| loss: 0.28784 | train_accuracy: 0.85224 | valid_accuracy: 0.85199 |  4:37:28s
+epoch 566| loss: 0.28772 | train_accuracy: 0.82982 | valid_accuracy: 0.83164 |  4:37:56s
+epoch 567| loss: 0.28743 | train_accuracy: 0.85398 | valid_accuracy: 0.85342 |  4:38:25s
+epoch 568| loss: 0.28795 | train_accuracy: 0.85435 | valid_accuracy: 0.85385 |  4:38:54s
+epoch 569| loss: 0.28761 | train_accuracy: 0.85479 | valid_accuracy: 0.8546  |  4:39:23s
+epoch 570| loss: 0.28752 | train_accuracy: 0.832   | valid_accuracy: 0.83275 |  4:39:52s
+epoch 571| loss: 0.28758 | train_accuracy: 0.85485 | valid_accuracy: 0.85443 |  4:40:21s
+epoch 572| loss: 0.28752 | train_accuracy: 0.85216 | valid_accuracy: 0.85138 |  4:40:50s
+epoch 573| loss: 0.28763 | train_accuracy: 0.82972 | valid_accuracy: 0.83094 |  4:41:19s
+epoch 574| loss: 0.28765 | train_accuracy: 0.85478 | valid_accuracy: 0.85392 |  4:41:48s
+epoch 575| loss: 0.28745 | train_accuracy: 0.85478 | valid_accuracy: 0.85407 |  4:42:17s
+epoch 576| loss: 0.28734 | train_accuracy: 0.85491 | valid_accuracy: 0.85434 |  4:42:46s
+epoch 577| loss: 0.28774 | train_accuracy: 0.8543  | valid_accuracy: 0.85393 |  4:43:16s
+epoch 578| loss: 0.28821 | train_accuracy: 0.8544  | valid_accuracy: 0.85431 |  4:43:45s
+epoch 579| loss: 0.2877  | train_accuracy: 0.84246 | valid_accuracy: 0.84286 |  4:44:14s
+epoch 580| loss: 0.28775 | train_accuracy: 0.85483 | valid_accuracy: 0.85382 |  4:44:43s
+epoch 581| loss: 0.2874  | train_accuracy: 0.85307 | valid_accuracy: 0.85223 |  4:45:12s
+epoch 582| loss: 0.28754 | train_accuracy: 0.85415 | valid_accuracy: 0.85434 |  4:45:41s
+epoch 583| loss: 0.28736 | train_accuracy: 0.83561 | valid_accuracy: 0.83643 |  4:46:10s
+epoch 584| loss: 0.28769 | train_accuracy: 0.85412 | valid_accuracy: 0.85364 |  4:46:39s
+epoch 585| loss: 0.28743 | train_accuracy: 0.85213 | valid_accuracy: 0.8516  |  4:47:08s
+epoch 586| loss: 0.2873  | train_accuracy: 0.85364 | valid_accuracy: 0.85298 |  4:47:36s
+epoch 587| loss: 0.28782 | train_accuracy: 0.85493 | valid_accuracy: 0.85449 |  4:48:05s
+epoch 588| loss: 0.28757 | train_accuracy: 0.85489 | valid_accuracy: 0.85481 |  4:48:34s
+epoch 589| loss: 0.28724 | train_accuracy: 0.85044 | valid_accuracy: 0.8503  |  4:49:03s
+epoch 590| loss: 0.28795 | train_accuracy: 0.85495 | valid_accuracy: 0.85455 |  4:49:34s
+epoch 591| loss: 0.28712 | train_accuracy: 0.85531 | valid_accuracy: 0.85473 |  4:50:03s
+epoch 592| loss: 0.28725 | train_accuracy: 0.85486 | valid_accuracy: 0.85413 |  4:50:32s
+epoch 593| loss: 0.28754 | train_accuracy: 0.85505 | valid_accuracy: 0.85485 |  4:51:01s
+epoch 594| loss: 0.28683 | train_accuracy: 0.85111 | valid_accuracy: 0.85074 |  4:51:30s
+epoch 595| loss: 0.28722 | train_accuracy: 0.83675 | valid_accuracy: 0.83763 |  4:51:59s
+epoch 596| loss: 0.2875  | train_accuracy: 0.85502 | valid_accuracy: 0.85456 |  4:52:28s
+epoch 597| loss: 0.28713 | train_accuracy: 0.85531 | valid_accuracy: 0.85429 |  4:52:56s
+epoch 598| loss: 0.28734 | train_accuracy: 0.85538 | valid_accuracy: 0.85453 |  4:53:26s
+epoch 599| loss: 0.28698 | train_accuracy: 0.83667 | valid_accuracy: 0.83814 |  4:53:55s
+epoch 600| loss: 0.28757 | train_accuracy: 0.84668 | valid_accuracy: 0.84649 |  4:54:23s
+epoch 601| loss: 0.28768 | train_accuracy: 0.85472 | valid_accuracy: 0.85469 |  4:54:53s
+epoch 602| loss: 0.28743 | train_accuracy: 0.83179 | valid_accuracy: 0.8328  |  4:55:21s
+
+Early stopping occurred at epoch 602 with best_epoch = 502 and best_valid_accuracy = 0.85519
+----- Time and memory usage -----
+(current, peak) (1940748, 2999574223)
+--- 17740.33 segundos ---
+------------------------------------
+--- Performance of tabnet multiclass normal ---
+Accuracy : 85.42%
+Precision: 86.11%
+Recall: 85.42%
+F1-score: 84.43%
+Balanced accuracy: 64.67%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.75      0.01      0.02       250
+           1       0.00      0.00      0.00         1
+           2       0.73      0.94      0.82     19782
+           3       0.85      0.48      0.62     13428
+           4       1.00      1.00      1.00      6029
+           5       0.87      0.93      0.90     19130
+           6       0.84      0.63      0.72      2310
+           7       0.57      0.95      0.72      1117
+           8       0.68      0.51      0.58      5282
+           9       1.00      1.00      1.00     22209
+
+    accuracy                           0.85     89538
+   macro avg       0.73      0.65      0.64     89538
+weighted avg       0.86      0.85      0.84     89538
+
+[('duration', 0.0), ('orig_bytes', 0.0), ('resp_bytes', 0.0), ('missed_bytes', 0.0), ('orig_pkts', 0.004), ('orig_ip_bytes', 0.0), ('resp_pkts', 0.0), ('resp_ip_bytes', 0.0019), ('flow_duration', 0.0), ('fwd_pkts_tot', 0.0), ('bwd_pkts_tot', 0.0), ('fwd_data_pkts_tot', 0.0), ('bwd_data_pkts_tot', 0.0), ('fwd_pkts_per_sec', 0.0), ('bwd_pkts_per_sec', 0.0001), ('flow_pkts_per_sec', 0.0186), ('down_up_ratio', 0.0), ('fwd_header_size_tot', 0.0), ('bwd_header_size_tot', 0.0), ('fwd_PSH_flag_count', 0.0), ('bwd_PSH_flag_count', 0.0), ('flow_ACK_flag_count', 0.0), ('fwd_pkts_payload.min', 0.0003), ('fwd_pkts_payload.max', 0.0001), ('fwd_pkts_payload.tot', 0.0009), ('fwd_pkts_payload.avg', 0.072), ('fwd_pkts_payload.std', 0.0009), ('bwd_pkts_payload.min', 0.0002), ('bwd_pkts_payload.max', 0.0), ('bwd_pkts_payload.tot', 0.0), ('bwd_pkts_payload.avg', 0.0), ('bwd_pkts_payload.std', 0.0), ('flow_pkts_payload.min', 0.0407), ('flow_pkts_payload.max', 0.0014), ('flow_pkts_payload.tot', 0.0), ('flow_pkts_payload.avg', 0.0), ('flow_pkts_payload.std', 0.0), ('fwd_iat.min', 0.0), ('fwd_iat.max', 0.0002), ('fwd_iat.tot', 0.0001), ('fwd_iat.avg', 0.044), ('fwd_iat.std', 0.0), ('bwd_iat.min', 0.0), ('bwd_iat.max', 0.0), ('bwd_iat.tot', 0.0), ('bwd_iat.avg', 0.084), ('bwd_iat.std', 0.0), ('flow_iat.min', 0.0002), ('flow_iat.max', 0.0), ('flow_iat.tot', 0.0009), ('flow_iat.avg', 0.0271), ('flow_iat.std', 0.0213), ('payload_bytes_per_second', 0.0), ('fwd_subflow_pkts', 0.0088), ('bwd_subflow_pkts', 0.0013), ('fwd_subflow_bytes', 0.0), ('bwd_subflow_bytes', 0.0), ('fwd_bulk_bytes', 0.0), ('bwd_bulk_bytes', 0.0), ('fwd_bulk_packets', 0.0), ('bwd_bulk_packets', 0.0), ('fwd_bulk_rate', 0.1377), ('bwd_bulk_rate', 0.0), ('active.max', 0.0), ('active.tot', 0.0), ('active.avg', 0.0), ('active.std', 0.0411), ('idle.min', 0.0038), ('idle.max', 0.0), ('idle.tot', 0.0), ('idle.avg', 0.0003), ('idle.std', 0.0), ('fwd_init_window_size', 0.0886), ('bwd_init_window_size', 0.0), ('fwd_last_window_size', 0.0), ('bwd_last_window_size', 0.0), ('proto_icmp', 0.0), ('proto_tcp', 0.0), ('proto_udp', 0.1623), ('conn_state_OTH', 0.0), ('conn_state_REJ', 0.0), ('conn_state_RSTO', 0.0), ('conn_state_RSTOS0', 0.0), ('conn_state_RSTR', 0.026), ('conn_state_RSTRH', 0.0), ('conn_state_S0', 0.0001), ('conn_state_S1', 0.0549), ('conn_state_S2', 0.0), ('conn_state_S3', 0.0), ('conn_state_SF', 0.0), ('conn_state_SH', 0.0003), ('conn_state_SHR', 0.0), ('fwd_header_size_min_0', 0.0), ('fwd_header_size_min_8', 0.0055), ('fwd_header_size_min_20', 0.0), ('fwd_header_size_min_24', 0.0), ('fwd_header_size_min_32', 0.0001), ('fwd_header_size_min_40', 0.0), ('fwd_header_size_min_44', 0.0), ('fwd_header_size_max_0', 0.0115), ('fwd_header_size_max_8', 0.0), ('fwd_header_size_max_20', 0.0), ('fwd_header_size_max_24', 0.0), ('fwd_header_size_max_32', 0.0), ('fwd_header_size_max_40', 0.0284), ('fwd_header_size_max_44', 0.0), ('bwd_header_size_min_0', 0.0), ('bwd_header_size_min_8', 0.0), ('bwd_header_size_min_20', 0.0), ('bwd_header_size_min_24', 0.0), ('bwd_header_size_min_32', 0.0), ('bwd_header_size_min_40', 0.0), ('bwd_header_size_min_44', 0.0), ('bwd_header_size_max_0', 0.0), ('bwd_header_size_max_8', 0.0), ('bwd_header_size_max_20', 0.0), ('bwd_header_size_max_24', 0.0), ('bwd_header_size_max_32', 0.023), ('bwd_header_size_max_40', 0.0), ('bwd_header_size_max_44', 0.0), ('bwd_header_size_max_52', 0.0), ('flow_FIN_flag_count_0', 0.0), ('flow_FIN_flag_count_1', 0.0), ('flow_FIN_flag_count_2', 0.0), ('flow_FIN_flag_count_3', 0.0), ('flow_FIN_flag_count_4', 0.0), ('flow_FIN_flag_count_5', 0.0), ('flow_FIN_flag_count_6', 0.0), ('flow_FIN_flag_count_7', 0.0), ('flow_SYN_flag_count_0', 0.0571), ('flow_SYN_flag_count_1', 0.0003), ('flow_SYN_flag_count_2', 0.0034), ('flow_SYN_flag_count_3', 0.0013), ('flow_SYN_flag_count_4', 0.0), ('flow_SYN_flag_count_5', 0.0), ('flow_SYN_flag_count_6', 0.0), ('flow_SYN_flag_count_7', 0.0), ('flow_SYN_flag_count_8', 0.0014), ('flow_SYN_flag_count_9', 0.0), ('flow_SYN_flag_count_10', 0.0), ('flow_RST_flag_count_0', 0.0005), ('flow_RST_flag_count_1', 0.0), ('flow_RST_flag_count_2', 0.0), ('flow_RST_flag_count_3', 0.0077), ('flow_RST_flag_count_4', 0.0), ('history_originator_0', 0.0), ('history_originator_1', 0.0), ('history_originator_2', 0.0001), ('history_originator_3', 0.0), ('history_originator_4', 0.0), ('history_originator_5', 0.0), ('history_originator_6', 0.0), ('history_responder_0', 0.0148), ('history_responder_1', 0.0), ('history_responder_2', 0.0), ('history_responder_3', 0.0002), ('history_responder_4', 0.0), ('history_responder_5', 0.0001)]/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+

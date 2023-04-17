@@ -29,6 +29,14 @@ from mlciic import functions
 from mlciic import metrics as met
 from matplotlib import pyplot as plt
 
+import tensorflow as tf
+
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras import backend as K
+
+from tensorflow.keras.layers import Dense, Activation, Dropout, BatchNormalization
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+
 random_state=42
 np.random.seed(random_state)
 
@@ -86,19 +94,19 @@ features = [ col for col in df_train.columns if col not in ["Attack_label"]+["At
 le = LabelEncoder()
 le.fit(df_train["Attack_type"].values)
 
-n_total = len(df_test)
+n_total = len(df_train)
 test_indices, valid_indices = train_test_split(range(n_total), test_size=0.2, random_state=random_state)
 
-X_train = df_train[features].values
-y_train = df_train["Attack_type"].values
+X_train = df_train[features].values[test_indices]
+y_train = df_train["Attack_type"].values[test_indices]
 y_train = le.transform(y_train)
 
-X_valid = df_test[features].values[valid_indices]
-y_valid = df_test["Attack_type"].values[valid_indices]
+X_valid = df_train[features].values[valid_indices]
+y_valid = df_train["Attack_type"].values[valid_indices]
 y_valid = le.transform(y_valid)
 
-X_test = df_test[features].values[test_indices]
-y_test = df_test["Attack_type"].values[test_indices]
+X_test = df_test[features].values
+y_test = df_test["Attack_type"].values
 y_test = le.transform(y_test)
 
 standScaler = StandardScaler()
@@ -109,34 +117,83 @@ X_test = model_norm.transform(X_test)
 X_valid = model_norm.transform(X_valid)
 
 
+#FAZER SMOTE AQUI
+sm = SMOTE(random_state=random_state,n_jobs=-1)
+X_train, y_train = sm.fit_resample(X_train, y_train)
+
+print("-----------lllll")
+print(len(le.classes_))
+
 start_time = functions.start_measures()
 
-clf = TabNetClassifier(
-    n_d=64, n_a=64, n_steps=5,
-    gamma=1.5, n_independent=2, n_shared=2,
-    cat_idxs=[],
-    cat_dims=[],
-    cat_emb_dim=1,
-    lambda_sparse=1e-4, momentum=0.3, clip_value=2.,
-    optimizer_fn=torch.optim.Adam,
-    optimizer_params=dict(lr=2e-2),
-    scheduler_params = {"gamma": 0.95, "step_size": 20},
-    scheduler_fn=torch.optim.lr_scheduler.StepLR, epsilon=1e-15
-)
+def recall_m(y_true, y_pred):
+    true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
+    possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
+    recall = true_positives / (possible_positives + K.epsilon())
+    return recall
 
-max_epochs = 100 if not os.getenv("CI", False) else 2
+def precision_m(y_true, y_pred):
+    true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
+    predicted_positives = K.sum(K.round(K.clip(y_pred, 0, 1)))
+    precision = true_positives / (predicted_positives + K.epsilon())
+    return precision
 
-clf.fit(
-    X_train=X_train, y_train=y_train,
-    eval_set=[(X_train, y_train), (X_valid, y_valid)],
-    eval_name=['train', 'valid'],
-    max_epochs=max_epochs, patience=100,
-    batch_size=16384, virtual_batch_size=256
-)
+def f1_m(y_true, y_pred):
+    precision = precision_m(y_true, y_pred)
+    recall = recall_m(y_true, y_pred)
+    return 2*((precision*recall)/(precision+recall+K.epsilon()))
 
-saved_filename = clf.save_model('modelTabNet')
+# Define the model
+model = Sequential()
+model.add(Dense(256, input_dim=X_train.shape[1], activation='relu'))
+model.add(BatchNormalization())
+model.add(Dropout(0.2))
+model.add(Dense(128, activation='relu'))
+model.add(BatchNormalization())
+model.add(Dropout(0.2))
+model.add(Dense(64, activation='relu'))
+model.add(BatchNormalization())
+model.add(Dropout(0.2))
+model.add(Dense(32, activation='relu'))
+model.add(BatchNormalization())
+model.add(Dropout(0.2))
+model.add(Dense(len(le.classes_), activation='softmax')) 
 
-predictions = clf.predict(X_test)
+# Compile the model
+model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy']) 
+
+monitor = tf.keras.callbacks.ReduceLROnPlateau(monitor="loss",factor=0.3,mode="min",patience=10,verbose=1,min_lr=1e-8)
+checkpoint = ModelCheckpoint('best_model_multiclass.h5', monitor='val_loss', save_best_only=True)
+
+# Train the model
+history = model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=100, batch_size=512, callbacks=[monitor, checkpoint])
+
+# Load the best saved model
+best_model = load_model('best_model_multiclass.h5')
+
+# Evaluate the best saved model
+score = best_model.evaluate(X_test, y_test)
+print('')
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+
+model.summary()
+
+
+fig, ax = plt.subplots(figsize=(20, 16))
+
+ax.plot(history.history['loss'], label='train')
+ax.plot(history.history['val_loss'], label='test')
+ax.set_title('Model Loss')
+ax.set_ylabel('Loss')
+ax.set_xlabel('Epoch')
+ax.legend(['Train', 'Test'], loc='upper right')
+plt.savefig("val_loss.png")
+plt.show()
+
+
+predictions = model.predict(X_test)
+predictions = np.argmax(predictions, axis=1)
 
 functions.stop_measures(start_time)
 
@@ -151,30 +208,3 @@ cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix,
 cm_display.plot(ax=ax)
 plt.savefig("confusion_matrix.png")
 plt.show()
-
-#importance features
-def sortSecond(val):
-	return val[1]
-
-values = clf.feature_importances_
-original_labels_list = le.classes_
-importances = [(features[i], np.round(values[i],4)) for i in range(len(features))]
-importances.sort(reverse=True, key=sortSecond)
-importances
-
-
-feature_names = [imp[0] for imp in importances]
-importance_vals = [imp[1] for imp in importances]
-
-# Create a horizontal bar chart
-fig, ax = plt.subplots()
-ax.barh(range(len(importances)), importance_vals)
-ax.set_yticks(range(len(importances)))
-ax.set_yticklabels(feature_names, fontsize=3) 
-
-# Add axis labels and title
-ax.set_xlabel('Importance')
-ax.set_ylabel('Feature')
-ax.set_title('Feature Importances')
-
-plt.savefig('feature_importances.png', dpi=300, bbox_inches='tight')

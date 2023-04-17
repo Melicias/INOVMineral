@@ -1,0 +1,372 @@
+---
+Lines: 358152
+Columns: 159 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['type']
+
+--- Details for categorical columns ---
+type: 
+['udp_flood' 'mqtt_flood' 'http_flood' 'normal' 'tcp_flood'
+ 'http_flood_node_red' 'icmp_flood' 'port_scanning' 'arp_spoofing'
+ 'http_botnet']
+
+    Data Type               Column Name  \
+0     float64                  duration   
+1     float64                orig_bytes   
+2     float64                resp_bytes   
+3       int64              missed_bytes   
+4     float64                 orig_pkts   
+5     float64             orig_ip_bytes   
+6     float64                 resp_pkts   
+7     float64             resp_ip_bytes   
+8     float64             flow_duration   
+9     float64              fwd_pkts_tot   
+10    float64              bwd_pkts_tot   
+11    float64         fwd_data_pkts_tot   
+12    float64         bwd_data_pkts_tot   
+13    float64          fwd_pkts_per_sec   
+14    float64          bwd_pkts_per_sec   
+15    float64         flow_pkts_per_sec   
+16    float64             down_up_ratio   
+17    float64       fwd_header_size_tot   
+18    float64       bwd_header_size_tot   
+19    float64        fwd_PSH_flag_count   
+20    float64        bwd_PSH_flag_count   
+21    float64       flow_ACK_flag_count   
+22    float64      fwd_pkts_payload.min   
+23    float64      fwd_pkts_payload.max   
+24    float64      fwd_pkts_payload.tot   
+25    float64      fwd_pkts_payload.avg   
+26    float64      fwd_pkts_payload.std   
+27    float64      bwd_pkts_payload.min   
+28    float64      bwd_pkts_payload.max   
+29    float64      bwd_pkts_payload.tot   
+30    float64      bwd_pkts_payload.avg   
+31    float64      bwd_pkts_payload.std   
+32    float64     flow_pkts_payload.min   
+33    float64     flow_pkts_payload.max   
+34    float64     flow_pkts_payload.tot   
+35    float64     flow_pkts_payload.avg   
+36    float64     flow_pkts_payload.std   
+37    float64               fwd_iat.min   
+38    float64               fwd_iat.max   
+39    float64               fwd_iat.tot   
+40    float64               fwd_iat.avg   
+41    float64               fwd_iat.std   
+42    float64               bwd_iat.min   
+43    float64               bwd_iat.max   
+44    float64               bwd_iat.tot   
+45    float64               bwd_iat.avg   
+46    float64               bwd_iat.std   
+47    float64              flow_iat.min   
+48    float64              flow_iat.max   
+49    float64              flow_iat.tot   
+50    float64              flow_iat.avg   
+51    float64              flow_iat.std   
+52    float64  payload_bytes_per_second   
+53    float64          fwd_subflow_pkts   
+54    float64          bwd_subflow_pkts   
+55    float64         fwd_subflow_bytes   
+56    float64         bwd_subflow_bytes   
+57    float64            fwd_bulk_bytes   
+58    float64            bwd_bulk_bytes   
+59    float64          fwd_bulk_packets   
+60    float64          bwd_bulk_packets   
+61    float64             fwd_bulk_rate   
+62    float64             bwd_bulk_rate   
+63    float64                active.max   
+64    float64                active.tot   
+65    float64                active.avg   
+66    float64                active.std   
+67    float64                  idle.min   
+68    float64                  idle.max   
+69    float64                  idle.tot   
+70    float64                  idle.avg   
+71    float64                  idle.std   
+72    float64      fwd_init_window_size   
+73    float64      bwd_init_window_size   
+74    float64      fwd_last_window_size   
+75    float64      bwd_last_window_size   
+76     object                      type   
+77      int64                proto_icmp   
+78      int64                 proto_tcp   
+79      int64                 proto_udp   
+80      int64            conn_state_OTH   
+81      int64            conn_state_REJ   
+82      int64           conn_state_RSTO   
+83      int64         conn_state_RSTOS0   
+84      int64           conn_state_RSTR   
+85      int64          conn_state_RSTRH   
+86      int64             conn_state_S0   
+87      int64             conn_state_S1   
+88      int64             conn_state_S2   
+89      int64             conn_state_S3   
+90      int64             conn_state_SF   
+91      int64             conn_state_SH   
+92      int64            conn_state_SHR   
+93      int64     fwd_header_size_min_0   
+94      int64     fwd_header_size_min_8   
+95      int64    fwd_header_size_min_20   
+96      int64    fwd_header_size_min_24   
+97      int64    fwd_header_size_min_32   
+98      int64    fwd_header_size_min_40   
+99      int64    fwd_header_size_min_44   
+100     int64     fwd_header_size_max_0   
+101     int64     fwd_header_size_max_8   
+102     int64    fwd_header_size_max_20   
+103     int64    fwd_header_size_max_24   
+104     int64    fwd_header_size_max_32   
+105     int64    fwd_header_size_max_40   
+106     int64    fwd_header_size_max_44   
+107     int64     bwd_header_size_min_0   
+108     int64     bwd_header_size_min_8   
+109     int64    bwd_header_size_min_20   
+110     int64    bwd_header_size_min_24   
+111     int64    bwd_header_size_min_32   
+112     int64    bwd_header_size_min_40   
+113     int64    bwd_header_size_min_44   
+114     int64     bwd_header_size_max_0   
+115     int64     bwd_header_size_max_8   
+116     int64    bwd_header_size_max_20   
+117     int64    bwd_header_size_max_24   
+118     int64    bwd_header_size_max_32   
+119     int64    bwd_header_size_max_40   
+120     int64    bwd_header_size_max_44   
+121     int64    bwd_header_size_max_52   
+122     int64     flow_FIN_flag_count_0   
+123     int64     flow_FIN_flag_count_1   
+124     int64     flow_FIN_flag_count_2   
+125     int64     flow_FIN_flag_count_3   
+126     int64     flow_FIN_flag_count_4   
+127     int64     flow_FIN_flag_count_5   
+128     int64     flow_FIN_flag_count_6   
+129     int64     flow_FIN_flag_count_7   
+130     int64     flow_SYN_flag_count_0   
+131     int64     flow_SYN_flag_count_1   
+132     int64     flow_SYN_flag_count_2   
+133     int64     flow_SYN_flag_count_3   
+134     int64     flow_SYN_flag_count_4   
+135     int64     flow_SYN_flag_count_5   
+136     int64     flow_SYN_flag_count_6   
+137     int64     flow_SYN_flag_count_7   
+138     int64     flow_SYN_flag_count_8   
+139     int64     flow_SYN_flag_count_9   
+140     int64    flow_SYN_flag_count_10   
+141     int64     flow_RST_flag_count_0   
+142     int64     flow_RST_flag_count_1   
+143     int64     flow_RST_flag_count_2   
+144     int64     flow_RST_flag_count_3   
+145     int64     flow_RST_flag_count_4   
+146     int64      history_originator_0   
+147     int64      history_originator_1   
+148     int64      history_originator_2   
+149     int64      history_originator_3   
+150     int64      history_originator_4   
+151     int64      history_originator_5   
+152     int64      history_originator_6   
+153     int64       history_responder_0   
+154     int64       history_responder_1   
+155     int64       history_responder_2   
+156     int64       history_responder_3   
+157     int64       history_responder_4   
+158     int64       history_responder_5   
+
+                                         Unique Values  
+0    [-0.0146794852089584, -0.4057007074806505, -0....  
+1    [-0.1798294178884204, -0.1798284914145006, 5.0...  
+2    [-0.0050909125602386, -0.0050749461149235, -0....  
+3                                               [0, 1]  
+4    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+5    [-0.2235051422612725, -0.2701244830698416, -0....  
+6    [-0.756566237085908, 0.113379129033401, 2.7232...  
+7    [-0.65132992298557, 0.0761837856163627, 0.0100...  
+8    [-0.0146794852089584, -0.4057007074806505, -0....  
+9    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+10   [-0.756566237085908, 0.113379129033401, 2.7232...  
+11   [-0.1841505084302839, 1.8849776192465009, 2.91...  
+12   [-0.0468426670141985, 15.094668954347924, 30.2...  
+13   [-0.7784400498089381, -0.7784161600321544, -0....  
+14   [-0.7778685962767037, -0.777780086048685, 1.31...  
+15   [-0.7784992390061136, -0.7784872839061784, -0....  
+16   [-1.303155859508906, 0.7080096245472669, 0.037...  
+17   [-0.5632548105483247, -0.4759722062381907, -0....  
+18   [-0.5899833859035155, 0.0606276880264669, -0.0...  
+19   [-0.1847802841859509, 1.9741081084026069, 3.05...  
+20   [-0.0400030915305518, 17.674125540826264, 35.3...  
+21   [-0.4998346498111727, -0.0539362824453553, 3.5...  
+22   [-0.0715485643139634, 3.915326526805518, 4.733...  
+23   [-0.2240566597355144, 1.7390343359970422, 2.41...  
+24   [-0.1700283834593249, 0.4782412227926198, 1.49...  
+25   [-0.202207993037164, 0.5625309784999971, 2.751...  
+26   [-0.2180729836878303, 1.5162121242004258, 3.06...  
+27   [-0.0268542124667472, 35.75915639532795, 32.97...  
+28   [-0.0415997877172178, 19.401657524859345, 8.83...  
+29   [-0.0425570558754673, 18.57474482657504, 8.452...  
+30   [-0.0348008605996162, 33.5905000562465, 2.5224...  
+31   [-0.0298206347677357, 8.991496232710693, 8.322...  
+32   [-0.0331878993021227, 11.642130649671818, 14.0...  
+33   [-0.2246240054143394, 1.737063313551674, 2.409...  
+34   [-0.1706558309600847, 0.4767949484126132, 1.49...  
+35   [-0.2080860613189242, 0.646748724811026, 2.935...  
+36   [-0.2211732043688052, 1.350672247020747, 3.018...  
+37   [0.7127558178183264, -0.1241863594563378, -0.4...  
+38   [0.2733864256711472, -0.3354093518719633, -0.5...  
+39   [-0.0028152123596323, -0.3933972387175649, -0....  
+40   [0.5051920576769914, -0.2519777043187228, -0.5...  
+41   [-0.3664930315787462, -0.0066253488630917, 1.4...  
+42   [-0.0943335427477205, -0.0942693179403854, 0.2...  
+43   [-0.1919051737110198, 2.452781667564118, 0.523...  
+44   [-0.136594453953829, 0.572018528282717, 0.0948...  
+45   [-0.1760385217376787, 1.2357883632501545, 0.51...  
+46   [-0.1701881005640612, 3.1116935451146284, 0.68...  
+47   [0.7007557821325137, -0.1404231255835309, -0.3...  
+48   [0.2580938529997307, -0.3551824923609279, -0.5...  
+49   [-0.0147052155493456, -0.4057263732713586, -0....  
+50   [0.4947340760258622, -0.2672872228429325, -0.4...  
+51   [-0.3717570839796863, -0.1029017127743767, -0....  
+52   [-0.0167643314864417, -0.0162993341521579, -0....  
+53   [-0.1664665308562612, 4.051102316774855, -1.22...  
+54   [-1.229441762620637, 0.6387953628886931, 2.507...  
+55   [-0.211129749304483, 1.0516171041470712, 3.039...  
+56   [-0.0335462033978086, 21.33447097684775, 2.404...  
+57   [-0.0045563503109509, 234.63874932947647, 138....  
+58   [-0.003094060504225, 333.5791545891124, 50.847...  
+59   [-0.0046737429031634, 216.44925318646543, 180....  
+60           [-0.0033419406315067, 299.22733832322217]  
+61   [-0.0022212486057844, 0.0106504297139593, 50.1...  
+62   [-0.0014985658322627, 0.4679980432883466, 0.72...  
+63   [-0.2104019440618189, 0.591378013080404, -0.06...  
+64   [-0.2110921674416496, 0.5694058858568176, -0.0...  
+65   [-0.2074104452541365, 0.6109421180480645, -0.0...  
+66   [-0.0579698713082919, -0.0555156831535085, -0....  
+67   [0.5670191944053457, -0.4771993911044491, -0.0...  
+68   [0.2791260775230978, -0.5365049285270181, -0.2...  
+69   [0.0220513888074027, -0.5105013742139537, -0.3...  
+70   [0.428915493265397, -0.5282022665843201, -0.17...  
+71   [-0.3039416991711032, 1.877159182437583, 2.359...  
+72   [-0.8016621040909139, -0.7851928581929801, 1.2...  
+73   [-0.7083135508908369, 1.4079016290762738, 1.43...  
+74   [-0.7251696633681214, -0.7082262240141926, 1.4...  
+75   [-0.6538613341045789, 1.5307894976787302, 1.52...  
+76   [udp_flood, mqtt_flood, http_flood, normal, tc...  
+77                                              [0, 1]  
+78                                              [0, 1]  
+79                                              [1, 0]  
+80                                              [0, 1]  
+81                                              [0, 1]  
+82                                              [0, 1]  
+83                                              [0, 1]  
+84                                              [0, 1]  
+85                                              [0, 1]  
+86                                              [1, 0]  
+87                                              [0, 1]  
+88                                              [0, 1]  
+89                                              [0, 1]  
+90                                              [0, 1]  
+91                                              [0, 1]  
+92                                              [0, 1]  
+93                                              [0, 1]  
+94                                              [1, 0]  
+95                                              [0, 1]  
+96                                              [0, 1]  
+97                                              [0, 1]  
+98                                              [0, 1]  
+99                                              [0, 1]  
+100                                             [0, 1]  
+101                                             [1, 0]  
+102                                             [0, 1]  
+103                                             [0, 1]  
+104                                             [0, 1]  
+105                                             [0, 1]  
+106                                             [0, 1]  
+107                                             [1, 0]  
+108                                             [0, 1]  
+109                                             [0, 1]  
+110                                             [0, 1]  
+111                                             [0, 1]  
+112                                             [0, 1]  
+113                                             [0, 1]  
+114                                             [1, 0]  
+115                                             [0, 1]  
+116                                             [0, 1]  
+117                                             [0, 1]  
+118                                             [0, 1]  
+119                                             [0, 1]  
+120                                             [0, 1]  
+121                                             [0, 1]  
+122                                             [1, 0]  
+123                                             [0, 1]  
+124                                             [0, 1]  
+125                                             [0, 1]  
+126                                             [0, 1]  
+127                                             [0, 1]  
+128                                             [0, 1]  
+129                                             [0, 1]  
+130                                             [1, 0]  
+131                                             [0, 1]  
+132                                             [0, 1]  
+133                                             [0, 1]  
+134                                             [0, 1]  
+135                                             [0, 1]  
+136                                             [0, 1]  
+137                                             [0, 1]  
+138                                             [0, 1]  
+139                                             [0, 1]  
+140                                                [0]  
+141                                             [1, 0]  
+142                                             [0, 1]  
+143                                             [0, 1]  
+144                                             [0, 1]  
+145                                             [0, 1]  
+146                                             [0, 1]  
+147                                             [1, 0]  
+148                                             [0, 1]  
+149                                             [0, 1]  
+150                                             [0, 1]  
+151                                             [0, 1]  
+152                                             [0, 1]  
+153                                             [1, 0]  
+154                                             [0, 1]  
+155                                             [0, 1]  
+156                                             [0, 1]  
+157                                             [0, 1]  
+158                                             [0, 1]  /home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+----- Time and memory usage -----
+(current, peak) (975951, 258414367)
+--- 39.90 segundos ---
+------------------------------------
+--- Performance of random forest multiclass normal ---
+Accuracy : 85.75%
+Precision: 86.28%
+Recall: 85.75%
+F1-score: 84.83%
+Balanced accuracy: 65.13%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.49      0.16      0.24       250
+           1       0.00      0.00      0.00         1
+           2       0.73      0.95      0.82     19782
+           3       0.85      0.48      0.62     13428
+           4       1.00      1.00      1.00      6029
+           5       0.88      0.94      0.91     19130
+           6       0.77      0.75      0.76      2310
+           7       0.62      0.70      0.66      1117
+           8       0.71      0.54      0.61      5282
+           9       1.00      1.00      1.00     22209
+
+    accuracy                           0.86     89538
+   macro avg       0.70      0.65      0.66     89538
+weighted avg       0.86      0.86      0.85     89538
+
+[('duration', 0.0064), ('orig_bytes', 0.0031), ('resp_bytes', 0.0), ('missed_bytes', 0.0), ('orig_pkts', 0.0066), ('orig_ip_bytes', 0.0182), ('resp_pkts', 0.0207), ('resp_ip_bytes', 0.0294), ('flow_duration', 0.0058), ('fwd_pkts_tot', 0.0083), ('bwd_pkts_tot', 0.0125), ('fwd_data_pkts_tot', 0.0011), ('bwd_data_pkts_tot', 0.0), ('fwd_pkts_per_sec', 0.0119), ('bwd_pkts_per_sec', 0.0222), ('flow_pkts_per_sec', 0.0091), ('down_up_ratio', 0.0163), ('fwd_header_size_tot', 0.04), ('bwd_header_size_tot', 0.0177), ('fwd_PSH_flag_count', 0.0002), ('bwd_PSH_flag_count', 0.0), ('flow_ACK_flag_count', 0.0236), ('fwd_pkts_payload.min', 0.0003), ('fwd_pkts_payload.max', 0.0018), ('fwd_pkts_payload.tot', 0.0007), ('fwd_pkts_payload.avg', 0.0015), ('fwd_pkts_payload.std', 0.0014), ('bwd_pkts_payload.min', 0.0), ('bwd_pkts_payload.max', 0.0), ('bwd_pkts_payload.tot', 0.0), ('bwd_pkts_payload.avg', 0.0), ('bwd_pkts_payload.std', 0.0), ('flow_pkts_payload.min', 0.0002), ('flow_pkts_payload.max', 0.002), ('flow_pkts_payload.tot', 0.0028), ('flow_pkts_payload.avg', 0.0014), ('flow_pkts_payload.std', 0.0008), ('fwd_iat.min', 0.0137), ('fwd_iat.max', 0.0152), ('fwd_iat.tot', 0.015), ('fwd_iat.avg', 0.0106), ('fwd_iat.std', 0.0013), ('bwd_iat.min', 0.0013), ('bwd_iat.max', 0.0007), ('bwd_iat.tot', 0.0008), ('bwd_iat.avg', 0.0009), ('bwd_iat.std', 0.0009), ('flow_iat.min', 0.0186), ('flow_iat.max', 0.0063), ('flow_iat.tot', 0.003), ('flow_iat.avg', 0.0117), ('flow_iat.std', 0.0022), ('payload_bytes_per_second', 0.0015), ('fwd_subflow_pkts', 0.0023), ('bwd_subflow_pkts', 0.0112), ('fwd_subflow_bytes', 0.0015), ('bwd_subflow_bytes', 0.0001), ('fwd_bulk_bytes', 0.0), ('bwd_bulk_bytes', 0.0), ('fwd_bulk_packets', 0.0), ('bwd_bulk_packets', 0.0), ('fwd_bulk_rate', 0.0), ('bwd_bulk_rate', 0.0), ('active.max', 0.0083), ('active.tot', 0.0104), ('active.avg', 0.0093), ('active.std', 0.0003), ('idle.min', 0.0003), ('idle.max', 0.0007), ('idle.tot', 0.0002), ('idle.avg', 0.0039), ('idle.std', 0.0001), ('fwd_init_window_size', 0.0663), ('bwd_init_window_size', 0.0141), ('fwd_last_window_size', 0.0355), ('bwd_last_window_size', 0.0255), ('proto_icmp', 0.0), ('proto_tcp', 0.0182), ('proto_udp', 0.0211), ('conn_state_OTH', 0.0128), ('conn_state_REJ', 0.0119), ('conn_state_RSTO', 0.0016), ('conn_state_RSTOS0', 0.0), ('conn_state_RSTR', 0.0), ('conn_state_RSTRH', 0.0), ('conn_state_S0', 0.0215), ('conn_state_S1', 0.0125), ('conn_state_S2', 0.0), ('conn_state_S3', 0.0), ('conn_state_SF', 0.0004), ('conn_state_SH', 0.0), ('conn_state_SHR', 0.0), ('fwd_header_size_min_0', 0.0), ('fwd_header_size_min_8', 0.0624), ('fwd_header_size_min_20', 0.0114), ('fwd_header_size_min_24', 0.0007), ('fwd_header_size_min_32', 0.0002), ('fwd_header_size_min_40', 0.0096), ('fwd_header_size_min_44', 0.0), ('fwd_header_size_max_0', 0.0), ('fwd_header_size_max_8', 0.0409), ('fwd_header_size_max_20', 0.0225), ('fwd_header_size_max_24', 0.0018), ('fwd_header_size_max_32', 0.0002), ('fwd_header_size_max_40', 0.0342), ('fwd_header_size_max_44', 0.0), ('bwd_header_size_min_0', 0.0114), ('bwd_header_size_min_8', 0.0), ('bwd_header_size_min_20', 0.0085), ('bwd_header_size_min_24', 0.0323), ('bwd_header_size_min_32', 0.0009), ('bwd_header_size_min_40', 0.0008), ('bwd_header_size_min_44', 0.0), ('bwd_header_size_max_0', 0.001), ('bwd_header_size_max_8', 0.0), ('bwd_header_size_max_20', 0.0101), ('bwd_header_size_max_24', 0.0149), ('bwd_header_size_max_32', 0.0), ('bwd_header_size_max_40', 0.0005), ('bwd_header_size_max_44', 0.0), ('bwd_header_size_max_52', 0.0), ('flow_FIN_flag_count_0', 0.0011), ('flow_FIN_flag_count_1', 0.0), ('flow_FIN_flag_count_2', 0.0004), ('flow_FIN_flag_count_3', 0.0), ('flow_FIN_flag_count_4', 0.0), ('flow_FIN_flag_count_5', 0.0), ('flow_FIN_flag_count_6', 0.0), ('flow_FIN_flag_count_7', 0.0), ('flow_SYN_flag_count_0', 0.0193), ('flow_SYN_flag_count_1', 0.0176), ('flow_SYN_flag_count_2', 0.0025), ('flow_SYN_flag_count_3', 0.0), ('flow_SYN_flag_count_4', 0.0), ('flow_SYN_flag_count_5', 0.0), ('flow_SYN_flag_count_6', 0.0), ('flow_SYN_flag_count_7', 0.0), ('flow_SYN_flag_count_8', 0.0), ('flow_SYN_flag_count_9', 0.0), ('flow_SYN_flag_count_10', 0.0), ('flow_RST_flag_count_0', 0.0042), ('flow_RST_flag_count_1', 0.0048), ('flow_RST_flag_count_2', 0.0), ('flow_RST_flag_count_3', 0.0), ('flow_RST_flag_count_4', 0.0), ('history_originator_0', 0.0116), ('history_originator_1', 0.0053), ('history_originator_2', 0.0001), ('history_originator_3', 0.0001), ('history_originator_4', 0.0), ('history_originator_5', 0.0), ('history_originator_6', 0.0), ('history_responder_0', 0.008), ('history_responder_1', 0.0003), ('history_responder_2', 0.0001), ('history_responder_3', 0.0006), ('history_responder_4', 0.0), ('history_responder_5', 0.0)]

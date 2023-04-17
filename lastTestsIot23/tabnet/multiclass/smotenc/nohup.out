@@ -1,0 +1,559 @@
+---
+Lines: 890900
+Columns: 159 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['type']
+
+--- Details for categorical columns ---
+type: 
+['udp_flood' 'mqtt_flood' 'http_flood' 'normal' 'tcp_flood'
+ 'http_flood_node_red' 'icmp_flood' 'port_scanning' 'arp_spoofing'
+ 'http_botnet']
+
+    Data Type               Column Name  \
+0     float64                  duration   
+1     float64                orig_bytes   
+2     float64                resp_bytes   
+3       int64              missed_bytes   
+4     float64                 orig_pkts   
+5     float64             orig_ip_bytes   
+6     float64                 resp_pkts   
+7     float64             resp_ip_bytes   
+8     float64             flow_duration   
+9     float64              fwd_pkts_tot   
+10    float64              bwd_pkts_tot   
+11    float64         fwd_data_pkts_tot   
+12    float64         bwd_data_pkts_tot   
+13    float64          fwd_pkts_per_sec   
+14    float64          bwd_pkts_per_sec   
+15    float64         flow_pkts_per_sec   
+16    float64             down_up_ratio   
+17    float64       fwd_header_size_tot   
+18    float64       bwd_header_size_tot   
+19    float64        fwd_PSH_flag_count   
+20    float64        bwd_PSH_flag_count   
+21    float64       flow_ACK_flag_count   
+22    float64      fwd_pkts_payload.min   
+23    float64      fwd_pkts_payload.max   
+24    float64      fwd_pkts_payload.tot   
+25    float64      fwd_pkts_payload.avg   
+26    float64      fwd_pkts_payload.std   
+27    float64      bwd_pkts_payload.min   
+28    float64      bwd_pkts_payload.max   
+29    float64      bwd_pkts_payload.tot   
+30    float64      bwd_pkts_payload.avg   
+31    float64      bwd_pkts_payload.std   
+32    float64     flow_pkts_payload.min   
+33    float64     flow_pkts_payload.max   
+34    float64     flow_pkts_payload.tot   
+35    float64     flow_pkts_payload.avg   
+36    float64     flow_pkts_payload.std   
+37    float64               fwd_iat.min   
+38    float64               fwd_iat.max   
+39    float64               fwd_iat.tot   
+40    float64               fwd_iat.avg   
+41    float64               fwd_iat.std   
+42    float64               bwd_iat.min   
+43    float64               bwd_iat.max   
+44    float64               bwd_iat.tot   
+45    float64               bwd_iat.avg   
+46    float64               bwd_iat.std   
+47    float64              flow_iat.min   
+48    float64              flow_iat.max   
+49    float64              flow_iat.tot   
+50    float64              flow_iat.avg   
+51    float64              flow_iat.std   
+52    float64  payload_bytes_per_second   
+53    float64          fwd_subflow_pkts   
+54    float64          bwd_subflow_pkts   
+55    float64         fwd_subflow_bytes   
+56    float64         bwd_subflow_bytes   
+57    float64            fwd_bulk_bytes   
+58    float64            bwd_bulk_bytes   
+59    float64          fwd_bulk_packets   
+60    float64          bwd_bulk_packets   
+61    float64             fwd_bulk_rate   
+62    float64             bwd_bulk_rate   
+63    float64                active.max   
+64    float64                active.tot   
+65    float64                active.avg   
+66    float64                active.std   
+67    float64                  idle.min   
+68    float64                  idle.max   
+69    float64                  idle.tot   
+70    float64                  idle.avg   
+71    float64                  idle.std   
+72    float64      fwd_init_window_size   
+73    float64      bwd_init_window_size   
+74    float64      fwd_last_window_size   
+75    float64      bwd_last_window_size   
+76     object                      type   
+77      int64                proto_icmp   
+78      int64                 proto_tcp   
+79      int64                 proto_udp   
+80      int64            conn_state_OTH   
+81      int64            conn_state_REJ   
+82      int64           conn_state_RSTO   
+83      int64         conn_state_RSTOS0   
+84      int64           conn_state_RSTR   
+85      int64          conn_state_RSTRH   
+86      int64             conn_state_S0   
+87      int64             conn_state_S1   
+88      int64             conn_state_S2   
+89      int64             conn_state_S3   
+90      int64             conn_state_SF   
+91      int64             conn_state_SH   
+92      int64            conn_state_SHR   
+93      int64     fwd_header_size_min_0   
+94      int64     fwd_header_size_min_8   
+95      int64    fwd_header_size_min_20   
+96      int64    fwd_header_size_min_24   
+97      int64    fwd_header_size_min_32   
+98      int64    fwd_header_size_min_40   
+99      int64    fwd_header_size_min_44   
+100     int64     fwd_header_size_max_0   
+101     int64     fwd_header_size_max_8   
+102     int64    fwd_header_size_max_20   
+103     int64    fwd_header_size_max_24   
+104     int64    fwd_header_size_max_32   
+105     int64    fwd_header_size_max_40   
+106     int64    fwd_header_size_max_44   
+107     int64     bwd_header_size_min_0   
+108     int64     bwd_header_size_min_8   
+109     int64    bwd_header_size_min_20   
+110     int64    bwd_header_size_min_24   
+111     int64    bwd_header_size_min_32   
+112     int64    bwd_header_size_min_40   
+113     int64    bwd_header_size_min_44   
+114     int64     bwd_header_size_max_0   
+115     int64     bwd_header_size_max_8   
+116     int64    bwd_header_size_max_20   
+117     int64    bwd_header_size_max_24   
+118     int64    bwd_header_size_max_32   
+119     int64    bwd_header_size_max_40   
+120     int64    bwd_header_size_max_44   
+121     int64    bwd_header_size_max_52   
+122     int64     flow_FIN_flag_count_0   
+123     int64     flow_FIN_flag_count_1   
+124     int64     flow_FIN_flag_count_2   
+125     int64     flow_FIN_flag_count_3   
+126     int64     flow_FIN_flag_count_4   
+127     int64     flow_FIN_flag_count_5   
+128     int64     flow_FIN_flag_count_6   
+129     int64     flow_FIN_flag_count_7   
+130     int64     flow_SYN_flag_count_0   
+131     int64     flow_SYN_flag_count_1   
+132     int64     flow_SYN_flag_count_2   
+133     int64     flow_SYN_flag_count_3   
+134     int64     flow_SYN_flag_count_4   
+135     int64     flow_SYN_flag_count_5   
+136     int64     flow_SYN_flag_count_6   
+137     int64     flow_SYN_flag_count_7   
+138     int64     flow_SYN_flag_count_8   
+139     int64     flow_SYN_flag_count_9   
+140     int64    flow_SYN_flag_count_10   
+141     int64     flow_RST_flag_count_0   
+142     int64     flow_RST_flag_count_1   
+143     int64     flow_RST_flag_count_2   
+144     int64     flow_RST_flag_count_3   
+145     int64     flow_RST_flag_count_4   
+146     int64      history_originator_0   
+147     int64      history_originator_1   
+148     int64      history_originator_2   
+149     int64      history_originator_3   
+150     int64      history_originator_4   
+151     int64      history_originator_5   
+152     int64      history_originator_6   
+153     int64       history_responder_0   
+154     int64       history_responder_1   
+155     int64       history_responder_2   
+156     int64       history_responder_3   
+157     int64       history_responder_4   
+158     int64       history_responder_5   
+
+                                         Unique Values  
+0    [-0.0146794852089584, -0.4057007074806505, -0....  
+1    [-0.1798294178884204, -0.1798284914145006, 5.0...  
+2    [-0.0050909125602386, -0.0050749461149235, -0....  
+3                                               [0, 1]  
+4    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+5    [-0.2235051422612725, -0.2701244830698416, -0....  
+6    [-0.756566237085908, 0.113379129033401, 2.7232...  
+7    [-0.65132992298557, 0.0761837856163627, 0.0100...  
+8    [-0.0146794852089584, -0.4057007074806505, -0....  
+9    [-0.0442144921158877, -0.3029477249158591, 0.9...  
+10   [-0.756566237085908, 0.113379129033401, 2.7232...  
+11   [-0.1841505084302839, 1.8849776192465009, 2.91...  
+12   [-0.0468426670141985, 15.094668954347924, 30.2...  
+13   [-0.7784400498089381, -0.7784161600321544, -0....  
+14   [-0.7778685962767037, -0.777780086048685, 1.31...  
+15   [-0.7784992390061136, -0.7784872839061784, -0....  
+16   [-1.303155859508906, 0.7080096245472669, 0.037...  
+17   [-0.5632548105483247, -0.4759722062381907, -0....  
+18   [-0.5899833859035155, 0.0606276880264669, -0.0...  
+19   [-0.1847802841859509, 1.9741081084026069, 3.05...  
+20   [-0.0400030915305518, 17.674125540826264, 35.3...  
+21   [-0.4998346498111727, -0.0539362824453553, 3.5...  
+22   [-0.0715485643139634, 3.915326526805518, 4.733...  
+23   [-0.2240566597355144, 1.7390343359970422, 2.41...  
+24   [-0.1700283834593249, 0.4782412227926198, 1.49...  
+25   [-0.202207993037164, 0.5625309784999971, 2.751...  
+26   [-0.2180729836878303, 1.5162121242004258, 3.06...  
+27   [-0.0268542124667472, 35.75915639532795, 32.97...  
+28   [-0.0415997877172178, 19.401657524859345, 8.83...  
+29   [-0.0425570558754673, 18.57474482657504, 8.452...  
+30   [-0.0348008605996162, 33.5905000562465, 2.5224...  
+31   [-0.0298206347677357, 8.991496232710693, 8.322...  
+32   [-0.0331878993021227, 11.642130649671818, 14.0...  
+33   [-0.2246240054143394, 1.737063313551674, 2.409...  
+34   [-0.1706558309600847, 0.4767949484126132, 1.49...  
+35   [-0.2080860613189242, 0.646748724811026, 2.935...  
+36   [-0.2211732043688052, 1.350672247020747, 3.018...  
+37   [0.7127558178183264, -0.1241863594563378, -0.4...  
+38   [0.2733864256711472, -0.3354093518719633, -0.5...  
+39   [-0.0028152123596323, -0.3933972387175649, -0....  
+40   [0.5051920576769914, -0.2519777043187228, -0.5...  
+41   [-0.3664930315787462, -0.0066253488630917, 1.4...  
+42   [-0.0943335427477205, -0.0942693179403854, 0.2...  
+43   [-0.1919051737110198, 2.452781667564118, 0.523...  
+44   [-0.136594453953829, 0.572018528282717, 0.0948...  
+45   [-0.1760385217376787, 1.2357883632501545, 0.51...  
+46   [-0.1701881005640612, 3.1116935451146284, 0.68...  
+47   [0.7007557821325137, -0.1404231255835309, -0.3...  
+48   [0.2580938529997307, -0.3551824923609279, -0.5...  
+49   [-0.0147052155493456, -0.4057263732713586, -0....  
+50   [0.4947340760258622, -0.2672872228429325, -0.4...  
+51   [-0.3717570839796863, -0.1029017127743767, -0....  
+52   [-0.0167643314864417, -0.0162993341521579, -0....  
+53   [-0.1664665308562612, 4.051102316774855, -1.22...  
+54   [-1.229441762620637, 0.6387953628886931, 2.507...  
+55   [-0.211129749304483, 1.0516171041470712, 3.039...  
+56   [-0.0335462033978086, 21.33447097684775, 2.404...  
+57   [-0.0045563503109509, 234.63874932947647, 138....  
+58   [-0.003094060504225, 333.5791545891124, 50.847...  
+59   [-0.0046737429031634, 216.44925318646543, 180....  
+60   [-0.0033419406315067, 299.22733832322217, 211....  
+61   [-0.0022212486057844, 0.0106504297139593, 50.1...  
+62   [-0.0014985658322627, 0.4679980432883466, 0.72...  
+63   [-0.2104019440618189, 0.591378013080404, -0.06...  
+64   [-0.2110921674416496, 0.5694058858568176, -0.0...  
+65   [-0.2074104452541365, 0.6109421180480645, -0.0...  
+66   [-0.0579698713082919, -0.0555156831535085, -0....  
+67   [0.5670191944053457, -0.4771993911044491, -0.0...  
+68   [0.2791260775230978, -0.5365049285270181, -0.2...  
+69   [0.0220513888074027, -0.5105013742139537, -0.3...  
+70   [0.428915493265397, -0.5282022665843201, -0.17...  
+71   [-0.3039416991711032, 1.877159182437583, 2.359...  
+72   [-0.8016621040909139, -0.7851928581929801, 1.2...  
+73   [-0.7083135508908369, 1.4079016290762738, 1.43...  
+74   [-0.7251696633681214, -0.7082262240141926, 1.4...  
+75   [-0.6538613341045789, 1.5307894976787302, 1.52...  
+76   [udp_flood, mqtt_flood, http_flood, normal, tc...  
+77                                              [0, 1]  
+78                                              [0, 1]  
+79                                              [1, 0]  
+80                                              [0, 1]  
+81                                              [0, 1]  
+82                                              [0, 1]  
+83                                              [0, 1]  
+84                                              [0, 1]  
+85                                              [0, 1]  
+86                                              [1, 0]  
+87                                              [0, 1]  
+88                                              [0, 1]  
+89                                              [0, 1]  
+90                                              [0, 1]  
+91                                              [0, 1]  
+92                                              [0, 1]  
+93                                              [0, 1]  
+94                                              [1, 0]  
+95                                              [0, 1]  
+96                                              [0, 1]  
+97                                              [0, 1]  
+98                                              [0, 1]  
+99                                              [0, 1]  
+100                                             [0, 1]  
+101                                             [1, 0]  
+102                                             [0, 1]  
+103                                             [0, 1]  
+104                                             [0, 1]  
+105                                             [0, 1]  
+106                                             [0, 1]  
+107                                             [1, 0]  
+108                                             [0, 1]  
+109                                             [0, 1]  
+110                                             [0, 1]  
+111                                             [0, 1]  
+112                                             [0, 1]  
+113                                             [0, 1]  
+114                                             [1, 0]  
+115                                             [0, 1]  
+116                                             [0, 1]  
+117                                             [0, 1]  
+118                                             [0, 1]  
+119                                             [0, 1]  
+120                                             [0, 1]  
+121                                             [0, 1]  
+122                                             [1, 0]  
+123                                             [0, 1]  
+124                                             [0, 1]  
+125                                             [0, 1]  
+126                                             [0, 1]  
+127                                             [0, 1]  
+128                                             [0, 1]  
+129                                             [0, 1]  
+130                                             [1, 0]  
+131                                             [0, 1]  
+132                                             [0, 1]  
+133                                             [0, 1]  
+134                                             [0, 1]  
+135                                             [0, 1]  
+136                                             [0, 1]  
+137                                             [0, 1]  
+138                                             [0, 1]  
+139                                             [0, 1]  
+140                                                [0]  
+141                                             [1, 0]  
+142                                             [0, 1]  
+143                                             [0, 1]  
+144                                             [0, 1]  
+145                                             [0, 1]  
+146                                             [0, 1]  
+147                                             [1, 0]  
+148                                             [0, 1]  
+149                                             [0, 1]  
+150                                             [0, 1]  
+151                                             [0, 1]  
+152                                             [0, 1]  
+153                                             [1, 0]  
+154                                             [0, 1]  
+155                                             [0, 1]  
+156                                             [0, 1]  
+157                                             [0, 1]  
+158                                             [0, 1]  
+epoch 0  | loss: 1.121   | train_accuracy: 0.71294 | valid_accuracy: 0.71237 |  0:01:13s
+epoch 1  | loss: 0.39027 | train_accuracy: 0.76729 | valid_accuracy: 0.76652 |  0:02:28s
+epoch 2  | loss: 0.34806 | train_accuracy: 0.81307 | valid_accuracy: 0.81238 |  0:03:43s
+epoch 3  | loss: 0.33572 | train_accuracy: 0.82748 | valid_accuracy: 0.82738 |  0:04:57s
+epoch 4  | loss: 0.33359 | train_accuracy: 0.83671 | valid_accuracy: 0.83672 |  0:06:12s
+epoch 5  | loss: 0.33111 | train_accuracy: 0.84076 | valid_accuracy: 0.8409  |  0:07:26s
+epoch 6  | loss: 0.33153 | train_accuracy: 0.83999 | valid_accuracy: 0.8399  |  0:08:40s
+epoch 7  | loss: 0.32862 | train_accuracy: 0.84034 | valid_accuracy: 0.84021 |  0:09:54s
+epoch 8  | loss: 0.32615 | train_accuracy: 0.84131 | valid_accuracy: 0.84072 |  0:11:08s
+epoch 9  | loss: 0.32374 | train_accuracy: 0.84209 | valid_accuracy: 0.8422  |  0:12:22s
+epoch 10 | loss: 0.32287 | train_accuracy: 0.84229 | valid_accuracy: 0.84195 |  0:13:36s
+epoch 11 | loss: 0.31997 | train_accuracy: 0.84321 | valid_accuracy: 0.84306 |  0:14:50s
+epoch 12 | loss: 0.32362 | train_accuracy: 0.8421  | valid_accuracy: 0.84164 |  0:16:04s
+epoch 13 | loss: 0.34599 | train_accuracy: 0.77478 | valid_accuracy: 0.77551 |  0:17:17s
+epoch 14 | loss: 0.35539 | train_accuracy: 0.8417  | valid_accuracy: 0.84192 |  0:18:31s
+epoch 15 | loss: 0.32731 | train_accuracy: 0.8433  | valid_accuracy: 0.84337 |  0:19:44s
+epoch 16 | loss: 0.32238 | train_accuracy: 0.8439  | valid_accuracy: 0.84405 |  0:20:58s
+epoch 17 | loss: 0.32029 | train_accuracy: 0.84268 | valid_accuracy: 0.84289 |  0:22:12s
+epoch 18 | loss: 0.32053 | train_accuracy: 0.84402 | valid_accuracy: 0.84408 |  0:23:25s
+epoch 19 | loss: 0.32262 | train_accuracy: 0.8439  | valid_accuracy: 0.84429 |  0:24:39s
+epoch 20 | loss: 0.32135 | train_accuracy: 0.84299 | valid_accuracy: 0.84293 |  0:25:53s
+epoch 21 | loss: 0.31831 | train_accuracy: 0.84486 | valid_accuracy: 0.84518 |  0:27:07s
+epoch 22 | loss: 0.31657 | train_accuracy: 0.84542 | valid_accuracy: 0.8455  |  0:28:20s
+epoch 23 | loss: 0.31781 | train_accuracy: 0.84352 | valid_accuracy: 0.84367 |  0:29:33s
+epoch 24 | loss: 0.32675 | train_accuracy: 0.84033 | valid_accuracy: 0.84054 |  0:30:46s
+epoch 25 | loss: 0.32464 | train_accuracy: 0.84251 | valid_accuracy: 0.8426  |  0:31:59s
+epoch 26 | loss: 0.31935 | train_accuracy: 0.84393 | valid_accuracy: 0.84411 |  0:33:13s
+epoch 27 | loss: 0.31716 | train_accuracy: 0.84385 | valid_accuracy: 0.84373 |  0:34:26s
+epoch 28 | loss: 0.31645 | train_accuracy: 0.8437  | valid_accuracy: 0.84356 |  0:35:39s
+epoch 29 | loss: 0.31716 | train_accuracy: 0.84387 | valid_accuracy: 0.84384 |  0:36:52s
+epoch 30 | loss: 0.31609 | train_accuracy: 0.84498 | valid_accuracy: 0.84485 |  0:38:05s
+epoch 31 | loss: 0.31568 | train_accuracy: 0.84488 | valid_accuracy: 0.84483 |  0:39:21s
+epoch 32 | loss: 0.31483 | train_accuracy: 0.84447 | valid_accuracy: 0.84427 |  0:40:34s
+epoch 33 | loss: 0.3141  | train_accuracy: 0.84523 | valid_accuracy: 0.84506 |  0:41:48s
+epoch 34 | loss: 0.31413 | train_accuracy: 0.84511 | valid_accuracy: 0.84496 |  0:43:01s
+epoch 35 | loss: 0.31419 | train_accuracy: 0.84481 | valid_accuracy: 0.84474 |  0:44:14s
+epoch 36 | loss: 0.31379 | train_accuracy: 0.84517 | valid_accuracy: 0.84538 |  0:45:27s
+epoch 37 | loss: 0.31338 | train_accuracy: 0.84584 | valid_accuracy: 0.84557 |  0:46:40s
+epoch 38 | loss: 0.31319 | train_accuracy: 0.84487 | valid_accuracy: 0.84492 |  0:47:53s
+epoch 39 | loss: 0.31269 | train_accuracy: 0.84566 | valid_accuracy: 0.84556 |  0:49:06s
+epoch 40 | loss: 0.31298 | train_accuracy: 0.84598 | valid_accuracy: 0.84582 |  0:50:19s
+epoch 41 | loss: 0.31264 | train_accuracy: 0.84561 | valid_accuracy: 0.84558 |  0:51:33s
+epoch 42 | loss: 0.31279 | train_accuracy: 0.84534 | valid_accuracy: 0.84535 |  0:52:46s
+epoch 43 | loss: 0.3131  | train_accuracy: 0.84588 | valid_accuracy: 0.8458  |  0:53:59s
+epoch 44 | loss: 0.31347 | train_accuracy: 0.84543 | valid_accuracy: 0.84557 |  0:55:11s
+epoch 45 | loss: 0.31475 | train_accuracy: 0.84516 | valid_accuracy: 0.84505 |  0:56:24s
+epoch 46 | loss: 0.31378 | train_accuracy: 0.84517 | valid_accuracy: 0.84507 |  0:57:37s
+epoch 47 | loss: 0.31371 | train_accuracy: 0.84461 | valid_accuracy: 0.84461 |  0:58:50s
+epoch 48 | loss: 0.31494 | train_accuracy: 0.84432 | valid_accuracy: 0.84448 |  1:00:03s
+epoch 49 | loss: 0.31612 | train_accuracy: 0.84437 | valid_accuracy: 0.8444  |  1:01:16s
+epoch 50 | loss: 0.31408 | train_accuracy: 0.84596 | valid_accuracy: 0.84596 |  1:02:30s
+epoch 51 | loss: 0.31279 | train_accuracy: 0.8456  | valid_accuracy: 0.84546 |  1:03:46s
+epoch 52 | loss: 0.31299 | train_accuracy: 0.84501 | valid_accuracy: 0.84464 |  1:04:59s
+epoch 53 | loss: 0.31242 | train_accuracy: 0.84577 | valid_accuracy: 0.84544 |  1:06:12s
+epoch 54 | loss: 0.31218 | train_accuracy: 0.84521 | valid_accuracy: 0.84485 |  1:07:25s
+epoch 55 | loss: 0.31212 | train_accuracy: 0.84604 | valid_accuracy: 0.84584 |  1:08:39s
+epoch 56 | loss: 0.31188 | train_accuracy: 0.84592 | valid_accuracy: 0.84589 |  1:09:52s
+epoch 57 | loss: 0.31178 | train_accuracy: 0.84533 | valid_accuracy: 0.8452  |  1:11:05s
+epoch 58 | loss: 0.3117  | train_accuracy: 0.84529 | valid_accuracy: 0.84512 |  1:12:17s
+epoch 59 | loss: 0.31198 | train_accuracy: 0.84593 | valid_accuracy: 0.84587 |  1:13:30s
+epoch 60 | loss: 0.31162 | train_accuracy: 0.84658 | valid_accuracy: 0.84633 |  1:14:42s
+epoch 61 | loss: 0.31168 | train_accuracy: 0.84606 | valid_accuracy: 0.8461  |  1:15:55s
+epoch 62 | loss: 0.31123 | train_accuracy: 0.84542 | valid_accuracy: 0.84526 |  1:17:07s
+epoch 63 | loss: 0.31124 | train_accuracy: 0.84622 | valid_accuracy: 0.84605 |  1:18:19s
+epoch 64 | loss: 0.31099 | train_accuracy: 0.84666 | valid_accuracy: 0.84634 |  1:19:32s
+epoch 65 | loss: 0.31484 | train_accuracy: 0.84651 | valid_accuracy: 0.84654 |  1:20:44s
+epoch 66 | loss: 0.31304 | train_accuracy: 0.84608 | valid_accuracy: 0.84598 |  1:22:00s
+epoch 67 | loss: 0.31277 | train_accuracy: 0.84648 | valid_accuracy: 0.84623 |  1:23:17s
+epoch 68 | loss: 0.3127  | train_accuracy: 0.84599 | valid_accuracy: 0.8459  |  1:24:30s
+epoch 69 | loss: 0.31279 | train_accuracy: 0.8459  | valid_accuracy: 0.8456  |  1:25:42s
+epoch 70 | loss: 0.31208 | train_accuracy: 0.84509 | valid_accuracy: 0.84511 |  1:26:57s
+epoch 71 | loss: 0.31264 | train_accuracy: 0.84686 | valid_accuracy: 0.84683 |  1:28:10s
+epoch 72 | loss: 0.31219 | train_accuracy: 0.84524 | valid_accuracy: 0.84525 |  1:29:23s
+epoch 73 | loss: 0.31203 | train_accuracy: 0.84636 | valid_accuracy: 0.84627 |  1:30:36s
+epoch 74 | loss: 0.31182 | train_accuracy: 0.84593 | valid_accuracy: 0.84591 |  1:31:48s
+epoch 75 | loss: 0.31195 | train_accuracy: 0.84726 | valid_accuracy: 0.84707 |  1:33:01s
+epoch 76 | loss: 0.31174 | train_accuracy: 0.84649 | valid_accuracy: 0.8464  |  1:34:14s
+epoch 77 | loss: 0.31148 | train_accuracy: 0.84599 | valid_accuracy: 0.84581 |  1:35:27s
+epoch 78 | loss: 0.3115  | train_accuracy: 0.84749 | valid_accuracy: 0.8473  |  1:36:39s
+epoch 79 | loss: 0.31176 | train_accuracy: 0.84586 | valid_accuracy: 0.84573 |  1:37:52s
+epoch 80 | loss: 0.31051 | train_accuracy: 0.84596 | valid_accuracy: 0.84576 |  1:39:05s
+epoch 81 | loss: 0.31039 | train_accuracy: 0.84667 | valid_accuracy: 0.84678 |  1:40:18s
+epoch 82 | loss: 0.31073 | train_accuracy: 0.84481 | valid_accuracy: 0.84484 |  1:41:30s
+epoch 83 | loss: 0.31094 | train_accuracy: 0.8465  | valid_accuracy: 0.84636 |  1:42:42s
+epoch 84 | loss: 0.31178 | train_accuracy: 0.84628 | valid_accuracy: 0.84609 |  1:43:55s
+epoch 85 | loss: 0.31069 | train_accuracy: 0.8479  | valid_accuracy: 0.84792 |  1:45:08s
+epoch 86 | loss: 0.31057 | train_accuracy: 0.84845 | valid_accuracy: 0.84822 |  1:46:20s
+epoch 87 | loss: 0.31009 | train_accuracy: 0.84861 | valid_accuracy: 0.84841 |  1:47:33s
+epoch 88 | loss: 0.30994 | train_accuracy: 0.84993 | valid_accuracy: 0.84965 |  1:48:45s
+epoch 89 | loss: 0.30967 | train_accuracy: 0.84589 | valid_accuracy: 0.84554 |  1:49:57s
+epoch 90 | loss: 0.31008 | train_accuracy: 0.84788 | valid_accuracy: 0.8477  |  1:51:11s
+epoch 91 | loss: 0.31009 | train_accuracy: 0.84649 | valid_accuracy: 0.8465  |  1:52:23s
+epoch 92 | loss: 0.31009 | train_accuracy: 0.84972 | valid_accuracy: 0.84945 |  1:53:36s
+epoch 93 | loss: 0.30898 | train_accuracy: 0.8481  | valid_accuracy: 0.84795 |  1:54:49s
+epoch 94 | loss: 0.3093  | train_accuracy: 0.8481  | valid_accuracy: 0.84773 |  1:56:02s
+epoch 95 | loss: 0.30935 | train_accuracy: 0.84606 | valid_accuracy: 0.84575 |  1:57:15s
+epoch 96 | loss: 0.30932 | train_accuracy: 0.84242 | valid_accuracy: 0.8424  |  1:58:28s
+epoch 97 | loss: 0.31798 | train_accuracy: 0.84163 | valid_accuracy: 0.84147 |  1:59:40s
+epoch 98 | loss: 0.31228 | train_accuracy: 0.84501 | valid_accuracy: 0.84499 |  2:00:53s
+epoch 99 | loss: 0.31328 | train_accuracy: 0.84647 | valid_accuracy: 0.84644 |  2:02:06s
+epoch 100| loss: 0.31146 | train_accuracy: 0.84695 | valid_accuracy: 0.84679 |  2:03:19s
+epoch 101| loss: 0.31099 | train_accuracy: 0.84683 | valid_accuracy: 0.84661 |  2:04:32s
+epoch 102| loss: 0.31052 | train_accuracy: 0.84571 | valid_accuracy: 0.84543 |  2:05:44s
+epoch 103| loss: 0.31075 | train_accuracy: 0.84666 | valid_accuracy: 0.84642 |  2:06:57s
+epoch 104| loss: 0.31044 | train_accuracy: 0.84598 | valid_accuracy: 0.84594 |  2:08:10s
+epoch 105| loss: 0.31036 | train_accuracy: 0.84672 | valid_accuracy: 0.84649 |  2:09:22s
+epoch 106| loss: 0.31032 | train_accuracy: 0.84639 | valid_accuracy: 0.84587 |  2:10:34s
+epoch 107| loss: 0.31    | train_accuracy: 0.84668 | valid_accuracy: 0.84657 |  2:11:46s
+epoch 108| loss: 0.30983 | train_accuracy: 0.84673 | valid_accuracy: 0.84671 |  2:12:59s
+epoch 109| loss: 0.31948 | train_accuracy: 0.83877 | valid_accuracy: 0.83865 |  2:14:12s
+epoch 110| loss: 0.35461 | train_accuracy: 0.84244 | valid_accuracy: 0.84274 |  2:15:24s
+epoch 111| loss: 0.33716 | train_accuracy: 0.83705 | valid_accuracy: 0.83734 |  2:16:36s
+epoch 112| loss: 0.32702 | train_accuracy: 0.83899 | valid_accuracy: 0.83915 |  2:17:50s
+epoch 113| loss: 0.32375 | train_accuracy: 0.83875 | valid_accuracy: 0.83889 |  2:19:02s
+epoch 114| loss: 0.32319 | train_accuracy: 0.83949 | valid_accuracy: 0.83954 |  2:20:15s
+epoch 115| loss: 0.32357 | train_accuracy: 0.83895 | valid_accuracy: 0.83935 |  2:21:27s
+epoch 116| loss: 0.32301 | train_accuracy: 0.84387 | valid_accuracy: 0.84414 |  2:22:40s
+epoch 117| loss: 0.315   | train_accuracy: 0.84507 | valid_accuracy: 0.84497 |  2:23:52s
+epoch 118| loss: 0.31387 | train_accuracy: 0.84483 | valid_accuracy: 0.84477 |  2:25:06s
+epoch 119| loss: 0.3133  | train_accuracy: 0.84523 | valid_accuracy: 0.84508 |  2:26:23s
+epoch 120| loss: 0.3127  | train_accuracy: 0.84566 | valid_accuracy: 0.84576 |  2:27:36s
+epoch 121| loss: 0.31211 | train_accuracy: 0.84524 | valid_accuracy: 0.84508 |  2:28:49s
+epoch 122| loss: 0.31188 | train_accuracy: 0.84552 | valid_accuracy: 0.84545 |  2:30:02s
+epoch 123| loss: 0.312   | train_accuracy: 0.84532 | valid_accuracy: 0.84544 |  2:31:15s
+epoch 124| loss: 0.31199 | train_accuracy: 0.84613 | valid_accuracy: 0.84612 |  2:32:28s
+epoch 125| loss: 0.3119  | train_accuracy: 0.84484 | valid_accuracy: 0.84506 |  2:33:40s
+epoch 126| loss: 0.31213 | train_accuracy: 0.84554 | valid_accuracy: 0.84558 |  2:34:53s
+epoch 127| loss: 0.31174 | train_accuracy: 0.84592 | valid_accuracy: 0.84605 |  2:36:05s
+epoch 128| loss: 0.31279 | train_accuracy: 0.84584 | valid_accuracy: 0.84563 |  2:37:18s
+epoch 129| loss: 0.31162 | train_accuracy: 0.84576 | valid_accuracy: 0.84585 |  2:38:30s
+epoch 130| loss: 0.3114  | train_accuracy: 0.84578 | valid_accuracy: 0.84585 |  2:39:42s
+epoch 131| loss: 0.31088 | train_accuracy: 0.8461  | valid_accuracy: 0.84618 |  2:40:55s
+epoch 132| loss: 0.31113 | train_accuracy: 0.84663 | valid_accuracy: 0.84664 |  2:42:08s
+epoch 133| loss: 0.31045 | train_accuracy: 0.84594 | valid_accuracy: 0.84591 |  2:43:20s
+epoch 134| loss: 0.31071 | train_accuracy: 0.84627 | valid_accuracy: 0.84626 |  2:44:32s
+epoch 135| loss: 0.31017 | train_accuracy: 0.8462  | valid_accuracy: 0.84614 |  2:45:45s
+epoch 136| loss: 0.31037 | train_accuracy: 0.84658 | valid_accuracy: 0.84667 |  2:46:58s
+epoch 137| loss: 0.31067 | train_accuracy: 0.84524 | valid_accuracy: 0.8452  |  2:48:10s
+epoch 138| loss: 0.31054 | train_accuracy: 0.84437 | valid_accuracy: 0.84435 |  2:49:24s
+epoch 139| loss: 0.31048 | train_accuracy: 0.84548 | valid_accuracy: 0.84555 |  2:50:36s
+epoch 140| loss: 0.31243 | train_accuracy: 0.84578 | valid_accuracy: 0.84618 |  2:51:48s
+epoch 141| loss: 0.31201 | train_accuracy: 0.84643 | valid_accuracy: 0.84641 |  2:53:01s
+epoch 142| loss: 0.31079 | train_accuracy: 0.84654 | valid_accuracy: 0.84657 |  2:54:13s
+epoch 143| loss: 0.31065 | train_accuracy: 0.84426 | valid_accuracy: 0.84441 |  2:55:26s
+epoch 144| loss: 0.311   | train_accuracy: 0.84648 | valid_accuracy: 0.84643 |  2:56:40s
+epoch 145| loss: 0.31042 | train_accuracy: 0.84664 | valid_accuracy: 0.84636 |  2:57:52s
+epoch 146| loss: 0.31011 | train_accuracy: 0.84666 | valid_accuracy: 0.84664 |  2:59:04s
+epoch 147| loss: 0.31012 | train_accuracy: 0.84676 | valid_accuracy: 0.84673 |  3:00:17s
+epoch 148| loss: 0.30974 | train_accuracy: 0.84684 | valid_accuracy: 0.84689 |  3:01:30s
+epoch 149| loss: 0.30965 | train_accuracy: 0.84616 | valid_accuracy: 0.846   |  3:02:42s
+epoch 150| loss: 0.31005 | train_accuracy: 0.84696 | valid_accuracy: 0.84692 |  3:03:54s
+epoch 151| loss: 0.30994 | train_accuracy: 0.84721 | valid_accuracy: 0.84739 |  3:05:06s
+epoch 152| loss: 0.30962 | train_accuracy: 0.84634 | valid_accuracy: 0.84632 |  3:06:19s
+epoch 153| loss: 0.30938 | train_accuracy: 0.84679 | valid_accuracy: 0.84661 |  3:07:31s
+epoch 154| loss: 0.31012 | train_accuracy: 0.84667 | valid_accuracy: 0.84666 |  3:08:44s
+epoch 155| loss: 0.30936 | train_accuracy: 0.84706 | valid_accuracy: 0.84675 |  3:09:56s
+epoch 156| loss: 0.30953 | train_accuracy: 0.84765 | valid_accuracy: 0.84743 |  3:11:09s
+epoch 157| loss: 0.30932 | train_accuracy: 0.84443 | valid_accuracy: 0.84431 |  3:12:25s
+epoch 158| loss: 0.30933 | train_accuracy: 0.84578 | valid_accuracy: 0.84568 |  3:13:41s
+epoch 159| loss: 0.30913 | train_accuracy: 0.847   | valid_accuracy: 0.8469  |  3:14:54s
+epoch 160| loss: 0.30923 | train_accuracy: 0.84733 | valid_accuracy: 0.84706 |  3:16:06s
+epoch 161| loss: 0.30877 | train_accuracy: 0.84734 | valid_accuracy: 0.84709 |  3:17:18s
+epoch 162| loss: 0.30926 | train_accuracy: 0.84695 | valid_accuracy: 0.84681 |  3:18:31s
+epoch 163| loss: 0.30906 | train_accuracy: 0.84678 | valid_accuracy: 0.84679 |  3:19:46s
+epoch 164| loss: 0.30875 | train_accuracy: 0.84612 | valid_accuracy: 0.84601 |  3:21:00s
+epoch 165| loss: 0.30973 | train_accuracy: 0.84704 | valid_accuracy: 0.84685 |  3:22:13s
+epoch 166| loss: 0.30848 | train_accuracy: 0.84498 | valid_accuracy: 0.84476 |  3:23:25s
+epoch 167| loss: 0.3106  | train_accuracy: 0.84701 | valid_accuracy: 0.8466  |  3:24:38s
+epoch 168| loss: 0.31141 | train_accuracy: 0.84658 | valid_accuracy: 0.84637 |  3:25:50s
+epoch 169| loss: 0.31393 | train_accuracy: 0.84594 | valid_accuracy: 0.8455  |  3:27:03s
+epoch 170| loss: 0.31122 | train_accuracy: 0.84545 | valid_accuracy: 0.84548 |  3:28:15s
+epoch 171| loss: 0.31039 | train_accuracy: 0.84642 | valid_accuracy: 0.84611 |  3:29:27s
+epoch 172| loss: 0.30936 | train_accuracy: 0.84257 | valid_accuracy: 0.84266 |  3:30:39s
+epoch 173| loss: 0.31146 | train_accuracy: 0.84638 | valid_accuracy: 0.84629 |  3:31:52s
+epoch 174| loss: 0.31004 | train_accuracy: 0.84616 | valid_accuracy: 0.84594 |  3:33:05s
+epoch 175| loss: 0.30944 | train_accuracy: 0.84716 | valid_accuracy: 0.84716 |  3:34:17s
+epoch 176| loss: 0.30975 | train_accuracy: 0.84703 | valid_accuracy: 0.84685 |  3:35:29s
+epoch 177| loss: 0.30935 | train_accuracy: 0.84649 | valid_accuracy: 0.8463  |  3:36:42s
+epoch 178| loss: 0.30882 | train_accuracy: 0.84478 | valid_accuracy: 0.8446  |  3:37:54s
+epoch 179| loss: 0.30786 | train_accuracy: 0.84653 | valid_accuracy: 0.84632 |  3:39:08s
+epoch 180| loss: 0.31035 | train_accuracy: 0.84733 | valid_accuracy: 0.84703 |  3:40:21s
+epoch 181| loss: 0.30903 | train_accuracy: 0.84704 | valid_accuracy: 0.84682 |  3:41:33s
+epoch 182| loss: 0.30925 | train_accuracy: 0.84683 | valid_accuracy: 0.84657 |  3:42:46s
+epoch 183| loss: 0.30872 | train_accuracy: 0.84559 | valid_accuracy: 0.84527 |  3:44:01s
+epoch 184| loss: 0.30895 | train_accuracy: 0.84712 | valid_accuracy: 0.84681 |  3:45:14s
+epoch 185| loss: 0.30881 | train_accuracy: 0.84732 | valid_accuracy: 0.84709 |  3:46:26s/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/abstract_model.py:75: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+/home/melicias/anaconda3/envs/tabnet/lib/python3.7/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+
+epoch 186| loss: 0.30871 | train_accuracy: 0.84709 | valid_accuracy: 0.84673 |  3:47:39s
+epoch 187| loss: 0.30892 | train_accuracy: 0.84752 | valid_accuracy: 0.84741 |  3:48:52s
+epoch 188| loss: 0.30904 | train_accuracy: 0.84513 | valid_accuracy: 0.8449  |  3:50:04s
+
+Early stopping occurred at epoch 188 with best_epoch = 88 and best_valid_accuracy = 0.84965
+----- Time and memory usage -----
+(current, peak) (1888596, 7385625350)
+--- 13881.44 segundos ---
+------------------------------------
+--- Performance of tabnet multiclass smotenc ---
+Accuracy : 84.63%
+Precision: 85.82%
+Recall: 84.63%
+F1-score: 83.37%
+Balanced accuracy: 70.12%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.25      0.99      0.40       250
+           1       0.00      0.00      0.00         1
+           2       0.73      0.93      0.82     19782
+           3       0.83      0.50      0.62     13428
+           4       1.00      1.00      1.00      6029
+           5       0.85      0.96      0.90     19130
+           6       0.96      0.29      0.45      2310
+           7       0.56      0.96      0.71      1117
+           8       0.73      0.38      0.50      5282
+           9       1.00      1.00      1.00     22209
+
+    accuracy                           0.85     89538
+   macro avg       0.69      0.70      0.64     89538
+weighted avg       0.86      0.85      0.83     89538
+
+[('duration', 0.0006), ('orig_bytes', 0.0508), ('resp_bytes', 0.0), ('missed_bytes', 0.0), ('orig_pkts', 0.0302), ('orig_ip_bytes', 0.0), ('resp_pkts', 0.0027), ('resp_ip_bytes', 0.0189), ('flow_duration', 0.0361), ('fwd_pkts_tot', 0.0), ('bwd_pkts_tot', 0.0), ('fwd_data_pkts_tot', 0.0209), ('bwd_data_pkts_tot', 0.0), ('fwd_pkts_per_sec', 0.0), ('bwd_pkts_per_sec', 0.0954), ('flow_pkts_per_sec', 0.0138), ('down_up_ratio', 0.0111), ('fwd_header_size_tot', 0.0), ('bwd_header_size_tot', 0.0643), ('fwd_PSH_flag_count', 0.0), ('bwd_PSH_flag_count', 0.0118), ('flow_ACK_flag_count', 0.0), ('fwd_pkts_payload.min', 0.0), ('fwd_pkts_payload.max', 0.0154), ('fwd_pkts_payload.tot', 0.0), ('fwd_pkts_payload.avg', 0.0), ('fwd_pkts_payload.std', 0.0), ('bwd_pkts_payload.min', 0.0658), ('bwd_pkts_payload.max', 0.0), ('bwd_pkts_payload.tot', 0.0), ('bwd_pkts_payload.avg', 0.0), ('bwd_pkts_payload.std', 0.0), ('flow_pkts_payload.min', 0.0), ('flow_pkts_payload.max', 0.0), ('flow_pkts_payload.tot', 0.0062), ('flow_pkts_payload.avg', 0.0365), ('flow_pkts_payload.std', 0.0), ('fwd_iat.min', 0.025), ('fwd_iat.max', 0.0), ('fwd_iat.tot', 0.0), ('fwd_iat.avg', 0.0103), ('fwd_iat.std', 0.0), ('bwd_iat.min', 0.0), ('bwd_iat.max', 0.0), ('bwd_iat.tot', 0.0), ('bwd_iat.avg', 0.0), ('bwd_iat.std', 0.0), ('flow_iat.min', 0.0651), ('flow_iat.max', 0.0), ('flow_iat.tot', 0.0012), ('flow_iat.avg', 0.0354), ('flow_iat.std', 0.0114), ('payload_bytes_per_second', 0.0), ('fwd_subflow_pkts', 0.0), ('bwd_subflow_pkts', 0.0), ('fwd_subflow_bytes', 0.0), ('bwd_subflow_bytes', 0.0), ('fwd_bulk_bytes', 0.0), ('bwd_bulk_bytes', 0.0), ('fwd_bulk_packets', 0.0), ('bwd_bulk_packets', 0.0), ('fwd_bulk_rate', 0.0), ('bwd_bulk_rate', 0.0016), ('active.max', 0.0), ('active.tot', 0.0091), ('active.avg', 0.0), ('active.std', 0.0), ('idle.min', 0.0), ('idle.max', 0.0), ('idle.tot', 0.0004), ('idle.avg', 0.0), ('idle.std', 0.0), ('fwd_init_window_size', 0.0), ('bwd_init_window_size', 0.0), ('fwd_last_window_size', 0.0204), ('bwd_last_window_size', 0.0396), ('proto_icmp', 0.0043), ('proto_tcp', 0.0), ('proto_udp', 0.0), ('conn_state_OTH', 0.0), ('conn_state_REJ', 0.0), ('conn_state_RSTO', 0.0), ('conn_state_RSTOS0', 0.0), ('conn_state_RSTR', 0.0007), ('conn_state_RSTRH', 0.0), ('conn_state_S0', 0.0), ('conn_state_S1', 0.0165), ('conn_state_S2', 0.0002), ('conn_state_S3', 0.0009), ('conn_state_SF', 0.0), ('conn_state_SH', 0.0), ('conn_state_SHR', 0.0), ('fwd_header_size_min_0', 0.0), ('fwd_header_size_min_8', 0.111), ('fwd_header_size_min_20', 0.0), ('fwd_header_size_min_24', 0.0), ('fwd_header_size_min_32', 0.0144), ('fwd_header_size_min_40', 0.0), ('fwd_header_size_min_44', 0.0), ('fwd_header_size_max_0', 0.0), ('fwd_header_size_max_8', 0.0), ('fwd_header_size_max_20', 0.0), ('fwd_header_size_max_24', 0.0049), ('fwd_header_size_max_32', 0.0288), ('fwd_header_size_max_40', 0.0076), ('fwd_header_size_max_44', 0.0), ('bwd_header_size_min_0', 0.0), ('bwd_header_size_min_8', 0.0), ('bwd_header_size_min_20', 0.0), ('bwd_header_size_min_24', 0.0), ('bwd_header_size_min_32', 0.0), ('bwd_header_size_min_40', 0.0), ('bwd_header_size_min_44', 0.0), ('bwd_header_size_max_0', 0.0134), ('bwd_header_size_max_8', 0.0), ('bwd_header_size_max_20', 0.0), ('bwd_header_size_max_24', 0.0302), ('bwd_header_size_max_32', 0.0), ('bwd_header_size_max_40', 0.0), ('bwd_header_size_max_44', 0.0), ('bwd_header_size_max_52', 0.0), ('flow_FIN_flag_count_0', 0.0), ('flow_FIN_flag_count_1', 0.0), ('flow_FIN_flag_count_2', 0.0001), ('flow_FIN_flag_count_3', 0.0), ('flow_FIN_flag_count_4', 0.0), ('flow_FIN_flag_count_5', 0.0), ('flow_FIN_flag_count_6', 0.0), ('flow_FIN_flag_count_7', 0.0), ('flow_SYN_flag_count_0', 0.0224), ('flow_SYN_flag_count_1', 0.0), ('flow_SYN_flag_count_2', 0.0383), ('flow_SYN_flag_count_3', 0.0), ('flow_SYN_flag_count_4', 0.0), ('flow_SYN_flag_count_5', 0.0002), ('flow_SYN_flag_count_6', 0.0), ('flow_SYN_flag_count_7', 0.0), ('flow_SYN_flag_count_8', 0.0), ('flow_SYN_flag_count_9', 0.0), ('flow_SYN_flag_count_10', 0.0), ('flow_RST_flag_count_0', 0.0), ('flow_RST_flag_count_1', 0.0), ('flow_RST_flag_count_2', 0.0), ('flow_RST_flag_count_3', 0.0), ('flow_RST_flag_count_4', 0.0), ('history_originator_0', 0.0), ('history_originator_1', 0.001), ('history_originator_2', 0.0), ('history_originator_3', 0.0009), ('history_originator_4', 0.0), ('history_originator_5', 0.0), ('history_originator_6', 0.0037), ('history_responder_0', 0.0), ('history_responder_1', 0.0), ('history_responder_2', 0.0), ('history_responder_3', 0.0003), ('history_responder_4', 0.0), ('history_responder_5', 0.0)]
