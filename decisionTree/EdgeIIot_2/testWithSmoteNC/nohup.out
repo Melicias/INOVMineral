@@ -1,0 +1,180 @@
+/Users/melicias/.local/lib/python3.7/site-packages/imblearn/over_sampling/_smote/base.py:340: FutureWarning: The parameter `n_jobs` has been deprecated in 0.10 and will be removed in 0.12. You can pass an nearest neighbors estimator where `n_jobs` is already set instead.
+  FutureWarning,
+---
+Lines: 686515
+Columns: 48 
+Missing value or NaN: 0
+---
+Categorical columns: 
+['http.request.method', 'http.referer', 'http.request.version', 'dns.qry.name.len', 'mqtt.conack.flags', 'mqtt.protoname', 'mqtt.topic', 'Attack_type']
+
+--- Details for categorical columns ---
+http.request.method: 
+['0.0' '0' 'GET' 'TRACE' 'POST' 'PROPFIND' 'OPTIONS' 'PUT' 'SEARCH']
+
+http.referer: 
+['0.0' '0' '127.0.0.1'
+ '() { _; } >_[$($())] { echo 93e4r0-CVE-2014-6278: true; echo;echo; }'
+ 'TESTING_PURPOSES_ONLY']
+
+http.request.version: 
+['0.0' '0' 'HTTP/1.1' 'HTTP/1.0' '/etc/passwd|?data=Download HTTP/1.1'
+ 'Src=javascript:alert(\'Vulnerable\')><Img Src=\\" HTTP/1.1'
+ "name=a><input name=i value=XSS>&lt;script>alert('Vulnerable')</script> HTTP/1.1"
+ '-al&_PHPLIB[libdir]=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ 'script>alert(1)/script><\\" HTTP/1.1'
+ '-al&ABSOLUTE_PATH_STUDIP=http://cirt.net/rfiinc.txt?? HTTP/1.1'
+ 'By Dr HTTP/1.1' '-a HTTP/1.1' '> HTTP/1.1']
+
+dns.qry.name.len: 
+['0.0' '0' '3.debian.pool.ntp.org' '1.0' '1.debian.pool.ntp.org'
+ '0.debian.pool.ntp.org' '2.debian.pool.ntp.org' 'raspberrypi.local']
+
+mqtt.conack.flags: 
+['0.0' '0' '0x00000000' '1574358' '1461591' '1461589' '1461383' '1574359']
+
+mqtt.protoname: 
+['0.0' '0' 'MQTT']
+
+mqtt.topic: 
+['0.0' '0' 'Temperature_and_Humidity']
+
+Attack_type: 
+['DDoS_ICMP' 'Normal' 'Password' 'Port_Scanning' 'DDoS_UDP' 'DDoS_TCP'
+ 'XSS' 'SQL_injection' 'Backdoor' 'Vulnerability_scanner' 'Ransomware'
+ 'Uploading' 'DDoS_HTTP' 'Fingerprinting' 'MITM']
+
+   Data Type                Column Name  \
+0    float64                 arp.opcode   
+1    float64                arp.hw.size   
+2    float64              icmp.checksum   
+3    float64                icmp.seq_le   
+4    float64                icmp.unused   
+5    float64        http.content_length   
+6     object        http.request.method   
+7     object               http.referer   
+8     object       http.request.version   
+9    float64              http.response   
+10   float64              http.tls_port   
+11   float64                    tcp.ack   
+12   float64                tcp.ack_raw   
+13   float64               tcp.checksum   
+14   float64         tcp.connection.fin   
+15   float64         tcp.connection.rst   
+16   float64         tcp.connection.syn   
+17   float64      tcp.connection.synack   
+18   float64                  tcp.flags   
+19   float64              tcp.flags.ack   
+20   float64                    tcp.len   
+21   float64                    tcp.seq   
+22   float64                 udp.stream   
+23   float64             udp.time_delta   
+24   float64               dns.qry.name   
+25    object           dns.qry.name.len   
+26   float64                 dns.qry.qu   
+27   float64               dns.qry.type   
+28   float64         dns.retransmission   
+29   float64     dns.retransmit_request   
+30   float64  dns.retransmit_request_in   
+31    object          mqtt.conack.flags   
+32   float64     mqtt.conflag.cleansess   
+33   float64              mqtt.conflags   
+34   float64              mqtt.hdrflags   
+35   float64                   mqtt.len   
+36   float64        mqtt.msg_decoded_as   
+37   float64               mqtt.msgtype   
+38   float64             mqtt.proto_len   
+39    object             mqtt.protoname   
+40    object                 mqtt.topic   
+41   float64             mqtt.topic_len   
+42   float64                   mqtt.ver   
+43   float64                  mbtcp.len   
+44   float64             mbtcp.trans_id   
+45   float64              mbtcp.unit_id   
+46     int64               Attack_label   
+47    object                Attack_type   
+
+                                        Unique Values  
+0                                     [0.0, 2.0, 1.0]  
+1                                          [0.0, 6.0]  
+2   [8277.0, 0.0, 60163.0, 12163.0, 13412.0, 32733...  
+3   [41872.0, 0.0, 62661.0, 30089.0, 38012.0, 6961...  
+4                                               [0.0]  
+5   [0.0, 57.0, 277.0, 36.0, 1465.0, 12.0, 38.0, 2...  
+6   [0.0, 0, GET, TRACE, POST, PROPFIND, OPTIONS, ...  
+7   [0.0, 0, 127.0.0.1, () { _; } >_[$($())] { ech...  
+8   [0.0, 0, HTTP/1.1, HTTP/1.0, /etc/passwd|?data...  
+9                                          [0.0, 1.0]  
+10                                              [0.0]  
+11  [0.0, 6.0, 5.0, 59.0, 87.0, 2.0, 629923657.0, ...  
+12  [0.0, 908035078.0, 1091234306.0, 597489578.0, ...  
+13  [0.0, 63243.0, 37153.0, 53846.0, 23272.0, 4115...  
+14                                         [0.0, 1.0]  
+15                                         [0.0, 1.0]  
+16                                         [0.0, 1.0]  
+17                                         [0.0, 1.0]  
+18  [0.0, 16.0, 2.0, 24.0, 18.0, 20.0, 25.0, 17.0,...  
+19                                         [0.0, 1.0]  
+20  [0.0, 1440.0, 4.0, 2.0, 224.0, 321.0, 102.0, 2...  
+21  [0.0, 59.0, 6.0, 1.0, 13.0, 187728729.0, 56.0,...  
+22  [0.0, 514830.0, 980880.0, 2140911.0, 1815652.0...  
+23  [0.0, 398.0, 12.0, 448.0, 255.0, 98.0, 298.0, ...  
+24  [0.0, 619239.0, 942805.0, 639789.0, 2479369.0,...  
+25  [0.0, 0, 3.debian.pool.ntp.org, 1.0, 1.debian....  
+26  [0.0, 21.0, 421.0, 271.0, 574.0, 848.0, 517.0,...  
+27                                              [0.0]  
+28                                   [0.0, 1.0, 28.0]  
+29                                         [0.0, 1.0]  
+30                                         [0.0, 1.0]  
+31  [0.0, 0, 0x00000000, 1574358, 1461591, 1461589...  
+32                                         [0.0, 1.0]  
+33                                         [0.0, 2.0]  
+34                     [0.0, 32.0, 224.0, 48.0, 16.0]  
+35                             [0.0, 2.0, 39.0, 12.0]  
+36                                              [0.0]  
+37                         [0.0, 2.0, 14.0, 3.0, 1.0]  
+38                                         [0.0, 4.0]  
+39                                     [0.0, 0, MQTT]  
+40                 [0.0, 0, Temperature_and_Humidity]  
+41                                        [0.0, 24.0]  
+42                                         [0.0, 4.0]  
+43                  [0.0, 21.0, 27.0, 9.0, 6.0, 17.0]  
+44  [0.0, 62.0, 127.0, 128.0, 10.0, 120.0, 86.0, 1...  
+45                               [0.0, 1.0, 2.0, 4.0]  
+46                                             [1, 0]  
+47  [DDoS_ICMP, Normal, Password, Port_Scanning, D...  
+Started SMOTENC; size of df - 32266205 
+finished SMOTENC; size of df - 176250000
+----- Time and memory usage -----
+(current, peak) (3064651, 1593756759)
+--- 63.31 segundos ---
+------------------------------------
+--- Performance of decision tree ---
+Accuracy : 97.59%
+Precision: 97.71%
+Recall: 97.59%
+F1-score: 97.63%
+Balanced accuracy: 89.92%
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      4782
+           1       0.91      0.85      0.88      9628
+           2       1.00      1.00      1.00     13501
+           3       1.00      1.00      1.00     10009
+           4       1.00      1.00      1.00     24601
+           5       0.21      0.76      0.33       146
+           6       1.00      1.00      1.00        76
+           7       1.00      1.00      1.00    272776
+           8       0.78      0.79      0.79     10108
+           9       0.97      0.88      0.92      4062
+          10       0.87      0.92      0.90      1926
+          11       0.81      0.80      0.81     10071
+          12       0.78      0.78      0.78      7273
+          13       0.95      0.95      0.95      9940
+          14       0.66      0.82      0.73      3035
+
+    accuracy                           0.98    381934
+   macro avg       0.86      0.90      0.87    381934
+weighted avg       0.98      0.98      0.98    381934
+

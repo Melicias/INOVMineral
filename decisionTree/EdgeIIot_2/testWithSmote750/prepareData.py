@@ -85,7 +85,7 @@ df_attacks = df_train[df_train["Attack_type"] != "Normal"]
 
 df_normal = df_train[df_train["Attack_type"] == "Normal"]
 df_normal = shuffle(df_normal)
-df_normal = df_normal[:650000]
+df_normal = df_normal[:750000]
 df_train = pd.concat([df_attacks,df_normal])
 df_train = shuffle(df_train)
 
