@@ -43,6 +43,10 @@ np.random.seed(random_state)
 
 df_train = pd.read_csv('../../../data/EdgeIIot_train.csv', low_memory=False)
 df_test = pd.read_csv('../../../data/EdgeIIot_test.csv', low_memory=False)
+df_samples = pd.read_csv('../../../data/samples2.csv', low_memory=False)
+
+df_train = pd.concat([df_train,df_samples])
+"""
 
 #for the SMOTE part, so it can fit in 16gb of RAM
 df_before = df_train
@@ -53,7 +57,7 @@ df_normal = shuffle(df_normal)
 df_normal = df_normal[:100000]
 df_train = pd.concat([df_attacks,df_normal])
 df_train = shuffle(df_train)
-
+"""
 functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
 
 #print(df_train["Attack_type"].value_counts())
@@ -73,7 +77,7 @@ catIndexs = []
 for cc in categorical_columns:
     catIndexs.append(featuresFromStart.index(cc))
 
-df_train = functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
+#df_train = functions.apply_smotenc_bigdata(df= df_train, label= "Attack_type", categorical_indices= catIndexs, random_state= random_state)
 
 #join the 2 df with keys so we can split it
 df = pd.concat([df_train,df_test],keys=[0,1])

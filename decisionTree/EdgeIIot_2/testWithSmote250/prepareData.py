@@ -72,6 +72,7 @@ def calcula_metricas(nome_modelo, ground_truth, predicao):
 
 df_train = pd.read_csv('../../../data/EdgeIIot_train_dummies.csv', low_memory=False)
 df_test = pd.read_csv('../../../data/EdgeIIot_test_dummies.csv', low_memory=False)
+print(df_train['Attack_type'].value_counts())
 functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
 
 df_train.drop(["Attack_label"], axis=1, inplace=True)
@@ -88,6 +89,7 @@ df_normal = shuffle(df_normal)
 df_normal = df_normal[:250000]
 df_train = pd.concat([df_attacks,df_normal])
 df_train = shuffle(df_train)
+df_train['Attack_type'].value_counts()
 
 le = LabelEncoder()
 le.fit(df_train["Attack_type"].values)
@@ -109,6 +111,16 @@ X_test = model_norm.transform(X_test)
 
 sm = SMOTE(random_state=random_state,n_jobs=-1)
 X_train, y_train = sm.fit_resample(X_train, y_train)
+
+x_columns = df_train.columns
+X_train_df = pd.DataFrame(X_train, columns=features)
+y_train_df = pd.DataFrame(y_train, columns=["Attack_type"])
+
+print(y_train_df.shape)
+print(X_train_df.shape)
+train_df = pd.concat([X_train_df, y_train_df], axis=1)
+print(train_df['Attack_type'].value_counts())
+
 
 start_time = functions.start_measures()
 
