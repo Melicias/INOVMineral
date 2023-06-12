@@ -32,6 +32,19 @@ from matplotlib import pyplot as plt
 random_state=42
 np.random.seed(random_state)
 
+def checkFields(row):
+    return np.sum(row == 1) == 1
+
+def applyVerification(df, lst):
+    result = np.apply_along_axis(checkFields, 1, df[lst].values)
+    counts = np.bincount(result.astype(int))
+    #print("Number of True values: ", counts[1])
+    #print("Number of False values: ", counts[0])
+    # Remove rows with False values
+    df_filtered = df[result]
+
+    return df_filtered
+
 
 df_train = pd.read_csv('../../../data/EdgeIIot_train_dummies.csv', low_memory=False)
 df_test = pd.read_csv('../../../data/EdgeIIot_test_dummies.csv', low_memory=False)
@@ -72,13 +85,46 @@ y_test = le.transform(y_test)
 standScaler = StandardScaler()
 model_norm = standScaler.fit(X_train)
 
-X_train = model_norm.transform(X_train)
-X_test = model_norm.transform(X_test)
-
-
 #FAZER SMOTE AQUI
 sm = SMOTE(random_state=random_state,n_jobs=-1)
 X_train, y_train = sm.fit_resample(X_train, y_train)
+
+df_test_After = pd.DataFrame(X_train,columns=features)
+df_test_After["Attack_type"] = y_train
+
+lst = ['http.request.method_0', 'http.request.method_1', 'http.request.method_2', 'http.request.method_3', 'http.request.method_4', 'http.request.method_5', 'http.request.method_6', 'http.request.method_7', 'http.request.method_8']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['http.referer_0', 'http.referer_1', 'http.referer_2', 'http.referer_3', 'http.referer_4']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['http.request.version_0', 'http.request.version_1', 'http.request.version_2', 'http.request.version_3', 'http.request.version_4','http.request.version_5','http.request.version_6','http.request.version_7','http.request.version_8','http.request.version_9','http.request.version_10','http.request.version_11','http.request.version_12']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['dns.qry.name.len_0', 'dns.qry.name.len_1', 'dns.qry.name.len_2', 'dns.qry.name.len_3', 'dns.qry.name.len_4', 'dns.qry.name.len_5', 'dns.qry.name.len_6', 'dns.qry.name.len_7', 'dns.qry.name.len_8']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['mqtt.conack.flags_0', 'mqtt.conack.flags_1', 'mqtt.conack.flags_2', 'mqtt.conack.flags_3', 'mqtt.conack.flags_4','mqtt.conack.flags_5','mqtt.conack.flags_6','mqtt.conack.flags_7','mqtt.conack.flags_8','mqtt.conack.flags_9','mqtt.conack.flags_10','mqtt.conack.flags_11','mqtt.conack.flags_12']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['mqtt.protoname_0', 'mqtt.protoname_1', 'mqtt.protoname_2']
+
+df_new = applyVerification(df_test_After, lst)
+
+lst = ['mqtt.topic_0', 'mqtt.topic_1', 'mqtt.topic_2']
+
+df_new = applyVerification(df_test_After, lst)
+
+X_train = df_new[features].values
+y_train = df_new["Attack_type"].values
+
+X_train = model_norm.transform(X_train)
+X_test = model_norm.transform(X_test)
 
 
 start_time = functions.start_measures()

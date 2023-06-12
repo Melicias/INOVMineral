@@ -46,8 +46,8 @@ def applyVerification(df, lst):
     return df_filtered
 
 
-df_train = pd.read_csv('../../../data/EdgeIIot_train_dummies.csv', low_memory=False)
-df_test = pd.read_csv('../../../data/EdgeIIot_test_dummies.csv', low_memory=False)
+df_train = pd.read_csv('../../data/EdgeIIot_train_dummies.csv', low_memory=False)
+df_test = pd.read_csv('../../data/EdgeIIot_test_dummies.csv', low_memory=False)
 
 functions.display_information_dataframe(df_train,showCategoricals = True, showDetailsOnCategorical = True, showFullDetails = True)
 
@@ -125,6 +125,7 @@ y_train = df_new["Attack_type"].values
 
 X_train = model_norm.transform(X_train)
 X_test = model_norm.transform(X_test)
+
 
 start_time = functions.start_measures()
 
